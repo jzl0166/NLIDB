@@ -8,7 +8,6 @@ from tensorflow.python.layers.core import Dense
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 # ----------------------------------------------------------------------------
 epochs = 30
-l2_scale = 1e-3
 lr = 0.01
 BS = 128
 maxlen = 20
@@ -25,16 +24,12 @@ subset='all'
 load_model=True
 input_vocab_size = vocabulary_size
 output_vocab_size = vocabulary_size
-S = 'bos player where and ( ( season equal 2004 ) and ( number_of_assists equal 3 ) )'
 S = 'bos player where ( ( number_of_assists equal 3 ) and ( season equal 2004 ) )'
 dim = n_states
 # ----------------------------------------------------------------------------
 import util
 from util import load_data,load_data_idx
 def evaluate(sess, env, X_data, y_data, batch_size=BS):
-    """
-    Evaluate TF model by running env.loss and env.acc.
-    """
     print('\nEvaluating')
 
     n_sample = X_data.shape[0]
@@ -140,13 +135,9 @@ def Decoder( mode , enc_rnn_out , enc_rnn_state , emb_Y , emb_out):
 def construct_graph(mode,env=env):
 
     vocab_emb = np.load('vocab_emb_all.npy')
-    print('Vocab size:')
-    print(vocab_emb.shape)
     emb_out = tf.get_variable( "emb_out" , initializer=vocab_emb)
     emb_X = tf.nn.embedding_lookup( emb_out , env.x ) 
     emb_Y = tf.nn.embedding_lookup( emb_out , env.y )
-    #[None, 20, 300]
-
 
     with tf.name_scope("Encoder"):
         cell_fw0 = tf.contrib.rnn.GRUCell(dim)
@@ -155,10 +146,7 @@ def construct_graph(mode,env=env):
         cell_bw = tf.contrib.rnn.DropoutWrapper(cell_bw0, input_keep_prob=1-in_drop,output_keep_prob=1-out_drop)
 
         enc_rnn_out , enc_rnn_state = tf.nn.bidirectional_dynamic_rnn( cell_fw , cell_bw , emb_X , dtype=tf.float32)
-        #state: (output_state_fw, output_state_bw) 
-        #([None, 20, 150],[None, 20, 150])
         enc_rnn_out = tf.concat(enc_rnn_out, 2)
-        #[None,20,300]
         enc_rnn_state = tf.concat([enc_rnn_state[0],enc_rnn_state[1]],axis=1)
 
     logits , sample_ids = Decoder(mode, enc_rnn_out , enc_rnn_state , emb_Y, emb_out)
@@ -175,12 +163,10 @@ def construct_graph(mode,env=env):
 	    b = tf.reduce_all(a, axis=1)
 	    env.acc = tf.reduce_mean( tf.cast( b , dtype=tf.float32 ) ) 
     else:
-	#[None,sentence length,beam_width]
-	sample_ids = tf.transpose( sample_ids , [0,2,1] )
-	#[None,beam_width,sentence length]
-	env.acc = None
-	env.loss = None
-	env.train_op = None 
+	    sample_ids = tf.transpose( sample_ids , [0,2,1] )
+	    env.acc = None
+	    env.loss = None
+	    env.train_op = None 
         
     return env.train_op , env.loss , env.acc , sample_ids , logits
 
@@ -205,10 +191,6 @@ def decode_data():
         logic=" ".join([reverse_vocab_dict[idx] for idx in seq ])
         true_logic=" ".join([reverse_vocab_dict[idx] for idx in true_seq ])
         count+=(logic==true_logic)
-        if logic!=true_logic:
-            print("=========")
-            print(logic)
-            print(true_logic)
   
     print('count acc')
     print(count*1./len(ybar))
@@ -221,7 +203,7 @@ def decode_one(sents):
     	x_data = [vocab_dict[x] for x in sent.split()]
     	x_data.append(2)
     	x_data.extend([0  for x in range(maxlen-len(x_data))])
-	X_data.append(x_data)
+	    X_data.append(x_data)
 
     X_data = np.asarray(X_data)
     ybar = sess.run(
@@ -230,10 +212,10 @@ def decode_one(sents):
     ybar=np.asarray(ybar)
     print(ybar.shape)
     for i,seq_per_beam in enumerate(ybar):
-	print('=========SQL==========')
-	print(x_data[i])
-	print('--------beam decoding--------')
-	for seq in seq_per_beam:
+	    print('=========SQL==========')
+	    print(X_data[i])
+	    print('--------beam decoding--------')
+	    for seq in seq_per_beam:
         	logic=" ".join([reverse_vocab_dict[idx] for idx in seq ])
         	print(logic)
 
@@ -241,8 +223,6 @@ tf.reset_default_graph()
 train_graph = tf.Graph()
 infer_graph = tf.Graph()
 
-import copy
-y_train,X_train=load_data_idx(subset=subset,maxlen=maxlen,load=False)
 y_test,X_test=load_data_idx(subset=subset,maxlen=maxlen,load=False,s='test')
 
 with infer_graph.as_default():
@@ -253,9 +233,7 @@ with infer_graph.as_default():
     env.infer_saver = tf.train.Saver()
 
     sess = tf.InteractiveSession()
-    env.infer_saver.restore(sess, "reverse_model/{}_60".format(subset) )
-    #evaluate(sess, env, X_train, y_train)
-    #decode_data()
+    env.infer_saver.restore(sess, "reverse_model/{}".format(subset) )
     decode_one([S])
     
 
