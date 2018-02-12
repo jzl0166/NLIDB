@@ -8,14 +8,12 @@ from tensorflow.python.layers.core import Dense
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 # ----------------------------------------------------------------------------
 epochs = 100
-l2_scale = 1e-3
 lr = 0.001
 BS = 64
 maxlen = 20
 embedding_dim = 300
 D = embedding_dim
 n_states = int(D/2)
-classes = 2
 T = maxlen
 in_drop=.0
 out_drop=.0
@@ -32,9 +30,6 @@ import util
 from util import load_data,load_data_idx
 def train(sess, env, X_data, y_data, epochs=5, load=False, shuffle=True, batch_size=BS,
           name='model'):
-    """
-    Train a TF model by running env.train_op.
-    """
     if load:
         print('\nLoading saved model')
         env.saver.restore(sess, 'reverse_model/{}'.format(name))
@@ -52,7 +47,6 @@ def train(sess, env, X_data, y_data, epochs=5, load=False, shuffle=True, batch_s
             X_data = X_data[ind]
             y_data = y_data[ind]
        
-
         for batch in range(n_batch):
             print(' batch {0}/{1}'.format(batch+1, n_batch),end='\r')
             start = batch * batch_size
@@ -62,9 +56,9 @@ def train(sess, env, X_data, y_data, epochs=5, load=False, shuffle=True, batch_s
                                               env.training: True})
         evaluate(sess, env, X_data, y_data, batch_size=batch_size)
        
-	if (epoch+1)%20==0:
-        	print('\n Saving model')
-        	env.saver.save(sess, 'reverse_model/{}_{}'.format(name,(epoch+1)))
+	    if (epoch+1)%20==0:
+            print('\n Saving model')
+            env.saver.save(sess, 'reverse_model/{}'.format(name), global_step=(epoch+1))
 
 def evaluate(sess, env, X_data, y_data, batch_size=BS):
     """
@@ -109,8 +103,6 @@ def _decoder( encoder_outputs , encoder_state , mode , beam_width , batch_size):
     # [batch_size, max_time,...]
     memory = encoder_outputs
     
-
-
     seq_len = tf.tile(tf.constant([maxlen], dtype=tf.int32), [ batch_size ] )
     attention_mechanism = tf.contrib.seq2seq.BahdanauAttention( num_units = num_units, memory=memory, 
                                                                normalize=True,
@@ -168,18 +160,10 @@ def Decoder( mode , enc_rnn_out , enc_rnn_state , emb_Y , emb_out):
 def construct_graph(mode,env=env):
 
     vocab_emb = np.load('vocab_emb_all.npy')
-    print('Vocab size:')
-    print(vocab_emb.shape)
     emb_out = tf.get_variable( "emb_out" , initializer=vocab_emb)
-    #emb_out = tf.get_variable( "emb_out",shape=[vocabulary_size, embedding_size])
-    #emb_X = env.x
     emb_X = tf.nn.embedding_lookup( emb_out , env.x ) 
-    #emb_mat = tf.get_variable( "emb_mat" , shape=[input_vocab_size,embedding_dim] )
-    #emb_out = tf.get_variable( "emb_out" , shape=[output_vocab_size,embedding_dim] )
-
     emb_Y = tf.nn.embedding_lookup( emb_out , env.y )
     #[None, 20, 300]
-
 
     with tf.name_scope("Encoder"):
         cell_fw0 = tf.contrib.rnn.GRUCell(dim)
@@ -192,14 +176,11 @@ def construct_graph(mode,env=env):
         #([None, 20, 150],[None, 20, 150])
         enc_rnn_out = tf.concat(enc_rnn_out, 2)
         #[None,20,300]
-        
         enc_rnn_state = tf.concat([enc_rnn_state[0],enc_rnn_state[1]],axis=1)
 
     logits , sample_ids = Decoder(mode, enc_rnn_out , enc_rnn_state , emb_Y, emb_out)
 
     env.pred = tf.concat( (env.y[:,1:],tf.zeros((tf.shape(env.y)[0],1), dtype=tf.int32)),axis=1)
-    print('==========')
-    print(env.pred.get_shape().as_list())
     env.loss = tf.losses.softmax_cross_entropy(  tf.one_hot( env.pred, output_vocab_size ) , logits )
     optimizer = tf.train.AdamOptimizer(lr)
     optimizer.minimize(env.loss)
@@ -211,7 +192,6 @@ def construct_graph(mode,env=env):
     b = tf.reduce_all(a, axis=1)
     env.acc = tf.reduce_mean( tf.cast( b , dtype=tf.float32 ) ) 
    
-        
     return env.train_op , env.loss , env.acc , sample_ids , logits, env.perp
 
 
@@ -220,7 +200,6 @@ def decode_data():
     ybar = sess.run(
             pred_ids,
             feed_dict={env.x: X_test})
-    #print(ybar)
     ybar=np.asarray(ybar)
     _,reverse_vocab_dict=util.load_vocab_all()
     print(ybar.shape)
@@ -235,10 +214,6 @@ def decode_data():
         logic=" ".join([reverse_vocab_dict[idx] for idx in seq ])
         true_logic=" ".join([reverse_vocab_dict[idx] for idx in true_seq ])
         count+=(logic==true_logic)
-        #if logic!=true_logic:
-        #    print("=========")
-        #    print(logic)
-        #    print(true_logic)
   
     print('count acc')
     print(count*1./len(ybar))
@@ -253,7 +228,6 @@ def decode_one(sent):
     ybar = sess.run(
             pred_ids,
             feed_dict={env.x: x_data})
-    #print(ybar)
     ybar=np.asarray(ybar)
     _,reverse_vocab_dict=util.load_vocab_all()
     print(ybar.shape)
@@ -262,7 +236,6 @@ def decode_one(sent):
         logic=" ".join([reverse_vocab_dict[idx] for idx in seq ])
         print(logic)
   
-
 tf.reset_default_graph()
 train_graph = tf.Graph()
 infer_graph = tf.Graph()
@@ -270,21 +243,16 @@ infer_graph = tf.Graph()
 y_train,X_train=load_data_idx(subset=subset,maxlen=maxlen,load=False)
 y_test,X_test=load_data_idx(subset=subset,maxlen=maxlen,load=False,s='test')
 
-'''
 with train_graph.as_default():   
     env.x = tf.placeholder( tf.int32 , shape=[None,maxlen], name='x' )
     env.y = tf.placeholder(tf.int32, (None, maxlen), name='y')
     env.training = tf.placeholder_with_default(False, (), name='train_mode')
     env.train_op, env.loss , env.acc, sample_ids,logits, env.perp = construct_graph("train")
     env.saver = tf.train.Saver()  
-    #for var in tf.trainable_variables():
-    #    print(var)
-  
     sess = tf.InteractiveSession()
     sess.run(tf.global_variables_initializer())
     sess.run(tf.local_variables_initializer()) 
     train(sess, env, X_train, y_train, epochs = epochs,load=load_model,name=subset,batch_size=BS)
-'''
 
 with infer_graph.as_default():
     env.x = tf.placeholder( tf.int32 , shape=[None,maxlen], name='x' )
@@ -294,9 +262,7 @@ with infer_graph.as_default():
     env.infer_saver = tf.train.Saver()
 
     sess = tf.InteractiveSession()
-    env.infer_saver.restore(sess, "reverse_model/{}_60".format(subset) )
-    #evaluate(sess, env, X_train, y_train)
-    #decode_data()
+    env.infer_saver.restore(sess, "reverse_model/{}".format(subset) )
     decode_one(S)
     
 
