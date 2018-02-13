@@ -5,8 +5,12 @@ import keras
 import numpy as np
 import tensorflow as tf
 from tensorflow.python.layers.core import Dense
+from utils.overnight import load_data,load_data_idx,load_vocab_all
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 # ----------------------------------------------------------------------------
+_GO = 1
+_PAD = 0
+_END = 2
 epochs = 30
 lr = 0.01
 BS = 128
@@ -27,7 +31,6 @@ output_vocab_size = vocabulary_size
 S = 'bos player where ( ( number_of_assists equal 3 ) and ( season equal 2004 ) )'
 dim = n_states
 # ----------------------------------------------------------------------------
-from utils.overnight import load_data,load_data_idx
 def evaluate(sess, env, X_data, y_data, batch_size=BS):
     print('\nEvaluating')
 
@@ -52,7 +55,7 @@ def evaluate(sess, env, X_data, y_data, batch_size=BS):
 
     print(' loss: {0:.4f} acc: {1:.4f}'.format(loss, acc))
     return acc
-
+#-----------------------------------------------------------------------------
 
 class Dummy:
     pass
@@ -113,8 +116,8 @@ def Decoder( mode , enc_rnn_out , enc_rnn_state , emb_Y , emb_out):
             sample_ids = outputs.sample_id
         else:
 
-            start_tokens = tf.tile(tf.constant([1], dtype=tf.int32), [ batch_size ] )
-            end_token = 2
+            start_tokens = tf.tile(tf.constant([_GO], dtype=tf.int32), [ batch_size ] )
+            end_token = _END
 
             my_decoder = tf.contrib.seq2seq.BeamSearchDecoder( cell = cell,
                                                                embedding = emb_out,
@@ -130,7 +133,7 @@ def Decoder( mode , enc_rnn_out , enc_rnn_state , emb_Y , emb_out):
             sample_ids = outputs.predicted_ids
         
     return logits , sample_ids
-
+#-------------------------------------------------------------------------------------------
 def construct_graph(mode,env=env):
 
     vocab_emb = np.load('vocab_emb_all.npy')
@@ -150,6 +153,7 @@ def construct_graph(mode,env=env):
 
     logits , sample_ids = Decoder(mode, enc_rnn_out , enc_rnn_state , emb_Y, emb_out)
     if mode == 'train':
+        #shift env.y by 1 to remove _GO , and pad with _PAD
         env.pred = tf.concat( (env.y[:,1:],tf.zeros((tf.shape(env.y)[0],1), dtype=tf.int32)),axis=1)
         env.loss = tf.losses.softmax_cross_entropy(  tf.one_hot( env.pred, output_vocab_size ) , logits )
         optimizer = tf.train.AdamOptimizer(lr)
@@ -162,7 +166,7 @@ def construct_graph(mode,env=env):
         b = tf.reduce_all(a, axis=1)
         env.acc = tf.reduce_mean( tf.cast( b , dtype=tf.float32 ) ) 
     else:
-        sample_ids = tf.transpose( sample_ids , [0,2,1] )
+        sample_ids = tf.transpose( sample_ids , [0,2,1] )#[batch_size,beam_width,sentence length]
         env.acc = None
         env.loss = None
         env.train_op = None 
@@ -176,7 +180,7 @@ def decode_data():
             pred_ids,
             feed_dict={env.x: X_test})
     ybar=np.asarray(ybar)
-    _,reverse_vocab_dict=util.load_vocab_all()
+    _,reverse_vocab_dict=load_vocab_all()
     print(ybar.shape)
     count=0
     for true_seq,seq in zip(y_test,ybar):
@@ -194,7 +198,7 @@ def decode_data():
     print(count*1./len(ybar))
 
 def decode_one(sents):
-    vocab_dict,reverse_vocab_dict=util.load_vocab_all()
+    vocab_dict,reverse_vocab_dict=load_vocab_all()
     reverse_vocab_dict[-1]='pad'
     X_data = []
     for sent in sents: 
@@ -217,11 +221,13 @@ def decode_one(sents):
             logic=" ".join([reverse_vocab_dict[idx] for idx in seq ])
             print(logic)
 
+
+#-----------------------------------------------------------------------
+y_test,X_test=load_data_idx(subset=subset,maxlen=maxlen,load=False,s='test')
+
 tf.reset_default_graph()
 train_graph = tf.Graph()
 infer_graph = tf.Graph()
-
-y_test,X_test=load_data_idx(subset=subset,maxlen=maxlen,load=False,s='test')
 
 with infer_graph.as_default():
     env.x = tf.placeholder( tf.int32 , shape=[None,maxlen], name='x' )
