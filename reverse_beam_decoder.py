@@ -150,22 +150,22 @@ def construct_graph(mode,env=env):
 
     logits , sample_ids = Decoder(mode, enc_rnn_out , enc_rnn_state , emb_Y, emb_out)
     if mode == 'train':
-	    env.pred = tf.concat( (env.y[:,1:],tf.zeros((tf.shape(env.y)[0],1), dtype=tf.int32)),axis=1)
-	    env.loss = tf.losses.softmax_cross_entropy(  tf.one_hot( env.pred, output_vocab_size ) , logits )
-	    optimizer = tf.train.AdamOptimizer(lr)
-	    optimizer.minimize(env.loss)
-	    gvs = optimizer.compute_gradients(env.loss)
-	    capped_gvs = [(tf.clip_by_norm(grad, 5.), var) for grad, var in gvs]
-	    env.train_op = optimizer.apply_gradients(capped_gvs)
+        env.pred = tf.concat( (env.y[:,1:],tf.zeros((tf.shape(env.y)[0],1), dtype=tf.int32)),axis=1)
+        env.loss = tf.losses.softmax_cross_entropy(  tf.one_hot( env.pred, output_vocab_size ) , logits )
+        optimizer = tf.train.AdamOptimizer(lr)
+        optimizer.minimize(env.loss)
+        gvs = optimizer.compute_gradients(env.loss)
+        capped_gvs = [(tf.clip_by_norm(grad, 5.), var) for grad, var in gvs]
+        env.train_op = optimizer.apply_gradients(capped_gvs)
 
-	    a = tf.equal( sample_ids , env.pred )
-	    b = tf.reduce_all(a, axis=1)
-	    env.acc = tf.reduce_mean( tf.cast( b , dtype=tf.float32 ) ) 
+        a = tf.equal( sample_ids , env.pred )
+        b = tf.reduce_all(a, axis=1)
+        env.acc = tf.reduce_mean( tf.cast( b , dtype=tf.float32 ) ) 
     else:
-	    sample_ids = tf.transpose( sample_ids , [0,2,1] )
-	    env.acc = None
-	    env.loss = None
-	    env.train_op = None 
+        sample_ids = tf.transpose( sample_ids , [0,2,1] )
+        env.acc = None
+        env.loss = None
+        env.train_op = None 
         
     return env.train_op , env.loss , env.acc , sample_ids , logits
 
@@ -185,7 +185,7 @@ def decode_data():
             if true_seq[i]==2 or seq[i]==2:
                 seq=seq[:i]
                 true_seq=true_seq[:i]
-            	break
+                break
         logic=" ".join([reverse_vocab_dict[idx] for idx in seq ])
         true_logic=" ".join([reverse_vocab_dict[idx] for idx in true_seq ])
         count+=(logic==true_logic)
@@ -198,10 +198,10 @@ def decode_one(sents):
     reverse_vocab_dict[-1]='pad'
     X_data = []
     for sent in sents: 
-    	x_data = [vocab_dict[x] for x in sent.split()]
-    	x_data.append(2)
-    	x_data.extend([0  for x in range(maxlen-len(x_data))])
-	    X_data.append(x_data)
+        x_data = [vocab_dict[x] for x in sent.split()]
+        x_data.append(2)
+        x_data.extend([0  for x in range(maxlen-len(x_data))])
+        X_data.append(x_data)
 
     X_data = np.asarray(X_data)
     ybar = sess.run(
@@ -210,12 +210,12 @@ def decode_one(sents):
     ybar=np.asarray(ybar)
     print(ybar.shape)
     for i,seq_per_beam in enumerate(ybar):
-	    print('=========SQL==========')
-	    print(X_data[i])
-	    print('--------beam decoding--------')
-	    for seq in seq_per_beam:
-        	logic=" ".join([reverse_vocab_dict[idx] for idx in seq ])
-        	print(logic)
+        print('=========SQL==========')
+        print(X_data[i])
+        print('--------beam decoding--------')
+        for seq in seq_per_beam:
+            logic=" ".join([reverse_vocab_dict[idx] for idx in seq ])
+            print(logic)
 
 tf.reset_default_graph()
 train_graph = tf.Graph()
