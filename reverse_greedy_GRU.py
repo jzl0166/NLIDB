@@ -5,8 +5,12 @@ import keras
 import numpy as np
 import tensorflow as tf
 from tensorflow.python.layers.core import Dense
+from utils.overnight import load_data,load_data_idx,build_vocab_all
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 # ----------------------------------------------------------------------------
+_PAD = 0
+_GO = 1
+_END = 2
 epochs = 100
 lr = 0.001
 BS = 64
@@ -26,7 +30,6 @@ output_vocab_size = vocabulary_size
 S = 'bos meeting where ( ( important equal true ) and ( end_time equal 3pm ) )'
 dim = n_states
 # ----------------------------------------------------------------------------
-from utils.overnight import load_data,load_data_idx
 def train(sess, env, X_data, y_data, epochs=5, load=False, shuffle=True, batch_size=BS,
           name='model'):
     if load:
@@ -60,9 +63,6 @@ def train(sess, env, X_data, y_data, epochs=5, load=False, shuffle=True, batch_s
             env.saver.save(sess, 'reverse_model/{}'.format(name), global_step=(epoch+1))
 
 def evaluate(sess, env, X_data, y_data, batch_size=BS):
-    """
-    Evaluate TF model by running env.loss and env.acc.
-    """
     print('\nEvaluating')
 
     n_sample = X_data.shape[0]
@@ -88,7 +88,7 @@ def evaluate(sess, env, X_data, y_data, batch_size=BS):
 
     print(' loss: {0:.4f} acc: {1:.4f} perp: {2:.4f}'.format(loss, acc, perp))
     return acc
-
+#------------------------------------------------------------------------------
 
 class Dummy:
     pass
@@ -142,10 +142,7 @@ def Decoder( mode , enc_rnn_out , enc_rnn_state , emb_Y , emb_out):
             sample_ids = outputs.sample_id
         else:
 
-            start_tokens = tf.tile(tf.constant([0], dtype=tf.int32), [ batch_size ] )
-            end_token = 0
-
-            helper = tf.contrib.seq2seq.GreedyEmbeddingHelper(emb_out, tf.fill([batch_size], 1), 2)
+            helper = tf.contrib.seq2seq.GreedyEmbeddingHelper(emb_out, tf.fill([batch_size], _GO), _END)
             my_decoder = tf.contrib.seq2seq.BasicDecoder(cell, helper, initial_state, output_layer=out_layer)
 
                       
@@ -155,7 +152,7 @@ def Decoder( mode , enc_rnn_out , enc_rnn_state , emb_Y , emb_out):
             sample_ids = outputs.sample_id
         
     return logits , sample_ids
-
+#--------------------------------------------------------------------------------------------------------------
 def construct_graph(mode,env=env):
 
     vocab_emb = np.load('vocab_emb_all.npy')
@@ -178,7 +175,7 @@ def construct_graph(mode,env=env):
         enc_rnn_state = tf.concat([enc_rnn_state[0],enc_rnn_state[1]],axis=1)
 
     logits , sample_ids = Decoder(mode, enc_rnn_out , enc_rnn_state , emb_Y, emb_out)
-
+    #shift env.y by 1 to remove _GO , and pad with _PAD
     env.pred = tf.concat( (env.y[:,1:],tf.zeros((tf.shape(env.y)[0],1), dtype=tf.int32)),axis=1)
     env.loss = tf.losses.softmax_cross_entropy(  tf.one_hot( env.pred, output_vocab_size ) , logits )
     optimizer = tf.train.AdamOptimizer(lr)
@@ -221,26 +218,24 @@ def decode_data():
 def decode_one(sent):
     vocab_dict,reverse_vocab_dict=util.load_vocab_all()
     x_data = [vocab_dict[x] for x in sent.split()]
-    x_data.append(2)
-    x_data.extend([0  for x in range(maxlen-len(x_data))])
+    x_data.append(_END)
+    x_data.extend([_PAD for x in range(maxlen-len(x_data))])
     x_data = np.asarray(x_data).reshape(1,maxlen)
     ybar = sess.run(
             pred_ids,
             feed_dict={env.x: x_data})
     ybar=np.asarray(ybar)
     _,reverse_vocab_dict=util.load_vocab_all()
-    print(ybar.shape)
-    count=0
     for seq in ybar:
         logic=" ".join([reverse_vocab_dict[idx] for idx in seq ])
         print(logic)
-  
+#------------------------------------------------------------------
+y_train,X_train=load_data_idx(subset=subset,maxlen=maxlen,load=False)
+y_test,X_test=load_data_idx(subset=subset,maxlen=maxlen,load=False,s='test')
+
 tf.reset_default_graph()
 train_graph = tf.Graph()
 infer_graph = tf.Graph()
-
-y_train,X_train=load_data_idx(subset=subset,maxlen=maxlen,load=False)
-y_test,X_test=load_data_idx(subset=subset,maxlen=maxlen,load=False,s='test')
 
 with train_graph.as_default():   
     env.x = tf.placeholder( tf.int32 , shape=[None,maxlen], name='x' )

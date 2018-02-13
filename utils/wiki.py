@@ -13,6 +13,9 @@ all_path = '/home/wzw0022/DATA/WikiSQL'
 1: bos
 2: eos
 '''
+_PAD = 0
+_GO = 1
+_END = 2
 def build_vocab_all( load=True, files=['train.lon','train.qu'] ):
     if load==False:
         vocabs = set()
@@ -74,24 +77,22 @@ def load_data_idx(maxlen=20,subset='basketball',load=True,s='train'):
             q_sentences = questions.readlines()
             logics = logics.readlines()
             assert len(q_sentences)==len(logics)
-            i = 0
             length = len(logics)
             for q_sentence,logic in zip(q_sentences,logics):
-                i+=1
                 print('counting: %d / %d'%(i,length),end='\r')
                 sys.stdout.flush()
-                token_ids = [1]
+                token_ids = [_GO]
                 token_ids.extend([vocab_dict[x] for x in q_sentence.split()])
-                token_ids.append(2)
-                logic_ids = [1]
+                token_ids.append(_END)
+                logic_ids = [_GO]
                 logic_ids.extend([vocab_dict[x] for x in logic.split()])
-                logic_ids.append(2)
+                logic_ids.append(_END)
                 if maxlen>len(logic_ids):
-                    logic_ids.extend([ 0 for i in range(len(logic_ids),maxlen)])
+                    logic_ids.extend([ _PAD for i in range(len(logic_ids),maxlen)])
                 else:
                     logic_ids = logic_ids[:maxlen]
                 if maxlen>len(token_ids):
-                    token_ids.extend([ 0 for i in range(len(token_ids),maxlen)])
+                    token_ids.extend([ _PAD for i in range(len(token_ids),maxlen)])
                 else:
                     token_ids = token_ids[:maxlen]
                 all_q_tokens.append(token_ids)
