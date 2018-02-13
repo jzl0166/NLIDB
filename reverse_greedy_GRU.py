@@ -26,8 +26,7 @@ output_vocab_size = vocabulary_size
 S = 'bos meeting where ( ( important equal true ) and ( end_time equal 3pm ) )'
 dim = n_states
 # ----------------------------------------------------------------------------
-import util
-from util import load_data,load_data_idx
+from utils.overnight import load_data,load_data_idx
 def train(sess, env, X_data, y_data, epochs=5, load=False, shuffle=True, batch_size=BS,
           name='model'):
     if load:

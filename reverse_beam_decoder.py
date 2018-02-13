@@ -27,8 +27,7 @@ output_vocab_size = vocabulary_size
 S = 'bos player where ( ( number_of_assists equal 3 ) and ( season equal 2004 ) )'
 dim = n_states
 # ----------------------------------------------------------------------------
-import util
-from util import load_data,load_data_idx
+from utils.overnight import load_data,load_data_idx
 def evaluate(sess, env, X_data, y_data, batch_size=BS):
     print('\nEvaluating')
 
@@ -176,7 +175,6 @@ def decode_data():
     ybar = sess.run(
             pred_ids,
             feed_dict={env.x: X_test})
-    #print(ybar)
     ybar=np.asarray(ybar)
     _,reverse_vocab_dict=util.load_vocab_all()
     print(ybar.shape)
