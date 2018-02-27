@@ -6,7 +6,13 @@ from tensorflow.python.platform import gfile
 import numpy as np
 import tensorflow as tf
 from tensorflow.python.layers.core import Dense
-from utils.overnight import load_data_idx,load_vocab_all
+from utils.both import load_data,load_vocab_all
+from utils.bleu import moses_multi_bleu
+from collections import defaultdict
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 # ----------------------------------------------------------------------------
 '''
@@ -16,7 +22,7 @@ l2_scale regularizer
 _PAD = 0
 _GO = 1
 _END = 2
-epochs = 20
+epochs = 100
 lr = 0.0001
 BS = 128
 maxlen = 20
@@ -26,17 +32,16 @@ n_states = int(D/2)
 T = maxlen
 in_drop=.0
 out_drop=.0
-vocabulary_size=61276
+vocabulary_size=10949
 embedding_size=300
 subset='all'
 load_model=True
 input_vocab_size = vocabulary_size
 output_vocab_size = vocabulary_size
 dim = n_states
-model2Bload = 'reverse_model/{}'.format(subset) 
 # ----------------------------------------------------------------------------
-def train(sess, env, X_data, y_data, epochs=5, load=False, shuffle=True, batch_size=BS,
-          name='model'):
+def train(sess, env, X_data, y_data, epochs=10, load=False, shuffle=True, batch_size=BS,
+          name='model',base=0):
     if load:
         print('\nLoading saved model')
         env.saver.restore(sess, model2Bload )
@@ -64,9 +69,10 @@ def train(sess, env, X_data, y_data, epochs=5, load=False, shuffle=True, batch_s
                                               env.training: True})
         evaluate(sess, env, X_data, y_data, batch_size=batch_size)
 
-        if (epoch+1)%20==0:
+        if (epoch+1)==epochs:
             print('\n Saving model')
-            env.saver.save(sess, 'reverse_model/{}'.format(name), global_step = (epoch+1))
+            env.saver.save(sess, 'reverse_model/{0}-{1}'.format(name,base))
+    return 'reverse_model/{0}-{1}'.format(name,base) 
 
 def evaluate(sess, env, X_data, y_data, batch_size=BS):
     """
@@ -168,7 +174,8 @@ def Decoder( mode , enc_rnn_out , enc_rnn_state , X,  emb_Y , emb_out):
                                                                initial_state = initial_state,
                                                                beam_width = beam_width,
                                                                X = X,
-                                                               output_layer = out_layer )
+                                                               output_layer = out_layer ,
+                                                               length_penalty_weight=0.0 )
                       
             outputs, t1 , t2 = tf.contrib.seq2seq.dynamic_decode(  my_decoder, maximum_iterations=maxlen,scope=decoder_scope )
             logits = tf.no_op()
@@ -226,33 +233,54 @@ def construct_graph(mode,env=env):
 
 
 
-def decode_data():
-    ybar = sess.run(
-            pred_ids,
-            feed_dict={env.x: X_test})
-    #print(ybar)
-    ybar=np.asarray(ybar)
+def decode_data(sess, X_data, y_data , batch_size = BS):
+    print('\nDecoding')
+    n_sample = X_data.shape[0]
+    n_batch = int((n_sample+batch_size-1) / batch_size)
+    acc = 0
+    true_values , values = [], []
     _,reverse_vocab_dict,_=load_vocab_all()
-    print(ybar.shape)
-    count=0
-    for true_seq,seq in zip(y_test,ybar):
-        true_seq=true_seq[1:]
-        for i in range(len(true_seq)):
-            if true_seq[i]==2 or seq[i]==2:
-                seq=seq[:i]
-                true_seq=true_seq[:i]
-            	break
-        logic=" ".join([reverse_vocab_dict[idx] for idx in seq ])
-        true_logic=" ".join([reverse_vocab_dict[idx] for idx in true_seq ])
-        count+=(logic==true_logic)
-        if logic!=true_logic:
-            print("=========")
-            print(logic)
-            print(true_logic)
-  
-    print('count acc')
-    print(count*1./len(ybar))
-
+    with gfile.GFile('output.txt', mode='w') as output:
+        for batch in range(n_batch):
+            print(' batch {0}/{1}'.format(batch+1, n_batch),end='\r')
+            sys.stdout.flush()
+            start = batch * batch_size
+            end = min(n_sample, start+batch_size)
+            cnt = end - start
+            ybar = sess.run(
+                pred_ids,
+                feed_dict={env.x: X_data[start:end]})
+            xtru = X_data[start:end]
+            ytru = y_data[start:end]
+            ybar = np.asarray(ybar)
+            ybar = np.squeeze(ybar[:,0,:])
+            #print(ybar.shape)
+            for true_seq,seq,x in zip(ytru, ybar, xtru):
+                true_seq=true_seq[1:]
+                try:
+                    true_seq=true_seq[:list(true_seq).index(2)]
+                except ValueError:
+                    pass
+                try:
+                    seq=seq[:list(seq).index(2)]
+                except ValueError:
+                    pass
+                xseq = " ".join([reverse_vocab_dict[idx] for idx in x ])
+                logic=" ".join([reverse_vocab_dict[idx] for idx in seq ])
+                true_logic=" ".join([reverse_vocab_dict[idx] for idx in true_seq ])
+                acc+=(logic==true_logic)
+                if False and logic != true_logic:
+                    output.write('-----\n')
+                    output.write(xseq+'\n')
+                    output.write(true_logic+'\n')
+                    output.write(logic+'\n')
+                true_values.append(true_logic)
+                values.append(logic)        
+               
+    print('EM count acc:%.4f'%(acc*1./len(y_data)))  
+    true_values, values= np.asarray(true_values), np.asarray(values)
+    bleu_score = moses_multi_bleu(true_values,values)
+    print('bleu score:%.4f'%bleu_score)
 def decode_one(sent_file):
     vocab_dict,reverse_vocab_dict,_=load_vocab_all()
     reverse_vocab_dict[-1]='pad'
@@ -276,44 +304,51 @@ def decode_one(sent_file):
         true = " ".join([reverse_vocab_dict[idx] for idx in X_data[i] ])
         print(true)
         for i,seq in enumerate(seq_per_beam):
+            for j,word in enumerate(seq):
+                if word==_END:
+                    break
+            seq = seq[:j]
             logic=" ".join([reverse_vocab_dict[idx] for idx in seq ])
             print('beam '+str(i+1)+':'+logic)
 
 #----------------------------------------------------------------------
-y_train,X_train=load_data_idx(subset=subset,maxlen=maxlen,load=True)
-#y_test,X_test=load_data_idx(subset=subset,maxlen=maxlen,load=False,s='test')
+y_train,X_train=load_data(maxlen=maxlen,load=True,s='train')
+y_test,X_test=load_data(maxlen=maxlen,load=True,s='test')
+y_dev,X_dev=load_data(maxlen=maxlen,load=True,s='dev')
+model2Bload = 'reverse_model/{}'.format(subset)
+for base in range(10):
+        print('~~~~~~~~~~~~~~~~~%d~~~~~~~~~~~~~~~~~~~~~'%base)
+        tf.reset_default_graph()
+        train_graph = tf.Graph()
+        infer_graph = tf.Graph()
+        
+        with train_graph.as_default():
+            env.x = tf.placeholder( tf.int32 , shape=[None,maxlen], name='x' )
+            env.y = tf.placeholder(tf.int32, (None, maxlen), name='y')
+            env.training = tf.placeholder_with_default(False, (), name='train_mode')
+            env.train_op, env.loss , env.acc, sample_ids,logits = construct_graph("train")
+            env.saver = tf.train.Saver()
 
+            sess = tf.InteractiveSession()
+            sess.run(tf.global_variables_initializer())
+            sess.run(tf.local_variables_initializer())
+            epochs = 5
+            model2Bload = train(sess, env, X_train, y_train, epochs = epochs,load=load_model,name=subset,batch_size=BS,base=base)
+            load_model = True
+        
+        with infer_graph.as_default():
+            env.x = tf.placeholder( tf.int32 , shape=[None,maxlen], name='x' )
+            env.y = tf.placeholder(tf.int32, (None, maxlen), name='y')
+            env.training = tf.placeholder_with_default(False, (), name='train_mode')   
+            _ , env.loss , env.acc , pred_ids, _ = construct_graph("infer")
+            env.infer_saver = tf.train.Saver()
 
-tf.reset_default_graph()
-train_graph = tf.Graph()
-infer_graph = tf.Graph()
-
-with train_graph.as_default():
-    env.x = tf.placeholder( tf.int32 , shape=[None,maxlen], name='x' )
-    env.y = tf.placeholder(tf.int32, (None, maxlen), name='y')
-    env.training = tf.placeholder_with_default(False, (), name='train_mode')
-    env.train_op, env.loss , env.acc, sample_ids,logits = construct_graph("train")
-    env.saver = tf.train.Saver()
-    #for var in tf.trainable_variables():
-    #    print(var)
-
-    sess = tf.InteractiveSession()
-    sess.run(tf.global_variables_initializer())
-    sess.run(tf.local_variables_initializer())
-    train(sess, env, X_train, y_train, epochs = epochs,load=load_model,name=subset,batch_size=BS)
-
-with infer_graph.as_default():
-    env.x = tf.placeholder( tf.int32 , shape=[None,maxlen], name='x' )
-    env.y = tf.placeholder(tf.int32, (None, maxlen), name='y')
-    env.training = tf.placeholder_with_default(False, (), name='train_mode')   
-    _ , env.loss , env.acc , pred_ids, _ = construct_graph("infer")
-    env.infer_saver = tf.train.Saver()
-
-    sess = tf.InteractiveSession()
-    env.infer_saver.restore(sess, model2Bload )
-    #evaluate(sess, env, X_train, y_train)
-    #decode_data()
-    decode_one('decode.txt')
-    
+            sess = tf.InteractiveSession()
+            env.infer_saver.restore(sess, model2Bload )
+            decode_data(sess, X_train, y_train)
+            decode_data(sess, X_dev, y_dev)
+           
+            
+            
 
 

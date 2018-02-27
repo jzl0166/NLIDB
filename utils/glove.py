@@ -10,7 +10,7 @@ import numpy as np
 from sklearn.externals import joblib
 from multiprocessing import current_process
 
-glove_path = '/home/wzw0022/DATA/glove'
+
 class Glove:
     """
     Wrapper for GloVe embedding.
@@ -19,7 +19,7 @@ class Glove:
     embedding_dim = 300
     batch_size = 5
     process_num= 2 
-    def __init__(self, glove=glove_path, rawfile='glove.840B.300d.txt',
+    def __init__(self, glove='/home/wzw0022/DATA/glove', rawfile='glove.840B.300d.txt',
                  rebuild=False):
         row = self.num_words
         dim = self.embedding_dim
@@ -104,8 +104,9 @@ class Glove:
     def reverse_embedding(self, vecs, k=3, embedding=True, batch_size=None, process_num=None, maxlen=400):
         from functools import partial
         import multiprocessing
+        #from multiprocessing import Pool
         from multiprocessing import Process
-        modelpath = os.path.join(glove_path,'glove-knn.pkl')
+        modelpath = os.path.expanduser('/home/wzw0022/DATA/glove/glove-knn.pkl')
 
         if not os.path.exists(modelpath):
             from sklearn.neighbors import NearestNeighbors
