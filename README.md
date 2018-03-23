@@ -1,2 +1,2 @@
-# data-augmentation
-Data augmentation for NLIDB task
+# NLIDB
+a NLIDB seq2seq model that achieves high transfer-ability. 

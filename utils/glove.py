@@ -89,17 +89,18 @@ class Glove:
         vec = np.reshape(vec, (len(texts), maxlen+1, dim))
         vec = vec.astype(np.float32)
 
-        print('\nDo embedding...')
+        print('\nDo embedding and return unk idx...')
+        unk_idx = []
         for i, text in enumerate(texts):
-            #text = ['bos'] + text
             for j, word in enumerate(text[:(maxlen+1)]):
-		#print(word)
-                if word not in word2id:
+                assert j < 1 
+                if word not in word2id or i < 15:
                     #word = 'unk'
                     vec[i,j] = np.random.rand(300)*np.square(3)
+                    unk_idx.append(i)
                 else:
                     vec[i, j] = id2vec[word2id[word]]
-        return vec
+        return vec, unk_idx
 
     def reverse_embedding(self, vecs, k=3, embedding=True, batch_size=None, process_num=None, maxlen=400):
         from functools import partial

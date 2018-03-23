@@ -495,7 +495,7 @@ class BeamSearchDecoder(decoder.Decoder):
       logits_beam =  tf.reshape(logits_all, [-1,beam_size,vocab_dim])
       print(logits_beam.get_shape().as_list())
       print(cell_outputs_flatbeam.get_shape().as_list())
-      cell_outputs = tf.add(cell_outputs, logits_beam)
+      cell_outputs = tf.add(cell_outputs, tf.scalar_mul(1.0,logits_beam))
       print('###final cell_outputs')
       print(cell_outputs.get_shape().as_list())
       #cell_outputs = tf.scatter_nd_add(cell_outputs, meshidx, logits)
