@@ -10,11 +10,13 @@ from tensorflow.python.platform import gfile
 import glove
 from collections import defaultdict
 
-subset='all'
 embedding_dim = 300
-wiki_path='/home/wzw0022/forward_wiki/data/DATA/wiki'
-overnight_path='/home/wzw0022/forward_wiki/data/DATA/overnight_source/%s'%subset
-save_path = '/home/wzw0022/forward_wiki/data'
+
+path = os.path.abspath(__file__)
+dir_path = os.path.dirname(path).replace('utils','data')
+
+wiki_path = dir_path + '/DATA/wiki'
+save_path = dir_path
 '''
 0: pad
 1: bos
@@ -29,23 +31,26 @@ _TOKEN_NUMBER = 5
 _TOKEN_MODEL = 6
 _EOC = 7
 ori_files1 = [ 'train.lon', 'train.qu', 'test.lon', 'test.qu', 'dev.lon', 'dev.qu']
-ori_files2 = [ 'train.lon', 'train.qu', 'test.lon', 'test.qu']
+ori_files2 = [ 'new_train.lon', 'train.qu', 'new_test.lon', 'test.qu']
 vocab_files = [ os.path.join(wiki_path, x) for x in ori_files1 ]
-#vocab_files.extend([ os.path.join(overnight_path, x) for x in ori_files2 ])
+for subset in ['basketball','calendar','housing','recipes','restaurants']:
+    overnight_path = dir_path + '/DATA/overnight_source/%s'%subset
+    vocab_files.extend([ os.path.join(overnight_path, x) for x in ori_files2 ])
 annotation = ['<f0>','<f1>','<f2>','<f3>','<v0>','<v1>','<v2>','<v3>']
 def build_vocab_all( load=True, files=vocab_files ):
     if load==False:
+        vocab_tokens = ['<pad>','<bos>','<eos>','<eof>','<unk>','<@number>','<@model>','<eoc>']
+        vocab_tokens.extend(annotation)
         vocabs = set()
+        
         for fname in files:
             with gfile.GFile(fname, mode='r') as DATA:
                 lines = DATA.readlines()
                 for line in lines:
                     for word in line.split():
-                        if word not in vocabs:
+                        if word not in vocabs and word not in vocab_tokens:
                             vocabs.add(word)
-        vocab_tokens = ['<pad>','<bos>','<eos>','<eof>','<unk>','<@number>','<@model>','<eoc>']
         
-        vocab_tokens.extend(annotation)
         vocab_tokens.extend(list(vocabs))
         np.save(os.path.join(save_path,'vocab_tokens_all.npy'),vocab_tokens)
         print('build vocab done.')
@@ -94,6 +99,15 @@ def load_vocab_all( load=True ):
                 re = np.concatenate((emb_dict[token[1]],right))
                 assert re.shape==(300,)
                 vocab_emb[i]=re
+            elif len(token)>=5 and token[0]=='<' and token[4]=='>' and token[2:4].isdigit():
+                if token[2:4] in emb_dict:
+                    right = emb_dict[token[2:4]]
+                else:
+                    emb_dict[token[2:4]] = (np.random.rand(embedding_dim/2)-.5)*2*np.sqrt(3)
+                    right = emb_dict[token[2:4]]
+                re = np.concatenate((emb_dict[token[1]],right))
+                assert re.shape==(300,)
+                vocab_emb[i]=re 
             i += 1
 
         np.save(os.path.join(save_path,'vocab_emb_all.npy'),vocab_emb)
@@ -167,6 +181,7 @@ def load_data_wiki(maxlen=30,load=True,s='train'):
     return all_q_tokens,all_logic_ids
 
 def load_data_overnight(maxlen=30,subset=subset,load=False,s='train'):
+    overnight_path = dir_path + '/DATA/overnight_source/%s'%subset
     all_q_tokens = []
     all_logic_ids = []
     vocab_dict,_,_,_=load_vocab_all()
@@ -208,16 +223,12 @@ def load_data_overnight(maxlen=30,subset=subset,load=False,s='train'):
 
 
 def load_data(maxlen=30, load=False, s='train'):
-    X1, y1 = load_data_wiki(maxlen=maxlen,load=load,s=s)
-    #X2, y2 = load_data_overnight(maxlen=maxlen,load=load,s=s)
-    
-    #X = np.concatenate([X1,X2],axis=0)
-    #y = np.concatenate([y1,y2],axis=0)
-    if True or s=='train' or s=='dev':
-        X, y = X1, y1
+    if s=='test' or s=='train' or s=='dev':
+        X, y = load_data_wiki(maxlen=maxlen,load=load,s=s)
     else:
-        X1, y1 = load_data_overnight(maxlen=maxlen,load=load,s='train')
-        X2, y2 = load_data_overnight(maxlen=maxlen,load=load,s='test')
+        subset = s     
+        X1, y1 = load_data_overnight(maxlen=maxlen, subset=subset, load=load, s='train')
+        X2, y2 = load_data_overnight(maxlen=maxlen, subset=subset, load=load, s='test')
         X = np.concatenate([X1,X2],axis=0)
         y = np.concatenate([y1,y2],axis=0)
     print('========data '+s+' shape=======')
@@ -225,17 +236,15 @@ def load_data(maxlen=30, load=False, s='train'):
     print(y.shape)
     return X,y
 
-#vocab_dict,_,_=load_vocab_all()
-#for word in vocab_dict.keys():
-#    if '(' in word or ')' in word:
-#        print(word)
 
 if __name__ == "__main__":
+    
     build_vocab_all(load=False)
     load_vocab_all(load=False)
     maxlen = 60
     load_data(maxlen=maxlen,load=False,s='train')
     load_data(maxlen=maxlen,load=False,s='test')
     load_data(maxlen=maxlen,load=False,s='dev')
+
     
 
