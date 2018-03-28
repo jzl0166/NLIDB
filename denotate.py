@@ -18,7 +18,7 @@ from utils.glove import Glove
 glove = Glove()
 
 maps = defaultdict(list)
-stop_words = ['a','of','the']
+stop_words = ['a','of','the','in']
 def _match_field(name_pairs,candidates):
 
     if len(name_pairs)!=len(candidates):
@@ -103,6 +103,21 @@ def _max_span(ids,tokens):
     
     return re, max_len
 
+def _abbr_match(a,b):
+    if a[-1]!='.' and b[-1]!='.':
+        return False
+
+    if a[-1]=='.':
+        idx = a.index('.')
+        if len(b)>idx and a[:idx]==b[:idx]:
+            return True
+    else:
+        idx = b.index('.')
+        if len(a)>idx and  a[:idx]==b[:idx]:
+            return True
+
+    return False
+
 #imperfect match
 def _match_ids(field,Q):
     ids = []
@@ -113,7 +128,7 @@ def _match_ids(field,Q):
 
         for i,q in enumerate(Q.split()):
             semantic_sim = 1-spatial.distance.cosine(glove.embed_one(q), glove.embed_one(token))
-            if q in stop_words or ed.eval(q,token)/len(token) < 0.5 or semantic_sim>=0.7:
+            if q in stop_words or _abbr_match(q,token) or ed.eval(q,token)/len(token) < 0.5 or semantic_sim>=0.7 :
                 ids.append(i)           
                 if q not in stop_words:
                     length += 1
@@ -140,7 +155,7 @@ def main():
     
     for split in ['train','test','dev']:
      
-        with open('%s.qu'%split, 'w') as qu_file, open('%s.lon'%split, 'w') as lon_file, open('%s.out'%split, 'w') as out:
+        with open('%s.qu'%split, 'w') as qu_file, open('%s.lon'%split, 'w') as lon_file, open('%s.out'%split, 'w') as out,open('%s_sym_pairs.txt'%split, 'w') as sym_file, open('%s_ground_truth.txt'%split, 'w') as S_file:
           
             fsplit = os.path.join(args.din, split) + '.jsonl'
             ftable = os.path.join(args.din, split) + '.tables.jsonl'
@@ -160,7 +175,7 @@ def main():
                 acc = 0
                 acc_pair = 0
                 acc_all = 0
-                target = -1
+                target = 1349
             
                 error = 0
                 ADD_FIELDS = True
@@ -175,9 +190,9 @@ def main():
                     Q = Q.replace(u'\xa0',u' ')
                     rows = tables[d['table_id']]['rows']
                     rows = np.asarray(rows)
-                    vs = rows
 
                     fs = tables[d['table_id']]['header']
+
                  
                     l = 0
                     for f in fs:
@@ -414,22 +429,6 @@ def main():
                                     #print(Q_ori)
                                     #print(Q)
 
-                        '''
-                        for p, new_p, t in Qpairs:
-                            if p not in Q and t=='f':
-                                
-                                ids = _match_ids(p,Q)
-
-                                if len(ids) >= 1:
-                                    replacement=_max_span(ids, Q.split()) 
-                                    p2partial[p] = replacement
-                                else:
-                                    # f is not in Q
-                                    Q += (' ' + p + ' ')
-                                    print(Q_ori)
-                                    print(Q)                               
-                                                        
-                        '''   
 
                     # field covered by value f = street, v = ryan street 
                     for f,v in candidates:
@@ -453,7 +452,18 @@ def main():
                         if f0 not in Q:
                             f0 = head2partial[f0]
 
-                        Q = Q.replace(f0,'<f0> '+f0+' <eof>')
+                        if f0 in Q:
+                            Q = Q.replace(f0,'<f0> '+f0+' <eof>')
+                        else:
+                            
+                            tokens = f0.split()
+                            while tokens[0] in stop_words:
+                                tokens = tokens[1:]
+                            while tokens[-1] in stop_words:
+                                tokens = tokens[:-1]
+                            f0 = ' '.join(tokens)
+                            Q = Q.replace(f0,'<f0> '+f0+' <eof>')
+                            
 
                     
                     if ADD_FIELDS:
@@ -465,6 +475,11 @@ def main():
                     Q = re.sub(r'(<f[0-9]>)(s)(\s|$)',r'\1\3', Q)
                     qu_file.write(Q+'\n')
 
+                    validation_pairs = copy.copy(Qpairs)
+                    validation_pairs.append((Q_head,'<f0>','head'))
+                    for i,f in enumerate(all_fields):
+                        validation_pairs.append((f,'<c'+str(i)+'>','c'))
+
                     #######################################
                     # Annotate SQL
                     #
@@ -475,6 +490,8 @@ def main():
                     S = _preclean(S)
                     S_ori = S
 
+                    S_noparen = q_sent.to_sentence_noparenthesis(tables[d['table_id']]['header'],rows,tables[d['table_id']]['types'])
+                    S_noparen = _preclean(S_noparen)
                     
                     new_col_names = []
                     for col_name in col_names:
@@ -537,7 +554,7 @@ def main():
                                     S=re.sub('\( '+cp+' (equal|less|greater)', '( '+new_p+r' \1', S)
                           
 
-                    if  S_head == Q_head :
+                    if  S_head == Q_head and '<f0>' in Q:
                         S = S.replace(S_head ,'<f0>')
                        
 
@@ -553,6 +570,20 @@ def main():
                     lon_file.write(S+'\n')
 
                     #--------------------------------------------------------------------------------
+                    ############################VALIDATION#################################
+                    recover_S = S
+                    for word,sym,t in validation_pairs:
+                        recover_S = recover_S.replace(sym,word)
+                        sym_file.write(sym+'=>'+word+'<>')
+                    sym_file.write('\n')
+
+                    S_file.write(S_noparen+'\n')
+                    if False and recover_S != S_ori:
+                        print(S_ori)
+                        print(S)
+                        print(recover_S)
+
+                    #------------------------------------------------------------------------
                     if _match_field(name_pairs,candidates):      
                         acc_pair += 1
                         

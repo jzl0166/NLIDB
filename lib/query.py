@@ -78,6 +78,26 @@ class Query:
             return False
 
     #add by wenlu
+    def to_sentence_noparenthesis(self,table_header,rows,types):
+        rows = np.asarray(rows, dtype=np.unicode_)
+        agg = self.agg_ops[self.agg_index]
+        if agg is not '':
+            agg = agg + ' '
+        rep = '{agg}{sel}'.format(
+            agg=agg,
+            sel='{}'.format(table_header[self.sel_index]),
+        )
+        if self.conditions:
+            if len(self.conditions) > 1:
+                rep +=  ' where ' + ' and '.join(['{} {} {}'.format('{}'.format(table_header[i]), self.cond_ops[o], v) if self._cmp(table_header[i],v) else '{} {} {}'.format('{}'.format(table_header[i]), self.cond_ops[o], 'True') for i, o, v in self.conditions]) 
+            else:
+                rep +=  ' where ' + 'and'.join(['{} {} {}'.format('{}'.format(table_header[i]), self.cond_ops[o], v) if self._cmp(table_header[i],v) else '{} {} {}'.format('{}'.format(table_header[i]), self.cond_ops[o], 'True') for i, o, v in self.conditions]) 
+      
+       
+       
+        return rep
+
+    #add by wenlu
     def to_sentence(self,table_header,rows,types):
         rows = np.asarray(rows, dtype=np.unicode_)
         agg = self.agg_ops[self.agg_index]
@@ -288,4 +308,3 @@ class Query:
             where_terms = where_terms[val_end_index+1:]
         q = cls(agg_col, agg_op, conditions)
         return q
-
