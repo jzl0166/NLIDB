@@ -3,13 +3,10 @@ from collections import defaultdict
 import numpy as np
 import tensorflow as tf
 from tensorflow.python.platform import gfile
-
-
-
+import re
 
 def get_fields():
     all_dicts = {}
-
     all_dicts['all']= {}
 
     subset = 'basketball'
@@ -20,6 +17,7 @@ def get_fields():
     subset_dict['number_of_points']=['2', '3', '4']
     subset_dict['number_of_fouls']=['2', '3', '4']
     subset_dict['number_of_steals']=['2', '3', '4']
+    subset_dict['number_of_rebounds']=['2', '3', '4']
     subset_dict['number_of_played_games']=['2', '3', '4']
     subset_dict['player']=['lebron_james', 'kobe_bryant']
     subset_dict['team']=['los_angeles_lakers','cleveland_cavaliers']
@@ -58,10 +56,10 @@ def get_fields():
     #------------------------------------------------------
     subset = 'recipes'
     subset_dict = {}
-    subset_dict['cuisine']=[]
+    subset_dict['cuisine']=['']
     subset_dict['recipe']=['rice_pudding', 'quiche']
-    subset_dict['preparation_time']=[]
-    subset_dict['cooking_time']=[]
+    subset_dict['preparation_time']=['']
+    subset_dict['cooking_time']=['']
     subset_dict['ingredient']=['spinach', 'milk', '']
     subset_dict['posting_date']=['2004', '2003', '2010']
     subset_dict['meal']=['lunch', 'dinner']
@@ -92,28 +90,62 @@ def get_fields():
         dictionary = all_dicts[subset]
         fields[subset] = dictionary.keys()
 
-    return fields
+    return fields, all_dicts
 
 def renotate(s='test',sub='housing'):
 
     path = os.path.abspath(__file__)
     path = os.path.dirname(path).replace('utils','data/DATA/overnight_source/%s'%sub)
 
-    fields = get_fields()
+    fields, all_dicts  = get_fields()
     all_fields = fields[sub]
+    dictionary = all_dicts[sub]
 
     error = 0
     qu_file = os.path.join(path, '%s.qu'%(s))
     lon_file = os.path.join(path, '%s.lon'%(s))
     new_lon_file = os.path.join(path, 'new_%s.lon'%s)
-    ori_lon_file = os.path.join(path, '%s_%s.lon'%(sub,s))
-    with gfile.GFile(qu_file, mode='r') as qu, gfile.GFile(lon_file, mode='r') as lon,gfile.GFile(new_lon_file, mode='w') as new_lon, gfile.GFile(ori_lon_file, mode='r') as ori_lon:
+    new_qu_file = os.path.join(path, 'new_%s.qu'%s)
+    ori_lon_file = os.path.join(path, '%s_%s0.lon'%(sub,s))
+    with gfile.GFile(qu_file, mode='r') as qu, gfile.GFile(lon_file, mode='r') as lon,gfile.GFile(new_lon_file, mode='w') as new_lon, gfile.GFile(new_qu_file, mode='w') as new_qu, gfile.GFile(ori_lon_file, mode='r') as ori_lon:
         qu_lines = qu.readlines()
         lon_lines = lon.readlines()
         ori_lons = ori_lon.readlines()
         assert len(qu_lines) == len(lon_lines)
+        assert len(lon_lines) == len(ori_lons)
         for Q, S, S0 in zip(qu_lines,lon_lines,ori_lons):
+            #append 
+            for i in range(4):
+                if '<v'+str(i)+'>' in Q and '<v'+str(i)+'>' in S and '<f'+str(i)+'>' not in Q:
+                    sym = '<v'+str(i)+'>'
+                    idx = S.split().index(sym)
+                    word = S0.split()[idx]
+                    fs = []
+                    for f in all_fields:
+                        values = dictionary[f]
+                        if word in values:
+                            fs.append(f)
+                    
+                    if len(fs)>1:
+                        print('--------')
+                        print(word)
+                        print(fs)
+                    #assert len(fs)==1
+                    f = fs[0]
+                    Q = Q.replace(sym, '<f'+str(i)+'> '+f+' <eof> '+sym)
+
+                
+                if '<v'+str(i)+'>' not in Q and '<f'+str(i)+'>' in Q:
+                    sym = '<f'+str(i)+'>'
+                    idx = S.split().index(sym)
+                    word = S0.split()[idx]
+                    if idx+1>=len(S0.split()) or (idx+1<len(S0.split()) and S0.split()[idx+1] != 'where'):
+                        values = dictionary[word]
+                        if values[0] == 'true':
+                            Q = re.sub('('+sym+' \w+ <eof>)',r'\1 <v'+str(i)+'> true <eof>', Q)
+                            #Q = Q.replace(sym, sym+' <v'+str(i)+'> true <eof>') 
             
+            #check over annotation rate
             for sym in ['<f0>','<f1>','<f2>','<f3>']:
                 if sym in S:
                     if sym not in Q:
@@ -124,9 +156,11 @@ def renotate(s='test',sub='housing'):
                         #S = S.replace(sym,newp)
                         
                         error += 1
-                    
+            for i,f in enumerate(all_fields):
+                S = S.replace(f,'<c'+str(i)+'>')         
             new_lon.write(S)
-
+            new_qu.write(Q)
+    print('over annotation rate:')
     print(error*1.0/len(qu_lines))
 
 

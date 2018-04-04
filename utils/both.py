@@ -186,7 +186,7 @@ def load_data_overnight(maxlen=30,subset=subset,load=False,s='train'):
     all_logic_ids = []
     vocab_dict,_,_,_=load_vocab_all()
     vocab_dict = defaultdict(lambda:_UNK,vocab_dict)
-    questionFile=os.path.join(overnight_path,'%s.qu'%(s))
+    questionFile=os.path.join(overnight_path,'new_%s.qu'%(s))
     logicFile=os.path.join(overnight_path,'%s.lon'%(s))
     with gfile.GFile(questionFile, mode='r') as questions, gfile.GFile(logicFile, mode='r') as logics:
         q_sentences = questions.readlines()
@@ -195,7 +195,7 @@ def load_data_overnight(maxlen=30,subset=subset,load=False,s='train'):
         for q_sentence,logic in zip(q_sentences,logics):
             token_ids = [_GO]
             token_ids.extend([vocab_dict[x] for x in q_sentence.split()])
-            token_ids.append(_END)
+            #token_ids.append(_END)
             for x in token_ids:
                 if x == _UNK:
                     print('ERROR')
@@ -226,11 +226,25 @@ def load_data(maxlen=30, load=False, s='train'):
     if s=='test' or s=='train' or s=='dev':
         X, y = load_data_wiki(maxlen=maxlen,load=load,s=s)
     else:
-        subset = s     
-        X1, y1 = load_data_overnight(maxlen=maxlen, subset=subset, load=load, s='train')
-        X2, y2 = load_data_overnight(maxlen=maxlen, subset=subset, load=load, s='test')
-        X = np.concatenate([X1,X2],axis=0)
-        y = np.concatenate([y1,y2],axis=0)
+        subset = s
+        X_all, y_all = None, None
+        for subset in ['basketball','calendar','housing','recipes','restaurants']:
+            #subset = 'restaurants'
+            X1, y1 = load_data_overnight(maxlen=maxlen, subset=subset, load=load, s='train')
+            X2, y2 = load_data_overnight(maxlen=maxlen, subset=subset, load=load, s='test')
+            X = np.concatenate([X1,X2],axis=0)
+            if X_all is not None:
+                X_all = np.concatenate([X_all,X],axis=0)
+            else:
+                X_all = X
+
+            y = np.concatenate([y1,y2],axis=0)
+            if y_all is not None:
+                y_all = np.concatenate([y_all,y],axis=0)
+            else:
+                y_all = y
+            #break
+        X, y = X_all, y_all
     print('========data '+s+' shape=======')
     print(X.shape)
     print(y.shape)
@@ -239,12 +253,12 @@ def load_data(maxlen=30, load=False, s='train'):
 
 if __name__ == "__main__":
     
-    build_vocab_all(load=False)
+    #build_vocab_all(load=False)
     load_vocab_all(load=False)
     maxlen = 60
     load_data(maxlen=maxlen,load=False,s='train')
     load_data(maxlen=maxlen,load=False,s='test')
     load_data(maxlen=maxlen,load=False,s='dev')
-
+    load_data(maxlen=maxlen,load=False,s='overnight')
     
 
