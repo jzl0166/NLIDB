@@ -1,6 +1,6 @@
 ## annotate WikiSQL
 
-- denotate.py
+- annotate.py
 
 - output files: 
   
