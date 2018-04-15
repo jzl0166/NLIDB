@@ -24,9 +24,11 @@ def denotate(s='test'):
 
     ta_file = os.path.join(path, '%s_%s.ta'%(sub,s))
     qu_file = os.path.join(path, '%s_%s.qu'%(sub,s))
+    #newly generated question file
     question_file = os.path.join(path, '%s.qu'%s)
     lon_file = os.path.join(path, '%s_%s.lon'%(sub,s))
-    lon_file0 = os.path.join(path, '%s_%s0.lon'%(sub,s)) #original lon file with qualified lon
+    #original lon file with qualified lon
+    lon_file0 = os.path.join(path, '%s_%s0.lon'%(sub,s))
 
     with gfile.GFile(ta_file, mode='r') as t, gfile.GFile(qu_file, mode='r') as q, gfile.GFile(question_file, mode='w') as re, gfile.GFile(lon_file0, mode='w') as lon0, gfile.GFile(lon_file, mode='r') as lon:
         templates = t.readlines()
@@ -44,8 +46,8 @@ def denotate(s='test'):
                 else:
                     words = t_token.split(':')
                     new += ('<'+words[0][1]+words[2]+'>')
-                    if words[0][1]=='f' or words[0][1]=='v':
-                        #new += ('<'+words[0][1]+words[2]+'>')
+                    if words[0][1]=='f':
+                    #if words[0][1]=='f' or words[0][1]=='v':
                         new += ' '
                         new += q_token
                         new += ' '
@@ -65,6 +67,7 @@ def denotate(s='test'):
 
     lox_file = os.path.join(path, '%s_%s.lox'%(sub,s))
     lon_file = os.path.join(path, '%s_%s.lon'%(sub,s))
+    #newly generated logic file
     lo_file = os.path.join(path, '%s.lon'%s)
     with gfile.GFile(lox_file, mode='r') as lox,gfile.GFile(lon_file, mode='r') as lon, gfile.GFile(lo_file, mode='w') as re:
         loxs = lox.readlines()

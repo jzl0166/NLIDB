@@ -15,6 +15,8 @@ import copy
 import editdistance as ed
 from scipy import spatial
 from utils.glove import Glove
+path = os.path.abspath(__file__)
+data_path = os.path.dirname(path).replace('annotation','data')
 glove = Glove()
 
 maps = defaultdict(list)
@@ -146,7 +148,7 @@ def _threshold(f):
 
 def main():
     parser = ArgumentParser()
-    parser.add_argument('--din', default='data', help='data directory')
+    parser.add_argument('--din', default=data_path, help='data directory')
     parser.add_argument('--dout', default='annotated', help='output directory')
     args = parser.parse_args()
 
@@ -175,10 +177,10 @@ def main():
                 acc = 0
                 acc_pair = 0
                 acc_all = 0
-                target = -1
+                target = 1349
             
                 error = 0
-                ADD_FIELDS = False
+                ADD_FIELDS = True
                 step2 = True
              
                 poss = 0
@@ -479,7 +481,7 @@ def main():
                     validation_pairs.append((Q_head,'<f0>','head'))
                     for i,f in enumerate(all_fields):
                         validation_pairs.append((f,'<c'+str(i)+'>','c'))
-                   
+
                     #######################################
                     # Annotate SQL
                     #
@@ -487,11 +489,11 @@ def main():
 
                     q_sent = Query.from_dict(d['sql'])
                     S, col_names, val_names = q_sent.to_sentence(tables[d['table_id']]['header'],rows,tables[d['table_id']]['types'])
-                    S_noparen = q_sent.to_sentence_noparenthesis(tables[d['table_id']]['header'],rows,tables[d['table_id']]['types'])
-                    S_noparen = _preclean(S_noparen)
                     S = _preclean(S)
                     S_ori = S
 
+                    S_noparen = q_sent.to_sentence_noparenthesis(tables[d['table_id']]['header'],rows,tables[d['table_id']]['types'])
+                    S_noparen = _preclean(S_noparen)
                     
                     new_col_names = []
                     for col_name in col_names:
@@ -569,12 +571,8 @@ def main():
                     S = re.sub(r'(<f[0-9]>)(s)(\s|$)',r'\1\3', S)
                     lon_file.write(S+'\n')
 
-
                     #--------------------------------------------------------------------------------
-                    #################################################################################
-                    ################################## VALIDATION ###################################
-                    #################################################################################
-
+                    ############################VALIDATION#################################
                     recover_S = S
                     for word,sym,t in validation_pairs:
                         recover_S = recover_S.replace(sym,word)
@@ -582,12 +580,12 @@ def main():
                     sym_file.write('\n')
 
                     S_file.write(S_noparen+'\n')
-                    if recover_S != S_ori:
+                    if False and recover_S != S_ori:
                         print(S_ori)
                         print(S)
                         print(recover_S)
 
-                    #--------------------------------------------------------------------------------
+                    #------------------------------------------------------------------------
                     if _match_field(name_pairs,candidates):      
                         acc_pair += 1
                         

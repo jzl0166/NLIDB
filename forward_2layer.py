@@ -191,25 +191,23 @@ def construct_graph(mode,env=env):
     print('Vocab size:')
     print(vocab_emb.shape)
     emb_out = tf.get_variable( "emb_out" , initializer=vocab_emb)
-    emb_X = tf.nn.embedding_lookup( emb_out , env.x ) 
-    emb_Y = tf.nn.embedding_lookup( emb_out , env.y )
-    #[None, 20, 300]
-
+    emb_X = tf.nn.embedding_lookup(emb_out, env.x) 
+    emb_Y = tf.nn.embedding_lookup(emb_out, env.y)
 
     with tf.name_scope("Encoder"):
-        with tf.variable_scope("bidirectional-rnn-0"):
+        with tf.variable_scope(None, default_name="bidirectional-rnn"):
             cell_fw = tf.contrib.rnn.GRUCell(dim)
             cell_bw = tf.contrib.rnn.GRUCell(dim)
             input_layer = Dense(dim, dtype=tf.float32, name='input_projection') 
             emb_X = input_layer(emb_X)
-            enc_rnn_out , enc_rnn_state = tf.nn.bidirectional_dynamic_rnn( cell_fw , cell_bw , emb_X , dtype=tf.float32)
+            enc_rnn_out, enc_rnn_state = tf.nn.bidirectional_dynamic_rnn(cell_fw, cell_bw, emb_X, dtype=tf.float32)
             enc_rnn_out = tf.concat(enc_rnn_out, 2)
-        with tf.variable_scope("bidirectional-rnn-1"):
-            cell_fw = tf.contrib.rnn.GRUCell(dim)
-            cell_bw = tf.contrib.rnn.GRUCell(dim)
-            input_layer = Dense(dim, dtype=tf.float32, name='input_projection')
-            enc_rnn_out = input_layer(enc_rnn_out)
-            enc_rnn_out , enc_rnn_state = tf.nn.bidirectional_dynamic_rnn( cell_fw , cell_bw , enc_rnn_out,dtype=tf.float32 )
+        with tf.variable_scope("bidirectional-rnn1"):
+            cell_fw1 = tf.contrib.rnn.GRUCell(dim)
+            cell_bw1 = tf.contrib.rnn.GRUCell(dim)
+            input_layer1 = Dense(dim, dtype=tf.float32, name='input_projection1')
+            enc_rnn_out = input_layer1(enc_rnn_out)
+            enc_rnn_out, enc_rnn_state = tf.nn.bidirectional_dynamic_rnn(cell_fw1, cell_bw1, enc_rnn_out, dtype=tf.float32)
             enc_rnn_out = tf.concat(enc_rnn_out, 2)
         enc_rnn_state = tf.concat([enc_rnn_state[0],enc_rnn_state[1]],axis=1)
 
@@ -220,8 +218,7 @@ def construct_graph(mode,env=env):
         optimizer = tf.train.AdamOptimizer(lr)
         optimizer.minimize(env.loss)
         gvs = optimizer.compute_gradients(env.loss)
-        for grad, var in gvs:
-            print(var.name)
+        
         #train_idx = np.arange(17)
         train_idx_tensor = tf.constant(train_idx, dtype = tf.int32)
         #m = tf.ones( shape=[output_vocab_size,embedding_dim] )
@@ -229,7 +226,6 @@ def construct_graph(mode,env=env):
         #mask = tf.transpose( tf.transpose(m) * n )
         mask = tf.reshape(n, [output_vocab_size, 1])
         #capped_gvs = [(tf.clip_by_norm(grad, 5.), var) if var.name != 'emb_out:0' else (tf.clip_by_norm(tf.multiply(grad,mask), 5.), var)  for grad, var in gvs]
-
         capped_gvs = [(tf.clip_by_norm(grad, 5.), var) for grad, var in gvs]
         env.train_op = optimizer.apply_gradients(capped_gvs)
         a = tf.equal( sample_ids , env.pred )
@@ -308,7 +304,6 @@ def decode_data_recover(sess, X_data, y_data, s, batch_size = BS):
 
             logic = logic.replace(' (','').replace(' )','')
             true_logic = true_logic.replace(' (','').replace(' )','') 
-            #S_ori = S_ori.replace(' (','').replace(' )','')
 
             full_annotate = True
             for s in true_logic.split():
@@ -478,41 +473,11 @@ def decode_data(sess, X_data, y_data , batch_size = BS):
     bleu_score = moses_multi_bleu(true_values,values)
     print('BLEU score:%.4f'%bleu_score)
     return acc*1./len(y_data) 
-def decode_one(sent_file):
-    vocab_dict,reverse_vocab_dict,_,_=load_vocab_all()
-    reverse_vocab_dict[-1]='pad'
-    X_data = []
-    with gfile.GFile(sent_file,mode='r') as sf:
-        lines = sf.readlines()
-        for sent in lines:
-            x_data = [_GO]
-    	    x_data.extend([vocab_dict[x] for x in sent.split()])
-            x_data.append(_END)
-            x_data.extend([_PAD  for x in range(maxlen-len(x_data))])
-            X_data.append(x_data)
-    X_data = np.asarray(X_data)
-    ybar = sess.run(
-            pred_ids,
-            feed_dict={env.x: X_data})
-    ybar=np.asarray(ybar)
-    print(ybar.shape)
-    for i,seq_per_beam in enumerate(ybar):
-        print('=========SQL==========')
-        true = " ".join([reverse_vocab_dict[idx] for idx in X_data[i] ])
-        print(true)
-        for i,seq in enumerate(seq_per_beam):
-            for j,word in enumerate(seq):
-                if word==_END:
-                    break
-            seq = seq[:j]
-            logic=" ".join([reverse_vocab_dict[idx] for idx in seq ])
-            print('beam '+str(i+1)+':'+logic)
-
 #----------------------------------------------------------------------
 X_train, y_train = load_data(maxlen=maxlen,load=True,s='train')
 X_test, y_test = load_data(maxlen=maxlen,load=True,s='test')
 X_dev, y_dev = load_data(maxlen=maxlen,load=True,s='dev')
-X_tran, y_tran = load_data(maxlen=maxlen,load=True,s='basketball')
+X_tran, y_tran = load_data(maxlen=maxlen,load=True,s='overnight')
 model2Bload = 'model/{}'.format(subset)
 max_em, global_test_em, global_tran_em, best_base = -1, -1, -1, -1
 for base in range(20):
@@ -521,6 +486,7 @@ for base in range(20):
         train_graph = tf.Graph()
         infer_graph = tf.Graph()
         with train_graph.as_default():
+            [print(n.name) for n in tf.get_default_graph().as_graph_def().node]
             env.x = tf.placeholder( tf.int32 , shape=[None,maxlen], name='x' )
             env.y = tf.placeholder(tf.int32, (None, maxlen), name='y')
             env.training = tf.placeholder_with_default(False, (), name='train_mode')
@@ -541,7 +507,7 @@ for base in range(20):
 
             sess = tf.InteractiveSession()
             env.infer_saver.restore(sess, model2Bload )
-           
+            #decode_data(sess, X_train, y_train)
             print('===========dev set============')
             decode_data(sess, X_dev, y_dev)
             em = decode_data_recover(sess, X_dev, y_dev,'dev')
@@ -551,7 +517,6 @@ for base in range(20):
              
             print('=========transfer set=========')
             tran_em = decode_data(sess, X_tran, y_tran)
-            
             if em > max_em:
                 max_em = em
                 global_test_em = test_em
@@ -560,7 +525,7 @@ for base in range(20):
             print('Max EM acc: %.4f during %d iteration.'%(max_em, best_base)) 
             print('test EM acc: %.4f '%global_test_em)
             print('transfer EM acc %.4f '%global_tran_em)
-            
+            #decode_data_recover(sess, X_tran, y_tran,'tran')
             
                       
 

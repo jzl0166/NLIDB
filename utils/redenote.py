@@ -158,6 +158,15 @@ def renotate(s='test',sub='housing'):
                         error += 1
             for i,f in enumerate(all_fields):
                 S = S.replace(f,'<c'+str(i)+'>')         
+            
+            #switch i
+            if '<f0>' in Q and '<v0>' in Q and '<f1>' in Q and '<v1>' not in Q:
+                Q = Q.replace('<f1>','<ftmp>')
+                Q = Q.replace('<f0>','<f1>').replace('<v0>','<v1>')
+                Q = Q.replace('<ftmp>','<f0>')
+                S = S.replace('<f1>','<ftmp>')
+                S = S.replace('<f0>','<f1>').replace('<v0>','<v1>')
+                S = S.replace('<ftmp>','<f0>')
             new_lon.write(S)
             new_qu.write(Q)
     print('over annotation rate:')

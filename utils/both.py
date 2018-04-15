@@ -187,7 +187,7 @@ def load_data_overnight(maxlen=30,subset=subset,load=False,s='train'):
     vocab_dict,_,_,_=load_vocab_all()
     vocab_dict = defaultdict(lambda:_UNK,vocab_dict)
     questionFile=os.path.join(overnight_path,'new_%s.qu'%(s))
-    logicFile=os.path.join(overnight_path,'%s.lon'%(s))
+    logicFile=os.path.join(overnight_path,'new_%s.lon'%(s))
     with gfile.GFile(questionFile, mode='r') as questions, gfile.GFile(logicFile, mode='r') as logics:
         q_sentences = questions.readlines()
         logics = logics.readlines()
@@ -225,11 +225,10 @@ def load_data_overnight(maxlen=30,subset=subset,load=False,s='train'):
 def load_data(maxlen=30, load=False, s='train'):
     if s=='test' or s=='train' or s=='dev':
         X, y = load_data_wiki(maxlen=maxlen,load=load,s=s)
-    else:
-        subset = s
+        return X, y
+    elif s=='overnight':
         X_all, y_all = None, None
         for subset in ['basketball','calendar','housing','recipes','restaurants']:
-            #subset = 'restaurants'
             X1, y1 = load_data_overnight(maxlen=maxlen, subset=subset, load=load, s='train')
             X2, y2 = load_data_overnight(maxlen=maxlen, subset=subset, load=load, s='test')
             X = np.concatenate([X1,X2],axis=0)
@@ -243,12 +242,21 @@ def load_data(maxlen=30, load=False, s='train'):
                 y_all = np.concatenate([y_all,y],axis=0)
             else:
                 y_all = y
-            #break
         X, y = X_all, y_all
-    print('========data '+s+' shape=======')
-    print(X.shape)
-    print(y.shape)
-    return X,y
+        print('========data '+s+' shape=======')
+        print(X.shape)
+        print(y.shape)  
+        return X, y
+    else:
+        lists = []
+        for subset in ['basketball','calendar','housing','recipes','restaurants']:
+            X1, y1 = load_data_overnight(maxlen=maxlen, subset=subset, load=load, s='train')
+            X2, y2 = load_data_overnight(maxlen=maxlen, subset=subset, load=load, s='test')
+            X = np.concatenate([X1,X2],axis=0)
+            y = np.concatenate([y1,y2],axis=0)
+            lists.append((X,y))        
+
+        return lists
 
 
 if __name__ == "__main__":
