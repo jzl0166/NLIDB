@@ -5,7 +5,7 @@ a NLIDB seq2seq model that achieves high transfer-ability.
 
   1. Annotate WikiSQL
   
-      annotation/annotate.py
+      utils/annotation/annotate.py
     
   2. Annotate Overnight
   
