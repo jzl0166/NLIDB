@@ -19,7 +19,8 @@ class Glove:
     embedding_dim = 300
     batch_size = 5
     process_num= 2 
-    def __init__(self, glove='/home/wzw0022/DATA/glove', rawfile='glove.840B.300d.txt',
+    GLOVE_PATH = '/home/wzw0022/DATA/glove'
+    def __init__(self, glove=GLOVE_PATH, rawfile='glove.840B.300d.txt',
                  rebuild=False):
         row = self.num_words
         dim = self.embedding_dim
@@ -107,7 +108,7 @@ class Glove:
         import multiprocessing
         #from multiprocessing import Pool
         from multiprocessing import Process
-        modelpath = os.path.expanduser('/home/wzw0022/DATA/glove/glove-knn.pkl')
+        modelpath = os.path.expanduser(GLOVE_PATH+'/glove-knn.pkl')
 
         if not os.path.exists(modelpath):
             from sklearn.neighbors import NearestNeighbors
