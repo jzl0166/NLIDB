@@ -13,9 +13,9 @@ a NLIDB seq2seq model that achieves high transfer-ability.
          
   3. prepare Glove
       
-     edit path for 'glove.840B.300d.txt' in utils/glove.py
+     edit path for 'glove.840B.300d.txt', set rebuild = True.
      
-     First time usage, set rebuild = True.
+         python utils/glove.py
       
   4. Load data
       
