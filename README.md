@@ -10,8 +10,14 @@ a NLIDB seq2seq model that achieves high transfer-ability.
   2. Annotate Overnight
   
          python utils/denotate_overnight.py
+         
+  3. prepare Glove
       
-  3. Load data
+     edit path for 'glove.840B.300d.txt', set rebuild = True.
+     
+         python utils/glove.py
+      
+  4. Load data
       
          python utils/both.py
       
