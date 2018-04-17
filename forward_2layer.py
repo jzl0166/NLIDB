@@ -9,6 +9,8 @@ from tensorflow.python.layers.core import Dense
 from utils.both import load_data,load_vocab_all
 from utils.bleu import moses_multi_bleu
 from collections import defaultdict
+from argparse import ArgumentParser
+
 import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -40,6 +42,14 @@ load_model=False
 input_vocab_size = vocabulary_size
 output_vocab_size = vocabulary_size
 # ----------------------------------------------------------------------------
+parser = ArgumentParser()
+parser.add_argument('--mode', default='load_pretrained', help='choose from load_pretrained or train or transfer')
+args = parser.parse_args()
+run_mode = args.mode
+
+if run_mode is not 'train':
+    load_model = True
+#----------------------------------------------------------------------------
 def train(sess, env, X_data, y_data, epochs=10, load=False, shuffle=True, batch_size=BS,
           name='model',base=0):
     if load:
@@ -478,8 +488,9 @@ X_train, y_train = load_data(maxlen=maxlen,load=True,s='train')
 X_test, y_test = load_data(maxlen=maxlen,load=True,s='test')
 X_dev, y_dev = load_data(maxlen=maxlen,load=True,s='dev')
 X_tran, y_tran = load_data(maxlen=maxlen,load=True,s='overnight')
+tran_sets = load_data(maxlen=maxlen,load=True,s='all')
 model2Bload = 'model/{}'.format(subset)
-max_em, global_test_em, global_tran_em, best_base = -1, -1, -1, -1
+max_em, global_test_em, best_base = -1, -1, -1
 for base in range(20):
         print('~~~~~~~~~~~~~~~~~%d~~~~~~~~~~~~~~~~~~~~~'%base)
         tf.reset_default_graph()
@@ -496,7 +507,8 @@ for base in range(20):
             sess = tf.InteractiveSession()
             sess.run(tf.global_variables_initializer())
             sess.run(tf.local_variables_initializer())
-            model2Bload = train(sess, env, X_train, y_train, epochs = epochs, load=load_model, name=subset, batch_size=BS, base=base)
+            if run_mode == 'train':
+                model2Bload = train(sess, env, X_train, y_train, epochs = epochs, load=load_model, name=subset, batch_size=BS, base=base)
             load_model = True
         with infer_graph.as_default():
             env.x = tf.placeholder( tf.int32 , shape=[None,maxlen], name='x' )
@@ -507,24 +519,34 @@ for base in range(20):
 
             sess = tf.InteractiveSession()
             env.infer_saver.restore(sess, model2Bload )
-            #decode_data(sess, X_train, y_train)
-            print('===========dev set============')
-            decode_data(sess, X_dev, y_dev)
-            em = decode_data_recover(sess, X_dev, y_dev,'dev')
-            print('==========test set===========')
-            decode_data(sess, X_test, y_test)
-            test_em = decode_data_recover(sess, X_test, y_test,'test')
-             
-            print('=========transfer set=========')
-            tran_em = decode_data(sess, X_tran, y_tran)
+            
+            if run_mode != 'transfer':
+                print('===========dev set============')
+                decode_data(sess, X_dev, y_dev)
+                em = decode_data_recover(sess, X_dev, y_dev,'dev')
+                print('==========test set===========')
+                decode_data(sess, X_test, y_test)
+                test_em = decode_data_recover(sess, X_test, y_test,'test')
+            
+            if run_mode == 'transfer':
+                print('========subset transfer set========')
+                subsets = ['basketball','calendar','housing','recipes','restaurants']
+                for subset, (X_tran_subset, y_tran_subset) in zip(subsets,tran_sets):
+                    print('---------'+subset+'---------')
+                    tran_em = decode_data(sess, X_tran_subset, y_tran_subset)
+                print('===========transfer set============')
+                tran_em = decode_data(sess, X_tran, y_tran)
+            
+            if run_mode is not "train":
+                break
+
             if em > max_em:
                 max_em = em
                 global_test_em = test_em
-                global_tran_em = tran_em
                 best_base = base
             print('Max EM acc: %.4f during %d iteration.'%(max_em, best_base)) 
             print('test EM acc: %.4f '%global_test_em)
-            print('transfer EM acc %.4f '%global_tran_em)
+
             #decode_data_recover(sess, X_tran, y_tran,'tran')
             
                       
