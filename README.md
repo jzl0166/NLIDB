@@ -7,6 +7,8 @@ a NLIDB seq2seq model that achieves high transfer-ability.
 - python3 (for annotating WikiSQL)
 
 ## How to use
+- set path
+
 - prepare WikiSQL for training and evaluation
 
   1. Annotate WikiSQL
