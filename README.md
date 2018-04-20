@@ -7,9 +7,9 @@ a NLIDB seq2seq model that achieves high transfer-ability.
 - python3 (for annotating WikiSQL)
 
 ## How to use
-- set path
+- Set PATH
 
-- prepare WikiSQL for training and evaluation
+- Prepare WikiSQL for training and evaluation
 
   1. Annotate WikiSQL
   
@@ -19,7 +19,7 @@ a NLIDB seq2seq model that achieves high transfer-ability.
   
          python utils/denotate_overnight.py
          
-  3. prepare Glove
+  3. Prepare Glove
       
      edit path for 'glove.840B.300d.txt', set rebuild = True.
      
