@@ -1,6 +1,9 @@
 # NLIDB
 a NLIDB seq2seq model that achieves high transfer-ability. 
 
+## config
+
+## How to use
 - prepare WikiSQL for training and evaluation
 
   1. Annotate WikiSQL
