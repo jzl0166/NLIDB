@@ -14,13 +14,8 @@ from argparse import ArgumentParser
 import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
-
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 # ----------------------------------------------------------------------------
-'''
-TODO:
-l2_scale regularizer
-'''
 _PAD = 0
 _GO = 1
 _END = 2
@@ -41,6 +36,7 @@ subset='all'
 load_model=False
 input_vocab_size = vocabulary_size
 output_vocab_size = vocabulary_size
+annotation_path = '/home/wzw0022/forward_wiki/'
 # ----------------------------------------------------------------------------
 parser = ArgumentParser()
 parser.add_argument('--mode', default='load_pretrained', help='choose from load_pretrained or train or transfer')
@@ -51,7 +47,10 @@ if run_mode is not 'train':
     load_model = True
 #----------------------------------------------------------------------------
 def train(sess, env, X_data, y_data, epochs=10, load=False, shuffle=True, batch_size=BS,
-          name='model',base=0):
+          name='model', base=0):
+    """
+    Train TF model by env.train_op
+    """
     if load:
         print('\nLoading saved model')
         env.saver.restore(sess, model2Bload )
@@ -69,7 +68,6 @@ def train(sess, env, X_data, y_data, epochs=10, load=False, shuffle=True, batch_
             X_data = X_data[ind]
             y_data = y_data[ind]
 
-
         for batch in range(n_batch):
             print(' batch {0}/{1}'.format(batch+1, n_batch),end='\r')
             start = batch * batch_size
@@ -77,12 +75,13 @@ def train(sess, env, X_data, y_data, epochs=10, load=False, shuffle=True, batch_
             sess.run(env.train_op, feed_dict={env.x: X_data[start:end],
                                               env.y: y_data[start:end],
                                               env.training: True})
+        
         evaluate(sess, env, X_data, y_data, batch_size=batch_size)
 
-        if (epoch+1)==epochs:
+        if (epoch+1) == epochs:
             print('\n Saving model')
-            env.saver.save(sess, 'model/{0}-{1}'.format(name,base))
-    return 'model/{0}-{1}'.format(name,base) 
+            env.saver.save(sess, 'model/{0}-{1}'.format(name, base))
+    return 'model/{0}-{1}'.format(name, base) 
 
 def evaluate(sess, env, X_data, y_data, batch_size=BS):
     """
@@ -121,86 +120,80 @@ from tf_utils.attention_wrapper import AttentionWrapper,BahdanauAttention
 from tf_utils.beam_search_decoder import BeamSearchDecoder
 from tf_utils.decoder import dynamic_decode
 from tf_utils.basic_decoder import BasicDecoder
-def _decoder( encoder_outputs , encoder_state , mode , beam_width , batch_size):
-    
-    num_units = 2*dim
-    # [batch_size, max_time,...]
+
+def _decoder(encoder_outputs, encoder_state, mode, beam_width, batch_size):
+    """
+    Decoder with BahdanauAttention
+    """
+    num_units = 2 * dim
     memory = encoder_outputs
     
     if mode == "infer":
-        memory = tf.contrib.seq2seq.tile_batch( memory, multiplier=beam_width )
-        encoder_state = tf.contrib.seq2seq.tile_batch( encoder_state, multiplier=beam_width )
+        memory = tf.contrib.seq2seq.tile_batch(memory, multiplier=beam_width)
+        encoder_state = tf.contrib.seq2seq.tile_batch(encoder_state, multiplier=beam_width)
         batch_size = batch_size * beam_width
     else:
         batch_size = batch_size
 
-    seq_len = tf.tile(tf.constant([maxlen], dtype=tf.int32), [ batch_size ] )
-    attention_mechanism = BahdanauAttention( num_units = num_units, memory=memory, 
-                                                               normalize=True,
-                                                               memory_sequence_length=seq_len)
+    seq_len = tf.tile(tf.constant([maxlen], dtype=tf.int32), [batch_size])
+    attention_mechanism = BahdanauAttention(num_units = num_units, memory=memory, 
+                                            normalize=True,
+                                            memory_sequence_length=seq_len)
 
-    cell0 = tf.contrib.rnn.GRUCell( 2*dim )
-    cell = tf.contrib.rnn.DropoutWrapper(cell0, input_keep_prob=1-in_drop,output_keep_prob=1-out_drop)
-    cell = AttentionWrapper( cell,
-                                                attention_mechanism,
-                                                attention_layer_size=num_units,
-                                                name="attention")
+    cell0 = tf.contrib.rnn.GRUCell(2*dim)
+    cell = tf.contrib.rnn.DropoutWrapper(cell0, input_keep_prob=1-in_drop, output_keep_prob=1-out_drop)
+    cell = AttentionWrapper(cell,
+                            attention_mechanism,
+                            attention_layer_size=num_units,
+                            name="attention")
 
-    decoder_initial_state = cell.zero_state(batch_size, tf.float32).clone( cell_state=encoder_state )
+    decoder_initial_state = cell.zero_state(batch_size, tf.float32).clone(cell_state=encoder_state)
 
     return cell, decoder_initial_state
 
 
-def Decoder( mode , enc_rnn_out , enc_rnn_state , X,  emb_Y , emb_out):
+def Decoder(mode, enc_rnn_out, enc_rnn_state, X, emb_Y, emb_out):
     
     with tf.variable_scope("Decoder") as decoder_scope:
 
-        mem_units = 2*dim
-        out_layer = Dense( output_vocab_size ) #projection W*X+b
+        mem_units = 2 * dim
+        out_layer = Dense(output_vocab_size) # projection W*X+b
         beam_width = 5
         batch_size = tf.shape(enc_rnn_out)[0]
 
-        cell , initial_state = _decoder( enc_rnn_out ,enc_rnn_state  , mode , beam_width ,batch_size)
-        
+        cell, initial_state = _decoder(enc_rnn_out, enc_rnn_state, mode, beam_width, batch_size)
 
         if mode == "train":
-
-            seq_len = tf.tile(tf.constant([maxlen], dtype=tf.int32), [ batch_size ] )
-            #[None]/[batch_size]
-            helper = tf.contrib.seq2seq.TrainingHelper( inputs = emb_Y , sequence_length = seq_len )
-            decoder = BasicDecoder( cell = cell, helper = helper, initial_state = initial_state,X=X, output_layer=out_layer) 
+            seq_len = tf.tile(tf.constant([maxlen], dtype=tf.int32), [batch_size])
+            helper = tf.contrib.seq2seq.TrainingHelper(inputs=emb_Y, sequence_length=seq_len)
+            decoder = BasicDecoder(cell=cell, helper=helper, initial_state=initial_state, X=X, output_layer=out_layer) 
             outputs, final_state, _= tf.contrib.seq2seq.dynamic_decode(decoder=decoder, maximum_iterations=maxlen, scope=decoder_scope)
             logits = outputs.rnn_output
             sample_ids = outputs.sample_id
         else:
-
-            start_tokens = tf.tile(tf.constant([_GO], dtype=tf.int32), [ batch_size ] )
+            start_tokens = tf.tile(tf.constant([_GO], dtype=tf.int32), [batch_size])
             end_token = _END
-
-            my_decoder = BeamSearchDecoder( cell = cell,
-                                                               embedding = emb_out,
-                                                               start_tokens = start_tokens,
-                                                               end_token = end_token,
-                                                               initial_state = initial_state,
-                                                               beam_width = beam_width,
-                                                               X = X,
-                                                               output_layer = out_layer ,
-                                                               length_penalty_weight=0.0 )
+            my_decoder = BeamSearchDecoder(cell=cell,
+                                           embedding=emb_out,
+                                           start_tokens=start_tokens,
+                                           end_token=end_token,
+                                           initial_state=initial_state,
+                                           beam_width=beam_width,
+                                           X=X,
+                                           output_layer=out_layer,
+                                           length_penalty_weight=0.0)
                       
-            outputs, t1 , t2 = tf.contrib.seq2seq.dynamic_decode(  my_decoder, maximum_iterations=maxlen,scope=decoder_scope )
+            outputs, t1, t2 = tf.contrib.seq2seq.dynamic_decode(my_decoder, maximum_iterations=maxlen, scope=decoder_scope)
             logits = tf.no_op()
             sample_ids = outputs.predicted_ids
         
-    return logits , sample_ids
+    return logits, sample_ids
 
 #----------------------------------------------------------------------------------------------
 def construct_graph(mode,env=env):
 
     _, _, vocab_emb, train_idx = load_vocab_all()
-    print(train_idx)
-    print('Vocab size:')
-    print(vocab_emb.shape)
-    emb_out = tf.get_variable( "emb_out" , initializer=vocab_emb)
+    emb_out = tf.get_variable("emb_out", initializer=vocab_emb)
     emb_X = tf.nn.embedding_lookup(emb_out, env.x) 
     emb_Y = tf.nn.embedding_lookup(emb_out, env.y)
 
@@ -221,30 +214,21 @@ def construct_graph(mode,env=env):
             enc_rnn_out = tf.concat(enc_rnn_out, 2)
         enc_rnn_state = tf.concat([enc_rnn_state[0],enc_rnn_state[1]],axis=1)
 
-    logits , sample_ids = Decoder(mode, enc_rnn_out , enc_rnn_state , env.x , emb_Y, emb_out)
+    logits ,sample_ids = Decoder(mode, enc_rnn_out, enc_rnn_state, env.x, emb_Y, emb_out)
     if mode == 'train':
-        env.pred = tf.concat( (env.y[:,1:],tf.zeros((tf.shape(env.y)[0],1), dtype=tf.int32)),axis=1)
-        env.loss = tf.losses.softmax_cross_entropy(  tf.one_hot( env.pred, output_vocab_size ) , logits )
+        env.pred = tf.concat((env.y[:,1:], tf.zeros((tf.shape(env.y)[0],1), dtype=tf.int32)), axis=1)
+        env.loss = tf.losses.softmax_cross_entropy(tf.one_hot(env.pred, output_vocab_size), logits)
         optimizer = tf.train.AdamOptimizer(lr)
         optimizer.minimize(env.loss)
         gvs = optimizer.compute_gradients(env.loss)
         
-        #train_idx = np.arange(17)
-        train_idx_tensor = tf.constant(train_idx, dtype = tf.int32)
-        #m = tf.ones( shape=[output_vocab_size,embedding_dim] )
-        n = tf.sparse_to_dense(train_idx_tensor, tf.stack([output_vocab_size]) , sparse_values=1.0, default_value=0.0, validate_indices=False )
-        #mask = tf.transpose( tf.transpose(m) * n )
-        mask = tf.reshape(n, [output_vocab_size, 1])
-        #capped_gvs = [(tf.clip_by_norm(grad, 5.), var) if var.name != 'emb_out:0' else (tf.clip_by_norm(tf.multiply(grad,mask), 5.), var)  for grad, var in gvs]
         capped_gvs = [(tf.clip_by_norm(grad, 5.), var) for grad, var in gvs]
         env.train_op = optimizer.apply_gradients(capped_gvs)
-        a = tf.equal( sample_ids , env.pred )
+        a = tf.equal(sample_ids, env.pred)
         b = tf.reduce_all(a, axis=1)
-        env.acc = tf.reduce_mean( tf.cast( b , dtype=tf.float32 ) ) 
+        env.acc = tf.reduce_mean(tf.cast(b, dtype=tf.float32)) 
     else:
-	    #[None,sentence length,beam_width]
 	    sample_ids = tf.transpose( sample_ids , [0,2,1] )
-	    #[None,beam_width,sentence length]
 	    env.acc = None
 	    env.loss = None
 	    env.train_op = None 
@@ -253,146 +237,106 @@ def construct_graph(mode,env=env):
 
 
 def decode_data_recover(sess, X_data, y_data, s, batch_size = BS):
+    """
+    Inference and calculate EM acc based on recovered SQL
+    """
     print('\nDecoding and Evaluate recovered EM acc')
     n_sample = X_data.shape[0]
-    sample_ids = np.random.choice(n_sample, 100)
     n_batch = int((n_sample+batch_size-1) / batch_size)
-    acc = 0
-    more_acc = 0
-    full_anno_acc = 0
-    no_anno_acc = 0
-    true_values , values = [], []
-    _,reverse_vocab_dict,_,_=load_vocab_all()
-    inf_logics = []
-    i = 0
+    true_values , values, inf_logics = [], [], []
+    _, reverse_vocab_dict, _, _ = load_vocab_all()
+    i, acc = 0, 0
     for batch in range(n_batch):
         print(' batch {0}/{1}'.format(batch+1, n_batch),end='\r')
         sys.stdout.flush()
         start = batch * batch_size
         end = min(n_sample, start+batch_size)
         cnt = end - start
-        ybar = sess.run(
-            pred_ids,
-            feed_dict={env.x: X_data[start:end]})
+        ybar = sess.run(pred_ids,
+                        feed_dict={env.x: X_data[start:end]})
         ybar = np.asarray(ybar)
-        ybar = np.squeeze(ybar[:,0,:])
+        ybar = np.squeeze(ybar[:,0,:])  # pick top prediction
         for seq in ybar:
             try:
-                seq=seq[:list(seq).index(2)]
+                seq=seq[:list(seq).index(_END)]
             except ValueError:
                 pass  
-            logic=" ".join([reverse_vocab_dict[idx] for idx in seq ])
+            logic=" ".join([reverse_vocab_dict[idx] for idx in seq])
             inf_logics.append(logic) 
      
-    xtru = X_data
-    ytru = y_data
-    with gfile.GFile('%s_infer.txt'%s, mode='w') as output, gfile.GFile('%s_ground_truth.txt'%s, mode='r') as S_ori_file, gfile.GFile('%s_sym_pairs.txt'%s, mode='r') as sym_pair_file:
+    xtru, ytru = X_data, y_data
+    with gfile.GFile(annotation_path+'%s_infer.txt'%s, mode='w') as output, gfile.GFile(annotation_path+'%s_ground_truth.txt'%s, mode='r') as S_ori_file, \
+        gfile.GFile(annotation_path+'%s_sym_pairs.txt'%s, mode='r') as sym_pair_file:
 
-        sym_pairs = sym_pair_file.readlines()
-        S_oris = S_ori_file.readlines()
+        sym_pairs = sym_pair_file.readlines()  # annotation pairs from question & table files
+        S_oris = S_ori_file.readlines()  # SQL files before annotation
         for true_seq, logic, x, sym_pair, S_ori in zip(ytru, inf_logics, xtru, sym_pairs, S_oris):
             sym_pair = sym_pair.replace('<>\n','')
             S_ori = S_ori.replace('\n','')
             Qpairs = []
             for pair in sym_pair.split('<>'):
                 Qpairs.append(pair.split('=>'))
-            true_seq = true_seq[1:]
-            x = x[1:]
+            true_seq = true_seq[1:]    # delete <eos>
+            x = x[1:]   # delete <eos>
             try:
-                true_seq=true_seq[:list(true_seq).index(2)]
+                true_seq=true_seq[:list(true_seq).index(_END)]
             except ValueError:
                 pass
 
             try:
-                x=x[:list(x).index(2)]
+                x=x[:list(x).index(_END)]
             except ValueError:
                 pass
             
-
-            xseq = " ".join([reverse_vocab_dict[idx] for idx in x ])
-            true_logic=" ".join([reverse_vocab_dict[idx] for idx in true_seq ])
+            xseq = " ".join([reverse_vocab_dict[idx] for idx in x])
+            true_logic = " ".join([reverse_vocab_dict[idx] for idx in true_seq])
 
             logic = logic.replace(' (','').replace(' )','')
             true_logic = true_logic.replace(' (','').replace(' )','') 
 
-            full_annotate = True
-            for s in true_logic.split():
-                if s[:2]!='<f' and s[:2]!='<v' and s!='<eof>' and s not in ['(',')','where','less','greater','equal','max','min','count','sum','avg','and','true']:
-                    full_annotate = False
-                    break
+            RIGHT = False
             logic_tokens = logic.split()
-            WRITE = True
+            
             if len(logic_tokens) > 8 and logic_tokens[5] == 'and':
                 newlogic = [x for x in logic_tokens]
-                newlogic[2] = logic_tokens[6]
-                newlogic[6] = logic_tokens[2]
-                newlogic[4] = logic_tokens[8]
-                newlogic[8] = logic_tokens[4]
+                newlogic[2], newlogic[6], newlogic[4], newlogic[8] = logic_tokens[6], logic_tokens[2], logic_tokens[8], logic_tokens[4]
                 newline = ' '.join(newlogic)
                 if newline == true_logic:
                     logic = newline
-                    more_acc += 1
-                    WRITE = False 
+                    RIGHT = True 
             elif len(logic_tokens) > 9 and logic_tokens[6] == 'and':
                 newlogic = [x for x in logic_tokens]
-                newlogic[3] = logic_tokens[7]
-                newlogic[7] = logic_tokens[3]
-                newlogic[5] = logic_tokens[9]
-                newlogic[9] = logic_tokens[5]
+                newlogic[3], newlogic[7], newlogic[5], newlogic[9] = logic_tokens[7], logic_tokens[3], logic_tokens[9], logic_tokens[5]
                 newline = ' '.join(newlogic)
                 if newline == true_logic:
                     logic = newline
-                    more_acc += 1
-                    WRITE = False 
+                    RIGHT = True 
 
             recover_S = logic
-            for sym,word in Qpairs:
-                recover_S = recover_S.replace(sym,word) 
-            if recover_S!=S_ori and logic==true_logic:
-                print(xseq)
-                print(Qpairs)
-                print(recover_S)
-                print(S_ori)
-                print('infer logic:')
-                print(logic)
-                print('true logic:')
-                print(true_logic)
+            for sym, word in Qpairs:
+                recover_S = recover_S.replace(sym, word) 
 
-            acc+=(recover_S==S_ori)
+            acc += (recover_S==S_ori)
             output.write(recover_S + '\n')
             
-            full_anno_acc += (full_annotate and ( logic==true_logic or not WRITE ) )
-            no_anno_acc += (not full_annotate and ( logic==true_logic or not WRITE ) )
-            '''
-            if logic != true_logic and WRITE and full_annotate:
-                output.write('----------'+str(i)+': SQL/True/Inference\n')
-                output.write(xseq+'\n')
-                output.write(true_logic+'\n')
-                output.write(logic+'\n')
-            '''
             i += 1
             true_values.append(true_logic)
             values.append(logic)        
     
     print('EM: %.4f'%(acc*1./len(y_data)))  
-    print('fully annotation EM acc: %.4f'%(full_anno_acc*1./len(y_data)))
-    print('not fully annotation EM acc: %.4f'%(no_anno_acc*1./len(y_data)))
     print('number of correct ones:%d'%acc)
     
-    true_values, values= np.asarray(true_values), np.asarray(values)
-    bleu_score = moses_multi_bleu(true_values,values)
-    print('BLEU score:%.4f'%bleu_score)
     return acc*1./len(y_data)
 
 def decode_data(sess, X_data, y_data , batch_size = BS):
+    """
+    Inference w/o recover annotation symbols
+    """
     print('\nDecoding')
     n_sample = X_data.shape[0]
     sample_ids = np.random.choice(n_sample, 100)
     n_batch = int((n_sample+batch_size-1) / batch_size)
     acc = 0
-    more_acc = 0
-    full_anno_acc = 0
-    no_anno_acc = 0
     true_values , values = [], []
     _,reverse_vocab_dict,_,_=load_vocab_all()
     with gfile.GFile('output.txt', mode='w') as output:
@@ -410,78 +354,47 @@ def decode_data(sess, X_data, y_data , batch_size = BS):
             ytru = y_data[start:end]
             ybar = np.asarray(ybar)
             ybar = np.squeeze(ybar[:,0,:])
-            #print(ybar.shape)
             for true_seq,seq,x in zip(ytru, ybar, xtru):
                 true_seq = true_seq[1:]
                 x = x[1:]
                 try:
-                    true_seq=true_seq[:list(true_seq).index(2)]
+                    true_seq=true_seq[:list(true_seq).index(_END)]
                 except ValueError:
                     pass
-
                 try:
-                    seq=seq[:list(seq).index(2)]
+                    seq=seq[:list(seq).index(_END)]
                 except ValueError:
                     pass
-                
                 try:
-                    x=x[:list(x).index(2)]
+                    x=x[:list(x).index(_END)]
                 except ValueError:
                     pass
                 
                 xseq = " ".join([reverse_vocab_dict[idx] for idx in x ])
-                logic=" ".join([reverse_vocab_dict[idx] for idx in seq ])
-                true_logic=" ".join([reverse_vocab_dict[idx] for idx in true_seq ])
+                logic = " ".join([reverse_vocab_dict[idx] for idx in seq ])
+                true_logic = " ".join([reverse_vocab_dict[idx] for idx in true_seq ])
 
                 logic = logic.replace(' (','').replace(' )','')
                 true_logic = true_logic.replace(' (','').replace(' )','') 
-                full_annotate = True
-                for s in true_logic.split():
-                    if s[:2]!='<f' and s[:2]!='<v' and s!='<eof>' and s not in ['(',')','where','less','greater','equal','max','min','count','sum','avg','and','true']:
-                        full_annotate = False
-                        break
                 logic_tokens = logic.split()
-                WRITE = True
+                
                 if len(logic_tokens) > 8 and logic_tokens[5] == 'and':
                     newlogic = [x for x in logic_tokens]
-                    newlogic[2] = logic_tokens[6]
-                    newlogic[6] = logic_tokens[2]
-                    newlogic[4] = logic_tokens[8]
-                    newlogic[8] = logic_tokens[4]
+                    newlogic[2], newlogic[6], newlogic[4], newlogic[8] = logic_tokens[6], logic_tokens[2], logic_tokens[8], logic_tokens[4]
                     newline = ' '.join(newlogic)
                     if newline == true_logic:
-                        more_acc += 1
-                        WRITE = False 
+                        logic = newline
                 elif len(logic_tokens) > 9 and logic_tokens[6] == 'and':
                     newlogic = [x for x in logic_tokens]
-                    newlogic[3] = logic_tokens[7]
-                    newlogic[7] = logic_tokens[3]
-                    newlogic[5] = logic_tokens[9]
-                    newlogic[9] = logic_tokens[5]
+                    newlogic[3], newlogic[7], newlogic[5], newlogic[9] = logic_tokens[7], logic_tokens[3], logic_tokens[9], logic_tokens[5]
                     newline = ' '.join(newlogic)
                     if newline == true_logic:
-                        more_acc += 1
-                        WRITE = False 
-                acc+=(logic==true_logic)
-                full_anno_acc += (full_annotate and ( logic==true_logic or not WRITE ) )
-                no_anno_acc += (not full_annotate and ( logic==true_logic or not WRITE ) )
-                if logic != true_logic and WRITE and full_annotate:
-                    output.write('----------'+str(i)+': SQL/True/Inference\n')
-                    output.write(xseq+'\n')
-                    output.write(true_logic+'\n')
-                    output.write(logic+'\n')
+                        logic = newline
+                acc += (logic==true_logic)
                 i += 1
-                true_values.append(true_logic)
-                values.append(logic)        
-    acc += more_acc
     print('EM: %.4f'%(acc*1./len(y_data)))  
-    print('fully annotation EM acc: %.4f'%(full_anno_acc*1./len(y_data)))
-    print('not fully annotation EM acc: %.4f'%(no_anno_acc*1./len(y_data)))
     print('number of correct ones:%d'%acc)
     
-    true_values, values= np.asarray(true_values), np.asarray(values)
-    bleu_score = moses_multi_bleu(true_values,values)
-    print('BLEU score:%.4f'%bleu_score)
     return acc*1./len(y_data) 
 #----------------------------------------------------------------------
 X_train, y_train = load_data(maxlen=maxlen,load=True,s='train')

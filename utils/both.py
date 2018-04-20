@@ -15,7 +15,8 @@ embedding_dim = 300
 path = os.path.abspath(__file__)
 dir_path = os.path.dirname(path).replace('utils','data')
 
-wiki_path = dir_path + '/DATA/wiki'
+#wiki_path = dir_path + '/DATA/wiki'
+wiki_path = '/home/wzw0022/forward_wiki/data/DATA/wiki'
 save_path = dir_path
 '''
 0: pad
@@ -31,7 +32,7 @@ _TOKEN_NUMBER = 5
 _TOKEN_MODEL = 6
 _EOC = 7
 ori_files1 = [ 'train.lon', 'train.qu', 'test.lon', 'test.qu', 'dev.lon', 'dev.qu']
-ori_files2 = [ 'new_train.lon', 'train.qu', 'new_test.lon', 'test.qu']
+ori_files2 = [ 'train.lon', 'new_train.lon', 'train.qu', 'new_train.qu', 'test.lon', 'new_test.lon', 'test.qu', 'new_test.qu']
 vocab_files = [ os.path.join(wiki_path, x) for x in ori_files1 ]
 for subset in ['basketball','calendar','housing','recipes','restaurants']:
     overnight_path = dir_path + '/DATA/overnight_source/%s'%subset

@@ -18,7 +18,10 @@ from utils.glove import Glove
 path = os.path.abspath(__file__)
 data_path = os.path.dirname(path).replace('annotation','data')
 glove = Glove()
-
+wiki_path = '/home/wzw0022/forward_wiki/data/DATA/wiki'
+wiki_path = data_path
+save_path = '/home/wzw0022/forward_wiki/data/wiki'
+#----------------------------------------------------------
 maps = defaultdict(list)
 stop_words = ['a','of','the','in']
 def _match_field(name_pairs,candidates):
@@ -157,7 +160,7 @@ def main():
     
     for split in ['train','test','dev']:
      
-        with open('%s.qu'%split, 'w') as qu_file, open('%s.lon'%split, 'w') as lon_file, open('%s.out'%split, 'w') as out,open('%s_sym_pairs.txt'%split, 'w') as sym_file, open('%s_ground_truth.txt'%split, 'w') as S_file:
+        with open(save_path+'%s.qu'%split, 'w') as qu_file, open(save_path+'%s.lon'%split, 'w') as lon_file, open(save_path+'%s.out'%split, 'w') as out, open(save_path+'%s_sym_pairs.txt'%split, 'w') as sym_file, open(save_path+'%s_ground_truth.txt'%split, 'w') as S_file:
           
             fsplit = os.path.join(args.din, split) + '.jsonl'
             ftable = os.path.join(args.din, split) + '.tables.jsonl'
