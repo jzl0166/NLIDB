@@ -8,7 +8,7 @@ a NLIDB seq2seq model that achieves high transfer-ability.
 
   1. Annotate WikiSQL
   
-         python utils/annotation/annotate.py
+         python3 utils/annotation/annotate.py
     
   2. Annotate Overnight
   
@@ -26,9 +26,9 @@ a NLIDB seq2seq model that achieves high transfer-ability.
       
 - Train or load model 
     
-      python run_model.py --mode train
-      python run_model.py --mode load_pretrained
+      python nlidb.py --mode train
+      python nlidb.py --mode load_pretrained
       
 - Transfer-ability
       
-      python run_model.py --mode transfer
+      python nlidb.py --mode transfer
