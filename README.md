@@ -1,7 +1,7 @@
 # NLIDB
 a NLIDB seq2seq model that achieves high transfer-ability. 
 
-## Config
+## Dependencies
 - TF 1.4
 - python 2.7
 - python3 (for annotating WikiSQL)
