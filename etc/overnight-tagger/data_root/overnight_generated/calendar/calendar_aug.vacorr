@@ -1,0 +1,331 @@
+3pm <nan> <nan>
+<nan> annual_review;weekly_standup
+4 <nan> 10am
+<nan> jan_2nd 3pm
+<nan> <nan> alice
+jan_2nd <nan> <nan>
+<nan> 3pm
+<nan> 1pm
+<nan> 1pm
+<nan> <nan>
+4 <nan> central_office
+4 <nan> 1pm
+<nan> <nan>
+<nan> central_office
+<nan> 3pm
+6 <nan> <nan>
+jan_3rd
+<nan> <nan> greenberg_cafe
+<nan> jan_3rd 10am
+<nan> 3pm
+<nan> 10am
+<nan> <nan>
+<nan> annual_review;weekly_standup
+<nan> weekly_standup;annual_review
+annual_review <nan>
+<nan> <nan>
+<nan> <nan>
+10am <nan> <nan>
+weekly_standup <nan>
+<nan> 10am
+4 <nan> alice
+<nan> <nan>
+5 <nan> 10am
+<nan>
+7 <nan> <nan>
+<nan> <nan> central_office
+<nan> jan_2nd greenberg_cafe
+jan_3rd;jan_2nd
+<nan> jan_3rd 3pm
+7 <nan> 10am
+2;7
+<nan> jan_3rd 3pm
+4 <nan> 10am
+<nan> <nan> alice
+7;3
+7;2
+5 <nan> alice
+annual_review <nan>
+<nan> 10am;1pm
+<nan>
+<nan> 10am;3pm
+<nan> <nan>
+<nan> bob
+<nan> 1pm
+<nan> <nan>
+<nan> jan_2nd
+<nan> <nan>
+<nan> jan_2nd 3pm
+<nan> 2
+<nan> <nan>
+5 <nan> 3pm
+<nan> jan_3rd
+<nan> 3pm
+<nan> <nan>
+<nan> jan_2nd alice
+<nan>
+weekly_standup <nan>
+<nan> weekly_standup;annual_review
+<nan>
+<nan> 1pm
+<nan> 10am
+<nan> 8;7
+<nan> <nan> central_office
+<nan> jan_3rd <nan>
+<nan> <nan>
+<nan> 6
+<nan> <nan>
+<nan> 10am
+<nan> 10am
+4 <nan> 3pm
+<nan> 5
+<nan> greenberg_cafe
+<nan>
+<nan> <nan> bob
+<nan> <nan>
+<nan> 10am
+<nan>
+<nan> <nan>
+<nan> 3pm;10am
+<nan>
+<nan> jan_2nd
+<nan> 3pm
+<nan> jan_3rd bob
+5 <nan> 10am
+<nan> jan_3rd greenberg_cafe
+<nan> <nan> central_office
+jan_3rd
+<nan> 10am
+<nan> jan_2nd 10am
+<nan> <nan>
+<nan> <nan>
+<nan> 3pm;10am
+<nan> jan_3rd;jan_2nd
+<nan> <nan>
+weekly_standup <nan>
+<nan>
+<nan> <nan>
+<nan> jan_3rd 1pm
+<nan> <nan> greenberg_cafe
+<nan> 1pm;3pm
+<nan> 3pm
+<nan> 10am;1pm
+<nan> <nan>
+greenberg_cafe;central_office
+<nan> <nan>
+weekly_standup <nan>
+<nan> 9
+<nan> <nan>
+<nan> jan_2nd
+<nan> jan_2nd 9
+<nan> <nan>
+<nan> jan_3rd 5
+weekly_standup <nan>
+<nan> jan_2nd 3pm
+<nan> jan_2nd;jan_3rd
+annual_review <nan>
+<nan> 3pm
+<nan> 10am
+<nan> 3pm
+<nan> 1pm
+<nan> 5
+<nan> 10am;3pm
+<nan> 10am;3pm
+<nan> 3pm
+annual_review <nan>
+<nan> 10am
+weekly_standup <nan>
+<nan> 3pm;10am
+<nan> annual_review;weekly_standup
+7 <nan> 3pm
+<nan> <nan>
+<nan> <nan>
+<nan> 3pm
+<nan> 10am
+<nan> 10am
+<nan> <nan>
+<nan> 10am
+<nan> 1pm;10am
+weekly_standup <nan>
+<nan> 10am
+5 <nan> 1pm
+<nan> <nan>
+<nan> 7;2
+<nan> jan_3rd 3pm
+<nan> 3pm
+<nan> 3pm
+central_office;greenberg_cafe
+weekly_standup <nan>
+<nan>
+<nan>
+<nan> 10am
+5 <nan> <nan>
+<nan> jan_2nd
+<nan> 3pm
+<nan> jan_2nd <nan>
+jan_2nd;jan_3rd
+<nan> 7
+<nan> 3pm;1pm
+4 <nan> 3pm
+<nan>
+<nan> <nan> greenberg_cafe
+7 <nan> bob
+weekly_standup <nan>
+<nan> 2;7
+4 <nan> <nan>
+<nan> <nan>
+<nan>
+<nan> <nan> alice
+annual_review <nan>
+5 <nan> greenberg_cafe
+<nan> <nan>
+4 <nan> <nan>
+<nan> <nan>
+<nan> <nan>
+<nan> <nan>
+<nan> 1pm;10am
+bob;alice
+5 <nan> bob
+<nan> alice
+jan_3rd <nan> <nan>
+annual_review <nan>
+<nan> 9
+<nan> jan_3rd 10am
+<nan> 3pm
+<nan> <nan> bob
+weekly_standup <nan>
+jan_2nd
+<nan> annual_review;weekly_standup
+<nan> 10am
+<nan> jan_3rd
+<nan> jan_3rd 10am
+jan_3rd <nan>
+<nan> <nan>
+5 <nan> central_office
+<nan> 10am
+<nan>
+<nan> jan_2nd
+<nan> <nan>
+4 <nan> <nan>
+3;2
+annual_review <nan>
+<nan> 3pm
+<nan> <nan>
+<nan> jan_2nd
+<nan> <nan>
+<nan> 3pm
+<nan>
+7 <nan> <nan>
+<nan> <nan>
+<nan> 10am;3pm
+alice;bob
+7 <nan> central_office
+<nan> 10am
+<nan> 6
+<nan> 3pm
+<nan> <nan>
+<nan> 9
+<nan> <nan> bob
+<nan> 10am
+<nan> 10am
+weekly_standup <nan>
+annual_review <nan>
+<nan>
+<nan> 3pm
+<nan> 10am
+<nan> 3pm
+<nan> 3pm;10am
+<nan> jan_2nd 10am
+<nan> <nan>
+2;3
+<nan> 7;8
+<nan> 5
+7 <nan> alice
+<nan> 10am
+annual_review <nan>
+<nan> jan_3rd alice
+<nan> jan_2nd 1pm
+4 <nan> greenberg_cafe
+5 <nan> <nan>
+<nan> 2;8
+<nan> <nan>
+<nan> weekly_standup;annual_review
+7 <nan> <nan>
+<nan> jan_2nd 10am
+<nan> jan_3rd <nan>
+<nan> <nan>
+<nan> <nan>
+<nan> <nan> bob
+<nan> 1pm
+<nan> 3pm
+<nan> <nan>
+annual_review <nan>
+7 <nan> 10am
+<nan>
+<nan> <nan> greenberg_cafe
+<nan> weekly_standup;annual_review
+<nan> jan_2nd
+<nan> <nan>
+4 <nan> bob
+<nan> jan_2nd 5
+<nan> <nan>
+<nan> jan_2nd <nan>
+<nan> jan_3rd 6
+weekly_standup <nan>
+<nan>
+jan_2nd <nan>
+3;7
+5 <nan> 3pm
+7 <nan> greenberg_cafe
+<nan> jan_2nd bob
+<nan> 3pm
+<nan> <nan>
+annual_review <nan>
+<nan> <nan>
+<nan> <nan>
+<nan> <nan> central_office
+<nan> 1
+<nan> jan_3rd
+<nan> jan_2nd <nan>
+<nan> 8;2
+<nan> <nan>
+<nan> jan_3rd
+<nan> jan_3rd central_office
+<nan> jan_3rd
+annual_review <nan>
+<nan> <nan>
+<nan> 3pm
+4 <nan> <nan>
+<nan> <nan> alice
+7 <nan> 1pm
+<nan> <nan>
+<nan> 3pm
+annual_review <nan>
+<nan> jan_2nd 6
+<nan> jan_3rd
+<nan> jan_2nd central_office
+<nan> 1pm;3pm
+<nan> <nan>
+<nan> 1pm
+<nan> <nan>
+<nan>
+<nan> 1pm
+<nan>
+<nan> 6
+jan_2nd
+5 <nan> <nan>
+<nan> jan_3rd 9
+<nan> 10am
+<nan> jan_3rd <nan>
+weekly_standup <nan>
+<nan> 3pm;1pm
+5 <nan> <nan>
+<nan> 1pm
+<nan> <nan>
+<nan>
+<nan> 10am
+<nan> <nan>
+<nan> <nan>
+<nan> <nan>
+<nan> jan_3rd
+7 <nan> 3pm
