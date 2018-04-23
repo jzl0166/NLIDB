@@ -450,7 +450,7 @@ for base in range(20):
                 print('===========transfer set============')
                 tran_em = decode_data(sess, X_tran, y_tran)
             
-            if run_mode is not "train":
+            if run_mode != "train":
                 break
 
             if em > max_em:

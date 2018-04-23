@@ -5,7 +5,7 @@ from tensorflow.python.platform import gfile
 from utils import glove
 from collections import defaultdict
 embedding_dim = glove.Glove.embedding_dim
-path='/home/wzw0022/ww_text/data/overnight_source'
+path = '/home/wzw0022/ww_text/data/overnight_source'
 all_path = '/home/wzw0022/ww_text/data/overnight_source/all'
 save_path = '/home/wzw0022/Wiki_contrib/data/overnight'
 _PAD = 0

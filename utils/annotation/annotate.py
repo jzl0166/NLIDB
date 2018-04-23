@@ -14,9 +14,10 @@ from collections import defaultdict
 import copy
 import editdistance as ed
 from scipy import spatial
-from utils.glove import Glove
+from glove import Glove
 path = os.path.abspath(__file__)
-save_path = os.path.dirname(path).replace('annotation', 'data/DATA/wiki/')
+save_path = os.path.dirname(path).replace('utils/annotation', 'data/DATA/wiki/')
+data_path = os.environ['WIKI_PATH']
 glove = Glove()
 # set wiki_path to WikiSQL raw data directory
 wiki_path = os.environ['WIKI_PATH']
@@ -188,7 +189,7 @@ def main():
 
                 print('loading examples')
                 n, acc, acc_pair, acc_all, error = 0, 0, 0, 0, 0
-                target = 1349
+                target = -1
             
                 ADD_FIELDS = True
                 step2 = True

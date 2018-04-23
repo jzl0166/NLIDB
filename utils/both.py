@@ -260,7 +260,7 @@ def load_data(maxlen=30, load=False, s='train'):
 if __name__ == "__main__":
     rebuild = True   
     if rebuild:
-        #build_vocab_all(load=False)
+        build_vocab_all(load=False)
         load_vocab_all(load=False)
         maxlen = 60
         load_data(maxlen=maxlen, load=False, s='train')

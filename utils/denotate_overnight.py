@@ -5,17 +5,13 @@ import tensorflow as tf
 from tensorflow.python.platform import gfile
 from redenote import get_fields,renotate
 import re
-
 def _chech_sketch(S):
-    """
-    Chech whether S is compatible with WikiSQL sketch
-    """
     signs = ['select',' nl ',' ng ','equal min','equal max',' neq ','where ( count',' or ',' between ']
     for sign in signs:
         if sign in S:
             return False
-    #if re.search('\( \w+ \)',S):  # agg ( field )
-    #    return False
+    if re.search('\( \w+ \)',S):
+        return False
     return True
 
 fdict = defaultdict(list)
@@ -27,8 +23,10 @@ def denotate(s='test'):
 
     ta_file = os.path.join(path, '%s_%s.ta'%(sub,s))
     qu_file = os.path.join(path, '%s_%s.qu'%(sub,s))
-    question_file = os.path.join(path, '%s.qu'%s)        # newly generated question file
-    lon_file = os.path.join(path, '%s_%s.lon'%(sub,s))   # original lon file with qualified lon
+    #newly generated question file
+    question_file = os.path.join(path, '%s.qu'%s)
+    lon_file = os.path.join(path, '%s_%s.lon'%(sub,s))
+    #original lon file with qualified lon
     lon_file0 = os.path.join(path, '%s_%s0.lon'%(sub,s))
 
     with gfile.GFile(ta_file, mode='r') as t, gfile.GFile(qu_file, mode='r') as q, gfile.GFile(question_file, mode='w') as re, gfile.GFile(lon_file0, mode='w') as lon0, gfile.GFile(lon_file, mode='r') as lon:
@@ -68,7 +66,8 @@ def denotate(s='test'):
 
     lox_file = os.path.join(path, '%s_%s.lox'%(sub,s))
     lon_file = os.path.join(path, '%s_%s.lon'%(sub,s))
-    lo_file = os.path.join(path, '%s.lon'%s)    #  newly generated logic file
+    #newly generated logic file
+    lo_file = os.path.join(path, '%s.lon'%s)
     with gfile.GFile(lox_file, mode='r') as lox,gfile.GFile(lon_file, mode='r') as lon, gfile.GFile(lo_file, mode='w') as re:
         loxs = lox.readlines()
         lons = lon.readlines()
