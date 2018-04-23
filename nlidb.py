@@ -25,7 +25,6 @@ BS = 128
 maxlen = 60
 embedding_dim = 300
 D = embedding_dim
-#dim = int(D/2)
 dim = 200
 T = maxlen
 in_drop=.0
