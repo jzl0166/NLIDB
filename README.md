@@ -17,23 +17,25 @@ a NLIDB seq2seq model that achieves high transfer-ability.
 
   1. Annotate WikiSQL (optional)
   
-     Annotated data has been saved in data/DATA/overnight_source
+     Annotated data has been saved in data/DATA/overnight_source.
      
          python3 utils/annotation/annotate.py
     
   2. Annotate Overnight (optional)
   
-     Annotated data has been saved in data/DATA/wiki
+     Annotated data has been saved in data/DATA/wiki.
   
          python utils/denotate_overnight.py
          
-  3. Prepare Glove
+  3. Prepare Glove (optional)
       
-     edit path for 'glove.840B.300d.txt', set rebuild = True.
+     Edit path for 'glove.840B.300d.txt', set rebuild = True.
      
          python utils/glove.py
       
-  4. Load data
+  4. Build data (optional)
+      
+     Data has been stored in data folder.
       
          python utils/both.py
       
