@@ -11,11 +11,15 @@ a NLIDB seq2seq model that achieves high transfer-ability.
 
 - Prepare WikiSQL for training and evaluation
 
-  1. Annotate WikiSQL
+  1. Annotate WikiSQL (optional)
   
+     Annotated data has been saved in data/DATA/overnight_source
+     
          python3 utils/annotation/annotate.py
     
-  2. Annotate Overnight
+  2. Annotate Overnight (optional)
+  
+     Annotated data has been saved in data/DATA/wiki
   
          python utils/denotate_overnight.py
          
