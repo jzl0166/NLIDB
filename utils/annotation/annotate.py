@@ -16,11 +16,11 @@ import editdistance as ed
 from scipy import spatial
 from utils.glove import Glove
 path = os.path.abspath(__file__)
-data_path = os.path.dirname(path).replace('annotation','data')
+data_path = os.path.dirname(path).replace('annotation', 'data')
 glove = Glove()
 wiki_path = '/home/wzw0022/forward_wiki/data/DATA/wiki'
 wiki_path = data_path
-save_path = '/home/wzw0022/forward_wiki/data/wiki/'
+save_path = '/home/wzw0022/forward_wiki/data/DATA/wiki/'
 #----------------------------------------------------------
 maps = defaultdict(list)
 stop_words = ['a','of','the','in']

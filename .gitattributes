@@ -1,0 +1,2 @@
+*.qu filter=lfs diff=lfs merge=lfs -text
+*.lon filter=lfs diff=lfs merge=lfs -text
