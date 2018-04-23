@@ -25,6 +25,7 @@ a NLIDB seq2seq model that achieves high transfer-ability.
   
      Annotated data has been saved in data/DATA/wiki.
   
+         python utils/annotate_overnight_vocab.py
          python utils/denotate_overnight.py
          
   3. Prepare Glove
