@@ -8,6 +8,8 @@ a NLIDB seq2seq model that achieves high transfer-ability.
 - tqdm
 
 ## How to use
+
+Since data has been preprocessed and stored in numpy files. You can either omit first two steps or rebuild dataset.
 - Set PATH (optional)
   
       export WIKI_PATH = '{PATH to WikiSQL}'
@@ -25,6 +27,7 @@ a NLIDB seq2seq model that achieves high transfer-ability.
   
      Annotated data has been saved in data/DATA/wiki.
   
+         python utils/annotate_overnight_vocab.py
          python utils/denotate_overnight.py
          
   3. Prepare Glove
