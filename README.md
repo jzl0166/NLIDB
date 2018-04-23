@@ -13,27 +13,27 @@ a NLIDB seq2seq model that achieves high transfer-ability.
       export WIKI_PATH = '{PATH to WikiSQL}'
       export GLOVE_PATH = '{PATH to GloVe}'
 
-- Prepare WikiSQL for training and evaluation
+- Prepare WikiSQL for training and evaluation (optional)
 
-  1. Annotate WikiSQL (optional)
+  1. Annotate WikiSQL
   
      Annotated data has been saved in data/DATA/overnight_source.
      
          python3 utils/annotation/annotate.py
     
-  2. Annotate Overnight (optional)
+  2. Annotate Overnight
   
      Annotated data has been saved in data/DATA/wiki.
   
          python utils/denotate_overnight.py
          
-  3. Prepare Glove (optional)
+  3. Prepare Glove
       
      Edit path for 'glove.840B.300d.txt', set rebuild = True.
      
          python utils/glove.py
       
-  4. Build data (optional)
+  4. Build data
       
      Data has been stored in data folder.
       
