@@ -5,6 +5,7 @@ a NLIDB seq2seq model that achieves high transfer-ability.
 - TF 1.4
 - python 2.7
 - python3 (for annotating WikiSQL)
+- tqdm
 
 ## How to use
 - Set PATH
