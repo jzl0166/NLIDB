@@ -8,9 +8,10 @@ a NLIDB seq2seq model that achieves high transfer-ability.
 - tqdm
 
 ## How to use
-- Set PATH
+- Set PATH (optional)
   
       export WIKI_PATH = '{PATH to WikiSQL}'
+      export GLOVE_PATH = '{PATH to GloVe}'
 
 - Prepare WikiSQL for training and evaluation
 
