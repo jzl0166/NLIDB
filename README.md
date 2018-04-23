@@ -9,7 +9,7 @@ a NLIDB seq2seq model that achieves high transfer-ability.
 ## How to use
 - Set PATH
   
-      export WIKI_PATH = '{}'
+      export WIKI_PATH = '{PATH to WikiSQL}'
 
 - Prepare WikiSQL for training and evaluation
 
