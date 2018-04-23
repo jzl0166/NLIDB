@@ -8,13 +8,14 @@ a NLIDB seq2seq model that achieves high transfer-ability.
 
 ## How to use
 - Set PATH
+  
+      export WIKI_PATH = '{}'
 
 - Prepare WikiSQL for training and evaluation
 
   1. Annotate WikiSQL (optional)
   
      Annotated data has been saved in data/DATA/overnight_source
-     If you choose to rerun, set 'wiki_path' first, then run
      
          python3 utils/annotation/annotate.py
     
