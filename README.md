@@ -9,7 +9,7 @@ a NLIDB seq2seq model that achieves high transfer-ability.
 
 ## How to use
 
-Since data has been preprocessed and stored in numpy files. You can either omit first two steps or rebuild dataset.
+Since data has been preprocessed and stored in numpy files. You can either omit first two steps go straight to train/load model or rebuild dataset.
 - Set PATH (optional)
   
       export WIKI_PATH={PATH to WikiSQL}
