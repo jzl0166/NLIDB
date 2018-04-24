@@ -45,6 +45,8 @@ Since data has been preprocessed and stored in numpy files. You can either omit 
       
 - Train or load model 
     
+   pretrained model https://drive.google.com/open?id=13cFjU9tEZ1hx-exBuq6qpYgSrlzKyGXl
+   
       python nlidb.py --mode train
       python nlidb.py --mode load_pretrained
       
