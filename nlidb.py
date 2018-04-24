@@ -36,7 +36,7 @@ load_model=False
 input_vocab_size = vocabulary_size
 output_vocab_size = vocabulary_size
 path = os.path.abspath(__file__)
-annotation_path = os.path.dirname(path).replace('utils','data/DATA/wiki/')
+annotation_path = os.path.dirname(path) + '/data/DATA/wiki/'
 # ----------------------------------------------------------------------------
 parser = ArgumentParser()
 parser.add_argument('--mode', default='load_pretrained', help='choose from load_pretrained or train or transfer')
