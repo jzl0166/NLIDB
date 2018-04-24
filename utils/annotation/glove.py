@@ -10,7 +10,7 @@ import numpy as np
 from sklearn.externals import joblib
 from multiprocessing import current_process
 from scipy import spatial
-
+GLOVE_PATH = os.environ['GLOVE_PATH']
 class Glove:
     """
     Wrapper for GloVe embedding.
@@ -19,7 +19,7 @@ class Glove:
     embedding_dim = 300
     batch_size = 5
     process_num= 2 
-    def __init__(self, glove='/Users/wenluwang/Documents/tf-workspace/DATA/glove', rawfile='glove.840B.300d.txt',
+    def __init__(self, glove=GLOVE_PATH, rawfile='glove.840B.300d.txt',
                  rebuild=False):
         row = self.num_words
         dim = self.embedding_dim
@@ -124,12 +124,4 @@ def _worker(vecs, k, modelpath, num, return_dict):
     return res
 
 
-if __name__ == '__main__':
-    glove = Glove()
-    eb1 = glove.embed_one('nationality')
-    eb2 = glove.embed_one('country')
-    #eb2 = np.ones(300) 
-    assert eb1.shape == eb2.shape
-    re = 1-spatial.distance.cosine(eb1,eb2 )
-    print(re)
 
