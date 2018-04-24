@@ -12,8 +12,8 @@ a NLIDB seq2seq model that achieves high transfer-ability.
 Since data has been preprocessed and stored in numpy files. You can either omit first two steps or rebuild dataset.
 - Set PATH (optional)
   
-      export WIKI_PATH='{PATH to WikiSQL}'
-      export GLOVE_PATH='{PATH to GloVe}'
+      export WIKI_PATH={PATH to WikiSQL}
+      export GLOVE_PATH={PATH to GloVe}
   Store 'glove.840B.300d.txt' in GLOVE_PATH.
 
 - Prepare WikiSQL for training and evaluation (optional)
