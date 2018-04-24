@@ -1,4 +1,4 @@
-# OVERNIGHT TAGGER
+# OVERNIGHT dataset tagger
 
 - Set path
   
@@ -6,10 +6,10 @@
 
 - Stanford Parser
 
-  Put Stanford Parser in deep_parser/ directory.
+  Put Stanford Parser in deep_parser/ directory (same level as src/).
 
 - Run
               
       python tagger.py
     
-Credit to https://github.com/alantian/nlidb
+Fork from https://github.com/alantian/nlidb
