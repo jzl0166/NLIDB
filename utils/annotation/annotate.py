@@ -250,7 +250,7 @@ def main():
                         if v.isdigit() and v not in Q.split():
                             v = str(v)+'.0'
 
-                        if (l > 1 and v in Q) or (l==1 and str(v) in Q.split()):
+                        if (l>1 and v in Q) or (l==1 and str(v) in Q.split()):
                             
                             # PASS if current v is a substring of matched v
                             for field,value in candidates:
@@ -271,19 +271,19 @@ def main():
                                         if field not in Q:
                                             fs.remove(field)
                                     # only one possible field, identify (f,v) directly
-                                    if len(fs)==1:
+                                    if len(fs) == 1:
                                         f = fs[0]
                                         cond_fields.append(f)
 
                                     # if several possible fields, 
                                     # match for field closest to v
-                                    if len(fs)>1:   
+                                    if len(fs) > 1:   
                                         fs.sort(key=lambda x: abs(Q_ori.index(x)-Q_ori.index(v)))
                                         f = fs[0]
                                         cond_fields.append(f)
 
                                     # if no field appears in Q, use imperfect string match
-                                    if len(fs)==0:
+                                    if len(fs) == 0:
                                         fs = copy.copy(fs_ori)
                                         fs_tmp = copy.copy(fs)
 
@@ -303,21 +303,21 @@ def main():
                                                 field2partial[field] = field
 
                                         # no imperfect match, give up
-                                        if len(fs)==0:
+                                        if len(fs) == 0:
                                             f = 'unk'
                                             cond_fields.append(f)
                                         
-                                        if len(fs)==1:
+                                        if len(fs) == 1:
                                             f = fs[0]
                                             cond_fields.append(f)
                                           
                                         # match for field closest to v
-                                        if len(fs)>1: 
+                                        if len(fs) > 1: 
                                             fs.sort(key=lambda x: abs(Q_ori.index(field2partial[x])-Q_ori.index(v)))
                                             f = fs[0]
                                             cond_fields.append(f)
                                  
-                                if f==v:   
+                                if f == v:   
                                     cond_fields.remove(f)
                                     pass   
                                     #candidates.append([_preclean(f),'true'])
@@ -325,7 +325,7 @@ def main():
                                     candidates.append([_preclean(f),_preclean(v)])
                                     
                     # sort to compare with ground truth                
-                    candidates.sort( key=lambda x: x[1] )
+                    candidates.sort(key=lambda x: x[1])
                   
                     #=============================MATCH HEAD====================================
                     head_cands = []

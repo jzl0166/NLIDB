@@ -43,7 +43,7 @@ parser.add_argument('--mode', default='load_pretrained', help='choose from load_
 args = parser.parse_args()
 run_mode = args.mode
 
-if run_mode is not 'train':
+if run_mode != 'train':
     load_model = True
 #----------------------------------------------------------------------------
 def train(sess, env, X_data, y_data, epochs=10, load=False, shuffle=True, batch_size=BS,

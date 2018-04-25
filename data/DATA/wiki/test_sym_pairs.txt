@@ -811,7 +811,7 @@
 <f1>=>points<><v1>=>30<><f0>=>club<><c0>=>points against<><c1>=>tries against<><c2>=>losing bonus<><c3>=>points for<><c4>=>tries for<><c5>=>try bonus<><c6>=>played<><c7>=>points<><c8>=>drawn<><c9>=>club<><c10>=>lost<><c11>=>won<>
 <f1>=>try bonus<><v1>=>8<><f0>=>tries for<><c0>=>points against<><c1>=>tries against<><c2>=>losing bonus<><c3>=>points for<><c4>=>tries for<><c5>=>try bonus<><c6>=>played<><c7>=>points<><c8>=>drawn<><c9>=>club<><c10>=>lost<><c11>=>won<>
 <f1>=>tries against<><v1>=>30<><f0>=>points for<><c0>=>points against<><c1>=>tries against<><c2>=>losing bonus<><c3>=>points for<><c4>=>tries for<><c5>=>try bonus<><c6>=>played<><c7>=>points<><c8>=>drawn<><c9>=>club<><c10>=>lost<><c11>=>won<>
-<f1>=>tries against<><v1>=>43<><f0>=>points against<><c0>=>points against<><c1>=>tries against<><c2>=>losing bonus<><c3>=>points for<><c4>=>tries for<><c5>=>try bonus<><c6>=>played<><c7>=>points<><c8>=>drawn<><c9>=>club<><c10>=>lost<><c11>=>won<>
+<f1>=>tries for<><v1>=>43<><f0>=>points against<><c0>=>points against<><c1>=>tries against<><c2>=>losing bonus<><c3>=>points for<><c4>=>tries for<><c5>=>try bonus<><c6>=>played<><c7>=>points<><c8>=>drawn<><c9>=>club<><c10>=>lost<><c11>=>won<>
 <f1>=>points against<><v1>=>287<><f0>=>tries against<><c0>=>points against<><c1>=>tries against<><c2>=>losing bonus<><c3>=>points for<><c4>=>tries for<><c5>=>try bonus<><c6>=>played<><c7>=>points<><c8>=>drawn<><c9>=>club<><c10>=>lost<><c11>=>won<>
 <v1>=>tonyrefail rfc<><f1>=>club<><f0>=>points for<><c0>=>points against<><c1>=>tries against<><c2>=>losing bonus<><c3>=>points for<><c4>=>tries for<><c5>=>try bonus<><c6>=>played<><c7>=>points<><c8>=>drawn<><c9>=>club<><c10>=>lost<><c11>=>won<>
 <f1>=>cytoplasm<><v1>=>pink<><f0>=>specifically stains<><c0>=>red blood cell (rbc)<><c1>=>specifically stains<><c2>=>collagen fibers<><c3>=>common use<><c4>=>cytoplasm<><c5>=>nucleus<><c6>=>stain<>
@@ -1165,7 +1165,7 @@
 <f1>=>year<><v1>=>1998<><f0>=>mixed doubles<><c0>=>womens singles<><c1>=>womens doubles<><c2>=>mixed doubles<><c3>=>mens singles<><c4>=>mens doubles<><c5>=>year<>
 <f1>=>pick<><v1>=>57<><f0>=>college<><c0>=>player name<><c1>=>position<><c2>=>college<><c3>=>height<><c4>=>weight<><c5>=>pick<><c6>=>rnd<>
 <f1>=>player name<><v1>=>chad henne<><f0>=>height<><c0>=>player name<><c1>=>position<><c2>=>college<><c3>=>height<><c4>=>weight<><c5>=>pick<><c6>=>rnd<>
-<f2>=>copa conmebol 1992<><f3>=>copa conmebol 1992<><v2>=>did not qualify<><v3>=>round of 16<><v1>=>bragantino<><f1>=>team<><f0>=>recopa sudamericana 1992<><c0>=>supercopa sudamericana 1992<><c1>=>intercontinental cup 1992<><c2>=>recopa sudamericana 1992<><c3>=>copa libertadores 1992<><c4>=>copa conmebol 1992<><c5>=>team<>
+<f2>=>copa libertadores 1992<><f3>=>copa conmebol 1992<><v2>=>did not qualify<><v3>=>round of 16<><v1>=>bragantino<><f1>=>team<><f0>=>recopa sudamericana 1992<><c0>=>supercopa sudamericana 1992<><c1>=>intercontinental cup 1992<><c2>=>recopa sudamericana 1992<><c3>=>copa libertadores 1992<><c4>=>copa conmebol 1992<><c5>=>team<>
 <f2>=>copa conmebol 1992<><v2>=>round of 16<><v1>=>fluminense<><f1>=>team<><f0>=>copa libertadores 1992<><c0>=>supercopa sudamericana 1992<><c1>=>intercontinental cup 1992<><c2>=>recopa sudamericana 1992<><c3>=>copa libertadores 1992<><c4>=>copa conmebol 1992<><c5>=>team<>
 <f1>=>copa conmebol 1992<><v1>=>round of 16<><f0>=>team<><c0>=>supercopa sudamericana 1992<><c1>=>intercontinental cup 1992<><c2>=>recopa sudamericana 1992<><c3>=>copa libertadores 1992<><c4>=>copa conmebol 1992<><c5>=>team<>
 <f1>=>year<><v1>=>2009<><f0>=>league<><c0>=>regular season<><c1>=>division<><c2>=>playoffs<><c3>=>open cup<><c4>=>league<><c5>=>year<>
@@ -1741,7 +1741,7 @@
 <v1>=>john sullivan and keith lindsay<><f1>=>written by<><f0>=>original title<><c0>=>original airdate<><c1>=>original title<><c2>=>directed by<><c3>=>written by<><c4>=>viewership<><c5>=>duration<><c6>=>episode<>
 <v1>=>6.05 million<><f1>=>viewership<><f0>=>original title<><c0>=>original airdate<><c1>=>original title<><c2>=>directed by<><c3>=>written by<><c4>=>viewership<><c5>=>duration<><c6>=>episode<>
 <f1>=>total wins<><v1>=>4<><f0>=>third-place<><c0>=>number of clubs<><c1>=>fourth-placed<><c2>=>third-place<><c3>=>total wins<><c4>=>runners-up<><c5>=>winners<><c6>=>season<>
-<v1>=>liaoning fushun<><f1>=>third-place<><f0>=>number of clubs<><c0>=>number of clubs<><c1>=>fourth-placed<><c2>=>third-place<><c3>=>total wins<><c4>=>runners-up<><c5>=>winners<><c6>=>season<>
+<v1>=>liaoning fushun<><f1>=>runners-up<><f0>=>number of clubs<><c0>=>number of clubs<><c1>=>fourth-placed<><c2>=>third-place<><c3>=>total wins<><c4>=>runners-up<><c5>=>winners<><c6>=>season<>
 <v2>=>beijing guoan<><v3>=>dalian wanda<><f1>=>total wins<><f3>=>winners<><f2>=>unk<><v1>=>4<><f0>=><><c0>=>number of clubs<><c1>=>fourth-placed<><c2>=>third-place<><c3>=>total wins<><c4>=>runners-up<><c5>=>winners<><c6>=>season<>
 <v1>=>guangzhou apollo<><f1>=>runners-up<><f0>=><><c0>=>number of clubs<><c1>=>fourth-placed<><c2>=>third-place<><c3>=>total wins<><c4>=>runners-up<><c5>=>winners<><c6>=>season<>
 <f1>=>season<><v1>=>2001<><f0>=><><c0>=>number of clubs<><c1>=>fourth-placed<><c2>=>third-place<><c3>=>total wins<><c4>=>runners-up<><c5>=>winners<><c6>=>season<>
@@ -1752,7 +1752,7 @@
 <v1>=>swansea uplands rfc<><f1>=>club<><f0>=>tries against<><c0>=>points against<><c1>=>tries against<><c2>=>losing bonus<><c3>=>points for<><c4>=>tries for<><c5>=>try bonus<><c6>=>played<><c7>=>points<><c8>=>drawn<><c9>=>club<><c10>=>lost<><c11>=>won<>
 <f1>=>won<><v1>=>9<><f0>=>points<><c0>=>points against<><c1>=>tries against<><c2>=>losing bonus<><c3>=>points for<><c4>=>tries for<><c5>=>try bonus<><c6>=>played<><c7>=>points<><c8>=>drawn<><c9>=>club<><c10>=>lost<><c11>=>won<>
 <f1>=>points<><v1>=>51<><f0>=>try bonus<><c0>=>points against<><c1>=>tries against<><c2>=>losing bonus<><c3>=>points for<><c4>=>tries for<><c5>=>try bonus<><c6>=>played<><c7>=>points<><c8>=>drawn<><c9>=>club<><c10>=>lost<><c11>=>won<>
-<f1>=>lost<><v1>=>4<><f0>=>losing bonus<><c0>=>points against<><c1>=>tries against<><c2>=>losing bonus<><c3>=>points for<><c4>=>tries for<><c5>=>try bonus<><c6>=>played<><c7>=>points<><c8>=>drawn<><c9>=>club<><c10>=>lost<><c11>=>won<>
+<f1>=>losing bonus<><v1>=>4<><f0>=>lost<><c0>=>points against<><c1>=>tries against<><c2>=>losing bonus<><c3>=>points for<><c4>=>tries for<><c5>=>try bonus<><c6>=>played<><c7>=>points<><c8>=>drawn<><c9>=>club<><c10>=>lost<><c11>=>won<>
 <f1>=>points for<><v1>=>667<><f0>=>tries against<><c0>=>points against<><c1>=>tries against<><c2>=>losing bonus<><c3>=>points for<><c4>=>tries for<><c5>=>try bonus<><c6>=>played<><c7>=>points<><c8>=>drawn<><c9>=>club<><c10>=>lost<><c11>=>won<>
 <f1>=>year<><v1>=>1989<><f0>=>no. of episodes<><c0>=>no. of episodes<><c1>=>no. of discs<><c2>=>dvd title<><c3>=>region 1<><c4>=>region 2<><c5>=>region 4<><c6>=>year<>
 <f2>=>dvd title<><v2>=>series 5<><f1>=>unk<><v1>=>2<><f0>=>region 1<><c0>=>no. of episodes<><c1>=>no. of discs<><c2>=>dvd title<><c3>=>region 1<><c4>=>region 2<><c5>=>region 4<><c6>=>year<>
@@ -2049,8 +2049,8 @@
 <v1>=>birdie kim<><f1>=>runner-up<><f0>=>winning score<><c0>=>winners share ( $ )<><c1>=>margin of victory<><c2>=>winning score<><c3>=>tournament<><c4>=>runner-up<><c5>=>to par<><c6>=>date<><c7>=>no.<>
 <v1>=>northwest territories<><f1>=>province<><f0>=>latin americans 2001<><c0>=>latin americans 2001<><c1>=>latin americans 2011<><c2>=>province<><c3>=>% 2001<><c4>=>% 2011<>
 <f1>=>province<><v1>=>yukon<><f0>=>latin americans 2001<><c0>=>latin americans 2001<><c1>=>latin americans 2011<><c2>=>province<><c3>=>% 2001<><c4>=>% 2011<>
-<f2>=>province<><v2>=>manitoba<><f1>=>% 2011<><v1>=>0.8%<><f0>=>% 2001<><c0>=>latin americans 2001<><c1>=>latin americans 2011<><c2>=>province<><c3>=>% 2001<><c4>=>% 2011<>
-<f1>=>% 2011<><v1>=>0.2%<><f0>=>% 2001<><c0>=>latin americans 2001<><c1>=>latin americans 2011<><c2>=>province<><c3>=>% 2001<><c4>=>% 2011<>
+<f2>=>province<><v2>=>manitoba<><f1>=>% 2001<><v1>=>0.8%<><f0>=>% 2011<><c0>=>latin americans 2001<><c1>=>latin americans 2011<><c2>=>province<><c3>=>% 2001<><c4>=>% 2011<>
+<f1>=>% 2001<><v1>=>0.2%<><f0>=>% 2011<><c0>=>latin americans 2001<><c1>=>latin americans 2011<><c2>=>province<><c3>=>% 2001<><c4>=>% 2011<>
 <f1>=>% 2001<><f2>=>% 2011<><v1>=>0.0%<><v2>=>0.2%<><f0>=>latin americans 2001<><c0>=>latin americans 2001<><c1>=>latin americans 2011<><c2>=>province<><c3>=>% 2001<><c4>=>% 2011<>
 <v1>=>saskatchewan<><f1>=>province<><f0>=>latin americans 2001<><c0>=>latin americans 2001<><c1>=>latin americans 2011<><c2>=>province<><c3>=>% 2001<><c4>=>% 2011<>
 <f1>=>ozone running 8 hourly mean (μg/m 3 )<><v1>=>66-99<><f2>=>index<><v2>=>8<><f0>=>nitrogen dioxide hourly mean (μg/m 3 )<><c0>=>sulphur dioxide 15 minute mean (μg/m 3 )<><c1>=>nitrogen dioxide hourly mean (μg/m 3 )<><c2>=>pm2.5 particles 24 hour mean (μg/m 3 )<><c3>=>ozone running 8 hourly mean (μg/m 3 )<><c4>=>pm10 particles 24 hour mean (μg/m 3 )<><c5>=>index<>
@@ -3561,7 +3561,7 @@
 <f1>=>viewers (in millions/target group 14-49)<><v1>=>0.63<><f0>=>timeslot<><c0>=>viewers (in millions/target group 14-49)<><c1>=>market share (target group 14-49)<><c2>=>viewers (in millions/overall)<><c3>=>market share (overall)<><c4>=>timeslot<><c5>=>episodes<><c6>=>network<><c7>=>year<>
 <f1>=>pick #<><v1>=>17<><f0>=>role<><c0>=>employee (real name)<><c1>=>brand (from)<><c2>=>brand (to)<><c3>=>pick #<><c4>=>role<>
 <f1>=>pick #<><v1>=>15<><f0>=>brand (from)<><c0>=>employee (real name)<><c1>=>brand (from)<><c2>=>brand (to)<><c3>=>pick #<><c4>=>role<>
-<f1>=>brand (from)<><v2>=>superstar<><f2>=>role<><v1>=>raw<><f0>=>employee (real name)<><c0>=>employee (real name)<><c1>=>brand (from)<><c2>=>brand (to)<><c3>=>pick #<><c4>=>role<>
+<f1>=>brand (to)<><v2>=>superstar<><f2>=>role<><v1>=>raw<><f0>=>employee (real name)<><c0>=>employee (real name)<><c1>=>brand (from)<><c2>=>brand (to)<><c3>=>pick #<><c4>=>role<>
 <f0>=>weeks at peak<><c0>=>peak reached [a ]<><c1>=>weeks in top 10<><c2>=>weeks at peak<><c3>=>entered [a ]<><c4>=>single<><c5>=>artist<><c6>=>peak<>
 <v1>=>lecor sports<><f1>=>team<><f0>=>series<><c0>=>position<><c1>=>podiums<><c2>=>season<><c3>=>series<><c4>=>f/laps<><c5>=>points<><c6>=>races<><c7>=>poles<><c8>=>team<><c9>=>wins<>
 <f1>=>poles<><v1>=>12<><f0>=><><c0>=>position<><c1>=>podiums<><c2>=>season<><c3>=>series<><c4>=>f/laps<><c5>=>points<><c6>=>races<><c7>=>poles<><c8>=>team<><c9>=>wins<>
@@ -4379,8 +4379,8 @@
 <v2>=>nominated<><f2>=>result<><f1>=>year<><v1>=>2011<><f0>=>nominated work<><c0>=>nominated work<><c1>=>association<><c2>=>category<><c3>=>result<><c4>=>year<>
 <v1>=>primetime emmy awards<><f1>=>association<><f0>=>result<><c0>=>nominated work<><c1>=>association<><c2>=>category<><c3>=>result<><c4>=>year<>
 <v1>=>barry cavanagh<><f1>=>1999 broadway<><f0>=>1998 broadway<><c0>=>1955 broadcast<><c1>=>1960 broadcast<><c2>=>1954 broadway<><c3>=>1979 broadway<><c4>=>1990 broadway<><c5>=>1991 broadway<><c6>=>1998 broadway<><c7>=>1999 broadway<><c8>=>character<>
-<v1>=>dana solimando<><f1>=>1999 broadway<><f0>=>1979 broadway<><c0>=>1955 broadcast<><c1>=>1960 broadcast<><c2>=>1954 broadway<><c3>=>1979 broadway<><c4>=>1990 broadway<><c5>=>1991 broadway<><c6>=>1998 broadway<><c7>=>1999 broadway<><c8>=>character<>
-<f1>=>1999 broadway<><v1>=>drake english<><f0>=>character<><c0>=>1955 broadcast<><c1>=>1960 broadcast<><c2>=>1954 broadway<><c3>=>1979 broadway<><c4>=>1990 broadway<><c5>=>1991 broadway<><c6>=>1998 broadway<><c7>=>1999 broadway<><c8>=>character<>
+<v1>=>dana solimando<><f1>=>1998 broadway<><f0>=>1979 broadway<><c0>=>1955 broadcast<><c1>=>1960 broadcast<><c2>=>1954 broadway<><c3>=>1979 broadway<><c4>=>1990 broadway<><c5>=>1991 broadway<><c6>=>1998 broadway<><c7>=>1999 broadway<><c8>=>character<>
+<f1>=>1998 broadway<><v1>=>drake english<><f0>=>character<><c0>=>1955 broadcast<><c1>=>1960 broadcast<><c2>=>1954 broadway<><c3>=>1979 broadway<><c4>=>1990 broadway<><c5>=>1991 broadway<><c6>=>1998 broadway<><c7>=>1999 broadway<><c8>=>character<>
 <f1>=>1960 broadcast<><v1>=>kent fletcher<><f0>=>1955 broadcast<><c0>=>1955 broadcast<><c1>=>1960 broadcast<><c2>=>1954 broadway<><c3>=>1979 broadway<><c4>=>1990 broadway<><c5>=>1991 broadway<><c6>=>1998 broadway<><c7>=>1999 broadway<><c8>=>character<>
 <f1>=>1979 broadway<><v1>=>george rose<><f0>=>1991 broadway<><c0>=>1955 broadcast<><c1>=>1960 broadcast<><c2>=>1954 broadway<><c3>=>1979 broadway<><c4>=>1990 broadway<><c5>=>1991 broadway<><c6>=>1998 broadway<><c7>=>1999 broadway<><c8>=>character<>
 <v1>=>1 march 1909<><f1>=>date<><f0>=>competition<><c0>=>competition<><c1>=>result<><c2>=>venue<><c3>=>score<><c4>=>date<>
@@ -4885,7 +4885,7 @@
 <f1>=>played<><f2>=>points<><v1>=>22<><v2>=>23<><f0>=>place<><c0>=>goals against<><c1>=>goals for<><c2>=>points<><c3>=>played<><c4>=>place<><c5>=>drawn<><c6>=>team<><c7>=>lost<>
 <v3>=>al wahda<><f1>=>played<><f2>=>drawn<><f3>=>team<><v1>=>22<><v2>=>4<><f0>=>goals against<><c0>=>goals against<><c1>=>goals for<><c2>=>points<><c3>=>played<><c4>=>place<><c5>=>drawn<><c6>=>team<><c7>=>lost<>
 <f2>=>goals for<><f1>=>drawn<><v2>=>27<><v1>=>1<><f0>=>team<><c0>=>goals against<><c1>=>goals for<><c2>=>points<><c3>=>played<><c4>=>place<><c5>=>drawn<><c6>=>team<><c7>=>lost<>
-<f2>=>goals against<><f1>=>points<><f3>=>drawn<><v1>=>30<><v2>=>37<><v3>=>4<><f0>=>played<><c0>=>goals against<><c1>=>goals for<><c2>=>points<><c3>=>played<><c4>=>place<><c5>=>drawn<><c6>=>team<><c7>=>lost<>
+<f2>=>goals for<><f1>=>points<><f3>=>drawn<><v1>=>30<><v2>=>37<><v3>=>4<><f0>=>played<><c0>=>goals against<><c1>=>goals for<><c2>=>points<><c3>=>played<><c4>=>place<><c5>=>drawn<><c6>=>team<><c7>=>lost<>
 <f1>=>away team<><v1>=>geelong<><f0>=>away team score<><c0>=>home team score<><c1>=>away team score<><c2>=>home team<><c3>=>away team<><c4>=>venue<><c5>=>crowd<><c6>=>date<>
 <f1>=>away team<><v1>=>richmond<><f0>=>away team score<><c0>=>home team score<><c1>=>away team score<><c2>=>home team<><c3>=>away team<><c4>=>venue<><c5>=>crowd<><c6>=>date<>
 <v2>=>punt road oval<><f1>=>crowd<><v1>=>17000<><f2>=>venue<><f0>=>home team<><c0>=>home team score<><c1>=>away team score<><c2>=>home team<><c3>=>away team<><c4>=>venue<><c5>=>crowd<><c6>=>date<>
@@ -5667,7 +5667,7 @@
 <v1>=>university of california<><f1>=>affiliation<><f0>=>player<><c0>=>affiliation<><c1>=>mls team<><c2>=>position<><c3>=>pick #<><c4>=>player<>
 <v1>=>american civil war and indian wars<><f1>=>active service<><f0>=>rank<><c0>=>active service<><c1>=>rank order<><c2>=>rank<><c3>=>name<><c4>=>date<>
 <v1>=>the tour championship<><f1>=>tournament<><f0>=><><c0>=>1st prize ( $ )<><c1>=>tournament<><c2>=>location<><c3>=>winner<><c4>=>score<><c5>=>date<>
-<f1>=>number of seasons in prva hnl<><v1>=>17<><f0>=>number of seasons in top division<><c0>=>first season of current spell in top division<><c1>=>number of seasons in top division<><c2>=>number of seasons in prva hnl<><c3>=>first season in top division<><c4>=>last top division title<><c5>=>position in 2012–13<><c6>=>top division titles<><c7>=>club<>
+<f1>=>number of seasons in top division<><v1>=>17<><f0>=>number of seasons in prva hnl<><c0>=>first season of current spell in top division<><c1>=>number of seasons in top division<><c2>=>number of seasons in prva hnl<><c3>=>first season in top division<><c4>=>last top division title<><c5>=>position in 2012–13<><c6>=>top division titles<><c7>=>club<>
 <f1>=>position in 2012–13<><v1>=>001 1st<><f0>=>number of seasons in top division<><c0>=>first season of current spell in top division<><c1>=>number of seasons in top division<><c2>=>number of seasons in prva hnl<><c3>=>first season in top division<><c4>=>last top division title<><c5>=>position in 2012–13<><c6>=>top division titles<><c7>=>club<>
 <v1>=>5 february 1979<><f1>=>d.o.b.<><f0>=>first<><c0>=>position<><c1>=>surname<><c2>=>d.o.b.<><c3>=>throws<><c4>=>first<><c5>=>bats<>
 <f1>=>position<><f3>=>position<><f2>=>bats<><v3>=>of<><v1>=>c<><v2>=>l<><f0>=>first<><c0>=>position<><c1>=>surname<><c2>=>d.o.b.<><c3>=>throws<><c4>=>first<><c5>=>bats<>
@@ -7124,7 +7124,7 @@
 <f1>=>top-10<><v1>=>1<><f0>=>top-5<><c0>=>tournament<><c1>=>cuts made<><c2>=>top-10<><c3>=>top-25<><c4>=>events<><c5>=>top-5<><c6>=>wins<>
 <f1>=>top-10<><f2>=>events<><v2>=>22<><v1>=>1<><f0>=>top-25<><c0>=>tournament<><c1>=>cuts made<><c2>=>top-10<><c3>=>top-25<><c4>=>events<><c5>=>top-5<><c6>=>wins<>
 <f1>=>gold medals<><v1>=>0<><f0>=>bronze medals<><c0>=>silver medals<><c1>=>bronze medals<><c2>=>gold medals<><c3>=>appearances<><c4>=>4th place<><c5>=>5th place<>
-<f1>=>gold medals<><v1>=>0<><f0>=>appearances<><c0>=>silver medals<><c1>=>bronze medals<><c2>=>gold medals<><c3>=>appearances<><c4>=>4th place<><c5>=>5th place<>
+<f1>=>silver medals<><v1>=>0<><f0>=>appearances<><c0>=>silver medals<><c1>=>bronze medals<><c2>=>gold medals<><c3>=>appearances<><c4>=>4th place<><c5>=>5th place<>
 <f1>=>silver medals<><f2>=>appearances<><v1>=>0<><v2>=>3<><f0>=>4th place<><c0>=>silver medals<><c1>=>bronze medals<><c2>=>gold medals<><c3>=>appearances<><c4>=>4th place<><c5>=>5th place<>
 <f1>=>pos plans<><f2>=>hmos<><v1>=>18%<><v2>=>27%<><f0>=>year<><c0>=>conventional plans<><c1>=>pos plans<><c2>=>year<><c3>=>hmos<><c4>=>ppos<>
 <f1>=>pos plans<><v1>=>13%<><f0>=>conventional plans<><c0>=>conventional plans<><c1>=>pos plans<><c2>=>year<><c3>=>hmos<><c4>=>ppos<>
@@ -7169,7 +7169,7 @@
 <f1>=>2009–10<><v1>=>dnp<><f0>=>2006–07<><c0>=>2006–07<><c1>=>2007–08<><c2>=>2008–09<><c3>=>2009–10<><c4>=>2010–11<><c5>=>2011–12<><c6>=>2012–13<><c7>=>event<>
 <f1>=>2010–11<><v1>=>dnp<><f0>=>event<><c0>=>2006–07<><c1>=>2007–08<><c2>=>2008–09<><c3>=>2009–10<><c4>=>2010–11<><c5>=>2011–12<><c6>=>2012–13<><c7>=>event<>
 <v1>=>autumn gold<><f1>=>event<><f0>=>2006–07<><c0>=>2006–07<><c1>=>2007–08<><c2>=>2008–09<><c3>=>2009–10<><c4>=>2010–11<><c5>=>2011–12<><c6>=>2012–13<><c7>=>event<>
-<f1>=>2008–09<><v1>=>sf<><f0>=>2006–07<><c0>=>2006–07<><c1>=>2007–08<><c2>=>2008–09<><c3>=>2009–10<><c4>=>2010–11<><c5>=>2011–12<><c6>=>2012–13<><c7>=>event<>
+<f1>=>2006–07<><v1>=>sf<><f0>=>2007–08<><c0>=>2006–07<><c1>=>2007–08<><c2>=>2008–09<><c3>=>2009–10<><c4>=>2010–11<><c5>=>2011–12<><c6>=>2012–13<><c7>=>event<>
 <f1>=>silver<><f2>=>silver<><f3>=>nation<><v3>=>total<><v1>=>1<><v2>=>4<><f0>=>total<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <f2>=>nation<><f1>=>gold<><v2>=>cuba<><v1>=>0<><f0>=>silver<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <v2>=>los angeles d-fenders<><f1>=>pos.<><f2>=>team<><v1>=>g<><f0>=>weight<><c0>=>player<><c1>=>height<><c2>=>weight<><c3>=>pos.<><c4>=>team<>
@@ -7275,7 +7275,7 @@
 <f2>=>regional gross value added<><f1>=>year<><v1>=>2005<><v2>=>4569<><f0>=>industry<><c0>=>regional gross value added<><c1>=>agriculture<><c2>=>industry<><c3>=>services<><c4>=>year<>
 <v2>=>rodney harrison p<><f1>=>pick<><f2>=>name<><v1>=>145<><f0>=>round<><c0>=>school/college<><c1>=>position<><c2>=>round<><c3>=>pick<><c4>=>name<>
 <v2>=>western illinois<><f2>=>school/college<><f1>=>round<><v1>=>5<><f0>=>pick<><c0>=>school/college<><c1>=>position<><c2>=>round<><c3>=>pick<><c4>=>name<>
-<v1>=>grand slam tournaments<><f1>=>2010<><f0>=>2011<><c0>=>tournament<><c1>=>2006<><c2>=>2007<><c3>=>2008<><c4>=>2009<><c5>=>2010<><c6>=>2011<><c7>=>2012<><c8>=>2013<>
+<v1>=>grand slam tournaments<><f1>=>tournament<><f0>=>2011<><c0>=>tournament<><c1>=>2006<><c2>=>2007<><c3>=>2008<><c4>=>2009<><c5>=>2010<><c6>=>2011<><c7>=>2012<><c8>=>2013<>
 <f1>=>2007<><f2>=>2012<><v2>=>sf<><v1>=>a<><f0>=>2011<><c0>=>tournament<><c1>=>2006<><c2>=>2007<><c3>=>2008<><c4>=>2009<><c5>=>2010<><c6>=>2011<><c7>=>2012<><c8>=>2013<>
 <f1>=>2010<><v1>=>8–4<><f0>=>2011<><c0>=>tournament<><c1>=>2006<><c2>=>2007<><c3>=>2008<><c4>=>2009<><c5>=>2010<><c6>=>2011<><c7>=>2012<><c8>=>2013<>
 <f1>=>2010<><v1>=>3r<><f0>=>2007<><c0>=>tournament<><c1>=>2006<><c2>=>2007<><c3>=>2008<><c4>=>2009<><c5>=>2010<><c6>=>2011<><c7>=>2012<><c8>=>2013<>
@@ -7462,7 +7462,7 @@
 <f1>=>lat bits<><f2>=>km error<><v2>=>±2500<><v1>=>7<><f0>=>geohash length<><c0>=>geohash length<><c1>=>lat error<><c2>=>lng error<><c3>=>lat bits<><c4>=>lng bits<><c5>=>km error<>
 <f2>=>lat error<><f1>=>lat bits<><v2>=>±0.00068<><v1>=>17<><f0>=>geohash length<><c0>=>geohash length<><c1>=>lat error<><c2>=>lng error<><c3>=>lat bits<><c4>=>lng bits<><c5>=>km error<>
 <f2>=>lng error<><f1>=>lng bits<><v2>=>±0.00017<><v1>=>20<><f0>=>geohash length<><c0>=>geohash length<><c1>=>lat error<><c2>=>lng error<><c3>=>lat bits<><c4>=>lng bits<><c5>=>km error<>
-<f2>=>drawn<><f1>=>lost<><v1>=>3<><v2>=>5<><f0>=>against<><c0>=>difference<><c1>=>position<><c2>=>against<><c3>=>points<><c4>=>played<><c5>=>drawn<><c6>=>team<><c7>=>lost<>
+<f1>=>position<><f2>=>drawn<><v1>=>3<><v2>=>5<><f0>=>against<><c0>=>difference<><c1>=>position<><c2>=>against<><c3>=>points<><c4>=>played<><c5>=>drawn<><c6>=>team<><c7>=>lost<>
 <f1>=>position<><f2>=>points<><v1>=>8<><v2>=>9<><f0>=>against<><c0>=>difference<><c1>=>position<><c2>=>against<><c3>=>points<><c4>=>played<><c5>=>drawn<><c6>=>team<><c7>=>lost<>
 <f1>=>points<><v1>=>12<><f0>=>lost<><c0>=>difference<><c1>=>position<><c2>=>against<><c3>=>points<><c4>=>played<><c5>=>drawn<><c6>=>team<><c7>=>lost<>
 <f1>=>drawn<><f2>=>drawn<><v1>=>3<><v2>=>5<><f0>=>position<><c0>=>difference<><c1>=>position<><c2>=>against<><c3>=>points<><c4>=>played<><c5>=>drawn<><c6>=>team<><c7>=>lost<>
@@ -7549,7 +7549,7 @@
 <v1>=>autumn gold<><f1>=>event<><f0>=>2010–11<><c0>=>2006–07<><c1>=>2007–08<><c2>=>2008–09<><c3>=>2010–11<><c4>=>event<>
 <f1>=>2007–08<><v1>=>q<><f0>=>2006–07<><c0>=>2006–07<><c1>=>2007–08<><c2>=>2008–09<><c3>=>2010–11<><c4>=>event<>
 <f1>=>gold<><f2>=>rank<><v1>=>0<><v2>=>5<><f0>=>nation<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
-<f3>=>nation<><f2>=>total<><v3>=>total<><f1>=>gold<><v1>=>1<><v2>=>2<><f0>=>silver<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
+<f3>=>nation<><v3>=>total<><f1>=>gold<><f2>=>gold<><v1>=>1<><v2>=>2<><f0>=>silver<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <v3>=>north korea<><f1>=>bronze<><f3>=>nation<><f2>=>total<><v4>=>total<><f4>=>rank<><v1>=>0<><v2>=>3<><f0>=><><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <f1>=>silver<><v1>=>1<><f0>=>gold<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <f1>=>bronze<><f2>=>nation<><f3>=>nation<><v3>=>total<><v2>=>cuba<><v1>=>1<><f0>=>total<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
@@ -7583,7 +7583,7 @@
 <v1>=>antonio davis (14)<><f1>=>high rebounds<><f0>=>record<><c0>=>location attendance<><c1>=>high rebounds<><c2>=>high assists<><c3>=>high points<><c4>=>record<><c5>=>score<><c6>=>game<><c7>=>date<><c8>=>team<>
 <v1>=>vince carter (19)<><f1>=>high points<><f0>=>team<><c0>=>location attendance<><c1>=>high rebounds<><c2>=>high assists<><c3>=>high points<><c4>=>record<><c5>=>score<><c6>=>game<><c7>=>date<><c8>=>team<>
 <f2>=>1st built<><v1>=>4-4-0t<><f1>=>w.a.<><v2>=>494<><f0>=>1913 class<><c0>=>1913 class<><c1>=>lner class<><c2>=>1st built<><c3>=>no. built<><c4>=>builder<><c5>=>w.a.<><c6>=>date<>
-<f1>=>total<><v2>=>total<><f2>=>unk<><v1>=>1<><f0>=>gold<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
+<f1>=>bronze<><v2>=>total<><f2>=>unk<><v1>=>1<><f0>=>gold<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <f1>=>total<><v1>=>152<><f0>=>player<><c0>=>year won<><c1>=>country<><c2>=>player<><c3>=>to par<><c4>=>total<>
 <f1>=>year won<><v1>=>1976<><f0>=>player<><c0>=>year won<><c1>=>country<><c2>=>player<><c3>=>to par<><c4>=>total<>
 <f1>=>country<><v1>=>spain<><f0>=>total<><c0>=>year won<><c1>=>country<><c2>=>player<><c3>=>to par<><c4>=>total<>
@@ -7881,7 +7881,7 @@
 <v2>=>adam pepper<><f2>=>player<><f1>=>total<><v1>=>7<><f0>=>other<><c0>=>player<><c1>=>league<><c2>=>other<><c3>=>total<><c4>=>cups<>
 <f2>=>position<><f3>=>position<><f1>=>wins<><v1>=>11<><v2>=>3<><v3>=>5<><f0>=>losses<><c0>=>goal difference<><c1>=>goals against<><c2>=>goals for<><c3>=>position<><c4>=>played<><c5>=>points<><c6>=>losses<><c7>=>draws<><c8>=>club<><c9>=>wins<>
 <f1>=>played<><v1>=>30<><f0>=>points<><c0>=>goal difference<><c1>=>goals against<><c2>=>goals for<><c3>=>position<><c4>=>played<><c5>=>points<><c6>=>losses<><c7>=>draws<><c8>=>club<><c9>=>wins<>
-<f1>=>goals against<><v2>=>ud lérida<><f2>=>club<><v1>=>41<><f0>=>draws<><c0>=>goal difference<><c1>=>goals against<><c2>=>goals for<><c3>=>position<><c4>=>played<><c5>=>points<><c6>=>losses<><c7>=>draws<><c8>=>club<><c9>=>wins<>
+<f1>=>goals for<><v2>=>ud lérida<><f2>=>club<><v1>=>41<><f0>=>draws<><c0>=>goal difference<><c1>=>goals against<><c2>=>goals for<><c3>=>position<><c4>=>played<><c5>=>points<><c6>=>losses<><c7>=>draws<><c8>=>club<><c9>=>wins<>
 <f2>=>goals for<><f3>=>position<><f1>=>played<><v1>=>30<><v2>=>68<><v3>=>7<><f0>=>points<><c0>=>goal difference<><c1>=>goals against<><c2>=>goals for<><c3>=>position<><c4>=>played<><c5>=>points<><c6>=>losses<><c7>=>draws<><c8>=>club<><c9>=>wins<>
 <f1>=>goal difference<><v3>=>real avilés cf<><f2>=>goals against<><f3>=>club<><v1>=>-10<><v2>=>59<><f0>=>goals for<><c0>=>goal difference<><c1>=>goals against<><c2>=>goals for<><c3>=>position<><c4>=>played<><c5>=>points<><c6>=>losses<><c7>=>draws<><c8>=>club<><c9>=>wins<>
 <v3>=>cultural leonesa<><f1>=>points<><f2>=>losses<><f3>=>club<><v1>=>27<><v2>=>9<><f0>=>goal difference<><c0>=>goal difference<><c1>=>goals against<><c2>=>goals for<><c3>=>position<><c4>=>played<><c5>=>points<><c6>=>losses<><c7>=>draws<><c8>=>club<><c9>=>wins<>
@@ -7935,8 +7935,8 @@
 <v1>=>fc rouen (d1)<><f1>=>team 1<><f0>=>team 2<><c0>=>1st round<><c1>=>2nd round<><c2>=>team 1<><c3>=>team 2<><c4>=>score<>
 <v1>=>gazélec ajaccio (d3)<><f1>=>team 2<><f0>=>team 1<><c0>=>1st round<><c1>=>2nd round<><c2>=>team 1<><c3>=>team 2<><c4>=>score<>
 <v1>=>olympique lyonnais (d2)<><f1>=>team 2<><f0>=>1st round<><c0>=>1st round<><c1>=>2nd round<><c2>=>team 1<><c3>=>team 2<><c4>=>score<>
-<v3>=>heiðar helguson<><f1>=>league<><f2>=>league<><v4>=>total<><f3>=>name<><f4>=>name<><v1>=>0<><v2>=>3<><f0>=>total<><c0>=>league cup<><c1>=>league<><c2>=>fa cup<><c3>=>total<><c4>=>name<>
-<v3>=>heiðar helguson<><f1>=>league<><f2>=>league<><f3>=>name<><v1>=>0<><v2>=>3<><f0>=>fa cup<><c0>=>league cup<><c1>=>league<><c2>=>fa cup<><c3>=>total<><c4>=>name<>
+<v3>=>heiðar helguson<><f1>=>league cup<><f2>=>league<><v4>=>total<><f3>=>name<><f4>=>name<><v1>=>0<><v2>=>3<><f0>=>total<><c0>=>league cup<><c1>=>league<><c2>=>fa cup<><c3>=>total<><c4>=>name<>
+<v3>=>heiðar helguson<><f1>=>league cup<><f2>=>league<><f3>=>name<><v1>=>0<><v2>=>3<><f0>=>fa cup<><c0>=>league cup<><c1>=>league<><c2>=>fa cup<><c3>=>total<><c4>=>name<>
 <f1>=>league<><v2>=>total<><f2>=>name<><v1>=>1<><f0>=>total<><c0>=>league cup<><c1>=>league<><c2>=>fa cup<><c3>=>total<><c4>=>name<>
 <f0>=>profits (billion $)<><c0>=>market value (billion $)<><c1>=>profits (billion $)<><c2>=>assets (billion $)<><c3>=>sales (billion $)<><c4>=>headquarters<><c5>=>industry<><c6>=>company<><c7>=>rank<>
 <f1>=>profits (billion $)<><v2>=>bank of america<><f3>=>industry<><f2>=>company<><v3>=>banking<><v1>=>16.47<><f0>=>rank<><c0>=>market value (billion $)<><c1>=>profits (billion $)<><c2>=>assets (billion $)<><c3>=>sales (billion $)<><c4>=>headquarters<><c5>=>industry<><c6>=>company<><c7>=>rank<>
@@ -7987,7 +7987,7 @@
 <v1>=>27 january 1968<><v2>=>carlisle united<><f2>=>away team<><f1>=>date<><f0>=>home team<><c0>=>home team<><c1>=>away team<><c2>=>tie no<><c3>=>score<><c4>=>date<>
 <v1>=>newport county<><f1>=>home team<><f0>=>score<><c0>=>home team<><c1>=>away team<><c2>=>tie no<><c3>=>score<><c4>=>date<>
 <f1>=>league cup<><v1>=>0<><f0>=>league<><c0>=>challenge cup<><c1>=>scottish cup<><c2>=>league cup<><c3>=>player<><c4>=>league<><c5>=>total<>
-<v3>=>kris doolan<><f1>=>league<><f2>=>league<><f3>=>player<><v1>=>0<><v2>=>1<><f0>=>scottish cup<><c0>=>challenge cup<><c1>=>scottish cup<><c2>=>league cup<><c3>=>player<><c4>=>league<><c5>=>total<>
+<v3>=>kris doolan<><f1>=>league cup<><f2>=>league cup<><f3>=>player<><v1>=>0<><v2>=>1<><f0>=>scottish cup<><c0>=>challenge cup<><c1>=>scottish cup<><c2>=>league cup<><c3>=>player<><c4>=>league<><c5>=>total<>
 <v2>=>damon gray<><f1>=>league<><f2>=>player<><v1>=>1<><f0>=>scottish cup<><c0>=>challenge cup<><c1>=>scottish cup<><c2>=>league cup<><c3>=>player<><c4>=>league<><c5>=>total<>
 <v2>=>kris doolan<><f2>=>player<><f1>=>total<><v1>=>5<><f0>=>league<><c0>=>challenge cup<><c1>=>scottish cup<><c2>=>league cup<><c3>=>player<><c4>=>league<><c5>=>total<>
 <f1>=>quantity<><v1>=>129<><f0>=>aircraft<><c0>=>aircraft<><c1>=>produced<><c2>=>quantity<><c3>=>version<><c4>=>type<>
@@ -8689,7 +8689,7 @@
 <v1>=>april 26 2003<><f1>=>date<><f0>=>result<><c0>=>game site<><c1>=>opponent<><c2>=>result<><c3>=>record<><c4>=>week<><c5>=>date<>
 <f2>=>result<><f1>=>week<><v2>=>bye<><v1>=>6<><f0>=><><c0>=>game site<><c1>=>opponent<><c2>=>result<><c3>=>record<><c4>=>week<><c5>=>date<>
 <v2>=>north sulawesi<><f1>=>villages<><f2>=>province<><v1>=>1510<><f0>=>number of districts (kecamatan)<><c0>=>number of regencies (kabupaten)<><c1>=>number of districts (kecamatan)<><c2>=>population at 2010 census<><c3>=>number of cities (kota)<><c4>=>geographical unit<><c5>=>density (2010)<><c6>=>area (km²)<><c7>=>province<><c8>=>villages<><c9>=>capital<>
-<f1>=>number of regencies (kabupaten)<><f3>=>geographical unit<><f2>=>villages<><v2>=>8577<><v3>=>java<><v1>=>4<><f0>=>number of districts (kecamatan)<><c0>=>number of regencies (kabupaten)<><c1>=>number of districts (kecamatan)<><c2>=>population at 2010 census<><c3>=>number of cities (kota)<><c4>=>geographical unit<><c5>=>density (2010)<><c6>=>area (km²)<><c7>=>province<><c8>=>villages<><c9>=>capital<>
+<f1>=>number of cities (kota)<><f3>=>geographical unit<><f2>=>villages<><v2>=>8577<><v3>=>java<><v1>=>4<><f0>=>number of districts (kecamatan)<><c0>=>number of regencies (kabupaten)<><c1>=>number of districts (kecamatan)<><c2>=>population at 2010 census<><c3>=>number of cities (kota)<><c4>=>geographical unit<><c5>=>density (2010)<><c6>=>area (km²)<><c7>=>province<><c8>=>villages<><c9>=>capital<>
 <f1>=>population at 2010 census<><v1>=>12982204<><f2>=>villages<><v2>=>331<><f0>=>number of regencies (kabupaten)<><c0>=>number of regencies (kabupaten)<><c1>=>number of districts (kecamatan)<><c2>=>population at 2010 census<><c3>=>number of cities (kota)<><c4>=>geographical unit<><c5>=>density (2010)<><c6>=>area (km²)<><c7>=>province<><c8>=>villages<><c9>=>capital<>
 <f3>=>number of districts (kecamatan)<><f2>=>population at 2010 census<><f1>=>area (km²)<><v2>=>3890757<><v1>=>16424<><v3>=>65<><f0>=>number of cities (kota)<><c0>=>number of regencies (kabupaten)<><c1>=>number of districts (kecamatan)<><c2>=>population at 2010 census<><c3>=>number of cities (kota)<><c4>=>geographical unit<><c5>=>density (2010)<><c6>=>area (km²)<><c7>=>province<><c8>=>villages<><c9>=>capital<>
 <f1>=>density (2010)<><f2>=>area (km²)<><v3>=>yogyakarta<><f3>=>capital<><v2>=>47799<><v1>=>1138<><f0>=>number of cities (kota)<><c0>=>number of regencies (kabupaten)<><c1>=>number of districts (kecamatan)<><c2>=>population at 2010 census<><c3>=>number of cities (kota)<><c4>=>geographical unit<><c5>=>density (2010)<><c6>=>area (km²)<><c7>=>province<><c8>=>villages<><c9>=>capital<>
@@ -10041,7 +10041,7 @@
 <f1>=>2012–13<><v1>=>yago<><f0>=>2000–01<><c0>=>1997–98<><c1>=>1998–99<><c2>=>1999–00<><c3>=>2000–01<><c4>=>2001–02<><c5>=>2002–03<><c6>=>2003–04<><c7>=>2004–05<><c8>=>2005–06<><c9>=>2006–07<><c10>=>2007–08<><c11>=>2008–09<><c12>=>2009–10<><c13>=>2010–11<><c14>=>2011–12<><c15>=>2012–13<>
 <f1>=>2012–13<><v1>=>pavlis<><f0>=>2002–03<><c0>=>1997–98<><c1>=>1998–99<><c2>=>1999–00<><c3>=>2000–01<><c4>=>2001–02<><c5>=>2002–03<><c6>=>2003–04<><c7>=>2004–05<><c8>=>2005–06<><c9>=>2006–07<><c10>=>2007–08<><c11>=>2008–09<><c12>=>2009–10<><c13>=>2010–11<><c14>=>2011–12<><c15>=>2012–13<>
 <v1>=>iliev wreh<><f1>=>1998–99<><f0>=>1997–98<><c0>=>1997–98<><c1>=>1998–99<><c2>=>1999–00<><c3>=>2000–01<><c4>=>2001–02<><c5>=>2002–03<><c6>=>2003–04<><c7>=>2004–05<><c8>=>2005–06<><c9>=>2006–07<><c10>=>2007–08<><c11>=>2008–09<><c12>=>2009–10<><c13>=>2010–11<><c14>=>2011–12<><c15>=>2012–13<>
-<f1>=>2010–11<><v1>=>kafes<><f0>=>1997–98<><c0>=>1997–98<><c1>=>1998–99<><c2>=>1999–00<><c3>=>2000–01<><c4>=>2001–02<><c5>=>2002–03<><c6>=>2003–04<><c7>=>2004–05<><c8>=>2005–06<><c9>=>2006–07<><c10>=>2007–08<><c11>=>2008–09<><c12>=>2009–10<><c13>=>2010–11<><c14>=>2011–12<><c15>=>2012–13<>
+<f1>=>2011–12<><v1>=>kafes<><f0>=>1997–98<><c0>=>1997–98<><c1>=>1998–99<><c2>=>1999–00<><c3>=>2000–01<><c4>=>2001–02<><c5>=>2002–03<><c6>=>2003–04<><c7>=>2004–05<><c8>=>2005–06<><c9>=>2006–07<><c10>=>2007–08<><c11>=>2008–09<><c12>=>2009–10<><c13>=>2010–11<><c14>=>2011–12<><c15>=>2012–13<>
 <f1>=>2007–08<><v1>=>rivaldo<><f0>=>2000–01<><c0>=>1997–98<><c1>=>1998–99<><c2>=>1999–00<><c3>=>2000–01<><c4>=>2001–02<><c5>=>2002–03<><c6>=>2003–04<><c7>=>2004–05<><c8>=>2005–06<><c9>=>2006–07<><c10>=>2007–08<><c11>=>2008–09<><c12>=>2009–10<><c13>=>2010–11<><c14>=>2011–12<><c15>=>2012–13<>
 <v1>=>1:29.00<><f1>=>run 2<><f2>=>rank<><v2>=>4<><f0>=>run 4<><c0>=>athletes<><c1>=>run 1<><c2>=>run 2<><c3>=>run 3<><c4>=>run 4<><c5>=>final<><c6>=>rank<><c7>=>team<>
 <v1>=>1:24.00<><f1>=>run 3<><f0>=>team<><c0>=>athletes<><c1>=>run 1<><c2>=>run 2<><c3>=>run 3<><c4>=>run 4<><c5>=>final<><c6>=>rank<><c7>=>team<>
@@ -11068,7 +11068,7 @@
 <f1>=>region<><v2>=>19025<><f2>=>code<><v1>=>12<><f0>=><><c0>=>regional county municipality<><c1>=>area (km 2 )<><c2>=>population<><c3>=>region<><c4>=>code<><c5>=>type<><c6>=>name<>
 <v2>=>saint-flavien<><f1>=>area (km 2 )<><v1>=>67.56<><f2>=>name<><f0>=>region<><c0>=>regional county municipality<><c1>=>area (km 2 )<><c2>=>population<><c3>=>region<><c4>=>code<><c5>=>type<><c6>=>name<>
 <f1>=>drobo fs<><v1>=>up to 32<><f0>=>drobo (2nd)<><c0>=>drobo s (2nd)<><c1>=>drobo (1st)<><c2>=>drobo (2nd)<><c3>=>drobo mini<><c4>=>drobo fs<><c5>=>drobo 5d<><c6>=>drobo s<>
-<f1>=>drobo s<><v1>=>5<><f0>=>drobo (2nd)<><c0>=>drobo s (2nd)<><c1>=>drobo (1st)<><c2>=>drobo (2nd)<><c3>=>drobo mini<><c4>=>drobo fs<><c5>=>drobo 5d<><c6>=>drobo s<>
+<f1>=>drobo s (2nd)<><v1>=>5<><f0>=>drobo (2nd)<><c0>=>drobo s (2nd)<><c1>=>drobo (1st)<><c2>=>drobo (2nd)<><c3>=>drobo mini<><c4>=>drobo fs<><c5>=>drobo 5d<><c6>=>drobo s<>
 <v1>=>2012-11-02<><f1>=>drobo 5d<><f0>=>drobo (2nd)<><c0>=>drobo s (2nd)<><c1>=>drobo (1st)<><c2>=>drobo (2nd)<><c3>=>drobo mini<><c4>=>drobo fs<><c5>=>drobo 5d<><c6>=>drobo s<>
 <v1>=>marty riessen<><f1>=>partner<><f0>=>surface<><c0>=>tournament<><c1>=>opponents<><c2>=>outcome<><c3>=>surface<><c4>=>partner<><c5>=>score<><c6>=>date<>
 <v2>=>marty riessen<><f1>=>surface<><f2>=>partner<><v1>=>carpet<><f0>=><><c0>=>tournament<><c1>=>opponents<><c2>=>outcome<><c3>=>surface<><c4>=>partner<><c5>=>score<><c6>=>date<>
@@ -11591,7 +11591,7 @@
 <f1>=>venue<><v1>=>mcg<><f0>=>home team<><c0>=>home team score<><c1>=>away team score<><c2>=>home team<><c3>=>away team<><c4>=>venue<><c5>=>crowd<><c6>=>date<>
 <f2>=>fdd capacity (each)<><f1>=># fdd<><v2>=>710kb<><v1>=>0<><f0>=>hdd capacity<><c0>=>fdd capacity (each)<><c1>=>hdd capacity<><c2>=>command set<><c3>=>hp model<><c4>=>fdd type<><c5>=># fdd<><c6>=>sides<><c7>=># hdd<>
 <f1>=># hdd<><f2>=>sides<><v2>=>ds<><v1>=>1<><f0>=>hp model<><c0>=>fdd capacity (each)<><c1>=>hdd capacity<><c2>=>command set<><c3>=>hp model<><c4>=>fdd type<><c5>=># fdd<><c6>=>sides<><c7>=># hdd<>
-<f2>=>fdd capacity (each)<><f1>=># hdd<><v2>=>270kb<><f3>=>sides<><v3>=>ds<><v1>=>1<><f0>=>command set<><c0>=>fdd capacity (each)<><c1>=>hdd capacity<><c2>=>command set<><c3>=>hp model<><c4>=>fdd type<><c5>=># fdd<><c6>=>sides<><c7>=># hdd<>
+<f2>=>fdd capacity (each)<><f1>=># fdd<><v2>=>270kb<><f3>=>sides<><v3>=>ds<><v1>=>1<><f0>=>command set<><c0>=>fdd capacity (each)<><c1>=>hdd capacity<><c2>=>command set<><c3>=>hp model<><c4>=>fdd type<><c5>=># fdd<><c6>=>sides<><c7>=># hdd<>
 <f1>=>official name in malay<><v1>=>politeknik pagoh<><f0>=>foundation<><c0>=>official name in malay<><c1>=>foundation<><c2>=>location<><c3>=>acronym<><c4>=>type<>
 <f1>=>share<><v1>=>8<><f0>=>total viewers<><c0>=>18-49 (rating/share)<><c1>=>total viewers<><c2>=>rating<><c3>=>title<><c4>=>share<>
 <v1>=>north melbourne<><f1>=>home team<><f0>=>crowd<><c0>=>home team score<><c1>=>away team score<><c2>=>home team<><c3>=>away team<><c4>=>venue<><c5>=>crowd<><c6>=>date<>
@@ -12191,7 +12191,7 @@
 <f1>=>location<><v1>=>atlanta<><f0>=>result<><c0>=>location<><c1>=>athlete<><c2>=>result<><c3>=>rank<><c4>=>date<>
 <v1>=>birmingham<><f1>=>location<><f0>=>result<><c0>=>location<><c1>=>athlete<><c2>=>result<><c3>=>rank<><c4>=>date<>
 <f1>=>championship<><v1>=>1<><f0>=>total<><c0>=>championship<><c1>=>league cup<><c2>=>fa cup<><c3>=>total<><c4>=>name<>
-<f2>=>league cup<><f1>=>fa cup<><v1>=>0<><v2>=>1<><f0>=>championship<><c0>=>championship<><c1>=>league cup<><c2>=>fa cup<><c3>=>total<><c4>=>name<>
+<f1>=>league cup<><f2>=>league cup<><v1>=>0<><v2>=>1<><f0>=>championship<><c0>=>championship<><c1>=>league cup<><c2>=>fa cup<><c3>=>total<><c4>=>name<>
 <f1>=>2010<><v1>=>q2<><f0>=>2013<><c0>=>tournament<><c1>=>2010<><c2>=>2011<><c3>=>2012<><c4>=>2013<>
 <f1>=>2012<><f2>=>2013<><v1>=>1r<><v2>=>3r<><f0>=>tournament<><c0>=>tournament<><c1>=>2010<><c2>=>2011<><c3>=>2012<><c4>=>2013<>
 <v1>=>french open<><f1>=>tournament<><f0>=>2011<><c0>=>tournament<><c1>=>2010<><c2>=>2011<><c3>=>2012<><c4>=>2013<>
@@ -12274,7 +12274,7 @@
 <v1>=>one life to live<><f1>=>2:00 pm<><f0>=><><c0>=>11:00 am<><c1>=>12:30 pm<><c2>=>7:00 am<><c3>=>8:00 am<><c4>=>9:00 am<><c5>=>1:00 pm<><c6>=>1:30 pm<><c7>=>2:00 pm<><c8>=>3:00 pm<><c9>=>3:30 pm<><c10>=>4:00 pm<><c11>=>4:30 pm<><c12>=>5:00 pm<><c13>=>6:30 pm<><c14>=>noon<>
 <f1>=>11:00 am<><v1>=>the view<><f0>=>noon<><c0>=>11:00 am<><c1>=>12:30 pm<><c2>=>7:00 am<><c3>=>8:00 am<><c4>=>9:00 am<><c5>=>1:00 pm<><c6>=>1:30 pm<><c7>=>2:00 pm<><c8>=>3:00 pm<><c9>=>3:30 pm<><c10>=>4:00 pm<><c11>=>4:30 pm<><c12>=>5:00 pm<><c13>=>6:30 pm<><c14>=>noon<>
 <v1>=>the new batman/superman adventures<><f1>=>unk<><f0>=>noon<><c0>=>11:00 am<><c1>=>12:30 pm<><c2>=>7:00 am<><c3>=>8:00 am<><c4>=>9:00 am<><c5>=>1:00 pm<><c6>=>1:30 pm<><c7>=>2:00 pm<><c8>=>3:00 pm<><c9>=>3:30 pm<><c10>=>4:00 pm<><c11>=>4:30 pm<><c12>=>5:00 pm<><c13>=>6:30 pm<><c14>=>noon<>
-<v1>=>the new batman/superman adventures<><f1>=>4:30 pm<><f0>=>11:00 am<><c0>=>11:00 am<><c1>=>12:30 pm<><c2>=>7:00 am<><c3>=>8:00 am<><c4>=>9:00 am<><c5>=>1:00 pm<><c6>=>1:30 pm<><c7>=>2:00 pm<><c8>=>3:00 pm<><c9>=>3:30 pm<><c10>=>4:00 pm<><c11>=>4:30 pm<><c12>=>5:00 pm<><c13>=>6:30 pm<><c14>=>noon<>
+<v1>=>the new batman/superman adventures<><f1>=>4:00 pm<><f0>=>11:00 am<><c0>=>11:00 am<><c1>=>12:30 pm<><c2>=>7:00 am<><c3>=>8:00 am<><c4>=>9:00 am<><c5>=>1:00 pm<><c6>=>1:30 pm<><c7>=>2:00 pm<><c8>=>3:00 pm<><c9>=>3:30 pm<><c10>=>4:00 pm<><c11>=>4:30 pm<><c12>=>5:00 pm<><c13>=>6:30 pm<><c14>=>noon<>
 <v1>=>power rangers in space<><f1>=>4:00 pm<><f0>=>9:00 am<><c0>=>11:00 am<><c1>=>12:30 pm<><c2>=>7:00 am<><c3>=>8:00 am<><c4>=>9:00 am<><c5>=>1:00 pm<><c6>=>1:30 pm<><c7>=>2:00 pm<><c8>=>3:00 pm<><c9>=>3:30 pm<><c10>=>4:00 pm<><c11>=>4:30 pm<><c12>=>5:00 pm<><c13>=>6:30 pm<><c14>=>noon<>
 <v2>=>tiny toon adventures<><v1>=>local programs<><f1>=>6:30 pm<><f2>=>7:00 am<><f0>=>9:00 am<><c0>=>11:00 am<><c1>=>12:30 pm<><c2>=>7:00 am<><c3>=>8:00 am<><c4>=>9:00 am<><c5>=>1:00 pm<><c6>=>1:30 pm<><c7>=>2:00 pm<><c8>=>3:00 pm<><c9>=>3:30 pm<><c10>=>4:00 pm<><c11>=>4:30 pm<><c12>=>5:00 pm<><c13>=>6:30 pm<><c14>=>noon<>
 <v1>=>international procar meeting<><f1>=>event<><f0>=>circuit<><c0>=>winning driver<><c1>=>winning team<><c2>=>circuit<><c3>=>round<><c4>=>event<><c5>=>date<>
@@ -12692,7 +12692,7 @@
 <v1>=>ontario australian football league<><f1>=>league<><f0>=>established<><c0>=>championships<><c1>=>established<><c2>=>league<><c3>=>sport<><c4>=>club<>
 <v1>=>ontario australian football league<><f1>=>league<><f0>=>championships<><c0>=>championships<><c1>=>established<><c2>=>league<><c3>=>sport<><c4>=>club<>
 <v1>=>guelph rangers<><f1>=>club<><f0>=>established<><c0>=>championships<><c1>=>established<><c2>=>league<><c3>=>sport<><c4>=>club<>
-<f2>=>radio commentator<><f1>=>spokesperson<><v1>=>colin berry<><v2>=>ray moore<><f0>=>year<><c0>=>semi-final second television commentator<><c1>=>semi-final television commentator<><c2>=>final television commentator<><c3>=>radio commentator<><c4>=>spokesperson<><c5>=>year<>
+<f1>=>spokesperson<><f2>=>spokesperson<><v1>=>colin berry<><v2>=>ray moore<><f0>=>year<><c0>=>semi-final second television commentator<><c1>=>semi-final television commentator<><c2>=>final television commentator<><c3>=>radio commentator<><c4>=>spokesperson<><c5>=>year<>
 <f1>=>year<><v1>=>2012<><f0>=>spokesperson<><c0>=>semi-final second television commentator<><c1>=>semi-final television commentator<><c2>=>final television commentator<><c3>=>radio commentator<><c4>=>spokesperson<><c5>=>year<>
 <f2>=>final television commentator<><v2>=>graham norton<><f3>=>spokesperson<><v3>=>scott mills<><f1>=>year<><v1>=>2013<><f0>=>semi-final second television commentator<><c0>=>semi-final second television commentator<><c1>=>semi-final television commentator<><c2>=>final television commentator<><c3>=>radio commentator<><c4>=>spokesperson<><c5>=>year<>
 <v1>=>kerron stewart<><f1>=>athlete<><f0>=>wind<><c0>=>location<><c1>=>athlete<><c2>=>result<><c3>=>rank<><c4>=>wind<><c5>=>date<>
@@ -14177,7 +14177,7 @@
 <f3>=>l/100km combined<><f4>=>l/100km combined<><f1>=>mpg-us combined<><f2>=>mpg-uk combined<><v1>=>25.1<><v2>=>39.8<><v3>=>7.2<><v4>=>7.9<><f0>=>l/100km urban (cold)<><c0>=>l/100km urban (cold)<><c1>=>l/100km extra-urban<><c2>=>mpg-uk urban (cold)<><c3>=>mpg-uk extra-urban<><c4>=>mpg-us extra-urban<><c5>=>l/100km combined<><c6>=>engine capacity<><c7>=>mpg-uk combined<><c8>=>mpg-us combined<><c9>=>manufacturer<><c10>=>transmission<><c11>=>mpg-us urban<><c12>=>green rating<><c13>=>fuel type<><c14>=>co 2 g/km<>
 <f2>=>l/100km urban (cold)<><f3>=>mpg-uk extra-urban<><f1>=>engine capacity<><f4>=>green rating<><f5>=>fuel type<><v5>=>diesel<><v1>=>1422<><v3>=>68.9<><v2>=>5.1<><v4>=>a<><f0>=>mpg-uk urban (cold)<><c0>=>l/100km urban (cold)<><c1>=>l/100km extra-urban<><c2>=>mpg-uk urban (cold)<><c3>=>mpg-uk extra-urban<><c4>=>mpg-us extra-urban<><c5>=>l/100km combined<><c6>=>engine capacity<><c7>=>mpg-uk combined<><c8>=>mpg-us combined<><c9>=>manufacturer<><c10>=>transmission<><c11>=>mpg-us urban<><c12>=>green rating<><c13>=>fuel type<><c14>=>co 2 g/km<>
 <f1>=>l/100km urban (cold)<><f2>=>l/100km urban (cold)<><f3>=>engine capacity<><f4>=>manufacturer<><v4>=>volkswagen<><v1>=>10.9<><v2>=>14.1<><v3>=>3189<><f0>=>green rating<><c0>=>l/100km urban (cold)<><c1>=>l/100km extra-urban<><c2>=>mpg-uk urban (cold)<><c3>=>mpg-uk extra-urban<><c4>=>mpg-us extra-urban<><c5>=>l/100km combined<><c6>=>engine capacity<><c7>=>mpg-uk combined<><c8>=>mpg-us combined<><c9>=>manufacturer<><c10>=>transmission<><c11>=>mpg-us urban<><c12>=>green rating<><c13>=>fuel type<><c14>=>co 2 g/km<>
-<f1>=>engine capacity<><f2>=>mpg-us combined<><f3>=>mpg-us combined<><f4>=>mpg-uk combined<><v1>=>1910<><v2>=>22.4<><v3>=>25.3<><v4>=>27.2<><f0>=>l/100km urban (cold)<><c0>=>l/100km urban (cold)<><c1>=>l/100km extra-urban<><c2>=>mpg-uk urban (cold)<><c3>=>mpg-uk extra-urban<><c4>=>mpg-us extra-urban<><c5>=>l/100km combined<><c6>=>engine capacity<><c7>=>mpg-uk combined<><c8>=>mpg-us combined<><c9>=>manufacturer<><c10>=>transmission<><c11>=>mpg-us urban<><c12>=>green rating<><c13>=>fuel type<><c14>=>co 2 g/km<>
+<f1>=>engine capacity<><f2>=>mpg-uk combined<><f3>=>mpg-us combined<><f4>=>mpg-uk combined<><v1>=>1910<><v2>=>22.4<><v3>=>25.3<><v4>=>27.2<><f0>=>l/100km urban (cold)<><c0>=>l/100km urban (cold)<><c1>=>l/100km extra-urban<><c2>=>mpg-uk urban (cold)<><c3>=>mpg-uk extra-urban<><c4>=>mpg-us extra-urban<><c5>=>l/100km combined<><c6>=>engine capacity<><c7>=>mpg-uk combined<><c8>=>mpg-us combined<><c9>=>manufacturer<><c10>=>transmission<><c11>=>mpg-us urban<><c12>=>green rating<><c13>=>fuel type<><c14>=>co 2 g/km<>
 <f1>=>l/100km urban (cold)<><f2>=>engine capacity<><f4>=>transmission<><f3>=>co 2 g/km<><v1>=>15.9<><v2>=>2461<><v3>=>303<><v4>=>a6<><f0>=>mpg-uk urban (cold)<><c0>=>l/100km urban (cold)<><c1>=>l/100km extra-urban<><c2>=>mpg-uk urban (cold)<><c3>=>mpg-uk extra-urban<><c4>=>mpg-us extra-urban<><c5>=>l/100km combined<><c6>=>engine capacity<><c7>=>mpg-uk combined<><c8>=>mpg-us combined<><c9>=>manufacturer<><c10>=>transmission<><c11>=>mpg-us urban<><c12>=>green rating<><c13>=>fuel type<><c14>=>co 2 g/km<>
 <v1>=>drip-along daffy<><f1>=>title<><f0>=>release date<><c0>=>release date<><c1>=>director<><c2>=>reissue<><c3>=>series<><c4>=>title<>
 <v1>=>rabbit every monday<><f1>=>title<><f0>=>reissue<><c0>=>release date<><c1>=>director<><c2>=>reissue<><c3>=>series<><c4>=>title<>
@@ -14252,11 +14252,11 @@
 <v2>=>kerron stewart<><f2>=>athlete<><v1>=>11.05<><f1>=>time<><f0>=>rank<><c0>=>athlete<><c1>=>country<><c2>=>rank<><c3>=>heat<><c4>=>time<>
 <f1>=>heat<><v1>=>1<><f0>=>time<><c0>=>athlete<><c1>=>country<><c2>=>rank<><c3>=>heat<><c4>=>time<>
 <v2>=>torri edwards<><f2>=>athlete<><f1>=>rank<><v1>=>6<><f0>=>time<><c0>=>athlete<><c1>=>country<><c2>=>rank<><c3>=>heat<><c4>=>time<>
-<f1>=>kv-1s m1942<><v1>=>114<><f0>=>kv-85 m1943<><c0>=>kv-1s m1942<><c1>=>kv-85 m1943<><c2>=>kv-1 m1940<><c3>=>kv-1 m1941<><c4>=>kv-1 m1942<><c5>=>is-2 m1945<><c6>=>is-3 m1945<><c7>=>t-100<><c8>=>t-35<>
-<f1>=>kv-1s m1942<><v1>=>45<><f0>=>kv-85 m1943<><c0>=>kv-1s m1942<><c1>=>kv-85 m1943<><c2>=>kv-1 m1940<><c3>=>kv-1 m1941<><c4>=>kv-1 m1942<><c5>=>is-2 m1945<><c6>=>is-3 m1945<><c7>=>t-100<><c8>=>t-35<>
+<f1>=>kv-1 m1942<><v1>=>114<><f0>=>kv-1s m1942<><c0>=>kv-1s m1942<><c1>=>kv-85 m1943<><c2>=>kv-1 m1940<><c3>=>kv-1 m1941<><c4>=>kv-1 m1942<><c5>=>is-2 m1945<><c6>=>is-3 m1945<><c7>=>t-100<><c8>=>t-35<>
+<f1>=>kv-1 m1941<><v1>=>45<><f0>=>kv-1s m1942<><c0>=>kv-1s m1942<><c1>=>kv-85 m1943<><c2>=>kv-1 m1940<><c3>=>kv-1 m1941<><c4>=>kv-1 m1942<><c5>=>is-2 m1945<><c6>=>is-3 m1945<><c7>=>t-100<><c8>=>t-35<>
 <f1>=>is-3 m1945<><v1>=>150 (225)<><f0>=>t-100<><c0>=>kv-1s m1942<><c1>=>kv-85 m1943<><c2>=>kv-1 m1940<><c3>=>kv-1 m1941<><c4>=>kv-1 m1942<><c5>=>is-2 m1945<><c6>=>is-3 m1945<><c7>=>t-100<><c8>=>t-35<>
 <f1>=>kv-85 m1943<><v1>=>40<><f0>=>kv-1s m1942<><c0>=>kv-1s m1942<><c1>=>kv-85 m1943<><c2>=>kv-1 m1940<><c3>=>kv-1 m1941<><c4>=>kv-1 m1942<><c5>=>is-2 m1945<><c6>=>is-3 m1945<><c7>=>t-100<><c8>=>t-35<>
-<f1>=>kv-1s m1942<><v1>=>45<><f0>=>kv-85 m1943<><c0>=>kv-1s m1942<><c1>=>kv-85 m1943<><c2>=>kv-1 m1940<><c3>=>kv-1 m1941<><c4>=>kv-1 m1942<><c5>=>is-2 m1945<><c6>=>is-3 m1945<><c7>=>t-100<><c8>=>t-35<>
+<f1>=>kv-1 m1941<><v1>=>45<><f0>=>kv-1s m1942<><c0>=>kv-1s m1942<><c1>=>kv-85 m1943<><c2>=>kv-1 m1940<><c3>=>kv-1 m1941<><c4>=>kv-1 m1942<><c5>=>is-2 m1945<><c6>=>is-3 m1945<><c7>=>t-100<><c8>=>t-35<>
 <v1>=>south korea<><f1>=>nation<><f0>=>bronze<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <f1>=>ihsaa class<><v2>=>park tudor<><f2>=>school<><v1>=>aa<><f0>=>ihsaa class football<><c0>=>ihsaa class football<><c1>=>previous conference<><c2>=>enrollment 12-13<><c3>=>ihsaa class<><c4>=>year joined<><c5>=>location<><c6>=>school<><c7>=>mascot<><c8>=>county<>
 <v1>=>speedway<><f1>=>school<><f0>=>ihsaa class<><c0>=>ihsaa class football<><c1>=>previous conference<><c2>=>enrollment 12-13<><c3>=>ihsaa class<><c4>=>year joined<><c5>=>location<><c6>=>school<><c7>=>mascot<><c8>=>county<>
@@ -14538,10 +14538,10 @@
 <v1>=>rarmian newton<><f1>=>name<><f0>=>last performance<><c0>=>first performance<><c1>=>last performance<><c2>=>status<><c3>=>style<><c4>=>name<>
 <v2>=>rhys kosakowski<><v1>=>ballet<><f1>=>style<><f2>=>name<><f0>=>first performance<><c0>=>first performance<><c1>=>last performance<><c2>=>status<><c3>=>style<><c4>=>name<>
 <v1>=>past replacement<><f1>=>status<><f0>=>last performance<><c0>=>first performance<><c1>=>last performance<><c2>=>status<><c3>=>style<><c4>=>name<>
-<f1>=>silver<><f2>=>total<><f3>=>rank<><f4>=>rank<><v1>=>0<><v2>=>1<><v3>=>3<><v4>=>9<><f0>=>bronze<><c0>=>silver<><c1>=>bronze<><c2>=>total<><c3>=>rank<><c4>=>gold<>
-<f2>=>total<><f3>=>total<><f1>=>rank<><v1>=>2<><v2>=>4<><v3>=>7<><f0>=>gold<><c0>=>silver<><c1>=>bronze<><c2>=>total<><c3>=>rank<><c4>=>gold<>
+<f2>=>total<><f1>=>gold<><f3>=>rank<><f4>=>rank<><v1>=>0<><v2>=>1<><v3>=>3<><v4>=>9<><f0>=>bronze<><c0>=>silver<><c1>=>bronze<><c2>=>total<><c3>=>rank<><c4>=>gold<>
+<f3>=>total<><f1>=>rank<><f2>=>rank<><v1>=>2<><v2>=>4<><v3>=>7<><f0>=>gold<><c0>=>silver<><c1>=>bronze<><c2>=>total<><c3>=>rank<><c4>=>gold<>
 <f3>=>total<><f1>=>gold<><f2>=>gold<><v1>=>1<><v2>=>2<><v3>=>3<><f0>=>silver<><c0>=>silver<><c1>=>bronze<><c2>=>total<><c3>=>rank<><c4>=>gold<>
-<f1>=>silver<><f2>=>total<><f3>=>total<><v1>=>0<><v2>=>1<><v3>=>4<><f0>=>gold<><c0>=>silver<><c1>=>bronze<><c2>=>total<><c3>=>rank<><c4>=>gold<>
+<f1>=>silver<><f3>=>total<><f2>=>gold<><v1>=>0<><v2>=>1<><v3>=>4<><f0>=>bronze<><c0>=>silver<><c1>=>bronze<><c2>=>total<><c3>=>rank<><c4>=>gold<>
 <f1>=>record<><v1>=>3-3<><f0>=>date<><c0>=>attendance<><c1>=>opponent<><c2>=>record<><c3>=>score<><c4>=>date<><c5>=>loss<>
 <v1>=>april 27<><f1>=>date<><f0>=>opponent<><c0>=>attendance<><c1>=>opponent<><c2>=>record<><c3>=>score<><c4>=>date<><c5>=>loss<>
 <v1>=>april 22<><f1>=>date<><f0>=>record<><c0>=>attendance<><c1>=>opponent<><c2>=>record<><c3>=>score<><c4>=>date<><c5>=>loss<>
@@ -14804,7 +14804,7 @@
 <f1>=>reimboldsh.<><v1>=>80<><f0>=>reckerode ****<><c0>=>reckerode ****<><c1>=>rotterterode<><c2>=>willingshain<><c3>=>heddersdorf<><c4>=>reimboldsh.<><c5>=>gershausen<><c6>=>kemmerode<><c7>=>kirchheim<><c8>=>gersdorf<>
 <f2>=>willingshain<><f1>=>gersdorf<><v1>=>194<><v2>=>268<><f0>=>reckerode ****<><c0>=>reckerode ****<><c1>=>rotterterode<><c2>=>willingshain<><c3>=>heddersdorf<><c4>=>reimboldsh.<><c5>=>gershausen<><c6>=>kemmerode<><c7>=>kirchheim<><c8>=>gersdorf<>
 <f1>=>gersdorf<><v1>=>39<><f0>=>kemmerode<><c0>=>reckerode ****<><c1>=>rotterterode<><c2>=>willingshain<><c3>=>heddersdorf<><c4>=>reimboldsh.<><c5>=>gershausen<><c6>=>kemmerode<><c7>=>kirchheim<><c8>=>gersdorf<>
-<f2>=>willingshain<><f1>=>gersdorf<><v1>=>224<><v2>=>243<><f0>=>gershausen<><c0>=>reckerode ****<><c1>=>rotterterode<><c2>=>willingshain<><c3>=>heddersdorf<><c4>=>reimboldsh.<><c5>=>gershausen<><c6>=>kemmerode<><c7>=>kirchheim<><c8>=>gersdorf<>
+<f2>=>willingshain<><f1>=>heddersdorf<><v1>=>224<><v2>=>243<><f0>=>gershausen<><c0>=>reckerode ****<><c1>=>rotterterode<><c2>=>willingshain<><c3>=>heddersdorf<><c4>=>reimboldsh.<><c5>=>gershausen<><c6>=>kemmerode<><c7>=>kirchheim<><c8>=>gersdorf<>
 <f1>=>reimboldsh.<><v1>=>101<><f0>=>reckerode ****<><c0>=>reckerode ****<><c1>=>rotterterode<><c2>=>willingshain<><c3>=>heddersdorf<><c4>=>reimboldsh.<><c5>=>gershausen<><c6>=>kemmerode<><c7>=>kirchheim<><c8>=>gersdorf<>
 <f2>=>event<><f1>=>year<><v1>=>2004<><v2>=>ro<><f0>=>pts.<><c0>=>place<><c1>=>event<><c2>=>year<><c3>=>pos.<><c4>=>pts.<>
 <f2>=>event<><f1>=>year<><v1>=>2003<><v2>=>f<><f0>=>pos.<><c0>=>place<><c1>=>event<><c2>=>year<><c3>=>pos.<><c4>=>pts.<>
@@ -14858,7 +14858,7 @@
 <v1>=>gisela dulko<><f1>=>opponent<><f0>=>date<><c0>=>tournament<><c1>=>opponent<><c2>=>outcome<><c3>=>surface<><c4>=>score<><c5>=>date<>
 <v1>=>patricia mayr-achleitner<><f1>=>opponent<><f0>=>tournament<><c0>=>tournament<><c1>=>opponent<><c2>=>outcome<><c3>=>surface<><c4>=>score<><c5>=>date<>
 <v1>=>2006 world cup qualification<><f1>=>competition<><f0>=>result<><c0>=>competition<><c1>=>result<><c2>=>scored<><c3>=>venue<><c4>=>date<>
-<f1>=>heat<><f2>=>heat<><v1>=>2<><v2>=>3<><f0>=>lane<><c0>=>nationality<><c1>=>heat<><c2>=>lane<><c3>=>name<><c4>=>time<>
+<f1>=>heat<><f2>=>lane<><v1>=>2<><v2>=>3<><f0>=>nationality<><c0>=>nationality<><c1>=>heat<><c2>=>lane<><c3>=>name<><c4>=>time<>
 <v3>=>durham<><f1>=>lost<><f2>=>lost<><f3>=>team<><v1>=>0<><v2>=>1<><f0>=>tied<><c0>=>no result<><c1>=>matches<><c2>=>winner<><c3>=>% won<><c4>=>team<><c5>=>lost<><c6>=>tied<>
 <f1>=>winner<><v1>=>1<><f0>=>team<><c0>=>no result<><c1>=>matches<><c2>=>winner<><c3>=>% won<><c4>=>team<><c5>=>lost<><c6>=>tied<>
 <v1>=>durham<><f1>=>team<><f0>=>% won<><c0>=>no result<><c1>=>matches<><c2>=>winner<><c3>=>% won<><c4>=>team<><c5>=>lost<><c6>=>tied<>
@@ -15009,7 +15009,7 @@
 <v1>=>sebastian ruthenberg<><f1>=>name<><f0>=>prize<><c0>=>event<><c1>=>place<><c2>=>prize<><c3>=>rank<><c4>=>name<>
 <v1>=>$2434061<><f1>=>prize<><f0>=>event<><c0>=>event<><c1>=>place<><c2>=>prize<><c3>=>rank<><c4>=>name<>
 <v1>=>mike di meglio<><f1>=>rider<><f0>=>grid<><c0>=>manufacturer<><c1>=>time/retired<><c2>=>rider<><c3>=>laps<><c4>=>grid<>
-<f1>=>n80 iec1<><v1>=>25<><f0>=>n117/2400 iec3<><c0>=>n117/2400 iec3<><c1>=>n100 iec 2<><c2>=>parameter<><c3>=>n100 iec3<><c4>=>n80 iec1<><c5>=>n90 iec1<><c6>=>n90 iec2<>
+<f1>=>n90 iec2<><v1>=>25<><f0>=>n117/2400 iec3<><c0>=>n117/2400 iec3<><c1>=>n100 iec 2<><c2>=>parameter<><c3>=>n100 iec3<><c4>=>n80 iec1<><c5>=>n90 iec1<><c6>=>n90 iec2<>
 <v2>=>s. loeb<><f1>=>length<><v1>=>2.40km<><f2>=>winner<><f0>=>name<><c0>=>rally leader<><c1>=>length<><c2>=>winner<><c3>=>stage<><c4>=>time<><c5>=>name<>
 <v2>=>santa rosa 1<><v1>=>21.40km<><f1>=>length<><f2>=>name<><f0>=>time<><c0>=>rally leader<><c1>=>length<><c2>=>winner<><c3>=>stage<><c4>=>time<><c5>=>name<>
 <f1>=>stage<><v1>=>ss5<><f0>=>winner<><c0>=>rally leader<><c1>=>length<><c2>=>winner<><c3>=>stage<><c4>=>time<><c5>=>name<>
@@ -15213,7 +15213,7 @@
 <f1>=>silver<><f2>=>rank<><v1>=>1<><v2>=>2<><f0>=>total<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <f1>=>rank<><v1>=>2<><f0>=>gold<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <v2>=>united states<><f2>=>nation<><f1>=>rank<><v1>=>2<><f0>=>total<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
-<f1>=>gold<><f2>=>rank<><v1>=>1<><v2>=>2<><f0>=>silver<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
+<f1>=>gold<><f2>=>gold<><v1>=>1<><v2>=>2<><f0>=>silver<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <f1>=>total<><v1>=>1<><f0>=>rank<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <f1>=>certification<><v1>=>2x platinum<><v2>=>750000<><v3>=>xuxa 3<><f2>=>sales<><f3>=>álbum<><f0>=>year<><c0>=>certification<><c1>=>charts<><c2>=>álbum<><c3>=>sales<><c4>=>year<>
 <f1>=>year<><v1>=>1991<><f0>=>sales<><c0>=>certification<><c1>=>charts<><c2>=>álbum<><c3>=>sales<><c4>=>year<>
@@ -15417,7 +15417,7 @@
 <v1>=>iao lethem<><f1>=>director<><f0>=>nominating festival<><c0>=>nominating festival<><c1>=>category<><c2>=>director<><c3>=>country<><c4>=>film<>
 <v1>=>julio robledo<><f1>=>director<><f0>=>country<><c0>=>nominating festival<><c1>=>category<><c2>=>director<><c3>=>country<><c4>=>film<>
 <v1>=>(a) torzija<><f1>=>film<><f0>=>category<><c0>=>nominating festival<><c1>=>category<><c2>=>director<><c3>=>country<><c4>=>film<>
-<f3>=>goals against<><f1>=>losses<><f2>=>points<><v2>=>40-4<><v1>=>12<><v3>=>57<><f0>=>wins<><c0>=>goal difference<><c1>=>goals against<><c2>=>goals for<><c3>=>position<><c4>=>played<><c5>=>points<><c6>=>losses<><c7>=>draws<><c8>=>club<><c9>=>wins<>
+<f3>=>goals for<><f1>=>losses<><f2>=>points<><v2>=>40-4<><v1>=>12<><v3>=>57<><f0>=>wins<><c0>=>goal difference<><c1>=>goals against<><c2>=>goals for<><c3>=>position<><c4>=>played<><c5>=>points<><c6>=>losses<><c7>=>draws<><c8>=>club<><c9>=>wins<>
 <v2>=>rayo vallecano<><f1>=>wins<><f2>=>club<><v1>=>12<><f0>=>played<><c0>=>goal difference<><c1>=>goals against<><c2>=>goals for<><c3>=>position<><c4>=>played<><c5>=>points<><c6>=>losses<><c7>=>draws<><c8>=>club<><c9>=>wins<>
 <v2>=>canis rufus audubon & bachman 1851<><f2>=>species/authority<><v1>=>canidae<><f1>=>family<><f0>=><><c0>=>species/authority<><c1>=>red list<><c2>=>family<><c3>=>order<><c4>=>name<>
 <f1>=>total<><f2>=>total<><v2>=>25<><v1>=>0<><f0>=>league<><c0>=>league cup<><c1>=>play-offs<><c2>=>league<><c3>=>fa cup<><c4>=>total<><c5>=>name<>
@@ -15657,7 +15657,7 @@
 <f1>=>year<><v1>=>2007<><f0>=>men s singles<><c0>=>women s singles<><c1>=>women s doubles<><c2>=>men s singles<><c3>=>men s doubles<><c4>=>mixed doubles<><c5>=>year<>
 <v1>=>aaron peirsol<><v2>=>united states<><f2>=>nationality<><f1>=>name<><f0>=>lane<><c0>=>nationality<><c1>=>heat<><c2>=>lane<><c3>=>name<><c4>=>time<>
 <v1>=>2:00.80<><f1>=>time<><f2>=>heat<><f3>=>heat<><v2>=>3<><v3>=>4<><f0>=>name<><c0>=>nationality<><c1>=>heat<><c2>=>lane<><c3>=>name<><c4>=>time<>
-<f1>=>score<><v1>=>8-1<><f0>=>result<><c0>=>competition<><c1>=>result<><c2>=>venue<><c3>=>score<><c4>=>date<>
+<f1>=>result<><v1>=>8-1<><f0>=>score<><c0>=>competition<><c1>=>result<><c2>=>venue<><c3>=>score<><c4>=>date<>
 <f1>=>result<><v1>=>5-1<><f0>=><><c0>=>competition<><c1>=>result<><c2>=>venue<><c3>=>score<><c4>=>date<>
 <f1>=>score<><v1>=>7-1<><f0>=><><c0>=>competition<><c1>=>result<><c2>=>venue<><c3>=>score<><c4>=>date<>
 <f1>=>score<><v1>=>8-1<><f0>=>result<><c0>=>competition<><c1>=>result<><c2>=>venue<><c3>=>score<><c4>=>date<>
@@ -15759,7 +15759,7 @@
 <f2>=>nationality<><v2>=>netherlands<><f1>=>lane<><v1>=>4<><f0>=>rank<><c0>=>nationality<><c1>=>rank<><c2>=>lane<><c3>=>name<><c4>=>time<>
 <f1>=>other<><v1>=>0<><f0>=>total<><c0>=>league cup<><c1>=>league<><c2>=>fa cup<><c3>=>other<><c4>=>total<><c5>=>name<>
 <f1>=>fa cup<><f2>=>total<><f3>=>total<><v2>=>14<><v1>=>0<><v3>=>2<><f0>=>other<><c0>=>league cup<><c1>=>league<><c2>=>fa cup<><c3>=>other<><c4>=>total<><c5>=>name<>
-<f1>=>league<><v1>=>0<><f0>=>fa cup<><c0>=>league cup<><c1>=>league<><c2>=>fa cup<><c3>=>other<><c4>=>total<><c5>=>name<>
+<f1>=>league cup<><v1>=>0<><f0>=>fa cup<><c0>=>league cup<><c1>=>league<><c2>=>fa cup<><c3>=>other<><c4>=>total<><c5>=>name<>
 <v2>=>lexington ky<><f2>=>hometown<><f1>=>height<><v1>=>5 4<><f0>=>state<><c0>=>hometown<><c1>=>height<><c2>=>state<><c3>=>age 1<><c4>=>name<>
 <v1>=>renton wa<><f1>=>hometown<><f0>=>height<><c0>=>hometown<><c1>=>height<><c2>=>state<><c3>=>age 1<><c4>=>name<>
 <f1>=>notes<><v1>=>53.96<><f0>=>position<><c0>=>position<><c1>=>venue<><c2>=>event<><c3>=>notes<><c4>=>year<>
@@ -15777,7 +15777,7 @@
 <f1>=>2003 cadiz<><v1>=>finn<><f0>=>2014 santander<><c0>=>2014 santander<><c1>=>2007 cascais<><c2>=>discipline<><c3>=>2003 cadiz<><c4>=>2011 perth<>
 <f1>=>2011 perth<><v1>=>470<><f0>=>2014 santander<><c0>=>2014 santander<><c1>=>2007 cascais<><c2>=>discipline<><c3>=>2003 cadiz<><c4>=>2011 perth<>
 <f1>=>2007 cascais<><v1>=>rs:x<><f0>=>2003 cadiz<><c0>=>2014 santander<><c1>=>2007 cascais<><c2>=>discipline<><c3>=>2003 cadiz<><c4>=>2011 perth<>
-<v1>=>laser radial<><f1>=>2011 perth<><f0>=>discipline<><c0>=>2014 santander<><c1>=>2007 cascais<><c2>=>discipline<><c3>=>2003 cadiz<><c4>=>2011 perth<>
+<f1>=>2007 cascais<><v1>=>laser radial<><f0>=>discipline<><c0>=>2014 santander<><c1>=>2007 cascais<><c2>=>discipline<><c3>=>2003 cadiz<><c4>=>2011 perth<>
 <v3>=>modern pentathlon<><v2>=>iii series<><v1>=>i series<><f3>=>reverse<><f1>=>series<><f2>=>series<><f0>=>weight<><c0>=>denomination<><c1>=>diameter<><c2>=>reverse<><c3>=>obverse<><c4>=>mintage<><c5>=>weight<><c6>=>series<><c7>=>alloy<><c8>=>year<>
 <f1>=>reverse<><v1>=>archery<><f0>=>obverse<><c0>=>denomination<><c1>=>diameter<><c2>=>reverse<><c3>=>obverse<><c4>=>mintage<><c5>=>weight<><c6>=>series<><c7>=>alloy<><c8>=>year<>
 <v2>=>iii series<><v1>=>i series<><f1>=>series<><f2>=>series<><f0>=>denomination<><c0>=>denomination<><c1>=>diameter<><c2>=>reverse<><c3>=>obverse<><c4>=>mintage<><c5>=>weight<><c6>=>series<><c7>=>alloy<><c8>=>year<>
@@ -15787,9 +15787,9 @@
 <v2>=>simon donnelly<><f1>=>scottish cup<><f2>=>player<><v1>=>0<><f0>=>total<><c0>=>challenge cup<><c1>=>scottish cup<><c2>=>league cup<><c3>=>player<><c4>=>league<><c5>=>total<>
 <v2>=>simon storey<><f1>=>league<><f2>=>player<><v1>=>1<><f0>=>challenge cup<><c0>=>challenge cup<><c1>=>scottish cup<><c2>=>league cup<><c3>=>player<><c4>=>league<><c5>=>total<>
 <f1>=>challenge cup<><v2>=>damon gray<><f2>=>player<><v1>=>0<><f0>=>total<><c0>=>challenge cup<><c1>=>scottish cup<><c2>=>league cup<><c3>=>player<><c4>=>league<><c5>=>total<>
-<v2>=>paul keegan<><f1>=>league<><f2>=>player<><v1>=>0<><f0>=>scottish cup<><c0>=>challenge cup<><c1>=>scottish cup<><c2>=>league cup<><c3>=>player<><c4>=>league<><c5>=>total<>
+<v2>=>paul keegan<><f1>=>league cup<><f2>=>player<><v1>=>0<><f0>=>scottish cup<><c0>=>challenge cup<><c1>=>scottish cup<><c2>=>league cup<><c3>=>player<><c4>=>league<><c5>=>total<>
 <f1>=>league cup<><f2>=>total<><v1>=>1<><v2>=>2<><f0>=>challenge cup<><c0>=>challenge cup<><c1>=>scottish cup<><c2>=>league cup<><c3>=>player<><c4>=>league<><c5>=>total<>
-<v2>=>gary harkins<><f1>=>league<><f2>=>player<><v1>=>0<><f0>=>total<><c0>=>challenge cup<><c1>=>scottish cup<><c2>=>league cup<><c3>=>player<><c4>=>league<><c5>=>total<>
+<v2>=>gary harkins<><f1>=>league cup<><f2>=>player<><v1>=>0<><f0>=>total<><c0>=>challenge cup<><c1>=>scottish cup<><c2>=>league cup<><c3>=>player<><c4>=>league<><c5>=>total<>
 <f2>=>opponent<><v2>=>marbella<><f1>=>venue<><v1>=>away<><f0>=>result<><c0>=>attendance<><c1>=>opponent<><c2>=>result<><c3>=>venue<><c4>=>date<>
 <v1>=>28 july 2007<><f1>=>date<><f0>=>venue<><c0>=>attendance<><c1>=>opponent<><c2>=>result<><c3>=>venue<><c4>=>date<>
 <f1>=>venue<><v1>=>home<><f0>=>result<><c0>=>attendance<><c1>=>opponent<><c2>=>result<><c3>=>venue<><c4>=>date<>
