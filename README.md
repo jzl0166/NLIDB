@@ -6,6 +6,7 @@ a NLIDB seq2seq model that achieves high transfer-ability.
 - python 2.7
 - python3 (for annotating WikiSQL)
 - tqdm
+- editdistance
 
 ## How to use
 
