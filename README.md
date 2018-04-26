@@ -57,6 +57,6 @@ Since data has been preprocessed and stored in numpy files. You can either omit 
       
 - Transfer-ability
       
-  The dataset used for transfer-ability evaluation is OVERNIGHT, and was adopted from previous work https://github.com/alantian/nlidb 
+  The annotated dataset used for transfer-ability evaluation is adopted from previous work https://github.com/alantian/nlidb . We have extracted related code into our etc/overnight-tagger folder.
       
       python nlidb.py --mode transfer
