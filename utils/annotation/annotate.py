@@ -218,13 +218,14 @@ def main():
                         pass
 
                     smap = defaultdict(list)    #f2v
-                    reverse_map = defaultdict(set)  #v2f
+                    reverse_map = defaultdict(list)  #v2f
                     for row in rows:
                         for i in range(len(fs)):
                             cur_f = _preclean(str(fs[i])) 
                             cur_row =  _preclean(str(row[i]))  
                             smap[cur_f].append(cur_row)
-                            reverse_map[cur_row].add(cur_f)
+                            if cur_f not in reverse_map[cur_row]:
+                                reverse_map[cur_row].append(cur_f)
                   
                     #----------------------------------------------------------                    
                     # all values are sorted by length in descending order
