@@ -1,6 +1,12 @@
 
 # transformer model
 
+## config
+
+- Tensorflow tensor2tensor library newest version v1.6.2
+
+- https://github.com/tensorflow/tensor2tensor
+
 ## minor revision
 
 - register ```tensor2tensor.data_generators.NLIDB_wiki``` in data_generators/all_problems.py
