@@ -3,7 +3,7 @@
 
 ## minor revision
 
-- add ```tensor2tensor.data_generators.NLIDB_wiki``` in data_generators/all_problems.py
+- register ```tensor2tensor.data_generators.NLIDB_wiki``` in data_generators/all_problems.py
 
 - add NLIDB_wiki.py in data_generators folder
 
