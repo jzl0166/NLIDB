@@ -1,4 +1,18 @@
 
+# transformer model
+
+## minor revision
+
+- add ```tensor2tensor.data_generators.NLIDB_wiki``` in data_generators/all_problems.py
+
+- add NLIDB_wiki.py in data_generators folder
+
+- replace utils/modality.py
+
+- replace layers/modalities.py
+
+## how to run
+
 ```
 PROBLEM=nlidb_wiki
 MODEL=transformer
@@ -31,12 +45,11 @@ t2t-trainer \
 
 ```
 # Decode
-DECODE_FILE=/home/gongzhitaao/ww/wiki/test.qu
-OUT_FILE=/home/gongzhitaao/ww/wiki/test_inf
-
 BEAM_SIZE=4
 ALPHA=0.6
 
+DECODE_FILE=/home/gongzhitaao/ww/wiki/test.qu
+OUT_FILE=/home/gongzhitaao/ww/wiki/test_inf
 t2t-decoder \
   --data_dir=$DATA_DIR \
   --problem=$PROBLEM \
@@ -49,7 +62,6 @@ t2t-decoder \
 
 DECODE_FILE=/home/gongzhitaao/ww/wiki/dev.qu
 OUT_FILE=/home/gongzhitaao/ww/wiki/dev_inf
-
 t2t-decoder \
   --data_dir=$DATA_DIR \
   --problem=$PROBLEM \
