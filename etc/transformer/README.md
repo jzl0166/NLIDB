@@ -78,7 +78,9 @@ t2t-decoder \
   --decode_from_file=$DECODE_FILE \
   --decode_to_file=$OUT_FILE
 ```
-
+```
+tensorboard --logdir $TRAIN_DIR --host localhost --port 2222
+```
 
 
 
