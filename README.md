@@ -48,7 +48,7 @@ Since data has been preprocessed and stored in numpy files. You can either omit 
       
 - Train or load model 
     
-   pretrained model https://drive.google.com/open?id=13cFjU9tEZ1hx-exBuq6qpYgSrlzKyGXl
+   pretrained model https://drive.google.com/open?id=1kCZImKOfN2Zpd66rCohTQsjQc3GbSddw
    
    please put all files in model/ folder
    
