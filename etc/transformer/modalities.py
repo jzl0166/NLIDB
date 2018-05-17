@@ -81,14 +81,14 @@ class SymbolModality(modality.Modality):
     if hidden_dim is None:
       hidden_dim = self._body_input_depth
     num_shards = self._model_hparams.symbol_modality_num_shards
-    #wenlu change
+    # @w change
     num_shards = 1
     shards = []
     for i in range(num_shards):
       shard_size = (self._vocab_size // num_shards) + (
           1 if i < self._vocab_size % num_shards else 0)
       var_name = "weights_%d" % i
-      #wenlu change
+      # @w change
       emb = self.get_w2v_embedding_matrix()
       print(emb.shape)
       print(shard_size)
@@ -97,7 +97,7 @@ class SymbolModality(modality.Modality):
           tf.get_variable(
               var_name, #[shard_size, hidden_dim],
               initializer=emb, dtype=tf.float32))
-              #wenlu change
+              # @w change
               #initializer=tf.random_normal_initializer(0.0, hidden_dim**-0.5)))
     if num_shards == 1:
       ret = shards[0]
@@ -108,10 +108,10 @@ class SymbolModality(modality.Modality):
       ret = eu.convert_gradient_to_tensor(ret)
     return ret
 
-  #wenlu add
+  # @w add
   def get_w2v_embedding_matrix(self):
       """
-      wenlu add
+      @w add
       build embedding matrix with GloVe
       """
       vocab_emb = np.load('/home/gongzhitaao/ww/vocab.npy')

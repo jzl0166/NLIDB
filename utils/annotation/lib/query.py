@@ -77,7 +77,7 @@ class Query:
         else:
             return False
 
-    #add by wenlu
+    #add by @w
     def to_sentence_noparenthesis(self,table_header,rows,types):
         rows = np.asarray(rows, dtype=np.unicode_)
         agg = self.agg_ops[self.agg_index]
@@ -97,7 +97,7 @@ class Query:
        
         return rep
 
-    #add by wenlu
+    #add by @w
     def to_sentence(self,table_header,rows,types):
         rows = np.asarray(rows, dtype=np.unicode_)
         agg = self.agg_ops[self.agg_index]

@@ -63,7 +63,7 @@ _WIKI_TEST_LARGE_DATA = [
     ],
 ]
 
-#wenlu add
+# @w add
 class DetTextEncoder():
     """Add this class to help decoding, and build embedding matrix"""
     def __init__(self, vocfile):

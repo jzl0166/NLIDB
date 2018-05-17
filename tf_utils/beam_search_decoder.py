@@ -457,7 +457,7 @@ class BeamSearchDecoder(decoder.Decoder):
       cell_state = nest.map_structure(
           self._maybe_merge_batch_beams,
           cell_state, self._cell.state_size)
-      #wenlu add logits [B,maxlen], returned by AttentionWrapper
+      # @w add logits [B,maxlen], returned by AttentionWrapper
       cell_outputs, next_cell_state, logits = self._cell(inputs, cell_state)
       cell_outputs = nest.map_structure(
           lambda out: self._split_batch_beams(out, out.shape[1:]), cell_outputs)
@@ -465,7 +465,7 @@ class BeamSearchDecoder(decoder.Decoder):
           self._maybe_split_batch_beams,
           next_cell_state, self._cell.state_size)
 
-      #wenlu
+      # @w
       if self._output_layer is not None:
         cell_outputs = self._output_layer(cell_outputs)
       print('****beam search logits shape')
