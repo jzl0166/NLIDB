@@ -15,7 +15,7 @@ Since data has been preprocessed and stored in numpy files. You can either omit 
   
       export WIKI_PATH={PATH to WikiSQL}
       export GLOVE_PATH={PATH to GloVe}
-  Store 'glove.840B.300d.txt' in GLOVE_PATH.
+  Store 'glove.840B.300d.txt' from https://nlp.stanford.edu/projects/glove/ in GLOVE_PATH.
   
   Store raw dataset from https://github.com/salesforce/WikiSQL in WIKI_PATH.
   

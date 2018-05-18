@@ -450,7 +450,7 @@
 <v1>=>19 02.890 118.847mph<><f1>=>mon 26 may<><f0>=>thurs 29 may<><c0>=>thurs 29 may<><c1>=>tues 27 may<><c2>=>mon 26 may<><c3>=>wed 28 may<><c4>=>fri 30 may<><c5>=>rider<><c6>=>rank<>
 <f1>=>year of last win<><v1>=>2007-08<><f0>=>school<><c0>=>year of last win<><c1>=>total finals<><c2>=>finalists<><c3>=>winners<><c4>=>school<>
 <v1>=>banbridge academy<><f1>=>school<><f0>=>winners<><c0>=>year of last win<><c1>=>total finals<><c2>=>finalists<><c3>=>winners<><c4>=>school<>
-<f1>=>total finals<><v1>=>2<><f0>=>finalists<><c0>=>year of last win<><c1>=>total finals<><c2>=>finalists<><c3>=>winners<><c4>=>school<>
+<f1>=>finalists<><v1>=>2<><f0>=>total finals<><c0>=>year of last win<><c1>=>total finals<><c2>=>finalists<><c3>=>winners<><c4>=>school<>
 <f1>=>total finals<><v1>=>10<><f0>=>finalists<><c0>=>year of last win<><c1>=>total finals<><c2>=>finalists<><c3>=>winners<><c4>=>school<>
 <f1>=>year of last win<><v1>=>1985-86<><f0>=>school<><c0>=>year of last win<><c1>=>total finals<><c2>=>finalists<><c3>=>winners<><c4>=>school<>
 <f1>=>year of last win<><v1>=>2012-13<><f0>=>total finals<><c0>=>year of last win<><c1>=>total finals<><c2>=>finalists<><c3>=>winners<><c4>=>school<>
@@ -1571,7 +1571,7 @@
 <v1>=>ohio christian university<><f1>=>institution<><f0>=>affiliation<><c0>=>institution<><c1>=>affiliation<><c2>=>year joined<><c3>=>enrollment<><c4>=>team name<><c5>=>location<><c6>=>founded<>
 <v1>=>circleville ohio<><f1>=>location<><f0>=>institution<><c0>=>institution<><c1>=>affiliation<><c2>=>year joined<><c3>=>enrollment<><c4>=>team name<><c5>=>location<><c6>=>founded<>
 <f1>=>team name<><v1>=>eagles<><f0>=>location<><c0>=>institution<><c1>=>affiliation<><c2>=>year joined<><c3>=>enrollment<><c4>=>team name<><c5>=>location<><c6>=>founded<>
-<f1>=>live+7 day dvr total viewers<><v1>=>5.09 million<><f0>=>live+sd total viewers<><c0>=>episode number production number<><c1>=>18–49 rating live+sd / live+7<><c2>=>live+7 day dvr total viewers<><c3>=>rating/share in households<><c4>=>live+sd total viewers<><c5>=>original airdate<><c6>=>title<><c7>=>share<>
+<f1>=>live+sd total viewers<><v1>=>5.09 million<><f0>=>live+7 day dvr total viewers<><c0>=>episode number production number<><c1>=>18–49 rating live+sd / live+7<><c2>=>live+7 day dvr total viewers<><c3>=>rating/share in households<><c4>=>live+sd total viewers<><c5>=>original airdate<><c6>=>title<><c7>=>share<>
 <f1>=>share<><v1>=>8<><f0>=>live+7 day dvr total viewers<><c0>=>episode number production number<><c1>=>18–49 rating live+sd / live+7<><c2>=>live+7 day dvr total viewers<><c3>=>rating/share in households<><c4>=>live+sd total viewers<><c5>=>original airdate<><c6>=>title<><c7>=>share<>
 <f1>=>episode number production number<><v1>=>4 1-04<><f0>=>live+sd total viewers<><c0>=>episode number production number<><c1>=>18–49 rating live+sd / live+7<><c2>=>live+7 day dvr total viewers<><c3>=>rating/share in households<><c4>=>live+sd total viewers<><c5>=>original airdate<><c6>=>title<><c7>=>share<>
 <f1>=>original airdate<><v1>=>october 14 2009<><f0>=>18–49 rating live+sd / live+7<><c0>=>episode number production number<><c1>=>18–49 rating live+sd / live+7<><c2>=>live+7 day dvr total viewers<><c3>=>rating/share in households<><c4>=>live+sd total viewers<><c5>=>original airdate<><c6>=>title<><c7>=>share<>
@@ -2420,7 +2420,7 @@
 <f1>=>area( acres )<><v1>=>276<><f0>=>barony<><c0>=>poor law union<><c1>=>area( acres )<><c2>=>civil parish<><c3>=>townland<><c4>=>barony<>
 <f1>=>area( acres )<><v1>=>142<><f0>=>poor law union<><c0>=>poor law union<><c1>=>area( acres )<><c2>=>civil parish<><c3>=>townland<><c4>=>barony<>
 <v3>=>michigan state<><f2>=>losses<><f3>=>school<><f1>=>wins<><v1>=>11<><v2>=>6<><f0>=>rank<><c0>=>appearances<><c1>=>school<><c2>=>losses<><c3>=>rank<><c4>=>wins<>
-<f3>=>appearances<><f1>=>rank<><f2>=>rank<><v1>=>10<><v2>=>2<><v3>=>3<><f0>=>losses<><c0>=>appearances<><c1>=>school<><c2>=>losses<><c3>=>rank<><c4>=>wins<>
+<f1>=>appearances<><f3>=>appearances<><f2>=>rank<><v1>=>10<><v2>=>2<><v3>=>3<><f0>=>losses<><c0>=>appearances<><c1>=>school<><c2>=>losses<><c3>=>rank<><c4>=>wins<>
 <f2>=>total<><f1>=>gold<><v1>=>0<><v2>=>2<><f0>=>rank<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <f1>=>bronze<><f2>=>rank<><v1>=>0<><v2>=>2<><f0>=>total<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <v1>=>june 9<><f1>=>date<><f0>=>track<><c0>=>pole winner<><c1>=>race winner<><c2>=>event name<><c3>=>track<><c4>=>date<>
@@ -2893,7 +2893,7 @@
 <f1>=>week<><v1>=>16<><f0>=>opponent<><c0>=>attendance<><c1>=>game site<><c2>=>opponent<><c3>=>tv time<><c4>=>result<><c5>=>record<><c6>=>week<><c7>=>date<>
 <v1>=>san diego chargers<><f1>=>opponent<><f0>=>game site<><c0>=>attendance<><c1>=>game site<><c2>=>opponent<><c3>=>tv time<><c4>=>result<><c5>=>record<><c6>=>week<><c7>=>date<>
 <f2>=>bronze<><v3>=>total<><f1>=>gold<><f3>=>rank<><v2>=>32<><v1>=>0<><f0>=>silver<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
-<f1>=>silver<><f2>=>rank<><v1>=>2<><v2>=>3<><f0>=>bronze<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
+<f1>=>silver<><f2>=>silver<><v1>=>2<><v2>=>3<><f0>=>bronze<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <f1>=>bronze<><f2>=>nation<><v2>=>china<><v1>=>7<><f0>=>silver<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <f1>=>gold<><f2>=>rank<><v1>=>0<><v2>=>6<><f0>=>nation<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <v1>=>december 9<><v2>=>detroit<><f1>=>date<><f2>=>home<><f0>=>score<><c0>=>visitor<><c1>=>record<><c2>=>score<><c3>=>date<><c4>=>home<>
@@ -3008,7 +3008,7 @@
 <f1>=>visitor<><v1>=>chicago<><f0>=>home<><c0>=>visitor<><c1>=>record<><c2>=>score<><c3>=>date<><c4>=>home<>
 <f1>=>visitor<><v1>=>chicago<><f0>=>date<><c0>=>visitor<><c1>=>record<><c2>=>score<><c3>=>date<><c4>=>home<>
 <f1>=>length<><v1>=>5:15<><f0>=>album<><c0>=>remixed by<><c1>=>version<><c2>=>length<><c3>=>album<><c4>=>year<>
-<f1>=>bronze<><f2>=>bronze<><f3>=>rank<><v1>=>0<><v2>=>1<><v3>=>3<><f0>=>total<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
+<f1>=>bronze<><f2>=>rank<><f3>=>rank<><v1>=>0<><v2>=>1<><v3>=>3<><f0>=>total<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <f1>=>gold<><v1>=>0<><f0>=>rank<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <f2>=>bronze<><f1>=>gold<><v1>=>0<><v2>=>1<><f0>=>silver<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <f1>=>bronze<><f2>=>rank<><v1>=>1<><v2>=>3<><f0>=>gold<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
@@ -3582,8 +3582,8 @@
 <v1>=>1992–93<><f1>=>year<><f0>=>name<><c0>=>political affiliation<><c1>=>deputy s affiliation<><c2>=>deputy<><c3>=>year<><c4>=>name<>
 <v1>=>1992–93<><f1>=>year<><f0>=>deputy s affiliation<><c0>=>political affiliation<><c1>=>deputy s affiliation<><c2>=>deputy<><c3>=>year<><c4>=>name<>
 <f1>=>political rights 2011<><f2>=>civil liberties 2012<><v1>=>5<><v2>=>6<><f0>=>civil liberties 2013<><c0>=>political rights 2010<><c1>=>political rights 2011<><c2>=>political rights 2012<><c3>=>political rights 2013<><c4>=>civil liberties 2010<><c5>=>civil liberties 2011<><c6>=>civil liberties 2012<><c7>=>civil liberties 2013<><c8>=>status 2010<><c9>=>status 2011<><c10>=>status 2012<><c11>=>status 2013<><c12>=>country<>
-<f1>=>political rights 2011<><f2>=>political rights 2011<><f3>=>status 2012<><v3>=>not free<><v1>=>6<><v2>=>7<><f0>=>civil liberties 2010<><c0>=>political rights 2010<><c1>=>political rights 2011<><c2>=>political rights 2012<><c3>=>political rights 2013<><c4>=>civil liberties 2010<><c5>=>civil liberties 2011<><c6>=>civil liberties 2012<><c7>=>civil liberties 2013<><c8>=>status 2010<><c9>=>status 2011<><c10>=>status 2012<><c11>=>status 2013<><c12>=>country<>
-<f1>=>political rights 2012<><f2>=>civil liberties 2011<><v1>=>1<><v2>=>3<><f0>=>civil liberties 2010<><c0>=>political rights 2010<><c1>=>political rights 2011<><c2>=>political rights 2012<><c3>=>political rights 2013<><c4>=>civil liberties 2010<><c5>=>civil liberties 2011<><c6>=>civil liberties 2012<><c7>=>civil liberties 2013<><c8>=>status 2010<><c9>=>status 2011<><c10>=>status 2012<><c11>=>status 2013<><c12>=>country<>
+<f1>=>political rights 2011<><f2>=>political rights 2011<><f3>=>status 2010<><v3>=>not free<><v1>=>6<><v2>=>7<><f0>=>civil liberties 2010<><c0>=>political rights 2010<><c1>=>political rights 2011<><c2>=>political rights 2012<><c3>=>political rights 2013<><c4>=>civil liberties 2010<><c5>=>civil liberties 2011<><c6>=>civil liberties 2012<><c7>=>civil liberties 2013<><c8>=>status 2010<><c9>=>status 2011<><c10>=>status 2012<><c11>=>status 2013<><c12>=>country<>
+<f1>=>political rights 2010<><f2>=>civil liberties 2011<><v1>=>1<><v2>=>3<><f0>=>civil liberties 2010<><c0>=>political rights 2010<><c1>=>political rights 2011<><c2>=>political rights 2012<><c3>=>political rights 2013<><c4>=>civil liberties 2010<><c5>=>civil liberties 2011<><c6>=>civil liberties 2012<><c7>=>civil liberties 2013<><c8>=>status 2010<><c9>=>status 2011<><c10>=>status 2012<><c11>=>status 2013<><c12>=>country<>
 <v2>=>wnbc/marist poll<><f2>=>poll source<><f1>=>unsure<><v1>=>8%<><f0>=>oppose<><c0>=>poll source<><c1>=>candidate<><c2>=>consider<><c3>=>support<><c4>=>oppose<><c5>=>unsure<><c6>=>date<>
 <f2>=>poll source<><v2>=>time poll<><f1>=>unsure<><v1>=>6%<><f0>=>oppose<><c0>=>poll source<><c1>=>candidate<><c2>=>consider<><c3>=>support<><c4>=>oppose<><c5>=>unsure<><c6>=>date<>
 <v2>=>newsweek poll<><v3>=>rudy giuliani<><f2>=>poll source<><f3>=>candidate<><f1>=>oppose<><v1>=>32%<><f0>=>consider<><c0>=>poll source<><c1>=>candidate<><c2>=>consider<><c3>=>support<><c4>=>oppose<><c5>=>unsure<><c6>=>date<>
@@ -4263,7 +4263,7 @@
 <f1>=>athletics nickname<><v1>=>lords/ladies<><f0>=>religious affiliation<><c0>=>religious affiliation<><c1>=>athletics nickname<><c2>=>school colors<><c3>=>university<><c4>=>enrollment<><c5>=>location<><c6>=>founded<>
 <v1>=>atp masters series<><f1>=>career sr<><f0>=>tournament<><c0>=>career win-loss<><c1>=>tournament<><c2>=>career sr<><c3>=>1990<><c4>=>1991<><c5>=>1992<><c6>=>1993<><c7>=>1994<><c8>=>1995<><c9>=>1996<><c10>=>1997<>
 <f1>=>tournament<><v1>=>miami<><f0>=>1995<><c0>=>career win-loss<><c1>=>tournament<><c2>=>career sr<><c3>=>1990<><c4>=>1991<><c5>=>1992<><c6>=>1993<><c7>=>1994<><c8>=>1995<><c9>=>1996<><c10>=>1997<>
-<f1>=>1990<><f2>=>1990<><f3>=>1991<><v1>=>1r<><v2>=>2r<><v3>=>f<><f0>=>1997<><c0>=>career win-loss<><c1>=>tournament<><c2>=>career sr<><c3>=>1990<><c4>=>1991<><c5>=>1992<><c6>=>1993<><c7>=>1994<><c8>=>1995<><c9>=>1996<><c10>=>1997<>
+<f1>=>1996<><f2>=>1990<><f3>=>1991<><v1>=>1r<><v2>=>2r<><v3>=>f<><f0>=>1997<><c0>=>career win-loss<><c1>=>tournament<><c2>=>career sr<><c3>=>1990<><c4>=>1991<><c5>=>1992<><c6>=>1993<><c7>=>1994<><c8>=>1995<><c9>=>1996<><c10>=>1997<>
 <v1>=>atp masters series<><f1>=>1992<><f0>=>1996<><c0>=>career win-loss<><c1>=>tournament<><c2>=>career sr<><c3>=>1990<><c4>=>1991<><c5>=>1992<><c6>=>1993<><c7>=>1994<><c8>=>1995<><c9>=>1996<><c10>=>1997<>
 <v1>=>australian open<><f1>=>tournament<><f2>=>1991<><v2>=>qf<><f0>=>1994<><c0>=>career win-loss<><c1>=>tournament<><c2>=>career sr<><c3>=>1990<><c4>=>1991<><c5>=>1992<><c6>=>1993<><c7>=>1994<><c8>=>1995<><c9>=>1996<><c10>=>1997<>
 <v1>=>nassau veterans memorial coliseum<><f1>=>venue<><f0>=>established<><c0>=>championships<><c1>=>established<><c2>=>capacity<><c3>=>location<><c4>=>league<><c5>=>venue<><c6>=>club<>
@@ -4377,7 +4377,7 @@
 <v2>=>hale irwin<><f2>=>player<><f1>=>total<><v1>=>285<><f0>=>year won<><c0>=>year won<><c1>=>country<><c2>=>player<><c3>=>to par<><c4>=>finish<><c5>=>total<>
 <f1>=>2011<><f2>=>2006<><v1>=>1r<><v2>=>a<><f0>=>2007<><c0>=>tournament<><c1>=>2003<><c2>=>2004<><c3>=>2005<><c4>=>2006<><c5>=>2007<><c6>=>2008<><c7>=>2009<><c8>=>2010<><c9>=>2011<><c10>=>2012<><c11>=>2013<>
 <f1>=>2013<><f2>=>2008<><v1>=>1r<><v2>=>a<><f0>=>tournament<><c0>=>tournament<><c1>=>2003<><c2>=>2004<><c3>=>2005<><c4>=>2006<><c5>=>2007<><c6>=>2008<><c7>=>2009<><c8>=>2010<><c9>=>2011<><c10>=>2012<><c11>=>2013<>
-<f1>=>2006<><f2>=>2003<><v2>=>lq<><v1>=>a<><f0>=>2004<><c0>=>tournament<><c1>=>2003<><c2>=>2004<><c3>=>2005<><c4>=>2006<><c5>=>2007<><c6>=>2008<><c7>=>2009<><c8>=>2010<><c9>=>2011<><c10>=>2012<><c11>=>2013<>
+<f1>=>2004<><f2>=>2003<><v2>=>lq<><v1>=>a<><f0>=>2005<><c0>=>tournament<><c1>=>2003<><c2>=>2004<><c3>=>2005<><c4>=>2006<><c5>=>2007<><c6>=>2008<><c7>=>2009<><c8>=>2010<><c9>=>2011<><c10>=>2012<><c11>=>2013<>
 <f1>=>attendance<><v1>=>75555<><f0>=>week<><c0>=>attendance<><c1>=>opponent<><c2>=>tv time<><c3>=>result<><c4>=>week<><c5>=>date<>
 <v1>=>chicago bears<><f1>=>opponent<><f0>=>result<><c0>=>attendance<><c1>=>opponent<><c2>=>tv time<><c3>=>result<><c4>=>week<><c5>=>date<>
 <v2>=>oakland raiders<><f2>=>opponent<><f1>=>week<><v1>=>15<><f0>=>tv time<><c0>=>attendance<><c1>=>opponent<><c2>=>tv time<><c3>=>result<><c4>=>week<><c5>=>date<>
@@ -7472,7 +7472,7 @@
 <v1>=>november 27 2005<><f1>=>date<><f0>=>opponent<><c0>=>attendance<><c1>=>opponent<><c2>=>result<><c3>=>week<><c4>=>date<>
 <f1>=>date<><v1>=>bye<><f0>=>week<><c0>=>attendance<><c1>=>opponent<><c2>=>result<><c3>=>week<><c4>=>date<>
 <v2>=>lithuania<><f1>=>bronze<><f2>=>nation<><v1>=>1<><f0>=>rank<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
-<f1>=>bronze<><f2>=>bronze<><v1>=>1<><v2>=>3<><f0>=>silver<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
+<f2>=>bronze<><f1>=>rank<><v1>=>1<><v2>=>3<><f0>=>silver<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <v2>=>slovakia<><f2>=>nation<><f3>=>nation<><v3>=>total<><f1>=>gold<><v1>=>2<><f0>=>bronze<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <v3>=>germany<><f2>=>silver<><f3>=>nation<><f4>=>nation<><f1>=>total<><v4>=>total<><v1>=>11<><v2>=>3<><f0>=>bronze<><c0>=>nation<><c1>=>silver<><c2>=>bronze<><c3>=>total<><c4>=>rank<><c5>=>gold<>
 <f1>=>position<><v1>=>1<><f0>=>total<><c0>=>compulsory<><c1>=>voluntary<><c2>=>position<><c3>=>athlete<><c4>=>total<>
@@ -7712,7 +7712,7 @@
 <v1>=>stan fox stakes<><f1>=>race<><f0>=>venue<><c0>=>weight (kg)<><c1>=>winner/2nd<><c2>=>distance<><c3>=>result<><c4>=>jockey<><c5>=>venue<><c6>=>group<><c7>=>date<><c8>=>race<>
 <v1>=>moore (0-1)<><f1>=>loss<><f0>=>score<><c0>=>attendance<><c1>=>opponent<><c2>=>series<><c3>=>score<><c4>=>date<><c5>=>loss<>
 <f1>=>assists<><f2>=>minutes<><v1>=>13<><v2>=>91<><f0>=>rebounds<><c0>=>rebounds<><c1>=>minutes<><c2>=>assists<><c3>=>season<><c4>=>points<><c5>=>steals<><c6>=>blocks<><c7>=>games<><c8>=>team<>
-<f1>=>2012 first time<><v1>=>85%<><f0>=>2008 first time<><c0>=>2006 first time<><c1>=>2007 first time<><c2>=>2008 first time<><c3>=>2009 first time<><c4>=>2010 first time<><c5>=>2011 first time<><c6>=>2012 first time<><c7>=>2006 all<><c8>=>2007 all<><c9>=>2008 all<><c10>=>2009 all<><c11>=>exam<>
+<f1>=>2006 first time<><v1>=>85%<><f0>=>2008 first time<><c0>=>2006 first time<><c1>=>2007 first time<><c2>=>2008 first time<><c3>=>2009 first time<><c4>=>2010 first time<><c5>=>2011 first time<><c6>=>2012 first time<><c7>=>2006 all<><c8>=>2007 all<><c9>=>2008 all<><c10>=>2009 all<><c11>=>exam<>
 <f1>=>2006 all<><v1>=>69%<><f0>=>2007 all<><c0>=>2006 first time<><c1>=>2007 first time<><c2>=>2008 first time<><c3>=>2009 first time<><c4>=>2010 first time<><c5>=>2011 first time<><c6>=>2012 first time<><c7>=>2006 all<><c8>=>2007 all<><c9>=>2008 all<><c10>=>2009 all<><c11>=>exam<>
 <f1>=>2009 all<><v1>=>68%<><f0>=>2006 first time<><c0>=>2006 first time<><c1>=>2007 first time<><c2>=>2008 first time<><c3>=>2009 first time<><c4>=>2010 first time<><c5>=>2011 first time<><c6>=>2012 first time<><c7>=>2006 all<><c8>=>2007 all<><c9>=>2008 all<><c10>=>2009 all<><c11>=>exam<>
 <f1>=>2006 all<><v1>=>69%<><f0>=>2007 all<><c0>=>2006 first time<><c1>=>2007 first time<><c2>=>2008 first time<><c3>=>2009 first time<><c4>=>2010 first time<><c5>=>2011 first time<><c6>=>2012 first time<><c7>=>2006 all<><c8>=>2007 all<><c9>=>2008 all<><c10>=>2009 all<><c11>=>exam<>
@@ -7822,7 +7822,7 @@
 <v1>=>october 1<><f1>=>date<><f0>=>game<><c0>=>attendance<><c1>=>location<><c2>=>game<><c3>=>date<><c4>=>time<>
 <v2>=>yankee stadium (i)<><f2>=>location<><f1>=>time<><v1>=>3:00<><f0>=>attendance<><c0>=>attendance<><c1>=>location<><c2>=>game<><c3>=>date<><c4>=>time<>
 <f1>=>college<><v1>=>lsu<><f0>=>round<><c0>=>position<><c1>=>overall<><c2>=>college<><c3>=>pick #<><c4>=>round<><c5>=>name<>
-<f1>=>overall<><f2>=>overall<><v1>=>207<><v2>=>25<><f0>=>name<><c0>=>position<><c1>=>overall<><c2>=>college<><c3>=>pick #<><c4>=>round<><c5>=>name<>
+<f1>=>overall<><f2>=>pick #<><v1>=>207<><v2>=>25<><f0>=>name<><c0>=>position<><c1>=>overall<><c2>=>college<><c3>=>pick #<><c4>=>round<><c5>=>name<>
 <f1>=>overall<><f2>=>round<><v1>=>129<><v2>=>7<><f0>=>college<><c0>=>position<><c1>=>overall<><c2>=>college<><c3>=>pick #<><c4>=>round<><c5>=>name<>
 <v3>=>southern illinois<><f3>=>college<><f1>=>pick #<><f2>=>round<><v1>=>25<><v2>=>6<><f0>=>position<><c0>=>position<><c1>=>overall<><c2>=>college<><c3>=>pick #<><c4>=>round<><c5>=>name<>
 <f1>=>pages<><v1>=>704<><f0>=>us release<><c0>=>us release<><c1>=>chapters<><c2>=>title<><c3>=>pages<><c4>=>audio<>
@@ -8109,7 +8109,7 @@
 <v1>=>french professor<><f1>=>occupation<><f0>=>votes<><c0>=>candidate s name<><c1>=>occupation<><c2>=>residence<><c3>=>riding<><c4>=>gender<><c5>=>votes<><c6>=>rank<>
 <f1>=>designation<><v1>=>hip 4872<><f0>=><><c0>=>constellation<><c1>=>arrival date<><c2>=>designation<><c3>=>date sent<><c4>=>message<>
 <v1>=>rosie<><f1>=>unk<><f0>=>language<><c0>=>film title used in nomination<><c1>=>year (ceremony)<><c2>=>original title<><c3>=>language<><c4>=>result<>
-<f2>=>original title<><f1>=>language<><v1>=>dutch<><v2>=>rosie<><f0>=>film title used in nomination<><c0>=>film title used in nomination<><c1>=>year (ceremony)<><c2>=>original title<><c3>=>language<><c4>=>result<>
+<f2>=>film title used in nomination<><f1>=>language<><v1>=>dutch<><v2>=>rosie<><f0>=>original title<><c0>=>film title used in nomination<><c1>=>year (ceremony)<><c2>=>original title<><c3>=>language<><c4>=>result<>
 <f1>=>women s singles<><v1>=>carolina marin<><f0>=>year<><c0>=>women s singles<><c1>=>women s doubles<><c2>=>men s singles<><c3>=>men s doubles<><c4>=>mixed doubles<><c5>=>year<>
 <f1>=>year<><v1>=>2007<><f0>=>mixed doubles<><c0>=>women s singles<><c1>=>women s doubles<><c2>=>men s singles<><c3>=>men s doubles<><c4>=>mixed doubles<><c5>=>year<>
 <f1>=>women s singles<><v1>=>juliane schenk<><f0>=>mixed doubles<><c0>=>women s singles<><c1>=>women s doubles<><c2>=>men s singles<><c3>=>men s doubles<><c4>=>mixed doubles<><c5>=>year<>

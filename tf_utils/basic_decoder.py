@@ -72,7 +72,7 @@ class BasicDecoder(decoder.Decoder):
     self._helper = helper
     self._initial_state = initial_state
     self._output_layer = output_layer
-    #wenlu add input to copy X [B,maxlen] idx
+    # @w add input to copy X [B,maxlen] idx
     self._X = X
   @property
   def batch_size(self):
@@ -137,7 +137,7 @@ class BasicDecoder(decoder.Decoder):
       `(outputs, next_state, next_inputs, finished)`.
     """
     with ops.name_scope(name, "BasicDecoderStep", (time, inputs, state)):
-      #wenlu add logits
+      # @w add logits
       cell_outputs, cell_state, logits = self._cell(inputs, state)
       if self._output_layer is not None:
         cell_outputs = self._output_layer(cell_outputs)

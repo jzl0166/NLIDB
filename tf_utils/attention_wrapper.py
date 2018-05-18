@@ -1022,7 +1022,7 @@ def _compute_attention(attention_mechanism, cell_output, previous_alignments,
     attention = attention_layer(array_ops.concat([cell_output, context], 1))
   else:
     attention = context
-  #wenlu add score
+  #@ww add score
   return attention, alignments, score
 
 
@@ -1356,7 +1356,7 @@ class AttentionWrapper(rnn_cell_impl.RNNCell):
     all_histories = []
     all_scores = []
     for i, attention_mechanism in enumerate(self._attention_mechanisms):
-      # wenlu add score
+      # @w add score
       attention, alignments, score = _compute_attention(
           attention_mechanism, cell_output, previous_alignments[i],
           self._attention_layers[i] if self._attention_layers else None)
