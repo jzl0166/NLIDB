@@ -19,18 +19,38 @@ arg1="${1:-}"
 # Bash3 Boilerplate End
 #######################################
 
-function convert_dev (){
-  ./table_to_db.py \
+function evaluate_dev (){
+  ./evaluate_ours.py \
     --data_root ../scratch/nlidb_data_ours \
-    --table_file dev_cleaned_table.txt \
+    --parsed_std_sql_file dev_ground_truth_mark.parsed.txt \
+    --parsed_pred_sql_file dev_infer.parsed.txt \
     --db_file dev_cleaned_table.db \
     ;
 }
 
-function convert_test (){
-  ./table_to_db.py \
+function evaluate_dev_transformer (){
+  ./evaluate_ours.py \
     --data_root ../scratch/nlidb_data_ours \
-    --table_file test_cleaned_table.txt \
+    --parsed_std_sql_file dev_ground_truth_mark.parsed.txt \
+    --parsed_pred_sql_file dev_infer_transformer.parsed.txt \
+    --db_file dev_cleaned_table.db \
+    ;
+}
+
+function evaluate_test (){
+  ./evaluate_ours.py \
+    --data_root ../scratch/nlidb_data_ours \
+    --parsed_std_sql_file test_ground_truth_mark.parsed.txt \
+    --parsed_pred_sql_file test_infer.parsed.txt \
+    --db_file test_cleaned_table.db \
+    ;
+}
+
+function evaluate_test_transformer (){
+  ./evaluate_ours.py \
+    --data_root ../scratch/nlidb_data_ours \
+    --parsed_std_sql_file test_ground_truth_mark.parsed.txt \
+    --parsed_pred_sql_file test_infer_transformer.parsed.txt \
     --db_file test_cleaned_table.db \
     ;
 }

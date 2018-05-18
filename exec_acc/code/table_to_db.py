@@ -46,6 +46,9 @@ def main(argv):
         )
         t.create_table(db)
 
+        assert table_module.Table.get_schema(
+            db=db, table_id=table['id']) is not None
+
 
 import pdb, traceback, sys, code  # noqa
 
