@@ -126,7 +126,7 @@ class NlidbWiki(translate.TranslateProblem):
 
   @property
   def vocabulary(self):
-      wvoc = DetTextEncoder("/home/gongzhitaao/t2t_data/vocab.wiki.10048")
+      wvoc = DetTextEncoder("~/t2t_data/vocab.wiki.10048")
       return wvoc
 
 

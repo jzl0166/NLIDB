@@ -114,7 +114,8 @@ class SymbolModality(modality.Modality):
       @w add
       build embedding matrix with GloVe
       """
-      vocab_emb = np.load('/home/gongzhitaao/ww/vocab.npy')
+      vocab_file = '{vocab file name}'
+      vocab_emb = np.load(vocab_file)
       return vocab_emb
 
       from tensor2tensor.utils import glove
@@ -150,7 +151,7 @@ class SymbolModality(modality.Modality):
               assert re.shape==(300,)
               vocab_emb[i]=re 
           i += 1
-      np.save('/home/gongzhitaao/ww/vocab.npy', vocab_emb)
+      np.save(vocab_file, vocab_emb)
       return vocab_emb
   def bottom_simple(self, x, name, reuse):
     with tf.variable_scope(name, reuse=reuse):

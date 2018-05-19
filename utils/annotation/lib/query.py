@@ -44,7 +44,7 @@ class Query:
             rep +=  ' WHERE ' + ' AND '.join(['{} {} {}'.format('col{}'.format(i), self.cond_ops[o], v) for i, o, v in self.conditions])
         return rep
     
-    #Added by Wenlu
+    #Added by @w
     def _index(self, L, v, t):
         v = str(v).decode('utf-8')
         if t=='real':
