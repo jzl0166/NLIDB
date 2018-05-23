@@ -66,17 +66,6 @@ t2t-decoder \
   --decode_from_file=$DECODE_FILE \
   --decode_to_file=$OUT_FILE
 
-DECODE_FILE=/home/gongzhitaao/ww/wiki/dev.qu
-OUT_FILE=/home/gongzhitaao/ww/wiki/dev_inf
-t2t-decoder \
-  --data_dir=$DATA_DIR \
-  --problem=$PROBLEM \
-  --model=$MODEL \
-  --hparams_set=$HPARAMS \
-  --output_dir=$TRAIN_DIR \
-  --decode_hparams="beam_size=$BEAM_SIZE,alpha=$ALPHA" \
-  --decode_from_file=$DECODE_FILE \
-  --decode_to_file=$OUT_FILE
 ```
 ```
 tensorboard --logdir $TRAIN_DIR --host localhost --port 2222
