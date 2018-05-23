@@ -54,8 +54,8 @@ t2t-trainer \
 BEAM_SIZE=4
 ALPHA=0.6
 
-DECODE_FILE=/home/gongzhitaao/ww/wiki/test.qu
-OUT_FILE=/home/gongzhitaao/ww/wiki/test_inf
+DECODE_FILE={path to file}
+OUT_FILE={path to file}
 t2t-decoder \
   --data_dir=$DATA_DIR \
   --problem=$PROBLEM \
