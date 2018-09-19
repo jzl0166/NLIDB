@@ -18,25 +18,18 @@ __root="$(cd "$(dirname "${__dir}")" && pwd)" # <-- change this as it depends on
 arg1="${1:-}"
 # Bash3 Boilerplate End
 #######################################
-
-function evaluate_dev (){
+function evaluate_test (){
   ./evaluate_ours.py \
     --data_root ../scratch \
-    --parsed_std_sql_file dev_ground_truth_mark.parsed.txt \
-    --parsed_pred_sql_file dev_infer.parsed.txt \
-    --db_file dev_cleaned_table.db \
+    --parsed_std_sql_file test_ground_truth_mark.parsed.txt \
+    --parsed_pred_sql_file test_infer.parsed.txt \
+    --db_file test_cleaned_table.db \
     ;
 }
 
 
-function evaluate_dev_transformer (){
-  ./evaluate_ours.py \
-    --data_root ../scratch \
-    --parsed_std_sql_file dev_ground_truth_mark.parsed.txt \
-    --parsed_pred_sql_file dev_infer_transformer.parsed.txt \
-    --db_file dev_cleaned_table.db \
-    ;
-}
+
+
 
 function evaluate_test (){
   ./evaluate_ours.py \
@@ -47,14 +40,6 @@ function evaluate_test (){
     ;
 }
 
-function evaluate_test_transformer (){
-  ./evaluate_ours.py \
-    --data_root ../scratch \
-    --parsed_std_sql_file test_ground_truth_mark.parsed.txt \
-    --parsed_pred_sql_file test_infer_transformer.parsed.txt \
-    --db_file test_cleaned_table.db \
-    ;
-}
 
 mkdir -p "${__dir}/../scratch/output"
 

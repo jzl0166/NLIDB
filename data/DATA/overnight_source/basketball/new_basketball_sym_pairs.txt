@@ -1,0 +1,235 @@
+<f0>=>players<><v1>=>3<><f1>=>assists<>
+<f0>=>number_of_points<><f1>=>player<><v1>=>kobe_bryant<><f2>=>season<><v2>=>2004<><f0> =>player<>
+<f0>=>blocks<><v1>=>kobe_bryant<><v2>=>3<><f2>=>assists<><f1> =>player<>
+<f0>=>turnovers<><v1>=>kobe_bryant<>
+<f0>=>position<><v1>=>kobe_bryant<><v2>=>los_angeles_lakers<><f1> =>player<>
+<f1>=>player<><v1>=>3<><f0>=>steals<><f2> =>player<>
+<f0>=>year<><v1>=>kobe_bryant<><v2>=>3<><f2>=>rebounds<>
+<f0>=>seasons<><v1>=>kobe_bryant<><v2>=>3<><f2>=>fouls<>
+<f0>=>position<><v1>=>kobe_bryant<><v2>=>3<><f2>=>steals<><f1> =>player<>
+<f0>=>number_of_rebounds<><v1>=>kobe_bryant<><v2>=>3<><f2>=>steals<>
+<f0>=>fouls<><f1>=>played<><v1>=>kobe_bryant<><v2>=>2004<>
+<f0>=>season<><f1>=>player<><v1>=>kobe_bryant<><f1>=>player<><v2>=>3<><f2>=>turnovers<>
+<f1>=>team<><v1>=>kobe_bryant<><v2>=>2004<><f2> =>player<>
+<f0>=>player<><f0>=>played<><v1>=>4<><f1>=>games<>
+<f0>=>season<><v1>=>kobe_bryant<><f2> =>position<>
+<f1>=>blocks<><v1>=>kobe_bryant<><f2> =>player<>
+<f0>=>team<><v1>=>kobe_bryant<><v2>=>3<><f2>=>games<>
+<f0>=>number_of_rebounds<><v1>=>kobe_bryant<><v2>=>3<><f2>=>blocks<><f1> =>player<>
+<f0>=>players<><v1>=>2<><f1>=>rebounds<><f1> =>player<>
+<f0>=>games<><v1>=>kobe_bryant<><v2>=>3<><f2>=>blocks<><f1> =>player<>
+<f0>=>blocks<><v1>=>kobe_bryant<><v2>=>2004<><f2>=>season<><f1> =>player<>
+<f0>=>games<><v1>=>kobe_bryant<><v2>=>3<><f2>=>assists<><f1> =>player<><f2> =>position<>
+<f0>=>position<><f1>=>player<><v1>=>kobe_bryant<><f1>=>player<><f1>=>played<><v2>=>3<><f2>=>games<><f1> =>player<>
+<f0>=>player<><v1>=>3<><f1>=>assists<><f1> =>player<>
+<f0>=>player<><v1>=>3<><f1>=>rebounds<>
+<f0>=>blocks<><v1>=>kobe_bryant<><v2>=>3<><f2>=>rebounds<>
+<f0>=>player<><v1>=>3<><f1>=>steals<><f1> =>player<>
+<f0>=>blocks<><v1>=>kobe_bryant<><v2>=>3<><f2>=>games<><f1> =>player<>
+<f0>=>fouls<><v1>=>kobe_bryant<><f1> =>player<>
+<f0>=>points<><v1>=>kobe_bryant<><v2>=>3<><f2>=>blocks<><f1> =>player<>
+<f1>=>position<><v1>=>kobe_bryant<><v2>=>3<><f2>=>blocks<>
+<f0>=>seasons<><v1>=>kobe_bryant<><v2>=>3<><f2>=>blocks<>
+<f0>=>blocks<><v1>=>kobe_bryant<><f1> =>player<>
+<f0>=>position<><v1>=>kobe_bryant<><v2>=>2004<><f1> =>player<>
+<f0>=>steals<><v1>=>kobe_bryant<><v2>=>3<><f2>=>rebounds<><f2> =>position<>
+<f0>=>position<><v1>=>kobe_bryant<><v2>=>2004<><f2>=>season<><f1> =>player<>
+<f0>=>games<><v1>=>kobe_bryant<><v2>=>3<><f2>=>blocks<><f1> =>player<>
+<f0>=>player<><v0>=>kobe_bryant<><v1>=>3<><f1>=>rebounds<><f1> =>player<><f2> =>season<>
+<f0>=>player<><v1>=>3<><f1>=>points<><f1> =>player<>
+<f0>=>team<><v1>=>kobe_bryant<><v2>=>3<><f2>=>blocks<>
+<f0>=>rebounds<><v1>=>kobe_bryant<><v2>=>2004<>
+<f0>=>number_of_fouls<><v1>=>kobe_bryant<><f1>=>player<><v2>=>3<><f2>=>assists<><f1> =>player<>
+<f0>=>team<><v1>=>kobe_bryant<><v2>=>3<><f2>=>blocks<><f1> =>player<>
+<f0>=>turnovers<><v1>=>kobe_bryant<><f1> =>player<><f2> =>team<>
+<f0>=>rebounds<><v1>=>kobe_bryant<><v2>=>3<><f2>=>fouls<>
+<f0>=>player<><f1>=>number_of_assists<><v1>=>3<><f1> =>player<>
+<f0>=>player<><v1>=>3<><f1>=>points<><f1> =>player<>
+<f0>=>fouls<><v1>=>kobe_bryant<><v2>=>3<><f2>=>games<><f0> =>player<>
+<f0>=>fouls<><v1>=>kobe_bryant<>
+<f0>=>player<><v1>=>3<><f1>=>blocks<><f1> =>player<>
+<v0>=>3<><f0>=>turnovers<><f1>=>team<><v2>=>kobe_bryant<><f1> =>player<>
+<f0>=>turnovers<><v1>=>kobe_bryant<><v2>=>3<><f2>=>assists<>
+<v0>=>kobe_bryant<><f0>=>played<><v1>=>3<><f1>=>assists<><f2>=>season<><f1> =>player<>
+<f0>=>assists<><v1>=>kobe_bryant<><v2>=>3<><f2>=>steals<><f1> =>player<>
+<f0>=>player<><v1>=>3<><f1>=>steals<><f0> =>player<>
+<f0>=>players<><f0>=>played<><v1>=>3<><f1>=>games<><f1> =>player<>
+<f0>=>position<><v1>=>kobe_bryant<><v2>=>3<><f2>=>steals<>
+<f0>=>blocks<><v1>=>kobe_bryant<><f1> =>player<>
+<f0>=>number_of_rebounds<><f1>=>player<><v1>=>kobe_bryant<><v2>=>3<><f2>=>blocks<>
+<f0>=>position<><v1>=>kobe_bryant<><v2>=>3<><f2>=>rebounds<>
+<f0>=>steals<><v1>=>kobe_bryant<><v2>=>los_angeles_lakers<><f1> =>player<>
+<f0>=>games<><v1>=>kobe_bryant<><v2>=>3<><f2>=>assists<><f1> =>player<>
+<f0>=>blocks<><v1>=>kobe_bryant<><f2>=>season<><v2>=>2004<><f1> =>player<>
+<f0>=>number_of_turnovers<><v1>=>kobe_bryant<><v2>=>2004<><f1> =>player<>
+<f0>=>season<><v1>=>kobe_bryant<><v2>=>3<><f2>=>points<><f1> =>player<><f2> =>team<>
+<f0>=>rebounds<><v1>=>kobe_bryant<><v2>=>3<><f2>=>fouls<>
+<f0>=>player<><v1>=>3<><f1>=>steals<>
+<f0>=>team<><f1>=>player<><v1>=>kobe_bryant<><v2>=>2004<><f2>=>season<><f1> =>player<><f2> =>season<>
+<f0>=>teams<><v1>=>kobe_bryant<><f1> =>player<>
+<f1>=>seasons<><v1>=>kobe_bryant<><v2>=>3<><f2>=>blocks<><f2> =>player<>
+<f0>=>games<><v1>=>kobe_bryant<><v2>=>3<><f2>=>fouls<><f1> =>player<>
+<f0>=>player<><v1>=>3<><f1>=>fouls<><f1> =>player<>
+<f0>=>rebounds<><v1>=>kobe_bryant<><v2>=>2004<>
+<f0>=>games<><v1>=>kobe_bryant<><f1>=>played<><f1> =>player<>
+<f0>=>player<><v1>=>3<><f1>=>blocks<><f1> =>player<>
+<f0>=>player<><f1>=>blocks<><v0>=>kobe_bryant<><f1>=>number_of_blocks<><v1>=>3<>
+<f0>=>steals<><v1>=>kobe_bryant<><v2>=>2004<><f0> =>player<>
+<f0>=>games<><v1>=>kobe_bryant<><f1>=>played<>
+<f0>=>blocks<><v1>=>kobe_bryant<><v2>=>3<><f2>=>rebounds<>
+<f0>=>fouls<><f1>=>played<><v1>=>kobe_bryant<><v2>=>3<><f2>=>rebounds<><f1> =>player<>
+<f0>=>turnovers<><v1>=>kobe_bryant<><f0> =>player<>
+<f0>=>blocks<><v1>=>point_guard<><v2>=>kobe_bryant<><f0> =>player<>
+<f0>=>fouls<><v1>=>kobe_bryant<><v2>=>3<><f2>=>points<><f1> =>player<>
+<f0>=>player<><v1>=>3<><f1>=>points<>
+<f0>=>players<><v1>=>4<><f1>=>fouls<><f0> =>player<><f1> =>position<>
+<f0>=>assists<><f1>=>player<><v1>=>kobe_bryant<><v2>=>3<><f2>=>turnovers<><f0> =>player<>
+<f0>=>year<><v1>=>kobe_bryant<><v2>=>los_angeles_lakers<><f1> =>player<><f2> =>team<>
+<f0>=>team<><v1>=>kobe_bryant<><v2>=>2004<><f1> =>player<>
+<f0>=>season<><v1>=>kobe_bryant<><v2>=>3<><f2>=>fouls<><f0> =>player<>
+<f0>=>rebounds<><v1>=>point_guard<><v2>=>kobe_bryant<>
+<f0>=>player<><v1>=>3<><f1>=>blocks<><f1> =>player<>
+<f0>=>blocks<><v1>=>kobe_bryant<><v2>=>3<><f2>=>point<><f1> =>player<>
+<f0>=>points<><v1>=>kobe_bryant<><v2>=>los_angeles_lakers<><f1> =>player<>
+<f0>=>player<><f0>=>player<><v1>=>4<><f1>=>blocks<><f0> =>player<><f1> =>season<>
+<f0>=>rebounds<><v1>=>lalos_angeles_lakers<><f2>=>player<><v2>=>kobe_bryant<>
+<f0>=>fouls<><v1>=>kobe_bryant<><v2>=>3<><f2>=>points<><f0> =>player<>
+<f0>=>player<><v1>=>3<><f1>=>points<><f1> =>player<>
+<f0>=>steals<><v1>=>kobe_bryant<><v0>=>3<><f0>=>steals<>
+<f0>=>blocks<><v1>=>kobe_bryant<><v2>=>3<><f2>=>steals<>
+<f0>=>games<><v1>=>kobe_bryant<><v2>=>3<><f2>=>assists<><f1> =>player<>
+<f0>=>player<><f1>=>foul<><v1>=>3<><f1> =>player<>
+<f0>=>rebounds<><v1>=>kobe_bryant<><f2>=>turnovers<><v2>=>3<><f1> =>player<>
+<f0>=>number_of_turnovers<><f1>=>player<><v1>=>kobe_bryant<><f1>=>player<><v2>=>3<><f2>=>rebounds<><f1> =>player<><f2> =>position<>
+<v0>=>2004<><f1>=>blocks<><v2>=>kobe_bryant<><f1> =>player<>
+<f0>=>fouls<><v1>=>kobe_bryant<><f1> =>player<>
+<f0>=>steals<><v1>=>kobe_bryant<>
+<f0>=>points<><v1>=>kobe_bryant<><f1>=>played<><v2>=>los_angeles_lakers<><f1> =>player<><f2> =>position<>
+<f0>=>team<><f1>=>player<><v1>=>kobe_bryant<><f1> =>player<>
+<f0>=>position<><v1>=>kobe_bryant<><v2>=>3<><f2>=>turnovers<><f1> =>player<>
+<f0>=>season<><f1>=>player<><v1>=>kobe_bryant<><v2>=>3<><f2>=>blocks<><f1> =>player<>
+<f0>=>number_of_played_games<><f1>=>player<><v1>=>kobe_bryant<><v2>=>3<><f2>=>points<><f1> =>player<>
+<f0>=>players<><v1>=>3<><f1>=>points<>
+<f0>=>assists<><v1>=>kobe_bryant<>
+<f0>=>team<><v1>=>kobe_bryant<><v2>=>3<><f2>=>steals<><f1> =>player<>
+<f0>=>turnovers<><v1>=>kobe_bryant<><v2>=>3<><f2>=>blocks<>
+<f0>=>turnovers<><v1>=>kobe_bryant<><v2>=>3<><f2>=>assists<><f0> =>player<><f1> =>position<>
+<f0>=>players<><v1>=>3<><f1>=>turnovers<>
+<f0>=>season<><v1>=>kobe_bryant<><v2>=>3<><f2>=>rebounds<><f1> =>player<><f2> =>team<>
+<f0>=>turnovers<><v1>=>kobe_bryant<>
+<f0>=>assists<><v1>=>kobe_bryant<><v2>=>3<><f2>=>blocks<>
+<f0>=>rebounds<><v1>=>kobe_bryant<><v2>=>2004<>
+<f0>=>turnovers<><v1>=>kobe_bryant<><f1>=>played<><v2>=>los_angeles_lakers<><f1> =>player<>
+<f1>=>team<><v1>=>kobe_bryant<><f1>=>steam<><f2> =>player<>
+<f0>=>blocks<><v1>=>kobe_bryant<><f1>=>player<><v2>=>los_angeles_lakers<><f2>=>team<><f1> =>player<>
+<f0>=>number_of_blocks<><f1>=>player<><v1>=>kobe_bryant<><f1>=>player<><v2>=>3<><f2>=>fouls<><f1> =>player<>
+<f0>=>player<><v1>=>3<><f1>=>fouls<><f1> =>player<><f2> =>position<>
+<f0>=>assists<><v1>=>kobe_bryant<>
+<f0>=>season<><v1>=>kobe_bryant<><v2>=>3<><f2>=>games<>
+<f0>=>team<><v1>=>kobe_bryant<><v2>=>3<><f2>=>rebounds<><f1> =>position<><f2> =>player<>
+<f0>=>turnovers<><v1>=>kobe_bryant<><f1>=>played<><f1> =>team<>
+<f0>=>rebounds<><v1>=>kobe_bryant<><f1> =>player<>
+<f0>=>number_of_fouls<><f1>=>player<><v1>=>kobe_bryant<><f1>=>player<><v2>=>point_guard<>
+<f0>=>season<><v1>=>kobe_bryant<><v2>=>3<><f2>=>points<>
+<f0>=>number_of_steals<><f1>=>player<><v1>=>kobe_bryant<><v2>=>3<><f2>=>turnovers<><f1> =>player<>
+<f0>=>fouls<><v1>=>kobe_bryant<><v2>=>lalos_angeles_lakers<>
+<f0>=>players<><v1>=>3<><f1>=>games<><f0>=>played<>
+<f0>=>player<><v1>=>3<><f1>=>points<><f1> =>player<>
+<f0>=>number_of_steals<><f1>=>player<><v1>=>kobe_bryant<><v2>=>3<><f2>=>points<>
+<f0>=>turnovers<><v1>=>kobe_bryant<><f1> =>player<>
+<f0>=>player<><v1>=>3<><f1>=>turnovers<><f1> =>player<>
+<f0>=>rebounds<><v1>=>kobe_bryant<>
+<f0>=>position<><v1>=>kobe_bryant<><v2>=>los_angeles_lakers<>
+<f0>=>player<><v1>=>3<><f1>=>rebounds<>
+<v0>=>kobe_bryants<><f1>=>games<><f0>=>played<><v2>=>3<><f2>=>rebounds<>
+<f0>=>teams<><v1>=>kobe_bryant<><f1>=>played<>
+<f1>=>player<><v1>=>3<><f0>=>rebounds<><f2> =>player<>
+<f0>=>steals<><v1>=>kobe_bryant<><v2>=>3<><f2>=>games<><f2> =>position<>
+<f0>=>year<><v1>=>kobe_bryant<><v2>=>3<><f2>=>steals<>
+<f0>=>turnovers<><v1>=>kobe_bryant<><v2>=>3<><f2>=>steals<><f1> =>player<>
+<f0>=>fouls<><v1>=>kobe_bryant<><v2>=>2004<><f1> =>player<>
+<f0>=>players<><v1>=>3<><f1>=>assists<><f1> =>player<>
+<f0>=>team<><v1>=>kobe_bryant<><f1> =>player<>
+<f0>=>blocks<><v1>=>kobe_bryant<>
+<f0>=>rebounds<><f1>=>player<><v1>=>kobe_bryant<><f2>=>season<><v2>=>2004<><f1> =>player<>
+<f0>=>turnovers<><v1>=>kobe_bryant<><v2>=>3<><f2>=>fouls<><f1> =>player<><f2> =>position<>
+<v0>=>2004<><f1>=>fouls<><v2>=>kobe_bryant<><f1> =>player<>
+<f0>=>number_of_blocks<><v1>=>kobe_bryant<><v2>=>3<><f2>=>fouls<><f1> =>player<>
+<v0>=>3<><f0>=>blocks<><v1>=>kobe_bryant<><f1> =>player<>
+<f0>=>rebounds<><v1>=>kobe_bryant<><v2>=>3<><f2>=>fouls<><f1> =>player<>
+<f0>=>team<><v1>=>kobe_bryant<><v2>=>3<><f2>=>assists<><f1> =>player<>
+<f0>=>number_of_points<><f1>=>player<><v1>=>kobe_bryant<><f1>=>player<><v2>=>3<><f2>=>assists<><f1> =>player<><f2> =>season<>
+<f0>=>turnovers<><v1>=>kobe_bryant<><v2>=>point_guard<><f1> =>player<><f2> =>team<>
+<f0>=>team<><v1>=>kobe_bryant<><v2>=>3<><f2>=>games<><f1> =>player<>
+<f0>=>blocks<><v1>=>kobe_bryant<><v2>=>3<><f2>=>games<><f1> =>player<>
+<f0>=>fouls<><v1>=>kobe_bryant<><v2>=>point_guard<><f1> =>player<>
+<f0>=>team<><v1>=>kobe_bryant<><v2>=>point_guard<><f1> =>player<><f2> =>team<>
+<f0>=>steals<><v1>=>kobe_bryant<><f1> =>player<>
+<f0>=>games<><v1>=>kobe_bryant<><f1>=>played<>
+<f0>=>blocks<><v1>=>kobe_bryant<><v2>=>3<><f2>=>turnovers<><f1> =>player<>
+<v0>=>3<><f0>=>steals<><f1>=>games<><v2>=>kobe_bryant<><f1> =>player<>
+<f0>=>turnovers<><v1>=>kobe_bryant<><v2>=>3<><f2>=>fouls<><f1> =>player<>
+<f0>=>points<><v1>=>kobe_bryant<><v2>=>los_angeles_lakers<><f1> =>player<>
+<f0>=>player<><f0>=>played<><v1>=>3<><f1>=>fouls<><f1> =>player<>
+<f0>=>team<><v1>=>kobe_bryant<><v2>=>point_guard<><f0> =>player<><f1> =>position<>
+<f0>=>games<><v1>=>kobe_bryant<><v2>=>3<><f2>=>steals<><f1> =>player<>
+<f0>=>number_of_rebounds<><v1>=>kobe_bryant<><f0> =>player<>
+<v0>=>kobe_bryants<><f1>=>number_of_assists<><v1>=>3<><f2>=>team<><f1> =>player<>
+<f0>=>blocks<><v1>=>kobe_bryant<><f1> =>player<>
+<f0>=>rebounds<><v1>=>kobe_bryant<><f1> =>player<><f2> =>position<>
+<f0>=>season<><v1>=>kobe_bryant<><v2>=>3<><f2>=>turnovers<><f0> =>player<>
+<v0>=>kobe_bryant<><f0>=>played<><v1>=>3<><f1>=>games<><f2>=>turnovers<>
+<f0>=>rebounds<><v1>=>kobe_bryant<><v2>=>3<><f2>=>points<><f1> =>player<>
+<v0>=>3<><f0>=>points<><f1>=>number_of_rebounds<><v2>=>kobe_bryant<><f1> =>player<>
+<v0>=>los_angeles_lakers<><f1>=>points<><v2>=>kobe_bryant<>
+<f1>=>games<><v1>=>kobe_bryant<><v2>=>3<><f2>=>steals<><f2> =>player<>
+<v0>=>kobe_bryant<><v1>=>3<><f1>=>steals<><f1> =>player<>
+<f0>=>blocks<><v1>=>kobe_bryant<><v2>=>3<><f2>=>fouls<><f1> =>player<>
+<f0>=>fouls<><v1>=>kobe_bryant<><v2>=>3<><f2>=>assists<><f1> =>player<>
+<f0>=>players<><v1>=>3<><f1>=>blocks<>
+<f0>=>points<><v1>=>kobe_bryant<><v2>=>3<><f2>=>games<><f1> =>player<>
+<f0>=>points<><v1>=>kobe_bryant<><v0>=>3<><f1> =>player<>
+<f0>=>rebounds<><v1>=>kobe_bryant<><v2>=>3<><f2>=>fouls<><f1> =>player<>
+<v0>=>kobe_bryant<><v1>=>2004<><f1> =>player<>
+<f0>=>season<><f1>=>player<><v1>=>kobe_bryant<><v2>=>3<><f2>=>points<><f1> =>player<>
+<f0>=>assists<><v1>=>kobe_bryant<><v2>=>3<><f2>=>fouls<><f1> =>player<>
+<f0>=>turnovers<><v1>=>kobe_bryant<>
+<f0>=>player<><v1>=>3<><f1>=>rebounds<>
+<f0>=>fouls<><v1>=>los_angeles_lakers<><v2>=>kobe_bryant<><f1> =>player<>
+<f0>=>blocks<><v1>=>kobe_bryant<><v2>=>2004<><f1> =>player<>
+<f0>=>games<><v1>=>kobebryant<><v2>=>3<><f2>=>fouls<><f1> =>player<>
+<f0>=>team<><v1>=>kobe_bryant<><v2>=>2004<>
+<f0>=>fouls<><v1>=>kobe_bryant<><v2>=>2004<><f1> =>player<>
+<f0>=>assists<><v1>=>kobe_bryant<><f1>=>player<><f2>=>team<><f1> =>player<>
+<f0>=>steals<><v1>=>kobe_bryant<><v2>=>3<><f2>=>turnovers<><f1> =>player<>
+<f0>=>steals<><v1>=>kobe_bryant<><v2>=>point_guard<><f1> =>player<><f2> =>position<>
+<f0>=>points<><v1>=>kobe_bryant<><v2>=>3<><f2>=>games<>
+<f0>=>number_of_assists<><f1>=>player<><v1>=>kobe_bryant<><v2>=>3<><f2>=>games<><f1> =>player<>
+<v0>=>3<><f0>=>steals<><f1>=>team<><v2>=>kobe_bryant<>
+<f0>=>games<><v1>=>kobe_bryant<><v2>=>lalos_angeles_lakers<><f0> =>player<>
+<f0>=>number_of_assists<><v1>=>kobe_bryant<><f1> =>player<>
+<f0>=>rebounds<><v1>=>kobe_bryant<><f1> =>position<><f2> =>player<>
+<v0>=>kobe_bryant<><v1>=>3<><f1>=>games<>
+<f0>=>season<><v1>=>kobe_bryant<><v2>=>3<><f2>=>assists<><f1> =>player<>
+<f0>=>players<><f0>=>player<><v1>=>3<><f1>=>games<><f1> =>player<><f2> =>position<>
+<f0>=>points<><v1>=>kobe_bryant<><v2>=>los_angeles_lakers<><f1> =>player<>
+<v0>=>kobe_bryant<><v1>=>3<><f1>=>fouls<><f2>=>number_of_turnovers<><f1> =>player<>
+<f0>=>steals<><v1>=>kobe_bryant<><v2>=>2004<><f1> =>player<>
+<f0>=>games<><v1>=>kobe_bryant<><v2>=>3<><f2>=>turnovers<><f1> =>player<>
+<f0>=>position<><v1>=>kobe_bryant<><v2>=>3<><f2>=>assists<>
+<f1>=>number_of_rebounds<><f0>=>player<><v1>=>kobe_bryant<><v2>=>los_angeles_lakers<><f2>=>team<><f0> =>team<><f2> =>player<>
+<f0>=>rebounds<><v1>=>kobe_bryant<>
+<f0>=>assists<><v1>=>kobe_bryant<><v2>=>3<><f2>=>blocks<>
+<f0>=>blocks<><f1>=>player<><v1>=>kobe_bryant<><v2>=>3<><f2>=>assists<>
+<v0>=>kobe_bryant<><v1>=>3<><f1>=>steals<><f1> =>player<>
+<v0>=>3<><f0>=>points<><f1>=>turnovers<><v2>=>kobe_bryant<>
+<f0>=>team<><v1>=>kobe_bryant<><v2>=>3<><f2>=>steals<><f1> =>player<><f2> =>season<>
+<f0>=>blocks<><v1>=>kobe_bryant<><v2>=>3<><f2>=>assists<><f1> =>player<><f2> =>position<>
+<f0>=>fouls<><v1>=>kobe_bryant<><v2>=>point_guard<><f2> =>player<>
+<v0>=>2004<><f0>=>season<><v1>=>kobe_bryant<>
+<v0>=>kobe_bryant<><v1>=>3<><f1>=>assists<>
+<f0>=>number_of_turnovers<><f1>=>player<><v1>=>kobe_bryant<><f2>=>season<><v2>=>2004<>
+<f0>=>position<><v1>=>kobe_bryant<><f1> =>player<><f2> =>position<>
+<f0>=>points<><v1>=>kobe_bryant<><f1> =>player<>
+<f0>=>games<><v1>=>kobe_bryant<><v2>=>2004<><f2>=>season<><f1> =>player<>
+<f1>=>team<><v1>=>kobe_bryant<><v2>=>3<><f2>=>points<><f0> =>player<>

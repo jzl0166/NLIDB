@@ -1,0 +1,75 @@
+<f1>=>date<><v1>=>weekly_standup<><f0>=>meeting<><v1>=>true<>
+<v0>=>weekly_standup<>
+<f1>=>meetings<><v1>=>greenberg_cafe<><v2>=>alice<><f0> =>date<>
+<f1>=>meetings<><v1>=>three<><f0>=>length<>
+<f0>=>meetings<><v1>=>jan_2nd<><f1> =>location<>
+<f0>=>meetings<><v1>=>three<><f1>=>length<><f1>=>long<><v2>=>greenberg_cafe<><f1> =>date<>
+<f0>=>important<><f1>=>meeting<><v2>=>jan_2nd<>
+<f0>=>long<><v1>=>weekly_standup<><f1>=>meeting<><v1>=>true<><f2> =>start_time<>
+<v0>=>three<><f0>=>length<><f0>=>long<><f1>=>meetings<><f2>=>end<><v2>=>10am<><f1> =>meeting<>
+<f0>=>meetings<><v1>=>three<><f1>=>length<><f1> =>location<>
+<v1>=>weekly_standup<><f0>=>end<>
+<f0>=>meeting<><f1>=>end_time<><v1>=>10am<><v2>=>alice<><f1> =>location<>
+<f0>=>meeting<><f1>=>start_time<><v1>=>10am<><f1> =>date<>
+<f0>=>important<><f1>=>meeting<><f2>=>location<><v2>=>greenberg_cafe<>
+<v1>=>three<><f1>=>length<><f0>=>meetings<><v2>=>jan_2nd<>
+<f1>=>meetings<><v1>=>greenberg_cafe<><f2>=>attended<><v2>=>alice<><f2> =>date<>
+<f0>=>dates<><v1>=>weekly_standup<><f1>=>meetings<><f1> =>location<><f2> =>date<>
+<f0>=>meeting<><v1>=>alice<><f2>=>start_time<><v2>=>10am<><v1>=>true<>
+<f0>=>meetings<><v1>=>jan_2nd<><f1> =>start_time<>
+<f0>=>meetings<><v1>=>three<><f1>=>length<><v2>=>alice<><f2> =>start_time<>
+<f0>=>attendee<><v1>=>weekly_standup<><f2> =>location<>
+<f0>=>start_time<><v1>=>weekly_standup<><f1>=>meeting<><f2> =>location<>
+<f0>=>long<>
+<f1>=>meetings<><f0>=>attended<><v1>=>alice<><v2>=>three<><f2>=>length<><f2>=>long<><f0> =>date<><f2> =>attendee<>
+<f0>=>meetings<><f1>=>end<><v1>=>10am<>
+<f0>=>meetings<><f1>=>end<><v2>=>10am<><f2>=>start<><v2>=>10am<><f1> =>attendee<><f2> =>location<>
+<f0>=>important<><f1>=>meeting<><v2>=>10am<><v1>=>true<>
+<f1>=>locations<><v1>=>weekly_standup<><f0>=>meeting<><v1>=>true<><f2> =>location<>
+<f0>=>important<><f1>=>meetings<><f2>=>start<><v2>=>10am<><f1> =>meeting<>
+<f0>=>length<><v1>=>weekly_standup<><f1> =>location<><f2> =>start_time<>
+<f0>=>where<><v1>=>weekly_standup<><f2> =>date<>
+<f1>=>meetings<><v1>=>three<><f0>=>length<><v2>=>10am<><v1>=>true<><f2> =>date<>
+<f0>=>meetings<><f1>=>end<><v1>=>10am<><f2> =>location<>
+<f0>=>dates<><v1>=>weekly_standup<><f1>=>meetings<><f1> =>date<>
+<f0>=>meetings<><f1>=>start<><v1>=>10am<><f1> =>location<>
+<f0>=>meetings<><f1>=>important<><f2>=>start<><v2>=>10am<>
+<f0>=>attendee<><f0>=>attends<><v1>=>weekly_standup<><f1> =>start_time<>
+<f0>=>important<><f1>=>meetings<><f1> =>attendee<>
+<f0>=>meetings<><v1>=>jan_3rd<>
+<f1>=>meetings<><v1>=>jan_2nd<><f2>=>end<><v2>=>10am<>
+<f0>=>meeting<><f1>=>start_time<><v1>=>10am<><f1> =>location<>
+<f0>=>long<><v1>=>weekly_standup<><f1>=>meeting<><f2> =>attendee<>
+<f1>=>meetings<><v1>=>jan_2nd<><v2>=>greenberg_cafe<><v1>=>true<>
+<f0>=>attendee<><v1>=>weekly_standup<><f1>=>meeting<><f1> =>date<>
+<f0>=>meetings<><v1>=>greenberg_cafe<><f2>=>start<><v2>=>10am<><f2> =>location<>
+<f0>=>meeting<><f1>=>shorter<><v1>=>three<><f1>=>length<><f1> =>date<>
+<v0>=>weekly_standup<><f1>=>attendee<><f1> =>meeting<>
+<f0>=>meeting<><f1>=>start_time<><v1>=>10am<><f1> =>date<><f2> =>start_time<>
+<f0>=>meetings<><v1>=>10am<><v2>=>alice<><f1> =>date<>
+<f1>=>meeting<><f0>=>end_time<><v1>=>10am<><v2>=>jan_2nd<><v1>=>true<><f2> =>location<>
+<f0>=>attendee<><f0>=>attend<><v1>=>weekly_standup<><f1>=>meeting<>
+<f0>=>meeting<><v1>=>jan_2nd<><v2>=>10am<><f1> =>attendee<><f2> =>date<>
+<f0>=>meetings<><f1>=>important<><v2>=>true<>
+<v1>=>weekly_standup<><v1>=>true<>
+<f0>=>meetings<><v1>=>10am<><v1>=>true<><f2> =>start_time<>
+<f0>=>important<><f1>=>meetings<><f2>=>attended<><v2>=>alice<><f1> =>attendee<><f2> =>date<>
+<f1>=>meeting<><v1>=>greenberg_cafe<>
+<v1>=>three<><f1>=>length<><f0>=>meeting<><v2>=>alice<><v1>=>true<>
+<f0>=>locations<><v1>=>weekly_standup<><f1> =>start_time<>
+<f0>=>important<><f1>=>meeting<>
+<f0>=>meetings<><f1>=>start_time<><v2>=>10am<><f2>=>end<><v1>=>10am<>
+<v0>=>three<><f0>=>length<><f1>=>meeting<><v2>=>greenberg_cafe<>
+<f0>=>attendee<><v1>=>weekly_standup<><f1>=>meeting<>
+<f0>=>meeting<><v1>=>jan_2nd<>
+<f0>=>meetings<><v1>=>alice<><f1>=>attended<><v2>=>jan_2nd<><f1> =>start_time<>
+<f1>=>meetings<><v1>=>jan_2nd<><f2>=>end<><v2>=>10am<><f2> =>location<>
+<f0>=>important<><f1>=>meetings<><f2>=>attended<><v2>=>alice<>
+<f0>=>meeting<><f1>=>end_time<><v1>=>10am<><f1> =>date<>
+<f1>=>important<><f0>=>meetings<><f2>=>start<><v2>=>10am<><v1>=>true<>
+<v0>=>jan_2nd<><f1>=>meeting<>
+<f0>=>important<><f1>=>meeting<><v2>=>greenberg_cafe<><f1> =>location<>
+<f1>=>meetings<><v1>=>greenberg_cafe<><f2>=>end<><v2>=>10am<><v1>=>true<>
+<v0>=>three<><f0>=>length<><f1>=>meeting<><v2>=>alice<><f2>=>attendee<><f1> =>attendee<>
+<f0>=>meetings<><v1>=>alice<><v2>=>three<><f2>=>length<><f2>=>long<>
+<f1>=>meetings<><v1>=>three<><f0>=>length<><f0>=>long<><f2> =>attendee<>

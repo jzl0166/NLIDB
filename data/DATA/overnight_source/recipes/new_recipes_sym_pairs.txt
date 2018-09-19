@@ -1,0 +1,34 @@
+<v0>=>lunch<><f1>=>recipes<><f1> =>posting_date<>
+<f0>=>cuisine<><v1>=>rice_pudding<><f1> =>ingredient<>
+<v0>=>lunch<><f1>=>recipe<><f2>=>posting_date<><v2>=>2004<><f1> =>recipe<>
+<v0>=>lunch<><f1>=>recipes<><f2>=>ingredient<><v2>=>milk<>
+<f0>=>meal<><v1>=>rice_pudding<><f2> =>meal<>
+<f0>=>recipe<><f1>=>posting_date<><v1>=>2004<>
+<f0>=>cook<><v1>=>rice_pudding<><f1> =>meal<>
+<f0>=>ingredients<><v1>=>rice_pudding<>
+<v0>=>lunch<><f1>=>recipes<><f2>=>posting_date<><v2>=>2004<>
+<v0>=>lunch<><f1>=>recipe<>
+<f0>=>recipe<><v1>=>milk<><v2>=>lunch<><f2>=>meal<>
+<f0>=>ingredients<><v1>=>rice_pudding<><f1> =>recipe<>
+<f0>=>cooking_time<><f1> =>ingredient<><f2> =>meal<>
+<f0>=>cuisine<><v1>=>rice_pudding<>
+<f0>=>preparation_time<><v1>=>rice_pudding<>
+<f0>=>recipes<><f1>=>posting_date<><v1>=>2004<><f2>=>ingredient<><v2>=>milk<>
+<f1>=>cooking_time<><v1>=>rice_pudding<><f0> =>meal<><f2> =>ingredient<>
+<f0>=>prep_time<><v1>=>rice_pudding<><f1> =>recipe<>
+<f0>=>recipes<><f1>=>posting_date<><v1>=>2004<><f2> =>meal<>
+<f0>=>preparation_time<><v1>=>rice_pudding<>
+<v0>=>rice_pudding<><f1>=>prep<><f1> =>ingredient<>
+<f0>=>cooking_time<><f1> =>recipe<>
+<f0>=>cuisine<><v1>=>rice_pudding<><f1> =>meal<>
+<f1>=>when<><f0>=>recipe<><v1>=>rice_pudding<><f1>=>posting_date<><f0> =>recipe<>
+<f0>=>cooking_time<><f1> =>recipe<>
+<v1>=>lunch<><f0>=>recipe<><v2>=>milk<><f0> =>recipe<>
+<f0>=>recipes<><f1>=>posting_date<><v1>=>2010<>
+<f1>=>recipes<><f0>=>posting_date<><v1>=>2004<><f0> =>meal<>
+<f0>=>recipe<><v1>=>lunch<>
+<f0>=>recipe<><v1>=>milk<><f1>=>ingredient<>
+<f0>=>recipes<><v1>=>milk<>
+<f0>=>preparation_time<><f1> =>recipe<>
+<f0>=>meal<><v1>=>rice_pudding<><f2> =>meal<>
+<f0>=>preparation_time<><v1>=>rice_pudding<><f1> =>recipe<>

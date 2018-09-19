@@ -42,6 +42,7 @@ def build_vocab_all(load=True, files=vocab_files):
         vocabs = set()
         
         for fname in files:
+            print(fname)
             with gfile.GFile(fname, mode='r') as DATA:
                 lines = DATA.readlines()
                 for line in lines:
@@ -245,6 +246,15 @@ def load_data(maxlen=30, load=False, s='train'):
         print(X.shape)
         print(y.shape)  
         return X, y
+    elif s=='overnight_test':
+        lists = []
+        for subset in ['basketball', 'calendar', 'housing', 'recipes', 'restaurants']:
+            X1, y1 = load_data_overnight(maxlen=maxlen, subset=subset, load=load, s='train')
+            X2, y2 = load_data_overnight(maxlen=maxlen, subset=subset, load=load, s='test')
+            #X = np.concatenate([X1,X2], axis=0)
+            #y = np.concatenate([y1,y2], axis=0)
+            lists.append((X2, y2))
+        return lists
     else:
         lists = []
         for subset in ['basketball', 'calendar', 'housing', 'recipes', 'restaurants']:

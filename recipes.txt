@@ -1,0 +1,136 @@
+================
+recipes where <f1> equal <v1>
+recipe where meal equal lunch
+<f0> where <f1> equal <v1>
+================
+recipes where <f2> equal <v2> and <f1> equal <v1>
+cuisine where recipe equal rice_pudding
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+cook where <f1> equal <v1>
+recipe where posting_date equal 2004 and meal equal lunch
+<f0> where <f1> equal <v1>
+================
+recipe where preparation_time equal <v1>
+recipe where meal equal lunch and ingredient equal milk
+<f0> where <f1> equal <v1>
+================
+recipe where <f1> equal <v1> and posted equal <v2>
+meal where recipe equal rice_pudding
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+<c5> where <f2> equal <v2> and <f1> equal <v1>
+recipe where posting_date equal 2004
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+recipes where meals equal <v1>
+cooking_time where recipe equal rice_pudding
+<f0> where <f1> equal <v1>
+================
+meals where <f1> equal <v1>
+ingredient where recipe equal rice_pudding
+<f0> where <f1> equal <v1>
+================
+recipe where prep greater <v1>
+recipe where posting_date equal 2004 and meal equal lunch
+<f0> where <f1> equal <v1>
+================
+count recipes
+recipe where meal equal lunch
+<f0>
+================
+recipe where cooking_time equal <v1> and <f2> equal <v2>
+recipe where meal equal lunch and ingredient equal milk
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+preparation_time where <f1> equal <v1>
+ingredient where recipe equal rice_pudding
+<f0> where <f1> equal <v1>
+================
+recipes where meals equal <v1> and <f2> equal <v2>
+cooking_time
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+recipe where <f2> equal <v2> and ingredients equal <v1>
+cuisine where recipe equal rice_pudding
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+count recipe
+preparation_time where recipe equal rice_pudding
+<f0>
+================
+recipe where ingredients equal <v1>
+recipe where posting_date equal 2004 and ingredient equal milk
+<f0> where <f1> equal <v1>
+================
+recipes where cooking_time equal <v2> and preparation_time equal <v1>
+cooking_time where recipe equal rice_pudding
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+recipes where require equal <v1>
+preparation_time where recipe equal rice_pudding
+<f0> where <f1> equal <v1>
+================
+recipe where posting_date equal <v1> and <f2> equal <v2>
+recipe where posting_date greater 2004 
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+count <c2>
+preparation_time where recipe equal rice_pudding
+<f0>
+================
+recipe where posting_date equal <v1>
+preparation_time where recipe equal rice_pudding
+<f0> where <f1> equal <v1>
+================
+recipes where meals equal <v1>
+cooking_time
+<f0> where <f1> equal <v1>
+================
+recipes where meals equal <v1>
+cuisine where recipe equal rice_pudding
+<f0> where <f1> equal <v1>
+================
+<c5> where posted equal <v1>
+posting_date where recipe equal rice_pudding
+<f0> where <f1> equal <v1>
+================
+recipe where ingredient equal <v1> and <f2> equal <v2>
+cooking_time
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+<c5> where recipe equal <v1>
+recipe where ingredient equal milk and meal equal lunch
+<f0> where <f1> equal <v1>
+================
+recipes where <c4> equal 22500
+recipe where posting_date less 2010
+<f0>
+================
+<c5> where cuisines equal <v1> and <f2> equal <v2>
+recipe where posting_date equal 2004
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+recipes where posting_date equal <v1>
+recipe where meal equal lunch
+<f0> where <f1> equal <v1>
+================
+recipe where cuisines equal <v1>
+recipe where ingredient equal milk
+<f0> where <f1> equal <v1>
+================
+recipes where cooking_time equal <v1>
+recipe where ingredient equal milk
+<f0> where <f1> equal <v1>
+================
+recipes where require equal <v1>
+preparation_time
+<f0> where <f1> equal <v1>
+================
+recipes where preparation_time equal <v1> and <f2> equal <v2>
+meal where recipe equal rice_pudding
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+min <c5> where posted equal <v1>
+preparation_time where recipe equal rice_pudding
+<f0> where <f1> equal <v1>

@@ -21,7 +21,7 @@ arg1="${1:-}"
 
 function parse_dev_ground_truth (){
   ./parse_ours.py \
-    --data_root ../scratch/nlidb_data_ours \
+    --data_root ../scratch \
     --table_file dev_cleaned_table.txt \
     --sql_file dev_ground_truth_mark.txt \
     --sqltableid_file dev_SQL2tableid.txt \
@@ -31,7 +31,7 @@ function parse_dev_ground_truth (){
 
 function parse_dev_infer (){
   ./parse_ours.py \
-    --data_root ../scratch/nlidb_data_ours \
+    --data_root ../scratch \
     --table_file dev_cleaned_table.txt \
     --sql_file dev_infer.txt \
     --sqltableid_file dev_SQL2tableid.txt \
@@ -39,19 +39,9 @@ function parse_dev_infer (){
     ;
 }
 
-  function parse_dev_infer_transformer (){
-  ./parse_ours.py \
-    --data_root ../scratch/nlidb_data_ours \
-    --table_file dev_cleaned_table.txt \
-    --sql_file dev_infer_transformer.txt \
-    --sqltableid_file dev_SQL2tableid.txt \
-    --parsed_sql_file dev_infer_transformer.parsed.txt \
-    ;
-}
-
 function parse_test_ground_truth (){
   ./parse_ours.py \
-    --data_root ../scratch/nlidb_data_ours \
+    --data_root ../scratch \
     --table_file test_cleaned_table.txt \
     --sql_file test_ground_truth_mark.txt \
     --sqltableid_file test_SQL2tableid.txt \
@@ -61,24 +51,13 @@ function parse_test_ground_truth (){
 
 function parse_test_infer (){
   ./parse_ours.py \
-    --data_root ../scratch/nlidb_data_ours \
+    --data_root ../scratch \
     --table_file test_cleaned_table.txt \
     --sql_file test_infer.txt \
     --sqltableid_file test_SQL2tableid.txt \
     --parsed_sql_file test_infer.parsed.txt \
     ;
 }
-
-function parse_test_infer_transformer (){
-  ./parse_ours.py \
-    --data_root ../scratch/nlidb_data_ours \
-    --table_file test_cleaned_table.txt \
-    --sql_file test_infer_transformer.txt \
-    --sqltableid_file test_SQL2tableid.txt \
-    --parsed_sql_file test_infer_transformer.parsed.txt \
-    ;
-}
-
 
 mkdir -p "${__dir}/../scratch/output"
 

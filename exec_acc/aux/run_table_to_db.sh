@@ -21,15 +21,15 @@ arg1="${1:-}"
 
 function convert_dev (){
   ./table_to_db.py \
-    --data_root ../scratch/nlidb_data_ours \
+    --data_root ../scratch \
     --table_file dev_cleaned_table.txt \
-    --db_file dev_cleaned_table.db \
+    --db_file dev_clean_table.db \
     ;
 }
 
 function convert_test (){
   ./table_to_db.py \
-    --data_root ../scratch/nlidb_data_ours \
+    --data_root ../scratch \
     --table_file test_cleaned_table.txt \
     --db_file test_cleaned_table.db \
     ;

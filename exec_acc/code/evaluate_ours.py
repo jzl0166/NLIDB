@@ -37,16 +37,17 @@ def main(argv):
                 zip(fs, fp), total=count_lines(parsed_std_sql_file)):
             eg = json.loads(ls)
             ep = json.loads(lp)
-
+            
             try:
                 qg = Query.from_dict(eg['sql'])
                 gold = engine.execute_query(eg['table_id'], qg, lower=True)
             except Exception as e:
                 gold = repr(e)
-                
-            pred = ep['error']
+            
+            #pred = ep['error']
             qp = None
-            if not ep['error']:
+            #if not ep['error']:
+            if True:
                 try:
                     qp = Query.from_dict(ep['sql'])
                     pred = engine.execute_query(eg['table_id'], qp, lower=True)
@@ -54,6 +55,9 @@ def main(argv):
                     pred = repr(e)
             correct = pred == gold
             match = qp == qg
+            if pred == gold and qp != qg:
+                print(qp)
+                print(qg)
             grades.append(correct)
             exact_match.append(match)
         print(

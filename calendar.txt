@@ -1,0 +1,300 @@
+================
+meetings where end equal <v1> and <f2> equal <v2>
+date where meeting equal weekly_standup
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+important where meeting equal <v1>
+start_time where meeting equal weekly_standup
+<f0> where <f1> less <v1>
+================
+meeting where hour equal <v1> and <f2> equal <v2>
+meeting where location equal greenberg_cafe and attendee equal alice
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meetings where start equal <v1> and <f2> equal <v2>
+meeting where length equal three
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meetings where <f2> equal <v2> and longest equal <v1>
+meeting where date greater jan_2nd
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+meeting where <f1> equal <v1>
+meeting where length equal three and location equal greenberg_cafe
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+<f0> where meeting less <v1>
+meeting where important equal true and date equal jan_2nd
+<f0> where <f1> less <v1>
+================
+meeting where <f1> equal <v1> and <f2> equal <v2>
+length where meeting equal weekly_standup
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+hour where meetings equal <v1>
+meeting where end_time equal 10am and length equal three
+<f0> where <f1> equal <v1>
+================
+meetings where <f1> equal <v1>
+meeting where length equal three
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+meetings where <f1> equal <v1>
+end_time where meeting equal weekly_standup
+<f1> where <f0> equal <f2> and <f1> equal <v1>
+================
+meetings where longer equal <v1> and <f2> equal <v2>
+meeting where attendee equal alice and end_time equal 10am
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meetings where <f1> equal <v1>
+meeting where start_time equal 10am
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+meeting where <f1> less <v1>
+meeting where important equal true and location equal greenberg_cafe
+<f0> where <f1> less <v1>
+================
+meetings where shorter less <v1> and <f2> equal <v2>
+meeting where length equal three and date equal jan_2nd
+<f1> where <f0> less <f2> and <f1> equal <v1>
+================
+meeting where ends equal <v1> and <f2> equal <v2>
+meeting where attendee equal alice and location equal greenberg_cafe
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meetings where <f2> equal <v2> and important equal <v1>
+date where meeting equal weekly_standup
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+longest where meeting equal <v1> and <f2> equal <v2>
+meeting where attendee equal alice and start_time equal 10am
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meetings where end greater <v1>
+meeting where date greater jan_2nd
+<f0> where <f1> greater <v1>
+================
+meetings where start equal <v1> and ends equal <v2>
+meeting where length equal three and attendee equal alice
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+location where <f1> equal <v1> and <f2> equal <v2>
+attendee where meeting equal weekly_standup
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+people where <f2> equal <v2> and meeting equal <v1>
+start_time where meeting equal weekly_standup
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+meeting where longest less <v1>
+length
+<f0> where <f1> less <v1>
+================
+meetings where <f1> equal <v1> and <f2> equal <v2>
+meeting where length equal three and attendee equal alice
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meeting where starts equal <v1>
+meeting where end_time equal 10am and end_time equal 10am
+<f0> where <f1> equal <v1>
+================
+meetings where <f1> equal <v1> and end equal <v2>
+meeting where end_time equal 10am and start_time equal 10am
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meetings where <f1> equal <v1> and <f2> equal <v2>
+meeting where important equal true and start_time equal 10am
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meeting where <f2> equal <v2> and end equal <v1>
+location where meeting equal weekly_standup
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+meeting where end equal <v1>
+meeting where important equal true and start_time equal 10am
+<f0> where <f1> equal <v1>
+================
+meetings where start equal <v1> and <f2> equal <v2>
+length where meeting equal weekly_standup
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meeting where end_time equal <v2> and starts equal <v1>
+location where meeting equal weekly_standup
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+hour where <f2> equal <v2> and meeting equal <v1>
+meeting where length equal three and start_time equal 10am
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+people where meetings equal <v1> and <f2> equal <v2>
+meeting where end_time equal 10am
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meetings where start equal <v1>
+date where meeting equal weekly_standup
+<f0> where <f1> greater <v1>
+================
+location where meetings equal <v1>
+meeting where start_time equal 10am and start_time equal 10am
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+meetings where <f1> less <v1>
+meeting where start_time equal 10am and important equal true
+<f0> where <f1> less <v1>
+================
+meetings where important equal <v1>
+attendee where meeting equal weekly_standup
+<f0> where <f1> equal <v1> and <c2> equal three
+================
+locations where <f2> equal <v2> and meetings equal <v1>
+meeting where important equal true and important equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+meeting where end_time greater <v1>
+meeting where date less jan_3rd
+<f0> where <f1> greater <v1>
+================
+<c0> where <f1> equal <v1>
+meeting where date equal jan_2nd and end_time equal 10am
+<f1> where <c1> greater <f0> and <f1> equal <v1>
+================
+meetings where <f1> equal <v1> and <f2> equal <v2>
+meeting where start_time equal 10am and start_time equal 10am
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meetings where attended equal <v1> and <f2> equal <v2>
+length where meeting equal weekly_standup
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meeting where end_time equal <v1>
+meeting where location equal greenberg_cafe and date equal jan_2nd
+<f0> where <f1> equal <v1>
+================
+meetings where hours equal <v1> and <f2> equal <v2>
+attendee where meeting equal weekly_standup
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meeting where <f2> equal <v2> and ends equal <v1>
+meeting where location equal greenberg_cafe and start_time equal 10am
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+meeting where starts less <v1>
+meeting where length less three
+<f0> where <f1> less <v1>
+================
+meetings where attended equal <v1>
+attendee where meeting equal weekly_standup
+<f0> where <f1> equal <v1>
+================
+meetings where shorter equal <v1> and <f2> equal <v2>
+meeting where start_time equal 10am and start_time equal 10am
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+location where hour equal <v1>
+meeting where start_time equal 10am and attendee equal alice
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+<f0> where meetings equal <v1> and <f2> equal <v2>
+meeting where end_time equal 10am and date equal jan_2nd
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meetings where begin equal <v1>
+attendee where meeting equal weekly_standup
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+meeting where <f1> equal <v1> and <f2> equal <v2>
+meeting where start_time equal 10am and date equal jan_2nd
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meeting where date equal <v1> and <f2> equal <v2>
+meeting where important equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meeting where ends equal <v1> and <f2> equal <v2>
+attendee where meeting equal weekly_standup
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meetings where important equal <v1> and attended equal <v2>
+meeting where start_time equal 10am and end_time equal 10am
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+important where meetings equal <v1> and <f2> equal <v2>
+meeting where important equal true and attendee equal alice
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+end_time where <f1> equal <v1> and <f2> equal <v2>
+meeting where location equal greenberg_cafe
+<f1> where <f0> equal <f2> and <f1> equal <v1>
+================
+meeting where <f2> equal <v2> and locations equal <v1>
+meeting where attendee equal alice and length equal three
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+meeting where starts less <v1>
+location where meeting equal weekly_standup
+<f0> where <f1> less <v1>
+================
+meetings where <f1> equal <v1> and <f2> equal <v2>
+meeting where important equal true
+<f0> where <f1> equal <v1> and <f2> equal <v1>
+================
+meeting where <f1> equal <v1> and <f2> equal <v2>
+meeting where end_time equal 10am and start_time equal 10am
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+location where meeting equal <v1>
+meeting where length equal three and location equal greenberg_cafe
+<f0> where <f1> equal <v1>
+================
+meetings where hours greater <v1>
+attendee where meeting equal weekly_standup
+<f0> where <f1> greater <v1>
+================
+important where meetings equal <v1>
+meeting where date less jan_2nd
+<f0> where <f1> equal <v1>
+================
+meetings where attended equal <v1> and <f2> equal <v2>
+meeting where date equal jan_2nd and attendee equal alice
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meetings where <f2> equal <v2> and <f1> equal <v1>
+meeting where end_time equal 10am and date equal jan_2nd
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+meeting where date equal <v1>
+meeting where attendee equal alice and important equal true
+<f0> where <f1> equal <v1>
+================
+meeting where ends equal <v1> and <f2> equal <v2>
+meeting where end_time greater 10am
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meetings where <f2> equal <v2> and day equal <v1>
+meeting where start_time equal 10am and important equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+meetings where <f2> equal <v2> and <f1> equal <v1>
+meeting where date equal jan_2nd
+<f0> where <f1> equal <v2> and <f2> equal <v2>
+================
+meeting where length equal <v1> and <f2> equal <v2>
+meeting where location equal greenberg_cafe and important equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+meeting where <f2> equal <v2> and <f1> equal <v1>
+meeting where end_time equal 10am and location equal greenberg_cafe
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+meetings where <f1> equal <v1>
+meeting where attendee equal alice and length equal three
+<f0> where <f1> equal <v1>
+================
+location where meeting less <v1>
+meeting where length equal three and attendee equal alice
+<f0> where <f1> less <v1> and <f1> less <v1>
+================
+meeting where ends equal <v2> and <f1> equal <v1>
+meeting where length equal three
+<f0> where <f2> equal <v2> and <f1> equal <v1>

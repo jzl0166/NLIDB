@@ -170,5 +170,5 @@ if __name__ == '__main__':
     print('\nshape: {}'.format(eb.shape))
 
     eb = np.squeeze(eb)
-    words, vecs = glove.reverse_embedding(eb, k=3)
-    print(words)
+    #words, vecs = glove.reverse_embedding(eb, k=3)
+    #print(words)

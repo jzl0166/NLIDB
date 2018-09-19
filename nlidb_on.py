@@ -37,13 +37,14 @@ input_vocab_size = vocabulary_size
 output_vocab_size = vocabulary_size
 path = os.path.abspath(__file__)
 annotation_path = os.path.dirname(path) + '/data/DATA/wiki/'
+overnight_path = os.path.dirname(path) + '/data/DATA/overnight_source/'
 # ----------------------------------------------------------------------------
 parser = ArgumentParser()
 parser.add_argument('--mode', default='load_pretrained', help='choose from load_pretrained or train or transfer')
 args = parser.parse_args()
 run_mode = args.mode
 
-if run_mode != 'train':
+if run_mode is not 'train':
     load_model = True
 #----------------------------------------------------------------------------
 def train(sess, env, X_data, y_data, epochs=10, load=False, shuffle=True, batch_size=BS,
@@ -235,6 +236,107 @@ def construct_graph(mode,env=env):
         
     return env.train_op , env.loss , env.acc , sample_ids , logits
 
+def decode_data_recover_overnight(sess, X_data, y_data, subset, batch_size = BS):
+    """
+    Inference and calculate EM acc based on recovered SQL
+    """
+    print('\nOVERNIGHT: Decoding and Evaluate recovered EM acc')
+    n_sample = X_data.shape[0]
+    print(n_sample)
+    n_batch = int((n_sample+batch_size-1) / batch_size)
+    true_values, values, inf_logics = [], [], []
+    _, reverse_vocab_dict, _, _ = load_vocab_all()
+    i, acc = 0, 0
+    for batch in range(n_batch):
+        print(' batch {0}/{1}'.format(batch+1, n_batch),end='\r')
+        sys.stdout.flush()
+        start = batch * batch_size
+        end = min(n_sample, start+batch_size)
+        cnt = end - start
+        ybar = sess.run(pred_ids,
+                        feed_dict={env.x: X_data[start:end]})
+        ybar = np.asarray(ybar)
+        ybar = np.squeeze(ybar[:,0,:])  # pick top prediction
+        for seq in ybar:
+            try:
+                seq=seq[:list(seq).index(_END)]
+            except ValueError:
+                pass  
+            logic=" ".join([reverse_vocab_dict[idx] for idx in seq])
+            inf_logics.append(logic) 
+     
+    xtru, ytru = X_data, y_data
+    with gfile.GFile(subset+'.txt', mode='w') as output, gfile.GFile(overnight_path+'%s/%s_ground_truth.txt'%(subset,subset), mode='r') as S_ori_file, \
+        gfile.GFile(overnight_path+'%s/%s_sym_pairs.txt'%(subset,subset), mode='r') as sym_pair_file:
+
+        sym_pairs = sym_pair_file.readlines()  # annotation pairs from question & table files
+        S_oris = S_ori_file.readlines()  # SQL files before annotation
+        for true_seq, logic, x, sym_pair, S_ori in zip(ytru, inf_logics, xtru, sym_pairs, S_oris):
+            sym_pair = sym_pair.replace('<>\n','')
+            S_ori = S_ori.replace('\n','').replace(' (','').replace(' )','')
+            Qpairs = []
+            if sym_pair != '\n':
+                for pair in sym_pair.split('<>'):
+                    Qpairs.append(pair.split('=>'))
+            true_seq = true_seq[1:]    # delete <eos>
+            x = x[1:]   # delete <eos>
+            try:
+                true_seq=true_seq[:list(true_seq).index(_END)]
+            except ValueError:
+                pass
+
+            try:
+                x=x[:list(x).index(_END)]
+            except ValueError:
+                pass
+            
+            xseq = " ".join([reverse_vocab_dict[idx] for idx in x])
+            true_logic = " ".join([reverse_vocab_dict[idx] for idx in true_seq])
+
+            logic = logic.replace(' (','').replace(' )','')
+            true_logic = true_logic.replace(' (','').replace(' )','') 
+
+            RIGHT = False
+            logic_tokens = logic.split()
+            
+            if len(logic_tokens) > 8 and logic_tokens[5] == 'and':
+                newlogic = [x for x in logic_tokens]
+                newlogic[2], newlogic[6], newlogic[4], newlogic[8] = logic_tokens[6], logic_tokens[2], logic_tokens[8], logic_tokens[4]
+                newline = ' '.join(newlogic)
+                if newline == true_logic:
+                    logic = newline
+                    RIGHT = True 
+            elif len(logic_tokens) > 9 and logic_tokens[6] == 'and':
+                newlogic = [x for x in logic_tokens]
+                newlogic[3], newlogic[7], newlogic[5], newlogic[9] = logic_tokens[7], logic_tokens[3], logic_tokens[9], logic_tokens[5]
+                newline = ' '.join(newlogic)
+                if newline == true_logic:
+                    logic = newline
+                    RIGHT = True 
+
+            recover_S = logic
+            if Qpairs != []:
+                for sym, word in Qpairs:
+                    recover_S = recover_S.replace(sym, word) 
+            
+            acc += (recover_S==S_ori)
+            if recover_S != S_ori:
+                #print(Qpairs)
+                #output.write(logic)
+                output.write('================\n')
+                output.write(recover_S+'\n')
+                output.write(S_ori+'\n')
+                output.write(true_logic+'\n')
+            #output.write(recover_S + '\n')
+            
+            i += 1
+            true_values.append(true_logic)
+            values.append(logic)        
+    
+    print('EM: %.4f'%(acc*1./len(y_data)))  
+    print('number of correct ones:%d'%acc)
+    
+    return acc*1./len(y_data)
 
 def decode_data_recover(sess, X_data, y_data, s, batch_size = BS):
     """
@@ -328,7 +430,7 @@ def decode_data_recover(sess, X_data, y_data, s, batch_size = BS):
     
     return acc*1./len(y_data)
 
-def decode_data(sess, X_data, y_data , batch_size = BS, filename='output.txt'):
+def decode_data(sess, X_data, y_data , batch_size = BS):
     """
     Inference w/o recover annotation symbols
     """
@@ -339,7 +441,7 @@ def decode_data(sess, X_data, y_data , batch_size = BS, filename='output.txt'):
     acc = 0
     true_values , values = [], []
     _,reverse_vocab_dict,_,_=load_vocab_all()
-    with gfile.GFile(filename, mode='w') as output:
+    with gfile.GFile('output.txt', mode='w') as output:
         i = 0
         for batch in range(n_batch):
             print(' batch {0}/{1}'.format(batch+1, n_batch),end='\r')
@@ -391,11 +493,6 @@ def decode_data(sess, X_data, y_data , batch_size = BS, filename='output.txt'):
                     if newline == true_logic:
                         logic = newline
                 acc += (logic==true_logic)
-                if logic!=true_logic:
-                    output.write(str(i)+":===========\n")
-                    output.write(xseq+'\n')
-                    output.write(logic+'\n')
-                    output.write(true_logic+'\n')
                 i += 1
     print('EM: %.4f'%(acc*1./len(y_data)))  
     print('number of correct ones:%d'%acc)
@@ -450,9 +547,13 @@ for base in range(20):
             if run_mode == 'transfer':
                 print('========subset transfer set========')
                 subsets = ['basketball','calendar','housing','recipes','restaurants']
-                for subset, (X_tran_subset, y_tran_subset) in zip(subsets,tran_sets1):
+                for subset, (X_tran_subset, y_tran_subset) in zip(subsets,tran_sets):
                     print('---------'+subset+'---------')
-                    tran_em = decode_data(sess, X_tran_subset, y_tran_subset,filename=str(subset+'.txt'))
+                    #tran_em = decode_data(sess, X_tran_subset, y_tran_subset)
+                    decode_data_recover_overnight(sess, X_tran_subset, y_tran_subset, subset)
+                for subset, (X_tran_subset, y_tran_subset) in zip(subsets,tran_sets):
+                    print('---------'+subset+'---------')
+                    #decode_data_recover_overnight(sess, X_tran_subset, y_tran_subset, subset) 
                 print('===========transfer set============')
                 tran_em = decode_data(sess, X_tran, y_tran)
             

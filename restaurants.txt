@@ -1,0 +1,664 @@
+================
+restaurant where <f2> equal <v2> and star_rating equal 3
+restaurant where star_rating equal 3
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where outdoor_seating equal true and star equal 3
+restaurant where outdoor_seating equal true and star_rating equal 3
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where star equal 3 and kids equal true
+restaurant where kids equal true and star_rating equal 3
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where <f1> equal <v1>
+restaurant where price_rating equal 3 and price_rating equal 2
+<f0> where <f1> equal <v1>
+================
+restaurants where neighborhood greater midtown_west
+restaurant where neighborhood equal midtown_west and cuisine equal thai
+<f0> where <f1> greater <v1>
+================
+restaurants where cuisine equal thai and takeout equal true
+restaurant where cuisine equal thai and takeout equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where neighborhood equal midtown_west and deliver equal true
+restaurant where neighborhood equal midtown_west and delivery equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where reservations equal true
+restaurant where reservations equal true and takeout equal true
+<f0> where <f1> equal <v1>
+================
+restaurant where <f2> equal <v2> and takeout equal 2
+restaurant where takeout equal true and price_rating equal 2
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where waiter_service equal true and star equal 3
+restaurant where waiter_service equal true and star_rating equal 3
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+groups where reservations equal true and <f2> equal <v2>
+restaurant where reservations equal true and groups equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where credit_card equal true and price_rating equal 2
+restaurant where price_rating equal 2 and credit_cards equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where cuisine equal thai
+restaurant where cuisine equal thai and reservations equal true
+<f0> where <f1> equal <v1>
+================
+restaurants where delivery equal true and takeout equal true
+restaurant where takeout equal true and delivery equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+price_rating where cuisine equal thai and restaurant equal <v2>
+restaurant where cuisine equal thai and price_rating equal 2
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where cuisine equal thai and star_rating equal 3
+restaurant where star_rating equal 3 and cuisine equal thai
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where price_rating equal 2 and star_rating equal 3
+restaurant where star_rating equal 3 and price_rating equal 2
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where groups equal true and <f2> equal <v2>
+restaurant where groups equal true and groups equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where delivery equal true and star equal 3
+restaurant where delivery equal true and star_rating equal 3
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where reservations equal true and star equal 3
+restaurant where star_rating equal 3 and reservations equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where neighborhood equal midtown_west and deliver equal true
+restaurant where neighborhood equal midtown_west and delivery equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+group where cuisine equal thai and restaurant equal <v2>
+restaurant where groups equal true and cuisine equal thai
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where credit_cards equal true and neighborhood equal midtown_west
+restaurant where neighborhood equal midtown_west and credit_cards equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where kids equal true and <f2> equal <v2>
+restaurant where kids equal true and kids equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where meal equal lunch and outdoor equal true
+restaurant where outdoor_seating equal true and meal equal lunch
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where waiter_service equal true
+restaurant where waiter_service equal true and waiter_service equal true
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+restaurant where waiter_service equal true and <f2> equal <v2>
+restaurant where waiter_service equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where credit_cards equal true and kid equal true
+restaurant where credit_cards equal true and kids equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+star_rating where restaurant equal thai_cafe and <f2> equal <v2>
+star_rating where restaurant equal thai_cafe
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where outdoor_seating equal true
+restaurant where outdoor_seating equal true and credit_cards equal true
+<f0> where <f1> equal <v1>
+================
+restaurants where price_rating equal 3 and <f2> equal <v2>
+restaurant where price_rating greater 3
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where neighborhood equal midtown_west and cuisine equal thai
+restaurant where cuisine equal thai and neighborhood equal midtown_west
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where star_rating equal true
+restaurant where waiter_service equal true
+<c1> where <f0> equal <v0>
+================
+star where cuisine equal thai and restaurants equal <v2>
+restaurant where star_rating equal 3 and cuisine equal thai
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where meal equal lunch and reservations equal true
+restaurant where meal equal lunch and reservations equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where waiter_service equal true and reservations equal true
+restaurant where reservations equal true and waiter_service equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where meal equal lunch and star equal 3
+restaurant where meal equal lunch and star_rating equal 3
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where group equal true and kids equal true
+restaurant where kids equal true and groups equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where takeout equal true and delivery equal true
+restaurant where takeout equal true and delivery equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where restaurant equal 55 and reservations equal 42
+restaurant where reservations equal true and cuisine equal thai
+<f0> where <f1> equal <v1> and <c11> equal <v1>
+================
+restaurants where takeout equal true and reservations equal true
+restaurant where takeout equal true and reservations equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where waiter_service equal true and delivery equal true
+restaurant where delivery equal true and waiter_service equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where star equal 3 and waiter_service equal true
+restaurant where waiter_service equal true and star_rating equal 3
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where <f2> equal <v2> and star equal 3
+restaurant where star_rating equal 3 and star_rating equal 3
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where groups equal true and outdoor_seating equal true
+restaurant where groups equal true and outdoor_seating equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where price_rating equal 2
+restaurant where price_rating equal 2
+<f0> where <f1> equal <v1>
+================
+restaurant where star_rating equal 3 and <f2> equal <v2>
+restaurant where star_rating equal 3 and star_rating equal 3
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where waiter_service greater true
+restaurant where waiter_service equal true and kids equal true
+<f0> where <f1> greater <v1>
+================
+resturants where waiter_service equal true and delivery equal true
+restaurant where waiter_service equal true and delivery equal true
+<c4> where <f0> equal <v0> and <f1> equal <v1>
+================
+restaurant where kids equal true and waiter_service equal true
+restaurant where waiter_service equal true and kids equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where kids equal true and outdoor_seating equal true
+restaurant where kids equal true and outdoor_seating equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where neighborhood equal midtown_west and star_rating equal 3
+restaurant where star_rating equal 3 and neighborhood equal midtown_west
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where <f2> equal <v2> and delivery equal true
+restaurant where delivery equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where neighborhood equal midtown_west
+restaurant where meal equal lunch and neighborhood equal midtown_west
+<f0> where <c5> equal <v1> and <f1> equal <v1>
+================
+cuisines where restaurant equal thai_cafe
+cuisine where restaurant equal thai_cafe
+<f0> where <f1> equal <v1> and <c1> equal thai
+================
+neighborhood where <f2> equal <v2> and restaurant equal thai_cafe
+neighborhood where restaurant equal thai_cafe
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where price_rating equal 2 and credit_cards equal true
+restaurant where credit_cards equal true and price_rating equal 2
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where price_rating equal 2 and outdoor_seating equal true
+restaurant where outdoor_seating equal true and price_rating equal 2
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where credit_cards equal true
+restaurant where credit_cards equal true
+<f0> where <f1> equal <v1>
+================
+restaurants where star_rating equal 3
+restaurant where star_rating less 3
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+restaurant where takeout equal true and <f2> equal <v2>
+restaurant where takeout equal true and takeout equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where meal equal lunch and star equal 3
+restaurant where star_rating equal 3 and meal equal lunch
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+resturants where <f2> equal <v2> and reservations equal true
+restaurant where reservations equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where kid equal true and <f2> equal <v2>
+restaurant where kids equal true and kids equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+price_rating where meal equal lunch and <f2> equal <v2>
+restaurant where price_rating equal 2 and meal equal lunch
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where cuisine equal thai and delivery equal true
+restaurant where delivery equal true and cuisine equal thai
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where credit_cards less true and kids equal true
+restaurant where credit_cards equal true and kids equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where meal equal lunch and groups equal true
+restaurant where groups equal true and meal equal lunch
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where neighborhood equal midtown_west and <f2> equal <v2>
+restaurant where neighborhood equal midtown_west and neighborhood equal midtown_west
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where star_rating equal 3
+restaurant where star_rating equal 3 and price_rating equal 2
+<f0> where <f1> equal <v1>
+================
+restaurants where star equal 3
+restaurant where outdoor_seating equal true and star_rating equal 3
+<f0> where <f1> equal <v1> and <c5> equal <v1>
+================
+restaurants where outdoor equal true and waiter_service equal true
+restaurant where outdoor_seating equal true and waiter_service equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where groups equal true and credit_cards equal true
+restaurant where credit_cards equal true and groups equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where credit_cards equal true and kids equal true
+restaurant where kids equal true and credit_cards equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where <f1> equal <v1>
+meal where restaurant equal thai_cafe
+<f0> where <c8> equal 2 and <f1> equal <v1>
+================
+restaurant where star equal 3
+restaurant where star_rating equal 3 and price_rating equal 2
+<f0> where <f1> equal <v1>
+================
+star_rating where <f2> equal <v2> and <f1> equal <v1>
+star_rating
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where price_rating equal 2 and <f2> equal <v2>
+restaurant where price_rating greater 2
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where kids equal true
+restaurant where kids equal true and credit_cards equal true
+<f0> where <f1> less <v1>
+================
+restaurants where credit_cards equal true and meal equal lunch
+restaurant where credit_cards equal true and meal equal lunch
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where star equal 3 and deliver equal true
+restaurant where star_rating equal 3 and delivery equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where waiter_service equal true and star equal 3
+restaurant where star_rating equal 3 and waiter_service equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where reservation equal true and meal equal lunch
+restaurant where reservations equal true and meal equal lunch
+<f0> where <f1> equal <v1> and <f2> equal 2
+================
+restaurants where <f2> equal <v2> and price_ratings equal 2
+restaurant where price_rating less 2
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where groups equal true
+restaurant where groups equal true and kids equal true
+<f0> where <f1> equal <v1>
+================
+restaurants where star_rating equal 3 and meal equal lunch
+restaurant where meal equal lunch and star_rating equal 3
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where kids equal true and star_rating equal 3
+restaurant where star_rating equal 3 and kids equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where star_rating equal 3 and neighborhood equal midtown_west
+restaurant where neighborhood equal midtown_west and star_rating equal 3
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where deliver equal true and waiter_service equal true
+restaurant where delivery equal true and waiter_service equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where star_rating greater 3
+restaurant where star_rating equal 3 and reservations equal true
+<f0> where <f1> greater <v1>
+================
+restaurants where kids equal true and neighborhood equal midtown_west
+restaurant where kids equal true and neighborhood equal midtown_west
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+resturants where star_rating greater 3 and <f2> equal <v2>
+restaurant where star_rating less 3
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where meal equal lunch and neighborhood equal midtown_west
+restaurant where neighborhood equal midtown_west and meal equal lunch
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where takeout equal true
+restaurant where reservations equal true and takeout equal true
+<f0> where <f1> equal <v1> and where <f1> <v1>
+================
+restaurants where credit_cards equal true and waiter_service equal true
+restaurant where waiter_service equal true and credit_cards equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where waiter_service equal true and outdoor equal true
+restaurant where waiter_service equal true and outdoor_seating equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where neighborhood equal midtown_west
+restaurant where neighborhood equal midtown_west and price_rating equal 2
+<f0> where <f1> equal <v1>
+================
+restaurant where meal equal lunch and <f2> equal <v2>
+restaurant where meal equal lunch
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where groups equal true and star_rating equal 3
+restaurant where star_rating equal 3 and groups equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where star_rating equal true
+restaurant where takeout equal true and outdoor_seating equal true
+<f0> where <c5> equal <v0> and <c5> equal <v0>
+================
+restaurants where cuisine equal thai and neighborhood equal midtown_west
+restaurant where neighborhood equal midtown_west and cuisine equal thai
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where takeout equal true and kids equal true
+restaurant where kids equal true and takeout equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where price_rating equal 2 and waiter_service equal true
+restaurant where price_rating equal 2 and waiter_service equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where <f2> equal <v2> and star equal 3
+restaurant where waiter_service equal true and star_rating equal 3
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where price_rating equal 2
+restaurant where kids equal true and price_rating equal 2
+<f0> where <f1> equal <v1>
+================
+restaurants where <f2> equal <v2> and star_rating equal 3
+restaurant where star_rating equal 3
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where meal equal lunch and outdoor_seating equal true
+restaurant where outdoor_seating equal true and meal equal lunch
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where <f2> equal <v2> and price_rating equal 2
+restaurant where reservations equal true and price_rating equal 2
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where <f2> equal <v2> and delivery equal true
+restaurant where delivery equal true and delivery equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where takeout equal true and credit_cards equal true
+restaurant where takeout equal true and credit_cards equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where outdoor equal true and kids equal true
+restaurant where kids equal true and outdoor_seating equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where kids equal true
+restaurant where kids equal true and neighborhood equal midtown_west
+<f0> where <f1> equal <v1>
+================
+cuisine where restaurant equal thai_cafe and <f2> equal <v2>
+cuisine where restaurant equal thai_cafe
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where kids equal true and waiter_service equal true
+restaurant where waiter_service equal true and kids equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where outdoor_seating equal true
+restaurant where outdoor_seating equal true and credit_cards equal true
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+restaurant where cuisine equal thai
+restaurant where delivery equal true and cuisine equal thai
+<f0> where <f1> equal <v1>
+================
+meal where restaurant equal thai_cafe and <f2> equal <v2>
+meal where restaurant equal thai_cafe
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+resturants where meal equal lunch and <f2> equal <v2>
+restaurant where meal equal lunch
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where kid equal true and credit_cards equal true
+restaurant where kids equal true and credit_cards equal true
+<f2> where <f1> equal <v1> and <f0> equal <v0>
+================
+restaurants where waiter_service equal true and price_rating equal 2
+restaurant where waiter_service equal true and price_rating equal 2
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where <f2> equal <v2> and outdoor_seating equal true
+restaurant where outdoor_seating equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where deliver less true
+restaurant where meal equal lunch and delivery equal true
+<f0> where <f1> less <v1>
+================
+restaurant where neighborhood equal midtown_west and takeout equal true
+restaurant where takeout equal true and neighborhood equal midtown_west
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where groups equal true
+restaurant where reservations equal true and groups equal true
+<f0> where <f1> equal <v1>
+================
+restaurant where reservations equal true
+restaurant where credit_cards equal true and reservations equal true
+<f0> where <f1> equal <v1>
+================
+restaurant where reservations equal true
+restaurant where meal equal lunch and reservations equal true
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+restaurants where meal equal lunch and kids equal true
+restaurant where kids equal true and meal equal lunch
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where waiter_service equal true and kids equal true
+restaurant where kids equal true and waiter_service equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where price_rating less 2
+restaurant where price_rating equal 2 and credit_cards equal true
+<f0> where <f1> less <v1>
+================
+restaurant where cuisine equal thai
+restaurant where star_rating equal 3 and cuisine equal thai
+<f0> where <f1> equal <v1>
+================
+restaurant where outdoor_seating less true
+restaurant where delivery equal true and outdoor_seating equal true
+<f0> where <f1> less <v1>
+================
+restaurants where groups equal true and takeout equal true
+restaurant where takeout equal true and groups equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where takeout equal true
+restaurant where takeout equal true
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+restaurant where neighborhood equal midtown_west and <f2> equal <v2>
+restaurant where neighborhood equal midtown_west and groups equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where cuisine equal thai and reservations equal true
+restaurant where reservations equal true and cuisine equal thai
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where price_rating equal 2 and neighborhood equal midtown_west
+restaurant where price_rating equal 2 and neighborhood equal midtown_west
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where star equal 3
+restaurant where groups equal true and star_rating equal 3
+<f0> where <f1> equal <v1>
+================
+restaurants where neighborhood equal midtown_west and takeout equal true
+restaurant where neighborhood equal midtown_west and takeout equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where neighborhood equal midtown_west and credit_cards equal true
+restaurant where credit_cards equal true and neighborhood equal midtown_west
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where neighborhood equal midtown_west and groups equal true
+restaurant where groups equal true and neighborhood equal midtown_west
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where reservations equal true
+restaurant where reservations equal true and meal equal lunch
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+restaurants where outdoor_seating equal true and neighborhood equal midtown_west
+restaurant where neighborhood equal midtown_west and outdoor_seating equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where deliver equal true and takeout equal true
+restaurant where delivery equal true and takeout equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where <f2> equal <v2> and price_rating equal 3
+restaurant where price_rating greater 3
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where star_rating equal 3 and delivers equal true
+restaurant where star_rating equal 3 and delivery equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where <f1> equal <v1> and <f2> equal <v2>
+price_rating where restaurant equal thai_cafe
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where <f2> equal <v2> and meal equal lunch
+restaurant where meal equal lunch
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where outdoor_seating equal true
+restaurant where outdoor_seating equal true and meal equal lunch
+<f0> where <f1> equal <v1>
+================
+restaurant where star_ratings equal 3 and neighborhood equal midtown_west
+restaurant where neighborhood equal midtown_west and star_rating equal 3
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurant where cuisine equal thai
+restaurant where outdoor_seating equal true and cuisine equal thai
+<f0> where <f1> equal <v1>
+================
+restaurants where reservations equal true
+restaurant where reservations equal true and reservations equal true
+<f0> where <f1> less 2
+================
+restaurant where outdoor_seating equal true and price_rating equal 2
+restaurant where price_rating equal 2 and outdoor_seating equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where price_rating equal 2 and credit_cards equal true
+restaurant where price_rating equal 2 and credit_cards equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where takeout equal true and waiter_service equal true
+restaurant where waiter_service equal true and takeout equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+waiter_service where price_rating equal 2
+restaurant where price_rating equal 2 and credit_cards equal true
+<f0> where <f1> equal <v1> and <c12> equal <v1>
+================
+restaurant where price_rating equal 2 and credit_cards equal true
+restaurant where credit_cards equal true and price_rating equal 2
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where outdoor_seating equal true
+restaurant where outdoor_seating equal true and groups equal true
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+restaurant where neighborhood equal midtown_west and star_rating equal 3
+restaurant where star_rating equal 3 and neighborhood equal midtown_west
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where credit_cards equal true and reservations equal true
+restaurant where credit_cards equal true and reservations equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where takeout equal true and reservations equal true
+restaurant where reservations equal true and takeout equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurants where cuisine equal thai and outdoor_seating equal true
+restaurant where outdoor_seating equal true and cuisine equal thai
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where waiter_service equal true
+restaurant where waiter_service equal true and neighborhood equal midtown_west
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+restaurant where cuisine equal thai and meal equal lunch
+restaurant where meal equal lunch and cuisine equal thai
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where group equal true and delivery equal true
+restaurant where delivery equal true and groups equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+restaurants where credit_cards equal true and <f2> equal <v2>
+restaurant where credit_cards equal true and credit_cards equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+restaurant where reservations equal true and <f2> equal <v2>
+restaurant where reservations equal true and reservations equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>

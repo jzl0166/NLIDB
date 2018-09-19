@@ -1,0 +1,197 @@
+<f0>=>restaurant<><v1>=>3<><f1>=>star_rating<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><f1>=>cuisine<><v1>=>thai<><f2>=>kids<><v1>=>true<><v2>=>true<>
+<v0>=>3<><f0>=>star<><f1>=>restaurant<><f2>=>outdoor_seating<><f1> =>meal<><v2>=>true<>
+<v0>=>3<><f0>=>star<><f1>=>restaurant<><f2>=>kids<><v2>=>true<>
+<f0>=>restaurant<><v1>=>true<>
+<f0>=>restaurants<><v1>=>midtown_west<><v2>=>thai<>
+<v0>=>thai<><f1>=>restaurants<><f2>=>takeout<><v2>=>true<>
+<f1>=>restaurant<><v1>=>midtown_west<><f2>=>deliver<><v2>=>true<>
+<f0>=>restaurant<><f1>=>reservations<><f2>=>takeout<><f1> =>meal<>
+<f0>=>restaurant<><v1>=>2<><f1>=>takeout<><v2>=>true<>
+<v0>=>3<><f0>=>star<><f1>=>restaurant<><f2>=>waiter_service<><v1>=>true<><v2>=>true<>
+<f0>=>groups<><f1>=>reservations<><v2>=>true<>
+<v0>=>2<><f0>=>price_rating<><f1>=>restaurant<><f2>=>credit_card<><f1> =>meal<><v2>=>true<>
+<v0>=>thai<><f1>=>restaurants<><f2>=>reservations<><f1> =>restaurant<>
+<f0>=>restaurants<><f1>=>takeout<><f2>=>delivery<><v1>=>true<><v2>=>true<>
+<f1>=>price_rating<><v1>=>thai<><f0>=>cuisine<><f2>=>restaurant<><v2>=>true<>
+<v1>=>thai<><f0>=>restaurants<><v2>=>3<><f2>=>star_rating<><f0> =>cuisine<>
+<f0>=>restaurants<><v1>=>3<><f1>=>star_rating<><v2>=>2<><f2>=>price_rating<><f2>=>price_rating<><v1>=>true<>
+<f1>=>restaurant<><f0>=>groups<><v2>=>true<>
+<v1>=>3<><f1>=>star<><f0>=>restaurant<><f2>=>delivery<><v2>=>true<>
+<v0>=>3<><f0>=>star<><f1>=>restaurant<><f2>=>reservations<><v1>=>true<><v2>=>true<>
+<f1>=>restaurants<><v1>=>midtown_west<><f2>=>deliver<><f0> =>cuisine<><v2>=>true<>
+<f1>=>group<><v1>=>thai<><f2>=>restaurant<><f0> =>cuisine<><v2>=>true<>
+<f1>=>restaurant<><f0>=>neighborhood<><v1>=>midtown_west<><f2>=>credit_cards<><f0> =>cuisine<><v2>=>true<>
+<f0>=>restaurants<><f1>=>kids<><f1> =>neighborhood<><v2>=>true<>
+<f0>=>restaurants<><v1>=>lunch<><f2>=>outdoor<><v1>=>true<><f2> =>meal<>
+<f0>=>restaurant<><f1>=>waiter_service<><v1>=>true<>
+<f0>=>restaurant<><f1>=>waiter_service<><v1>=>true<><f2> =>meal<>
+<f0>=>restaurant<><f1>=>credit_cards<><f2>=>kid<><v1>=>true<>
+<f1>=>star_rating<><v1>=>thai_cafe<><f0> =>cuisine<><v2>=>true<>
+<f1>=>restaurants<><f0>=>outdoor_seating<><f2>=>credit_cards<><f0> =>cuisine<>
+<f0>=>restaurant<><f1>=>price_rating<><v1>=>2<><f1>=>price_rating<><f2>=>kids<><v1>=>true<>
+<f0>=>restaurants<><f1>=>price_rating<><v1>=>3<><f1>=>price_rating<><f1> =>neighborhood<><v2>=>true<>
+<f0>=>restaurant<><f1>=>kids<><f2>=>outdoor_seating<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><v1>=>midtown_west<><v2>=>thai<><v1>=>true<><v2>=>true<>
+<f0>=>restaurants<><f1>=>waiter_service<>
+<v0>=>3<><f0>=>star<><v1>=>thai<><f2>=>restaurants<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><f1>=>outdoor_seating<><f2>=>takeout<><v1>=>true<><f2> =>meal<>
+<f0>=>restaurants<><v1>=>lunch<><f2>=>reservations<><v1>=>true<><f2> =>meal<>
+<f0>=>restaurants<><f1>=>reservations<><f2>=>waiter_service<><v1>=>true<><v2>=>true<>
+<v0>=>3<><f0>=>star<><f1>=>restaurant<><v2>=>lunch<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><f1>=>groups<><f1> =>neighborhood<>
+<f0>=>restaurant<><f1>=>kids<><f2>=>group<><v1>=>true<><v2>=>true<>
+<f0>=>restaurants<><f1>=>takeout<><f2>=>delivery<><v1>=>true<><f2> =>neighborhood<>
+<v0>=>thai<><f1>=>restaurant<><f2>=>reservations<><v1>=>true<>
+<f0>=>restaurants<><f1>=>takeout<><f2>=>reservations<><f1> =>neighborhood<>
+<f1>=>delivery<><f0>=>restaurant<><f2>=>waiter_service<><f0> =>neighborhood<><v2>=>true<>
+<v0>=>3<><f0>=>star<><f1>=>restaurant<><f2>=>waiter_service<><v1>=>true<><v2>=>true<>
+<v1>=>3<><f1>=>star<><f0>=>restaurants<><v1>=>true<><f2> =>meal<>
+<f0>=>restaurants<><f1>=>groups<><f2>=>outdoor_seating<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><f1>=>waiter_service<><f2>=>price_rating<><v2>=>2<><f2>=>price_rating<><v1>=>true<><v2>=>true<>
+<f0>=>restaurants<><v1>=>2<><f1>=>price_rating<><f1>=>price_rating<><f1> =>neighborhood<>
+<f0>=>restaurant<><f1>=>star_rating<><v1>=>3<><f1>=>star_rating<><f1>=>star_rating<><v1>=>3<><f1>=>star_rating<><v1>=>true<>
+<v0>=>midtown_west<><f1>=>restaurant<><f2>=>reservations<><v1>=>true<><v2>=>true<>
+<f0>=>restaurants<><f1>=>waiter_service<><f2>=>kids<>
+<f0>=>resturants<><f1>=>waiter_service<><f2>=>delivery<><v0>=>true<><v1>=>true<>
+<f0>=>restaurant<><f1>=>waiter_service<><f2>=>kids<><v1>=>true<><f2> =>neighborhood<>
+<f0>=>kids<><f1>=>restaurants<><f2>=>outdoor_seating<><v1>=>true<><v2>=>true<>
+<v0>=>midtown_west<><f1>=>restaurant<><v2>=>3<><f2>=>star_rating<><v1>=>true<><v2>=>true<>
+<f1>=>restaurant<><f0>=>delivery<><v2>=>true<>
+<f1>=>restaurant<><f0>=>neighborhood<><v1>=>midtown_west<><v2>=>lunch<><f0> =>cuisine<>
+<f0>=>cuisines<><v1>=>thai_cafe<><v1>=>true<>
+<f0>=>neighborhood<><v1>=>thai_cafe<><v2>=>true<>
+<f1>=>restaurant<><f0>=>price_rating<><v1>=>2<><f0>=>price_rating<><f2>=>credit_cards<><f2> =>neighborhood<>
+<f0>=>restaurant<><v1>=>lunch<><f2>=>kids<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><f1>=>outdoor_seating<><f2>=>price_rating<><v2>=>2<><f2>=>price_rating<><f1> =>neighborhood<><v2>=>true<>
+<f1>=>restaurants<><f0>=>credit_cards<>
+<f0>=>restaurant<><v1>=>lunch<><f2>=>price_rating<><v2>=>2<><f2>=>price_rating<><f1> =>neighborhood<><v2>=>true<>
+<f0>=>restaurants<><v1>=>3<><f1>=>star_rating<><v1>=>true<>
+<f0>=>restaurant<><f1>=>takeout<><f1> =>neighborhood<><f2> =>meal<>
+<v1>=>3<><f1>=>star<><f0>=>restaurant<><v2>=>lunch<><v2>=>true<>
+<f1>=>resturants<><f0>=>reservations<><v1>=>true<><v2>=>true<>
+<f1>=>restaurants<><f0>=>kid<><f0> =>cuisine<><v2>=>true<>
+<f0>=>restaurant<><f1>=>kids<><f2>=>reservations<><v2>=>true<>
+<v1>=>2<><f1>=>price_rating<><v1>=>lunch<><v2>=>true<>
+<f0>=>restaurant<><f1>=>waiter_service<><f2>=>credit_cards<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><f1>=>delivery<><f2>=>cuisine<><v2>=>thai<><v1>=>true<><v2>=>true<>
+<f0>=>restaurants<><f1>=>credit_cards<><f2>=>kids<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><f1>=>waiter_service<><f2>=>outdoor_seating<><v2>=>true<>
+<f0>=>restaurant<><f1>=>groups<><v2>=>lunch<><f1> =>neighborhood<>
+<f0>=>restaurants<><v1>=>midtown_west<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><v1>=>3<><f1>=>star_rating<><v1>=>2<><f1> =>restaurant<>
+<v0>=>3<><f0>=>star<><f1>=>restaurants<><f2>=>outdoor_seating<><v1>=>true<>
+<f1>=>restaurants<><f0>=>waiter_service<><f2>=>outdoor<><v2>=>true<>
+<f0>=>restaurants<><f1>=>groups<><f2>=>credit_cards<><v1>=>true<>
+<f0>=>restaurants<><f1>=>credit_cards<><f2>=>kids<>
+<v0>=>thai_cafe<><v1>=>true<>
+<f0>=>restaurant<><f1>=>waiter_service<><f1> =>restaurant<>
+<v0>=>3<><f0>=>star<><f1>=>restaurant<><f2>=>price_rating<><v2>=>2<><f2>=>price_rating<>
+<f1>=>star_rating<><v2>=>true<>
+<f0>=>restaurants<><f1>=>price_rating<><v1>=>2<><f1>=>price_rating<><f1> =>meal<>
+<f0>=>restaurant<><f1>=>kids<><f2>=>credit_cards<>
+<f0>=>restaurants<><f1>=>credit_cards<><v2>=>lunch<><v1>=>true<><v2>=>true<>
+<v0>=>3<><f0>=>star<><f1>=>restaurants<><f2>=>deliver<><v1>=>true<><v2>=>true<>
+<v0>=>3<><f0>=>star<><f1>=>restaurant<><f2>=>waiter_service<><v1>=>true<>
+<f1>=>restaurant<><f0>=>groups<><f2>=>delivery<><f0> =>neighborhood<><v2>=>true<>
+<f0>=>restaurant<><f1>=>reservation<><v2>=>lunch<><v1>=>true<>
+<f0>=>restaurant<><f1>=>takeout<><f2>=>delivery<><v1>=>true<><v2>=>true<>
+<f0>=>restaurants<><f1>=>price_ratings<><v1>=>2<><f1>=>price_rating<><f1> =>neighborhood<>
+<f0>=>restaurants<><f1>=>groups<><f2>=>kids<><f1> =>restaurant<>
+<f1>=>restaurants<><v1>=>3<><f0>=>star_rating<><v2>=>lunch<><f0> =>cuisine<><v2>=>true<>
+<f1>=>restaurant<><f0>=>star_rating<><v1>=>3<><f0>=>star_rating<><f2>=>kids<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><f1>=>neighborhood<><v1>=>midtown_west<><f2>=>star_rating<><v2>=>3<><f2>=>star_rating<><v2>=>true<>
+<f0>=>restaurants<><f1>=>deliver<><f2>=>waiter_service<><v2>=>true<>
+<f0>=>restaurants<><v1>=>3<><f1>=>star_rating<><f2>=>reservations<>
+<f1>=>restaurant<><v1>=>midtown_west<><f2>=>credit_cards<><v2>=>true<>
+<f1>=>kids<><f0>=>restaurants<><v2>=>midtown_west<><v2>=>true<>
+<f0>=>resturants<><f1>=>star_rating<><v1>=>3<><f1>=>star_rating<><v1>=>true<><v2>=>true<>
+<v0>=>midtown_west<><f1>=>restaurant<><v2>=>lunch<><f1> =>neighborhood<><v2>=>true<>
+<f0>=>restaurant<><f1>=>takeout<><f2>=>reservations<><f1> =>restaurant<>
+<f1>=>restaurant<><f0>=>groups<><f2>=>kids<><f0> =>cuisine<><v2>=>true<>
+<f1>=>restaurants<><f0>=>credit_cards<><f2>=>waiter_service<><f0> =>cuisine<><v2>=>true<>
+<f0>=>restaurants<><f1>=>waiter_service<><f2>=>outdoor<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><v1>=>midtown_west<><v2>=>2<><f2>=>price_rating<><f1> =>meal<>
+<f0>=>restaurant<><v1>=>lunch<><v1>=>true<><v2>=>true<>
+<f1>=>restaurant<><f0>=>star_rating<><v1>=>3<><f0>=>star_rating<><f2>=>groups<><v2>=>true<>
+<f0>=>restaurants<><f1>=>outdoor_seating<><f2>=>takeout<>
+<v0>=>thai<><f1>=>restaurants<><v2>=>midtown_west<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><f1>=>takeout<><f2>=>kids<><v1>=>true<>
+<f0>=>restaurants<><f1>=>waiter_service<><f2>=>price_rating<><v2>=>2<><v2>=>true<>
+<v1>=>3<><f1>=>star<><f0>=>restaurant<><f0> =>cuisine<><v2>=>true<>
+<v0>=>2<><f0>=>price_rating<><f1>=>restaurants<><f2>=>kids<><f1> =>restaurant<>
+<f1>=>restaurants<><v1>=>3<><f0>=>star_rating<><v1>=>true<><f2> =>neighborhood<>
+<f0>=>restaurant<><v1>=>lunch<><f2>=>outdoor_seating<>
+<f0>=>restaurant<><f1>=>price_rating<><v1>=>2<><f1>=>price_rating<><f1> =>meal<>
+<v0>=>thai<><f1>=>restaurant<><v2>=>2<><f2>=>price_rating<><f2> =>meal<>
+<f0>=>restaurant<><f1>=>delivery<><f1> =>meal<>
+<f0>=>restaurants<><f1>=>takeout<><f2>=>credit_cards<><v1>=>true<><v2>=>true<>
+<f0>=>restaurants<><f1>=>outdoor<><f2>=>kids<><f1> =>meal<><v2>=>true<>
+<f0>=>restaurant<><f1>=>groups<><v2>=>midtown_west<><v1>=>true<><f2> =>meal<>
+<f0>=>kids<><f1>=>restaurant<><v2>=>midtown_west<><f2>=>neighborhood<><f1> =>restaurant<>
+<f0>=>cuisine<><f0>=>cuisine<><v1>=>thai_cafe<><f0>=>cuisine<><v1>=>thai_cafe<><f1> =>meal<>
+<f0>=>kids<><f1>=>restaurants<><f2>=>waiter_service<><v1>=>true<><f2> =>meal<>
+<f0>=>restaurant<><f1>=>neighborhood<><v1>=>midtown_west<><f2>=>outdoor_seating<><v1>=>true<><v2>=>true<>
+<f0>=>restaurants<><f1>=>outdoor_seating<><f2>=>credit_cards<><v1>=>true<>
+<v0>=>thai<><f1>=>restaurant<><f2>=>delivery<><v1>=>true<>
+<f0>=>meal<><v1>=>thai_cafe<><f1> =>meal<><v2>=>true<>
+<f0>=>resturants<><v1>=>lunch<><v1>=>true<>
+<f0>=>restaurant<><f1>=>kid<><f2>=>credit_cards<><v0>=>true<><v1>=>true<>
+<f0>=>restaurants<><f1>=>waiter_service<><f2>=>price_rating<><v2>=>2<><f2>=>price_rating<><v1>=>true<>
+<f0>=>restaurants<><f1>=>outdoor_seating<><v2>=>true<>
+<f0>=>restaurants<><f1>=>deliver<><v2>=>lunch<>
+<f0>=>restaurant<><f1>=>takeout<><v2>=>midtown_west<><f1> =>neighborhood<><v2>=>true<>
+<f0>=>restaurant<><f1>=>groups<><f2>=>reservations<><v1>=>true<>
+<f0>=>restaurant<><f1>=>reservations<><f2>=>credit_cards<><v1>=>true<>
+<f0>=>restaurant<><f1>=>reservations<><v2>=>lunch<><v1>=>true<>
+<f0>=>restaurants<><f1>=>kids<><v2>=>lunch<><v2>=>true<>
+<f1>=>restaurants<><f0>=>kids<><f2>=>waiter_service<><v2>=>true<>
+<f0>=>restaurants<><v1>=>2<><f1>=>price_rating<><f1>=>monthly_rent<><f2>=>credit_cards<>
+<v1>=>thai<><f0>=>restaurant<><v2>=>3<><f2>=>star_rating<><v1>=>true<>
+<f0>=>restaurant<><f1>=>neighborhood<><v1>=>midtown_west<><f2>=>reservations<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><v1>=>2<><f1>=>price_rating<><v2>=>lunch<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><f1>=>outdoor_seating<><f2>=>delivery<>
+<f0>=>restaurants<><f1>=>groups<><f2>=>takeout<><f1> =>neighborhood<><v2>=>true<>
+<f0>=>restaurants<><f1>=>takeout<>
+<v0>=>midtown_west<><f1>=>restaurant<><v1>=>true<><v2>=>true<>
+<v0>=>thai<><f1>=>restaurants<><f2>=>reservations<><v1>=>true<>
+<f0>=>restaurant<><f1>=>waiter_service<><f2>=>reservations<><v1>=>true<><v2>=>true<>
+<f0>=>restaurants<><v1>=>2<><f1>=>price_rating<><v2>=>midtown_west<><f2> =>meal<>
+<v0>=>3<><f0>=>star<><f1>=>restaurants<><f2>=>groups<><v1>=>true<>
+<f0>=>restaurants<><v1>=>midtown_west<><f2>=>takeout<><f1> =>meal<><v2>=>true<>
+<f1>=>restaurants<><v1>=>midtown_west<><f2>=>credit_cards<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><f1>=>delivery<><f2>=>price_rating<><v2>=>2<><f2>=>price_rating<><f1> =>meal<><v2>=>true<>
+<v0>=>midtown_west<><f1>=>restaurant<><f2>=>groups<><f1> =>meal<><v2>=>true<>
+<f0>=>restaurant<><f1>=>waiter_service<><f2>=>reservations<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><f1>=>reservations<><v2>=>lunch<><v1>=>true<>
+<f0>=>restaurants<><v1>=>midtown_west<><f1>=>neighborhood<><f2>=>outdoor_seating<><v1>=>true<><v2>=>true<>
+<f0>=>restaurants<><f1>=>deliver<><f2>=>takeout<><v1>=>true<><v2>=>true<>
+<f1>=>restaurants<><f0>=>price_rating<><v1>=>3<><f0>=>price_rating<><f0> =>cuisine<><v2>=>true<>
+<f1>=>restaurant<><v1>=>3<><f0>=>star_rating<><f2>=>delivers<><v2>=>true<>
+<v0>=>thai_cafe<><v1>=>true<><v2>=>true<>
+<f1>=>restaurants<><v1>=>lunch<><f0> =>neighborhood<><v2>=>true<>
+<f0>=>restaurants<><f1>=>outdoor_seating<><v2>=>lunch<>
+<v0>=>midtown_west<><f0>=>neighborhood<><f1>=>restaurant<><v2>=>3<><f2>=>star_ratings<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><f1>=>kids<><f2>=>reservations<><v1>=>true<>
+<v1>=>thai<><f0>=>restaurant<><f2>=>outdoor_seating<><f0> =>cuisine<>
+<f0>=>restaurants<><f1>=>reservations<>
+<f0>=>kids<><f1>=>restaurant<><v2>=>lunch<><f2> =>meal<>
+<v0>=>2<><f0>=>price_rating<><f1>=>restaurant<><f2>=>outdoor_seating<><v1>=>true<><v2>=>true<>
+<f0>=>restaurants<><f1>=>price_rating<><v1>=>2<><f1>=>price_rating<><f2>=>credit_cards<><v1>=>true<>
+<f0>=>restaurants<><f1>=>waiter_service<><f2>=>takeout<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><v1>=>lunch<><f2>=>delivery<><f1> =>neighborhood<><f2> =>meal<>
+<f0>=>restaurant<><f1>=>price_rating<><v1>=>2<><f1>=>price_rating<><f2>=>credit_cards<><f1> =>meal<>
+<f0>=>restaurant<><f1>=>credit_cards<><f2>=>price_rating<><v2>=>2<><f2>=>price_rating<><v1>=>true<>
+<f0>=>restaurants<><f1>=>outdoor_seating<>
+<f0>=>restaurant<><v1>=>midtown_west<><v2>=>3<><f2>=>star_rating<>
+<f0>=>restaurants<><f1>=>credit_cards<><f2>=>reservations<><v1>=>true<><v2>=>true<>
+<f0>=>restaurants<><f1>=>takeout<><f2>=>reservations<><v1>=>true<><v2>=>true<>
+<f1>=>restaurant<><f0>=>reservations<><f2>=>groups<><v1>=>true<><v2>=>true<>
+<v0>=>thai<><f1>=>restaurants<><f2>=>outdoor_seating<><v2>=>true<>
+<f0>=>restaurant<><f1>=>waiter_service<><f2>=>groups<><v2>=>true<>
+<f0>=>restaurant<><f1>=>waiter_service<><f2>=>neighborhood<><v2>=>midtown_west<><v1>=>true<>
+<v0>=>thai<><f1>=>restaurant<><v2>=>lunch<><v1>=>true<><v2>=>true<>
+<f0>=>restaurant<><f1>=>delivery<><f2>=>group<><v1>=>true<><v2>=>true<>
+<f1>=>restaurant<><f0>=>outdoor_seating<><f2>=>credit_cards<><f0> =>cuisine<><f2> =>neighborhood<>
+<f0>=>restaurants<><f1>=>credit_cards<><v2>=>true<>
+<f0>=>restaurant<><f1>=>reservations<><v2>=>true<>

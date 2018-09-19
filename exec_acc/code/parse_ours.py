@@ -218,16 +218,15 @@ def main(argv):
         try:
             result = {
                 'sql': parse(sql, table),
-                'table_id': query_index_to_table_id[query_index],
-                'error': False,
+                'table_id': query_index_to_table_id[query_index]
             }
             parsed_sql_list.append(result)
             count['good'] += 1
         except Exception:
-            parsed_sql_list.append({'error': True})
+            parsed_sql_list.append([])
             count['bad'] += 1
 
-    print('good : bad =', count['good'], ':', count['bad'])
+    print(count['good'], count['bad'])
     if False and count['bad'] > 0:
         print('bad guys')
         for query_index, parsed_sql in enumerate(parsed_sql_list):

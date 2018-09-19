@@ -1,0 +1,88 @@
+<f0>=>much<><v1>=>123_sesame_street<><v1>=>true<>
+<f0>=>housing<><f1>=>bedroom<><f2>=>private_bath<>
+<f0>=>housing_unit<><f1>=>private_bath<><v2>=>1500<><f2>=>price_rating<><f2>=>rent<>
+<f0>=>housing_unit<><f1>=>cats<><f2>=>private_bath<>
+<f0>=>housing_unit<><f1>=>posting_date<><v1>=>jan_2nd<><f2>=>cats<><f2> =>neighborhood<>
+<f1>=>housing_unit<><f0>=>priced<><v1>=>1500<><f0>=>monthly_rent<>
+<f0>=>housing_units<><f1>=>private_room<><v2>=>midtown_west<><v1>=>true<><v2>=>true<>
+<f1>=>housing<><f0>=>private_bath<><f2>=>posting_date<><v2>=>jan_2nd<><v2>=>true<>
+<f1>=>housing<><v1>=>800<><f0>=>size<><f2>=>private_room<>
+<f0>=>housing_units<><v1>=>midtown_west<><f1>=>neighborhood<><f2>=>dogs<><v1>=>true<>
+<v0>=>apartment<><f0>=>type<><f1>=>housing_unit<><f2>=>private_bath<><v1>=>true<>
+<v0>=>apartment<><f1>=>private_room<><f2>=>rents<><v2>=>1500<>
+<v0>=>800<><f0>=>size<><f1>=>housing_unit<><f2>=>private_bath<>
+<f0>=>housing_units<><f1>=>private_room<><f2>=>posting_date<><v2>=>jan_2nd<><v1>=>true<>
+<f0>=>housing_unit<><v1>=>apartment<><f1>=>housing_type<><v1>=>true<>
+<v0>=>123_sesame_street<><f1>=>housing_type<>
+<f1>=>housing_unit<><f0>=>private_bath<>
+<f0>=>housing<><v1>=>800<><f1>=>size<><f2>=>private_bath<><v2>=>true<>
+<f0>=>housing_unit<><f1>=>private_room<><f2>=>dogs<>
+<f0>=>neighborhood<><v1>=>123_sesame_street<>
+<f0>=>housing_unit<><f1>=>monthly_rent<><v1>=>1500<><f1>=>monthly_rent<><v1>=>true<>
+<f0>=>housing<><f1>=>dogs<><v2>=>true<>
+<v0>=>apartment<><f1>=>private_bath<>
+<v0>=>apartment<><f1>=>monthly_rent<><v1>=>1500<><f1>=>monthly_rent<>
+<f0>=>housing_units<><f1>=>dogs<><f2>=>cats<><f1> =>neighborhood<><v2>=>true<>
+<f0>=>private_room<><v1>=>midtown_west<>
+<f0>=>housing<><v0>=>123_sesame_street<><v1>=>true<><v2>=>true<>
+<f0>=>housing_unit<><f1>=>private_room<><f2>=>cats<><v1>=>true<>
+<f0>=>housing_units<><f1>=>posting_date<><v1>=>jan_2nd<>
+<f0>=>housing_units<><f1>=>dog<>
+<v0>=>apartment<><v1>=>true<>
+<f0>=>housing<><f1>=>posting_date<><v1>=>feb_3rd<>
+<f0>=>housing<><f1>=>posting_date<><v1>=>jan_2nd<><f1> =>neighborhood<>
+<f0>=>housing_unit<><v1>=>800<><f1>=>size<>
+<f0>=>housing_type<><f1>=>rent<><v1>=>1500<><v1>=>true<><v2>=>true<>
+<f0>=>housing_unit<><v1>=>midtown_west<><f2>=>private_bath<><v0>=>true<><v1>=>true<>
+<f0>=>housing_type<><v1>=>123_sesame_street<><f2>=>posting_date<><v2>=>jan_2nd<>
+<f1>=>private_bath<><f0>=>rent<><v1>=>1500<><f0> =>housing_unit<>
+<f0>=>housing<><v1>=>midtown_west<><f2>=>posting_date<><v2>=>jan_2nd<><v1>=>true<>
+<f0>=>housing_units<><f1>=>posting_date<><v1>=>jan_2nd<><f1> =>neighborhood<>
+<f1>=>housing_unit<><f0>=>private_bath<><f2>=>posting_date<><v2>=>jan_2nd<><v1>=>true<>
+<f0>=>housing<><v1>=>1500<><f1>=>private_room<><v0>=>true<><f1> =>housing_type<>
+<v0>=>apartment<><f1>=>dogs<><f1> =>neighborhood<>
+<v0>=>apartment<><f1>=>private_bath<><f0> =>housing_type<><v1>=>true<>
+<f0>=>housing<><f1>=>monthly_rent<><v1>=>1500<><f1>=>monthly_rent<><v2>=>800<><f2>=>size<><v1>=>true<>
+<v0>=>800<><f0>=>size<><f1>=>unit<><f2>=>rent<><v2>=>1500<><v1>=>true<><v2>=>true<>
+<f0>=>housing_units<><v1>=>midtown_west<><f2>=>dogs<>
+<f0>=>housing_unit<><v1>=>midtown_west<><f1>=>neighborhood<><f2>=>private_room<><v2>=>true<>
+<v0>=>apartment<><f1>=>private_bath<>
+<f0>=>housing_type<><v1>=>midtown_west<><f2>=>rent<><v2>=>1500<>
+<f0>=>housing_type<><v1>=>true<>
+<f0>=>housing_unit<><v1>=>midtown_west<><f2>=>monthly_rent<><v2>=>1500<><v1>=>true<>
+<f0>=>housing_unit<><f1>=>private_room<><f1> =>housing_type<>
+<f1>=>housing<><v1>=>midtown_west<><f2>=>posting_date<><v2>=>jan_2nd<><v2>=>true<>
+<f0>=>neighborhood<><v1>=>123_sesame_street<>
+<f0>=>housing<><f1>=>cats<><f2>=>private_room<><v1>=>true<>
+<f0>=>housing_unit<><v1>=>800<><f1>=>size<><f2>=>private_room<><v0>=>true<>
+<f1>=>housing_units<><f0>=>size<><v1>=>800<><f0>=>size<><v2>=>true<>
+<f0>=>housing<><v1>=>800<><f1>=>size<><f2>=>cats<>
+<v0>=>apartment<><v1>=>midtown_west<><v1>=>true<><v2>=>true<>
+<f0>=>housing<><v1>=>800<><f1>=>size<><f2>=>posting_date<><v2>=>jan_2nd<><f1> =>neighborhood<>
+<v0>=>800<><f0>=>size<><f1>=>housing_units<><f2>=>dogs<><v2>=>true<>
+<f0>=>housing_unit<><f1>=>posting_date<><v1>=>jan_2nd<><v1>=>true<><v2>=>true<>
+<f0>=>rent<><v0>=>1500<><v1>=>true<><v2>=>true<>
+<f0>=>housing_unit<><f1>=>cats<><v2>=>midtown_west<><f2>=>neighborhood<><v2>=>true<>
+<f0>=>housing<><f1>=>private_room<>
+<v0>=>800<><f0>=>size<><f1>=>housing_unit<><f2>=>private_baths<>
+<f0>=>housing<><v1>=>apartment<><f2>=>private_bath<><f0> =>housing_type<>
+<f0>=>housing_type<><f1>=>housing<><v1>=>123_sesame_street<><v1>=>true<>
+<f0>=>housing_unit<><f1>=>monthly_rent<><v1>=>1500<><f1>=>monthly_rent<>
+<f0>=>housing_unit<><f1>=>private_room<><f2>=>cats<>
+<f0>=>housing_type<><f1>=>dogs<>
+<f0>=>cats<><f1>=>housing<><v2>=>true<>
+<v0>=>123_sesame_street<><f1> =>neighborhood<>
+<f0>=>housing_unit<><f1>=>posting_date<><v1>=>jan_2nd<><v2>=>midtown_west<>
+<f0>=>housing_unit<><f1>=>cats<>
+<f0>=>housing<><v1>=>midtown_west<>
+<f0>=>housing<><v1>=>apartment<><v2>=>midtown_west<><f2>=>neighborhood<>
+<f0>=>cat<><f1>=>housing_units<><f2>=>private_bath<>
+<f0>=>housing_unit<><v1>=>midtown_west<><f2>=>posting_date<><v2>=>jan_2nd<>
+<f0>=>housing_unit<><f1>=>dogs<><f2>=>cats<><v1>=>true<>
+<f1>=>housing_units<><f0>=>private_bath<><v2>=>midtown_west<><f2>=>neighborhood<>
+<f0>=>housing<><f1>=>private_room<><f2>=>posting_date<><v2>=>jan_2nd<>
+<v0>=>800<><f0>=>size<><f1> =>housing_unit<>
+<v0>=>apartment<><f1>=>posting_date<><v1>=>jan_2nd<><f1> =>housing_type<>
+<f0>=>housing_unit<><f1>=>dogs<><f2>=>private_bath<><v1>=>true<><v2>=>true<>
+<f0>=>housing<><v1>=>800<><f1>=>size<><f1>=>size<><f2>=>cats<><f0> =>housing_type<><v1>=>true<>
+<v0>=>800<><f0>=>size<><f1>=>housing_unit<><f2>=>private_room<><v0>=>true<><f1> =>neighborhood<>

@@ -1,0 +1,352 @@
+================
+neighborhoods where <f2> equal <v2> and <f1> equal <v1>
+monthly_rent where housing_unit equal 123_sesame_street
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+housing where dogs equal <v1>
+housing_unit where private_bath equal true and private_room equal true
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+housing_unit where rent equal <v1>
+housing_unit where private_bath equal true and monthly_rent equal 1500
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+housing_unit where <c3> equal 309886
+housing_unit where cats equal true and private_bath equal true
+<f0> where <c4> equal <v0> and <c7> equal <v0>
+================
+housing_unit where monthly_rent equal <v1> and <f2> equal <v2>
+housing_unit where posting_date equal jan_2nd and cats equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+housing_unit where square_feet equal <v1>
+housing_unit where monthly_rent equal 1500
+<f0> where <f1> equal <v1>
+================
+housing_units where <f1> equal <v1> and <f2> equal <v2>
+housing_unit where neighborhood equal midtown_west and private_room equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+housing_units where <c5> equal 77
+housing_unit where posting_date equal jan_2nd and private_bath equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+square_feet where housing_units equal <v1>
+housing_unit where private_room equal true and size equal 800
+<f0> where <c1> equal <v1> and <f1> equal <v1>
+================
+housing where <f2> equal <v2> and apartments equal <v1>
+housing_unit where dogs equal true and neighborhood equal midtown_west
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+housing where dogs equal <v2> and private_room equal <v1>
+housing_unit where housing_type equal apartment and private_bath equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+monthly_rentals where housing equal <v1> and private_room equal <v2>
+housing_type where monthly_rent equal 1500 and private_room equal true
+<f0> where <f1> equal jan_2nd and <f2> equal <v2>
+================
+monthly_rent where <f1> less <v1>
+housing_unit where size equal 800 and private_bath equal true
+<f0> where <f1> less <v1>
+================
+housing_unit where rent equal <v1>
+housing_unit where private_room equal true and posting_date equal jan_2nd
+<f0> where <f1> equal <v1>
+================
+private_room where <f2> equal <v2> and housing equal <v1>
+housing_unit where housing_type equal apartment
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+<c4> where types equal <v1>
+housing_type where housing_unit equal 123_sesame_street
+<c2> where <f1> equal <v1>
+================
+housing_unit where square_feet equal <v1> and <f2> equal <v2>
+housing_unit where private_bath equal true 
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+housing_unit where <f2> equal <v2> and rent equal <v1>
+housing_unit where size equal 800 and private_bath equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+housing_units where <f1> equal <v1>
+housing_unit where private_room equal true and dogs equal true
+<f0> where <f1> equal <v1>
+================
+housing where private_bath equal <v1>
+neighborhood where housing_unit equal 123_sesame_street
+<f0> where <f1> equal <v1>
+================
+housing_units where <f2> equal <v2> and rental equal <v1>
+housing_unit where monthly_rent less 1500
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+housing_units where <f2> equal <v2> and bigger equal <v1>
+housing_unit where dogs equal true and dogs equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+housing_unit where <f1> equal <v1>
+housing_unit where housing_type equal apartment and private_bath equal true
+<f0> where <f1> less <v1> and <f1> less <v1>
+================
+housing_unit where private_bath equal <v1>
+housing_unit where housing_type equal apartment and monthly_rent equal 1500
+<f0> where <f1> equal <v1>
+================
+housing_units where size equal <v2> and posted equal <v1>
+housing_unit where cats equal true and dogs equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+neighborhoods where <c4> equal 54.09
+housing_unit where neighborhood equal midtown_west and private_room equal true
+<f0> where <c1> equal 1500
+================
+housing where monthly_rent greater <v1> and <f2> equal <v2>
+neighborhood where housing_unit equal 123_sesame_street
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+housing_units where private_room equal <v1>
+housing_unit where cats equal true and private_room equal true
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+housing where <f1> equal <v1>
+housing_unit where posting_date less jan_2nd
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+housing where neighborhoods equal <v1> and <f2> equal <v2>
+housing_unit where dogs equal true
+<f0> where <f1> equal <v1> and <f2> equal <v1>
+================
+housing_units where private_room equal <v1> and housing_type equal <v2>
+housing_unit where monthly_rent equal 1500 and housing_type equal apartment
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+<f0> where dollars equal <v1>
+housing_unit where posting_date equal feb_3rd 
+<f0> where <f1> equal <v1>
+================
+<f0> where <f1> equal <v1>
+housing_unit where posting_date equal jan_2nd
+<c2> where <f1> equal <v1>
+================
+square_feet where <c5> equal 77
+housing_unit where size equal 800 and size equal 800
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+housing_unit where monthly_rent greater <v1> and <f2> equal <v2>
+housing_type where monthly_rent less 1500
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+units where <f1> equal <v1>
+housing_unit where private_bath equal true and neighborhood equal midtown_west
+<c8> where <f1> equal <v1> and <f0> equal <v0>
+================
+housing_unit where price equal <v1> and dogs equal <v2>
+housing_type where housing_unit equal 123_sesame_street and posting_date equal jan_2nd
+<f0> where <f1> equal midtown_west and <f2> equal <v2>
+================
+neighborhood where housing_units equal <v1>
+housing_unit where monthly_rent equal 1500 and private_bath equal true
+<f0> where <f1> equal <v1>
+================
+housing where <f2> equal <v2> and rent equal <v1>
+housing_unit where posting_date equal jan_2nd and neighborhood equal midtown_west
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+housing_units where <f2> equal <v2> and square_feet equal <v1>
+housing_unit where posting_date greater jan_2nd
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+housing where <c5> equal shen
+housing_unit where posting_date equal jan_2nd and private_bath equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+housing where <f1> equal <v1>
+housing_unit where private_room equal true and monthly_rent equal 1500
+<c8> where <f0> equal <v0> and <f1> equal <v1>
+================
+housing_unit where posted equal <v1> and dogs equal <v2>
+housing_unit where housing_type equal apartment and dogs equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+housing_units where size equal <v1>
+housing_unit where private_bath equal true and housing_type equal apartment
+<c8> where <f1> equal <v1> and <f0> equal <v0>
+================
+housing_unit where <f2> equal <v2> and square_feet equal <v1>
+housing_unit where size equal 800 and monthly_rent equal 1500
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+housing_unit where dogs equal <v2> and <f1> equal <v1>
+housing_unit where monthly_rent equal 1500 and size equal 800
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+housing where <f1> greater <v1>
+housing_unit where neighborhood equal midtown_west and dogs equal true
+<f0> where <f1> greater <v1>
+================
+housing_unit where private_room equal <v2> and cats equal <v1>
+housing_unit where private_room equal true and neighborhood equal midtown_west
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+housing_unit where private_bath equal <v1>
+housing_unit where housing_type equal apartment and private_bath equal true
+<f0> where <f1> equal <v1>
+================
+housing_unit where neighborhood equal <v1> and <f2> equal <v2>
+housing_type where monthly_rent equal 1500 and neighborhood equal midtown_west
+<f0> where <f1> equal <v2> and <f2> equal <v2>
+================
+housing_units where area equal <v1>
+housing_type where dogs equal true
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+housing where posted equal <v1> and rents equal <v2>
+housing_unit where monthly_rent equal 1500 and neighborhood equal midtown_west
+<f0> where <f1> equal <v1> and <c3> equal <v1>
+================
+kinds where <c5> equal 8:16.28
+housing_unit where private_room equal true and private_room equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+housing where private_bath equal <v1> and posted equal <v2>
+housing_unit where posting_date equal jan_2nd and neighborhood equal midtown_west
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+neighborhoods where <c5> equal triangle sports plex/greensboro ice house
+neighborhood where housing_unit equal 123_sesame_street
+<f1> where <f0> equal <f1> and <f2> equal <v2>
+================
+units where dollar equal <v1>
+housing_unit where private_room equal true and cats equal true
+<f0> where <f1> equal <v1>
+================
+<f0> where <f1> equal <v1>
+housing_unit where private_room equal true and size equal 800
+<c8> where <f1> equal <v1> and <f0> equal <v0>
+================
+housing where <c5> equal 77
+housing_unit where size greater 800
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+housing_unit where
+housing_unit where size equal 800 and cats equal true
+<c8> where <f0> equal <v0> and <f0> equal <v0>
+================
+neighborhoods where <f1> greater <v1> and <f2> equal <v2>
+housing_unit where housing_type equal apartment and neighborhood equal midtown_west
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+private_rooms where dogs equal <v1> and <f2> equal <v2>
+housing_unit where posting_date equal jan_2nd and size equal 800
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+housing where neighborhood equal <v1> and posted equal <v2>
+housing_unit where size equal 800 and dogs equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+housing_unit where area equal <v1> and monthly_rent equal <v2>
+housing_unit where posting_date equal jan_2nd and posting_date equal jan_2nd
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+<f0> where posted equal <v1> and <f2> equal <v2>
+housing_unit where monthly_rent equal 1500
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+housing_units where neighborhoods equal <v1> and <f2> equal <v2>
+housing_unit where cats equal true and neighborhood equal midtown_west
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+housing_units where private_room equal <v1>
+housing_unit where private_room equal true and private_bath equal true
+<f2> where <f1> equal <v1> and <f0> equal <v0>
+================
+housing where <f1> equal <v1>
+housing_unit where private_bath equal true and size equal 800
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+kind where <c4> equal <v1>
+housing_unit where private_bath equal true and housing_type equal apartment
+<c8> where <f0> equal <v0> and <c4> equal <v0>
+================
+dogfriendly where housing equal <v1>
+housing_type where housing_unit equal 123_sesame_street
+<f0> where <f1> equal <v1>
+================
+neighborhood where housing greater <v1>
+housing_unit where monthly_rent less 1500
+<f0> where <f1> greater <v1>
+================
+dogfriendly where <f1> equal <v1>
+housing_unit where private_room equal true and cats equal true
+<f0> where <f1> equal <v1> and <f1> equal <v1>
+================
+housing where <f1> greater <v1>
+housing_type where dogs equal true
+<f0> where <f1> greater <v1>
+================
+rental where <f2> equal <v2> and <f1> equal <v1>
+housing_unit where cats equal true
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+================
+<f0> where private_room equal <v1>
+posting_date where housing_unit equal 123_sesame_street
+<f0> where <f1> equal <v1>
+================
+neighborhoods where <f1> equal <v1> and <f2> equal <v2>
+housing_unit where posting_date equal jan_2nd and neighborhood equal midtown_west
+<f0> where <f1> equal <v1> and <f2> equal <v1>
+================
+housing_units where private_bath equal <v1>
+housing_unit where cats equal true and cats equal true
+<f0> where <f1> equal <v1>
+================
+housing where <f2> equal <v2> and types equal <v1>
+housing_unit where neighborhood equal midtown_west and cats equal true
+<f0> where <f1> equal <v2> and <f2> equal <v2>
+================
+neighborhood where listings greater <v1>
+housing_unit where neighborhood equal midtown_west and housing_type equal apartment
+<f0> where <f1> greater <v1>
+================
+<c0> where <c1> equal 2.14
+housing_unit where cats equal true and private_bath equal true
+<f0> where <c4> equal <v0> and <c7> equal <v0>
+================
+housing_unit where private_room greater <v1>
+housing_unit where neighborhood equal midtown_west and posting_date equal jan_2nd
+<f0> where <f1> greater <v1>
+================
+recently where housing equal <v1> and <f2> equal <v2>
+housing_unit where dogs equal true and cats equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+housing where <c5> equal 77
+housing_unit where neighborhood equal midtown_west and private_bath equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+housing where rent equal <v1>
+housing_unit where private_room equal true and posting_date equal jan_2nd
+<f0> where <f1> equal <v1> and <c1> equal <v1>
+================
+housing_unit where posted equal <v1>
+housing_unit where size equal 800
+<f0> where <f1> equal <v1>
+================
+kind where housing equal <v1> and <f2> equal <v2>
+housing_unit where posting_date equal jan_2nd and housing_type equal apartment
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+unit where square_feet equal <v1> and <f2> equal <v2>
+housing_unit where dogs equal true and private_bath equal true
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+================
+housing_unit where costs equal <v1>
+housing_unit where cats equal true and size equal 800
+<c8> where <f0> equal <v0> and <f1> equal <v1>
+================
+housing_type where dollars equal <v1>
+housing_unit where size equal 800 and private_room equal true
+<c8> where <f1> equal <v1> and <f0> equal <v0>

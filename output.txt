@@ -1,0 +1,168 @@
+3:===========
+how many <f0> turnovers <eof> does <f1> player <eof> <v1> average over a reason
+count <f0> where <f1> equal <v1>
+<c10> where <f1> equal <v1> and <f0> equal 3
+7:===========
+number of <f0> seasons <eof> where <f1> player <eof> <v1> had <v2> <f2> fouls <eof>
+count <f0> where <f1> equal <v1> and <f2> equal <v2>
+count <f0> where <f1> equal <v1> where <f2> equal <v2>
+15:===========
+how many <f0> blocks <eof> were made by <f1> player <eof> <v1>
+max <f0> where <f1> equal <v1>
+<f0> where <f1> equal <v1>
+19:===========
+how many <f0> games <eof> did <f1> player <eof> <v1> play with <v2> <f2> blocks <eof>
+count <f0> where <f1> equal <v1> and <f2> equal <v2>
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+21:===========
+how many <f0> games <eof> has <f1> player <eof> <v1> made more than <v2> <f2> assists <eof>
+count <f0> where <f1> equal <v1> and <f2> greater <v2>
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+25:===========
+how many <f0> blocks <eof> <f1> player <eof> <v1> made in the season he made <v2> <f2> rebounds <eof>
+count <f0> where <f2> equal <v2> and <f1> equal <v1>
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+27:===========
+how many <f0> blocks <eof> did <f1> player <eof> <v1> have in <v2> <f2> games <eof> of the season
+count <f0> where <f1> equal <v1> and <f2> equal <v2>
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+28:===========
+how many <f0> fouls <eof> did <f1> player <eof> <v1> have last season
+max <f0> where <f1> equal <v1>
+<f0> where <f1> equal <v1>
+36:===========
+in how many <f0> games <eof> has <f1> player <eof> <v1> made <v2> <f2> blocks <eof>
+count <f0> where <f1> equal <v1> and <f2> equal <v2>
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+37:===========
+<f0> who <eof> did <v0> play for when he had <v1> all season <f1> rebounds <eof>
+<f0> where <f1> equal <v1>
+<c10> where <f0> equal <v0> and <f1> equal <v1>
+41:===========
+<f0> number_of_fouls <eof> <v1> <f1> who <eof> has <v2> <f2> assists <eof>
+<f0> where <c5> equal 8:16.28
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+43:===========
+how many <f0> turnovers <eof> has <f1> player <eof> <v1> had
+count <f0> where <f1> equal <v1>
+<f0> where <f1> equal <v1>
+45:===========
+name the <f0> player <eof> with the total <f1> number_of_assists <eof> equalling less than <v1>
+count <f0> where <f1> less <v1>
+<f0> where <f1> less <v1>
+47:===========
+how many <f0> fouls <eof> did <f1> player <eof> <v1> have after <v2> <f2> games <eof>
+count <f0> where <f1> equal <v1> and <f2> greater <v2>
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+52:===========
+how long has <v0> <f0> played <eof> with more than <v1> <f1> assists <eof> per <f2> season <eof>
+<f0> where <f2> equal <v2> and <f1> greater <v1>
+<f2> where <f0> equal <v0> and <f1> greater <v1>
+57:===========
+how many <f0> blocks <eof> has <f1> player <eof> <v1> had
+count <f0> where <f1> equal <v1>
+<f0> where <f1> equal <v1> and <c7> equal 3
+62:===========
+how many <f0> blocks <eof> <f1> player <eof> <v1> made in the <f2> season <eof> <v2>
+max <f0> where <f2> equal <v2> and <f1> equal <v1>
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+64:===========
+in which <f0> season <eof> did <f1> player <eof> <v1> score <v2> <f2> points <eof>
+<f0> where <c0> equal hawthorn
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+65:===========
+how many <f0> rebounds <eof> did <f1> player <eof> <v1> get after playing <v2> <f2> fouls <eof>
+<f0> where <f2> greater <v2> and <f1> equal <v1>
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+68:===========
+<f0> teams <eof> <f1> player <eof> <v1> plays for
+<c3> where <f1> equal <v1>
+<f0> where <f1> equal <v1>
+70:===========
+how many <f0> games <eof> did <f1> player <eof> <v1> play where he had more than <v2> <f2> fouls <eof>
+count <f0> where <f1> equal <v1> and <f2> greater <v2>
+<f0> where <f1> equal <v1> and <f2> greater <v2>
+73:===========
+how many <f0> games <eof> has <v1> <f1> played <eof> each season
+count <f0> where <f1> equal <v1>
+<f0> where <f1> equal <v1>
+75:===========
+what <f0> player <eof> had more <f1> blocks <eof> than <v0> whose <f1> number_of_blocks <eof> is <v1>
+<f0> where <f1> greater <v1> and <f2> equal <v2>
+<f0> where <f0> equal <v0> and <f1> equal <v1>
+77:===========
+how many <f0> games <eof> has <v1> <f1> played <eof>
+count <f0> where <f1> equal <v1>
+<f0> where <f1> equal <v1> and <c3> equal 3
+79:===========
+how many <f0> fouls <eof> were <f1> played <eof> by <v1> after having <v2> <f2> rebounds <eof>
+<f0> where <f1> greater <v1> and <f2> equal <v2>
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+80:===========
+name the number of total <f0> turnovers <eof> of <f1> player <eof> <v1>
+count <f0> where <f1> equal <v1>
+<f0> where <f1> equal <v1>
+81:===========
+how many <f0> blocks <eof> as <f1> position <eof> <v1> <f2> player <eof> <v2> made
+count <f0> where <f1> equal <v1> and <f2> equal <v2>
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+85:===========
+how many <f0> assists <eof> did <f1> player <eof> <v1> have over this season to get <v2> <f2> turnovers <eof>
+count <f0> where <f2> equal <v2> and <f1> greater <v1>
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+91:===========
+how many <f0> blocks <eof> did <f1> player <eof> <v1> have during his <v2> <f2> point <eof> total game
+count <f0> where <f1> equal <v1> and <f2> equal <v2>
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+97:===========
+how many <f0> steals <eof> does <f1> player <eof> <v1> get where hes got more than <v0> <f0> steals <eof>
+<f0> where <c4> less 86 and <c0> equal 26
+<f0> where <f1> equal <v1> and <c3> equal <v0>
+98:===========
+how many <f0> blocks <eof> did <f1> player <eof> <v1> make after getting <v2> <f2> steals <eof>
+count <f0> where <f1> equal <v1> and <f2> greater <v2>
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+100:===========
+<f0> who <eof> has a total <f1> foul <eof> count under <v1> for the season
+count <f0> where <f1> less <v1>
+<f0> where <f1> less <v1>
+103:===========
+in <f1> season <eof> <v1> how many allseason <f0> blocks <eof> did <f2> player <eof> <v2> have
+max <f0> where <f2> equal <v2> and <f1> equal <v1>
+<f0> where <f2> equal <v2> and <f1> equal <v1>
+106:===========
+how many <f0> points <eof> <v1> made in the season in which he <f1> played <eof> for <f2> team <eof> <v2>
+max <f0> where <f2> equal <v2> and <f1> equal <v1>
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+111:===========
+find those <f0> players <eof> responsible for less than <v1> <f1> points <eof> in any given season
+count <f0> where <f1> less <v1>
+<f0> where <f1> less <v1>
+114:===========
+how many <f0> turnovers <eof> did <f1> player <eof> <v1> have when he had <v2> <f2> blocks <eof>
+count <f0> where <f2> equal <v2> and <f1> equal <v1>
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+115:===========
+how many <f0> turnovers <eof> does <f1> player <eof> <v1> make when hes got <v2> <f2> assists <eof> in the season
+count <f0> where <f1> equal <v1> and <f2> equal <v2>
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+118:===========
+how many <f0> turnovers <eof> has <f1> player <eof> <v1> had
+count <f0> where <f1> equal <v1>
+<f0> where <f1> equal <v1> and <c0> equal 3
+119:===========
+how many allseason <f0> assists <eof> did <f1> player <eof> <v1> have along with <v2> allseason <f2> blocks <eof>
+count <f0> where <f2> equal <v2> and <f1> equal <v1>
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+121:===========
+how many <f0> turnovers <eof> <v1> made in the season he <f1> played <eof> for <f2> team <eof> <v2>
+count <f0> where <f2> equal <v2> and <f1> equal <v1>
+<f0> where <f1> equal <v1> and <f2> equal <v2>
+122:===========
+what <f0> team <eof> did <f1> player <eof> <v1> play for during his 3 <f0> steam <eof> season
+<f0> where <f1> equal <v1>
+<f0> where <f1> equal <v1> and <c2> equal 3
+126:===========
+how many <f0> assists <eof> does <f1> player <eof> <v1> have
+<f0> where <f1> equal <v1>
+<f0> where <f1> equal <v1> and <c7> equal 3
