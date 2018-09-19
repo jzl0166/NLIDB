@@ -23,13 +23,13 @@ Since data has been preprocessed and stored in numpy files. You can either omit 
 
   1. Annotate WikiSQL
   
-     Annotated data has been saved in data/DATA/overnight_source.
+     Annotated data has been saved in data/DATA/wiki.
      
          python3 utils/annotation/annotate.py
     
   2. Annotate Overnight
   
-     Annotated data has been saved in data/DATA/wiki.
+     Annotated data has been saved in data/DATA/overnight_source.
   
          python utils/annotate_overnight_vocab.py
          python utils/denotate_overnight.py
