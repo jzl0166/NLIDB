@@ -1,4 +1,7 @@
 # NLIDB
+
+A Transfer-Learnable Natural Language Interface for Databases (https://arxiv.org/abs/1809.02649)
+
 a NLIDB seq2seq model that achieves high transfer-ability. 
 
 ## Dependencies
