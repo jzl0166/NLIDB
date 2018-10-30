@@ -14,151 +14,221 @@ from collections import defaultdict
 import copy
 import editdistance as ed
 from scipy import spatial
-from glove import Glove
+
+import utils
+from utils import _preclean, _clean, _equal, _strip_stopword, _check_head, _max_span, _abbr_match, _match_ids, _threshold, _value_match, _digit, _backslash
+
 path = os.path.abspath(__file__)
-save_path = os.path.dirname(path).replace('utils/annotation', 'data/DATA/wiki/')
+save_path = os.path.dirname(path).replace('utils/annotation',
+                                          'data/DATA/wiki/')
 data_path = os.environ['WIKI_PATH']
-glove = Glove()
+
 # set wiki_path to WikiSQL raw data directory
 wiki_path = os.environ['WIKI_PATH']
 #----------------------------------------------------------
 maps = defaultdict(list)
-stop_words = ['a','of','the','in']
-def _match_field(name_pairs,candidates):
-    """
-    name_pairs : ground truth
-    candidates : identified (f,v) pairs
-    Check whether identified (f,v) pairs are the same as ground truth.
-    """
-    if len(name_pairs)!=len(candidates):
-        return False
-    return name_pairs==candidates
-  
-def _preclean(Q):
-    """
-    Clean before annotation.
-    """
-    Q = re.sub('#([0-9])',r'# \1', Q)
-    Q = Q.replace('€',' €')
-    Q = Q.replace('\'',' ')
-    Q = Q.replace(',','')
-    Q = Q.replace('?','')
-    Q = Q.replace('\"','')
-    Q = Q.replace('(s)','')
-    Q = Q.replace('  ',' ')
-    return Q.lower()
+stop_words = ['a', 'of', 'the', 'in']
+UNK = 'unk'
 
-def _clean(Q):
+def _approx_match_map(items, Q):
+    items = [ item for item in items if item not in Q ]
+    smap, _ = _approx_match_map_helper(items, Q)
+    return smap
+
+
+def _approx_match_map_helper(items, Q):
     """
-    Clean after annotation.
+    retrieve approximate match map
     """
-    Q = Q.replace('<eof>s','<eof>')
-    Q = Q.replace('<eof>d','<eof>')
+    smap = defaultdict(lambda: 'unk', {})
+    item2len = {} #match len
+    
+    for item in items:
+        ids = _match_ids(item, Q)
+        replacement, match_len = _max_span(
+                ids, Q.split())
+        if match_len >= _threshold(item):
+            smap[item] = replacement
+            item2len[item] = match_len
+
+    return smap, item2len
+
+
+def _approx_match(Q, Q_ori, fs, v):
+    """
+    approximate match fields based on value v
+    """
+
+    field2partial  = _approx_match_map(fs, Q)
+    fs = list(field2partial.keys())
+    fs.sort(key=lambda x: abs(Q_ori.index(field2partial[x])-Q_ori.index(v)))
+
+    return 'unk' if len(fs) == 0 else fs[0]
+
+
+def _match_pairs (Q, Q_ori, keys, reverse_map):
+    """
+    Iterate all values and
+    match column f for each value
+    """
+    candidates = []
+    cond_fields = []
+    # match values first
+    for v in keys:
+        l = len(v.split())
+ 
+        fs = reverse_map[v]
+
+        v = _digit(v, Q)
+
+        if (l > 1 and v in Q) or (l == 1 and str(v) in Q.split()):
+            
+            # PASS if current v is a substring of matched v
+            if not any(value for _, value in candidates if _value_match(value, v)):
+                fs = list(fs)
+                # only one possible field, identify (f,v) directly
+                if len(fs) == 1:
+                    f = fs[0]
+                    cond_fields.append(f)
+                else:  
+                    fs_inQ = [ item for item in fs if item in Q ]
+                    if len(fs_inQ) >= 1: 
+                        fs_inQ.sort(key=lambda x: abs(Q_ori.index(x) - Q_ori.index(v)))
+                        f = fs_inQ[0]
+                    else: #approximate match
+                        f = _approx_match(Q, Q_ori, fs, v)
+
+                    cond_fields.append(f)
+
+                cond_fields.remove(f) if f == v else candidates.append([_preclean(f), _preclean(v)])
+
+    # sort to compare with ground truth
+    candidates.sort(key=lambda x: x[1])
+    return candidates, cond_fields
+
+
+def _match_head_variant(Q, Q_ori, all_fields, cond_fields):
+    
+    exclude_fields = [f for f in all_fields if f not in cond_fields]
+    head2partial, head2matchlen = _approx_match_map_helper(exclude_fields, Q)
+
+    head_cands = list(head2partial.keys())
+    head_cands.sort( key=lambda x: head2matchlen[x] )              
+    head_cands = [ f for f in head_cands if head2matchlen[f]==head2matchlen[head_cands[-1]] ]
+    head_cands.sort( key=lambda x: Q_ori.index(head2partial[x]) )
+
+    head = '' if len(head_cands) == 0 else head_cands[0]
+
+    return head, head2partial
+
+def _match_head(Q, Q_ori, smap, all_fields, cond_fields):
+    head_cands = []
+    heads = smap.keys()
+    heads = sorted(heads, key=len, reverse=True)
+    heads = [f for f in heads if f not in cond_fields]
+    head2partial = defaultdict(lambda: 'unk', {})
+    for f in heads:
+        if not any(h for h in head_cands if f in h) and f in Q_ori and _check_head(
+                f, Q_ori):
+            head_cands.append(f)
+
+    if len(head_cands) >= 1:
+        head_cands.sort(key=lambda x: Q_ori.index(x))
+        head = head_cands[0]
+    elif len(heads) == 1:
+        head = heads[0]
+    else:
+        head, head2partial = _match_head_variant(Q, Q_ori, all_fields, cond_fields)
+
+    return head, head2partial
+
+def annotate_Q(Q, Q_ori, Q_head, candidates, all_fields, head2partial, n, target, PARTIAL_MATCH=True, step2=True, ADD_FIELDS=True):
+    """
+    annotate Q
+    """
+
+    new_candidates = [ ['<f' + str(i+1) + '>', '<v' + str(i+1) + '>'] for i, (field, value) in enumerate(candidates) ]
+       
+      
+
+    # annotate Q
+    Qpairs = []
+    for (f, v), (new_f, new_v) in zip(candidates, new_candidates):
+        Qpairs.append((f, new_f, 'f'))
+        Qpairs.append((v, new_v, 'v'))
+
+    # sort (word,symbol) pairs by word length in descending order
+    Qpairs.sort(key=lambda x: 100 - len(x[0]))
+
+
+    p2partial = defaultdict(lambda: 'unk', {})
+
+    if PARTIAL_MATCH:
+        fields = [f for f, _ in candidates]
+        p2partial = _approx_match_map(fields, Q)
+
+    Q = _insert_inferred_content(Q, candidates, p2partial, step2)
+
+    Q = _annotate_pairs(Q, Qpairs, p2partial)
+    
+    Q = _annotate_head(Q, Q_ori, Q_head, head2partial) 
+
+    if ADD_FIELDS:
+        Q += ' <eos> '
+        for i, f in enumerate(all_fields):
+            Q += (' <c' + str(i) + '> ' + f + ' <eoc> ')
+
+    Q = _clean(Q)
+    return Q, Qpairs
+
+
+def _annotate_pairs(Q, Qpairs, p2partial):
+    for p, new_p, t in Qpairs:
+        cp = _backslash(p)
+
+        if t == 'f':
+            p = p2partial[p] if p not in Q else p
+
+            Q0 = re.sub('(\s|^)' + cp + '(\s|$|s|\?|,|.)',
+                        ' ' + new_p + ' ' + p + ' <eof> ', Q)
+            Q = Q.replace(p, new_p + ' ' + p +
+                          ' <eof> ') if Q == Q0 else Q0
+        else:
+            Q0 = re.sub('(\s|^)' + cp + '(\s|$|s|\?|,|.)',
+                        ' ' + new_p + ' ', Q)
+            Q = Q.replace(p, new_p + ' ') if Q == Q0 else Q0
+
     return Q
 
-def _check_head(head,Q):
-    """
-    Head should be close to question word.
-    """
-    question_words = ['what','what\'s','whats','whatis','how','which','list','who','who\'s','whos','give','tell','name','where']
-    idx = Q.index(head)
-    tokens = Q[:idx].split()
-    for i in range(1,8):
-        if len(tokens)-i>=0 and tokens[-i] in question_words:
-            return True
-    return False
+def _insert_inferred_content(Q, candidates, p2partial, step2 = True):
 
-def _max_span(ids,tokens):
-    """
-    Search for maximum continuous span.
-    """
-    if len(ids)<1:
-        return '',-1
-    
-    intervals = []
-    for i in ids:
-        if not intervals:
-            intervals.append([i])
-        else:
-            ADD = False
-            for interval in intervals:
-                if i == interval[0] - 1:
-                    interval.insert(0, i)
-                    ADD = True
-                elif i == interval[-1] + 1:
-                    interval.append(i)
-                    ADD = True
-            if not ADD:
-                intervals.append([i])
+    # field inference
+    if step2:
+        for f, v in candidates:
+            if f not in Q and p2partial[f] is not UNK:
+                Q = Q.replace(v, f + ' ' + v)
 
-    #intervals.sort(key=len, reverse=True)
+    # field covered by value f = street, v = ryan street
+    for f, v in candidates:
+        if ((f in v and Q.count(f) == 1) or
+            (p2partial[f] in v and Q.count(
+                p2partial[f]) == 1)) and Q.count(v) == 1:
+            Q = Q.replace(v, f + ' ' + v)
 
-    max_len = -1
-    max_interval = []
+    return Q
 
-    for interval in intervals:
-        l = 0
-        for idx in interval:
-            if tokens[idx] not in stop_words:
-                l += 1
-        if l > max_len:
-            max_len = l
-            max_interval = interval
+def _annotate_head(Q, Q_ori, Q_head,head2partial):
+    # MATCH HEAD
+    f0 = Q_head
+    if f0 is not '':
+        if f0 in Q:
+            Q = Q.replace(f0, '<f0> ' + f0 + ' <eof>')
+        else:  
+            f0 = head2partial[f0]
+            f0 = _strip_stopword(f0)
+            Q = Q.replace(f0, '<f0> ' + f0 + ' <eof>')
 
-    re = ''
-    for i in max_interval[:-1]:
-        re += tokens[i] 
-        re += ' '
-    re += tokens[max_interval[-1]]
-    
-    return re, max_len
-
-def _abbr_match(a, b):
-    """
-    Match abbreviation.
-    """
-    if a[-1] != '.' and b[-1] != '.':
-        return False
-
-    if a[-1] == '.':
-        idx = a.index('.')
-        if len(b) > idx and a[:idx] == b[:idx]:
-            return True
-    else:
-        idx = b.index('.')
-        if len(a) > idx and  a[:idx] == b[:idx]:
-            return True
-    return False
-
-
-def _match_ids(field, Q):
-    """
-    Imperfect match
-    """
-    ids = []
-    length = 0
-    for token in field.replace('/', ' ').split():
-        if token == 'no.':
-            token = 'number'
-
-        for i, q in enumerate(Q.split()):
-            semantic_sim = 1 - spatial.distance.cosine(glove.embed_one(q), glove.embed_one(token))
-            if q in stop_words or _abbr_match(q, token) or ed.eval(q, token) / len(token) < 0.5 or semantic_sim >= 0.7 :
-                ids.append(i)           
-                if q not in stop_words:
-                    length += 1
-
-    return ids
-
-def _threshold(f):
-    """
-    Overlap threshold.
-    """
-    tokens = []
-    for t in f.split():
-        if t not in stop_words:
-            tokens.append(t)
-    return len(tokens) / 2
+    return Q
 
 
 def main():
@@ -169,19 +239,19 @@ def main():
 
     if not os.path.isdir(args.dout):
         os.makedirs(args.dout)
-    
-    for split in ['train', 'test', 'dev']:
+
+    for split in ['dev']:
+    #for split in ['train', 'test', 'dev']:
         with open(save_path+'%s.qu'%split, 'w') as qu_file, open(save_path+'%s.lon'%split, 'w') as lon_file, \
             open(save_path+'%s.out'%split, 'w') as out, open(save_path+'%s_sym_pairs.txt'%split, 'w') as sym_file, \
             open(save_path+'%s_ground_truth.txt'%split, 'w') as S_file:
-          
+
             fsplit = os.path.join(args.din, split) + '.jsonl'
             ftable = os.path.join(args.din, split) + '.tables.jsonl'
 
-            with open(fsplit) as fs, open(ftable) as ft :
+            with open(fsplit) as fs, open(ftable) as ft:
                 print('loading tables')
                 tables = {}
-
                 for line in tqdm(ft, total=count_lines(ftable)):
                     d = json.loads(line)
                     tables[d['id']] = d
@@ -190,22 +260,18 @@ def main():
                 print('loading examples')
                 n, acc, acc_pair, acc_all, error = 0, 0, 0, 0, 0
                 target = -1
-            
-                ADD_FIELDS = True
+
+                ADD_FIELDS = False
                 step2 = True
-             
+
                 for line in tqdm(fs, total=count_lines(fsplit)):
                     ADD_TO_FILE = True
                     d = json.loads(line)
                     Q = d['question']
-                    Q = Q.replace(u'\xa0',u' ')
+                    
                     rows = tables[d['table_id']]['rows']
                     rows = np.asarray(rows)
                     fs = tables[d['table_id']]['header']
-                 
-                    l = 0
-                    for f in fs:
-                        l += ( len(f.split()) + 2)
 
                     all_fields = []
                     for f in fs:
@@ -213,353 +279,113 @@ def main():
                     # all fields are sorted by length in descending order
                     # for string match purpose
                     all_fields = sorted(all_fields, key=len, reverse=True)
-                    
-                    if l>40:
-                        pass
 
-                    smap = defaultdict(list)    #f2v
+                
+                    smap = defaultdict(list)  #f2v
                     reverse_map = defaultdict(list)  #v2f
                     for row in rows:
                         for i in range(len(fs)):
-                            cur_f = _preclean(str(fs[i])) 
-                            cur_row =  _preclean(str(row[i]))  
+                            cur_f = _preclean(str(fs[i]))
+                            cur_row = _preclean(str(row[i]))
                             smap[cur_f].append(cur_row)
                             if cur_f not in reverse_map[cur_row]:
                                 reverse_map[cur_row].append(cur_f)
-                  
-                    #----------------------------------------------------------                    
+
+                    #----------------------------------------------------------
                     # all values are sorted by length in descending order
                     # for string match purpose
                     keys = sorted(reverse_map.keys(), key=len, reverse=True)
-
-                    candidates = []
-                    cond_fields = []
-        
+                
                     Q = _preclean(Q)
-                    Q_ori = Q
-            
-                    #========================MATCH VALUES & FIELDS=============================                    
-                    field2partial = {}
-                    field2partial = defaultdict(lambda:'unk', field2partial)
+                    Q_ori = Q  
 
-                    # match values first
-                    for v in keys: 
-                        l = len(v.split())
-                        PASS = False
+                    #####################################
+                    ########## Annotate question ########
+                    #####################################
+                    candidates, cond_fields = _match_pairs(Q, Q_ori, keys, reverse_map)
+                    Q_head, head2partial = _match_head(Q, Q_ori, smap, all_fields, cond_fields)
 
-                        fs = reverse_map[v]
-                        if v.isdigit() and v not in Q.split():
-                            v = str(v)+'.0'
-
-                        if (l>1 and v in Q) or (l==1 and str(v) in Q.split()):
-                            
-                            # PASS if current v is a substring of matched v
-                            for field,value in candidates:
-                                if v + ' ' in value or ' ' + v in value or (v in value and abs(len(v)-len(value)) < 2):
-                                    PASS = True
-
-                            if PASS == False:        
-                                fs = list(fs)
-                                # only one possible field, identify (f,v) directly
-                                if len(fs)==1:
-                                    f = fs[0]
-                                    cond_fields.append(f)
-                                else:
-                                    fs_ori = copy.copy(fs)
-                                    fs_tmp = copy.copy(fs)
-                                    # fields not appear in Q are removed
-                                    for field in fs_tmp:
-                                        if field not in Q:
-                                            fs.remove(field)
-                                    # only one possible field, identify (f,v) directly
-                                    if len(fs) == 1:
-                                        f = fs[0]
-                                        cond_fields.append(f)
-
-                                    # if several possible fields, 
-                                    # match for field closest to v
-                                    if len(fs) > 1:   
-                                        fs.sort(key=lambda x: abs(Q_ori.index(x)-Q_ori.index(v)))
-                                        f = fs[0]
-                                        cond_fields.append(f)
-
-                                    # if no field appears in Q, use imperfect string match
-                                    if len(fs) == 0:
-                                        fs = copy.copy(fs_ori)
-                                        fs_tmp = copy.copy(fs)
-
-                                        for field in fs_tmp:
-                                            if field not in Q:
-                                                ids = _match_ids(field,Q)
-                                                replacement, match_len = _max_span(ids, Q.split())
-                                                if match_len >= _threshold(field):
-                                                    field2partial[field] = replacement
-                                                    #if replacement not in Q:
-                                                    #    print('******')
-                                                    #    print(Q)
-                                                    #    print(replacement)
-                                                else:
-                                                    fs.remove(field) 
-                                            else:
-                                                field2partial[field] = field
-
-                                        # no imperfect match, give up
-                                        if len(fs) == 0:
-                                            f = 'unk'
-                                            cond_fields.append(f)
-                                        
-                                        if len(fs) == 1:
-                                            f = fs[0]
-                                            cond_fields.append(f)
-                                          
-                                        # match for field closest to v
-                                        if len(fs) > 1: 
-                                            fs.sort(key=lambda x: abs(Q_ori.index(field2partial[x])-Q_ori.index(v)))
-                                            f = fs[0]
-                                            cond_fields.append(f)
-                                 
-                                if f == v:   
-                                    cond_fields.remove(f)
-                                    pass   
-                                    #candidates.append([_preclean(f),'true'])
-                                else:
-                                    candidates.append([_preclean(f),_preclean(v)])
-                                    
-                    # sort to compare with ground truth                
-                    candidates.sort(key=lambda x: x[1])
-                  
-                    #=============================MATCH HEAD====================================
-                    head_cands = []
-                    heads = smap.keys()
-                    heads = sorted(heads, key=len, reverse=True)
-
-                    for f in heads:
-                        ADD = True
-                        for h in head_cands:
-                            if f in h:
-                                ADD = False
-                                break
-
-                        if ADD and f in Q_ori and _check_head(f, Q_ori) and f not in cond_fields:
-                            head_cands.append(f)
-
-                    if len(head_cands) > 1:
-                        head_cands.sort(key=lambda x: Q_ori.index(x))
-                        head = head_cands[0]
-                    elif len(head_cands) == 1:
-                        head = head_cands[0]
-                    elif len(heads) == 1:
-                        head = heads[0]
-                    else:
-                        head = ''
-
-                    #========================MATCH PARTIAL/VARIATION HEAD=====================
-                    head2partial = {}
-                    head2partial = defaultdict(lambda:'unk', head2partial)
-
-                    # if there is no HEAD identified, search HEAD with imperfect match
-                    if head == '' :
-                        max_len = -1
-                        for field in all_fields:
-
-                            if field not in cond_fields:
-                                ids = _match_ids(field, Q)
-                                replacement, match_len = _max_span(ids, Q.split()) 
-                                if match_len >= _threshold(field) and match_len >= max_len:
-                                    head2partial[field] = replacement
-                                    if match_len == max_len:
-                                        head_cands.append(field)
-                                    else:
-                                        head = field
-                                        head_cands = [head]
-                                        max_len = match_len
-
-                        if len(head_cands) >= 2:
-                            head_cands.sort(key=lambda x: Q_ori.index(head2partial[x]))
-                            head = head_cands[0]
-
-                    Q_head = head
-                    #---------------------------------------------------------------------------------------------------
-                    new_candidates = [] 
-                    i = 1
-                    for field, value in candidates:
-                        new_candidates.append(['<f'+str(i)+'>' ,'<v'+str(i)+'>'])
-                        i += 1
-
-                    # annotate Q 
-                    Qpairs = []
-                    for (f,v),(new_f,new_v) in zip(candidates,new_candidates):
-                        Qpairs.append((f,new_f,'f'))
-                        Qpairs.append((v,new_v,'v'))
-
-                    # sort (word,symbol) pairs by word length in descending order
-                    Qpairs.sort(key=lambda x: 100-len(x[0]))
-
-                    ##=====================MATCH FIELD VAIRATION IN Q==================================
                     
-                    # imperfect match 
-                    if True:
-                        p2partial = {}
-                        p2partial = defaultdict(lambda:'unk', p2partial)
-
-                        for f,v in candidates:
-                            if f not in Q :
-                                ids = _match_ids(f, Q)
-                                replacement, match_len = _max_span(ids, Q.split()) 
-                                if match_len >= _threshold(f) :
-                                    if n==target:
-                                        print(match_len)
-                                        print(ids)
-                                        print(replacement)
-
-                                    p2partial[f] = replacement
-                                else:
-                                    # if v is found, and f is not seen in Q.
-                                    if step2:
-                                        Q = Q.replace(v, f+' '+v)
-                                    else:
-                                        pass
-                                   
-                                    #print('********')
-                                    #print(Q_ori)
-                                    #print(Q)
-
-
-                    # field covered by value f = street, v = ryan street 
-                    for f,v in candidates:
-                        if ((f in v and Q.count(f)==1) or (p2partial[f] in v and Q.count(p2partial[f])==1)) and Q.count(v)==1:
-                            Q = Q.replace(v, f+' '+v)
-
-                    # perfect match
-                    for p, new_p, t in Qpairs:     
-                        cp = p.replace('\\', '\\\\').replace('(', r'\(').replace(')', r'\)').\
-                            replace('+', r'\+').replace('-', r'\-').\
-                            replace('*', r'\*').replace('?', r'\?')
-                        
-                        if t == 'f':   
-                            if p not in Q:
-                                p = p2partial[p]            
-                            Q0 = re.sub('(\s|^)'+cp+'(\s|$|s|\?|,|.)', ' '+new_p+' '+p+' <eof> ', Q)
-                            Q = Q.replace(p, new_p+' '+p+' <eof> ') if Q == Q0 else Q0 
-                        else:              
-                            Q0 = re.sub('(\s|^)'+cp+'(\s|$|s|\?|,|.)', ' '+new_p+' ', Q)
-                            Q = Q.replace(p, new_p+' ') if Q == Q0 else Q0 
-                       
-                    f0 = Q_head
-                    if len(f0) >= 1:
-                        if f0 not in Q:
-                            f0 = head2partial[f0]
-
-                        if f0 in Q:
-                            Q = Q.replace(f0, '<f0> '+f0+' <eof>')
-                        else:
-                            tokens = f0.split()
-                            while tokens[0] in stop_words:
-                                tokens = tokens[1:]
-                            while tokens[-1] in stop_words:
-                                tokens = tokens[:-1]
-                            f0 = ' '.join(tokens)
-                            Q = Q.replace(f0, '<f0> '+f0+' <eof>')
-                    
-                    if ADD_FIELDS:
-                        Q += ' <eos> ' 
-                        for i,f in enumerate(all_fields):
-                            Q += (' <c'+str(i)+'> '+f+' <eoc> ')
-
-                    Q = _clean(Q)
-                    Q = re.sub(r'(<f[0-9]>)(s)(\s|$)', r'\1\3', Q)
-                    qu_file.write(Q+'\n')
+                    Q, Qpairs = annotate_Q(Q, Q_ori, Q_head, candidates, all_fields, head2partial, n, target)
+                    qu_file.write(Q + '\n')
 
                     validation_pairs = copy.copy(Qpairs)
                     validation_pairs.append((Q_head, '<f0>', 'head'))
-                    for i,f in enumerate(all_fields):
-                        validation_pairs.append((f, '<c'+str(i)+'>', 'c'))
+                    for i, f in enumerate(all_fields):
+                        validation_pairs.append((f, '<c' + str(i) + '>', 'c'))
+
 
                     #####################################
                     ########## Annotate SQL #############
                     #####################################
                     q_sent = Query.from_dict(d['sql'])
-                    S, col_names, val_names = q_sent.to_sentence(tables[d['table_id']]['header'], rows, tables[d['table_id']]['types'])
+                    S, col_names, val_names = q_sent.to_sentence(
+                        tables[d['table_id']]['header'], rows,
+                        tables[d['table_id']]['types'])
                     S = _preclean(S)
                     S_ori = S
 
-                    S_noparen = q_sent.to_sentence_noparenthesis(tables[d['table_id']]['header'], rows, tables[d['table_id']]['types'])
+                    S_noparen = q_sent.to_sentence_noparenthesis(
+                        tables[d['table_id']]['header'], rows,
+                        tables[d['table_id']]['types'])
                     S_noparen = _preclean(S_noparen)
-                    
-                    new_col_names = []
-                    for col_name in col_names:
-                        new_col_names.append(_preclean(col_name))
-                    col_names = new_col_names
 
-                    new_val_names = []
-                    for val_name in val_names:
-                        new_val_names.append(_preclean(val_name))
-                    val_names = new_val_names
+                    col_names = [ _preclean(col_name) for col_name in col_names ]
+                    val_names = [ _preclean(val_name) for val_name in val_names ]
+
 
                     HEAD = col_names[-1]
                     S_head = _preclean(HEAD)
 
-                    if n==target:
-                        print(Q_ori)
-                        print(Q)
-                        print(S)
-                        print(S_head)
-                        print(Q_head)
-                        print(candidates)
-                        print(name_pairs)
-                        print(p2partial)
 
                     #annotate for SQL
                     name_pairs = []
                     for col_name, val_name in zip(col_names, val_names):
-                        if col_name == val_name: 
+                        if col_name == val_name:
                             name_pairs.append([_preclean(col_name), 'true'])
-                        else: 
-                            name_pairs.append([_preclean(col_name), _preclean(val_name)])
+                        else:
+                            name_pairs.append(
+                                [_preclean(col_name),
+                                 _preclean(val_name)])
+
                     # sort to compare with candidates
-                    name_pairs.sort(key=lambda x:x[1])
-                    new_name_pairs = []
-                    i = 1
-                    for field, value in name_pairs:
-                        new_name_pairs.append(['<f'+str(i)+'>', '<v'+str(i)+'>'])
-                        i += 1
+                    name_pairs.sort(key=lambda x: x[1])
+                    new_name_pairs = [  ['<f' + str(i+1) + '>', '<v' + str(i+1) + '>'] for i, (field, value) in enumerate(name_pairs)]
+    
 
                     # only annotate S while identified (f,v) pairs are right
-                    if _match_field(name_pairs, candidates):
+                    if _equal(name_pairs, candidates):
                         pairs = []
-                        for (f, v), (new_f, new_v) in zip(name_pairs, new_name_pairs):
+                        for (f, v), (new_f, new_v) in zip(
+                                name_pairs, new_name_pairs):
                             pairs.append((f, new_f, 'f'))
                             pairs.append((v, new_v, 'v'))
                         # sort (word,symbol) pairs by length in descending order
-                        pairs.sort(key=lambda x: 100-len(x[0]))
-                        
+                        pairs.sort(key=lambda x: 100 - len(x[0]))
+
                         for p, new_p, t in pairs:
-                            cp = p.replace('\\','\\\\').replace('(', r'\(').replace(')', r'\)').\
-                                replace('+', r'\+').replace('-', r'\-').replace('*', r'\*').\
-                                replace('?', r'\?')
+                            cp = _backslash(p)
 
                             if new_p in Q:
                                 if t == 'v':
-                                    S = S.replace(p + ' )',new_p+' )') 
+                                    S = S.replace(p + ' )', new_p + ' )')
                                 if t == 'f':
-                                    S=re.sub('\( '+cp+' (equal|less|greater)', '( '+new_p+r' \1', S)
-                          
+                                    S = re.sub(
+                                        '\( ' + cp + ' (equal|less|greater)',
+                                        '( ' + new_p + r' \1', S)
+
                     # only annotate S while identified HEAD is right
-                    if  S_head == Q_head and '<f0>' in Q:
-                        S = S.replace(S_head ,'<f0>')
-                       
+                    if S_head == Q_head and '<f0>' in Q:
+                        S = S.replace(S_head, '<f0>')
+
                     # annote unseen fields
                     if ADD_FIELDS:
-                        for i,f in enumerate(all_fields):
-                            cf = f.replace('\\', '\\\\').replace('(', r'\(').\
-                                replace(')', r'\)').replace('+', r'\+').\
-                                replace('-', r'\-').replace('*', r'\*').\
-                                replace('?', r'\?').replace('$', r'\$').\
-                                replace('[', r'\[').replace(']', r'\]')
-                            S = re.sub('(\s|^)'+cf+'(\s|$|s)', ' <c'+str(i)+'> ', S)
-                
+                        for i, f in enumerate(all_fields):
+                            cf = _backslash(f)
+                            S = re.sub('(\s|^)' + cf + '(\s|$|s)',
+                                       ' <c' + str(i) + '> ', S)
+
                     S = _clean(S)
-                    S = re.sub(r'(<f[0-9]>)(s)(\s|$)', r'\1\3', S)
                     lon_file.write(S + '\n')
 
                     ###############################
@@ -572,54 +398,55 @@ def main():
                     sym_file.write('\n')
 
                     S_file.write(S_noparen + '\n')
-                    if False and recover_S != S_ori:
-                        print(S_ori)
-                        print(S)
-                        print(recover_S)
-
                     #------------------------------------------------------------------------
-                    if _match_field(name_pairs,candidates):      
+                    if _equal(name_pairs, candidates):
                         acc_pair += 1
 
-                    if Q_head == S_head:     
+                    if Q_head == S_head:
                         acc += 1
-                        
-                    if _match_field(name_pairs,candidates) and Q_head == S_head:
+
+                    if _equal(name_pairs,
+                                    candidates) and Q_head == S_head:
                         acc_all += 1
 
                     full_anno = True
                     for s in S.split():
-                        if s[0]!='<' and s not in ['(',')','where','less','greater','equal','max','min','count','sum','avg','and','true']:
-                            error += 1  
-                            full_anno = False  
+                        if s[0] != '<' and s not in [
+                                '(', ')', 'where', 'less', 'greater', 'equal',
+                                'max', 'min', 'count', 'sum', 'avg', 'and',
+                                'true'
+                        ]:
+                            error += 1
+                            full_anno = False
                             break
 
-                    if False and not (_match_field(name_pairs,candidates) and head == col_names[-1]):
-                        print('--------'+str(n)+'-----------')
+                    if False and not (_equal(name_pairs, candidates)
+                                      and head == col_names[-1]):
+                        print('--------' + str(n) + '-----------')
                         print(Q_ori)
                         print(Q)
                         print(S_ori)
                         print(S)
                         print('head:')
-                        print(head) 
+                        print(head)
                         print(head2partial)
                         print('true HEAD')
                         print(Q_head)
                         print('fields:')
-                        print(candidates)  
+                        print(candidates)
                         print(p2partial)
                         print('true fields')
                         print(name_pairs)
-                    
-                 
+
                     n += 1
-                   
+
                 print('total number of examples:' + str(n))
-                print('fully snnotated:' + str(1-error*1.0/n))
-                print('accurate all percent:' + str(acc_all*1.0/n))
-                print('accurate HEAD match percent:' + str(acc*1.0/n))
-                print('accurate fields pair match percent:' + str(acc_pair*1.0/n))
+                print('fully snnotated:' + str(1 - error * 1.0 / n))
+                print('accurate all percent:' + str(acc_all * 1.0 / n))
+                print('accurate HEAD match percent:' + str(acc * 1.0 / n))
+                print('accurate fields pair match percent:' +
+                      str(acc_pair * 1.0 / n))
+
 
 if __name__ == '__main__':
     main()
-   
