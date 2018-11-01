@@ -47,7 +47,7 @@ Since data has been preprocessed and stored in numpy files. You can either omit 
       
      Data has been stored in data folder.
       
-         python utils/both.py
+         python utils/data_manager.py
       
 - Train or load model 
     
@@ -55,11 +55,11 @@ Since data has been preprocessed and stored in numpy files. You can either omit 
    
    please put all files in model/ folder
    
-      python nlidb.py --mode train
-      python nlidb.py --mode load_pretrained
+      python main.py --mode train --data 'wikisql'
+      python main.py --mode infer --data 'overnight'
       
 - Transfer-ability
       
   The annotated dataset used for transfer-ability evaluation is adopted from previous work https://github.com/alantian/nlidb . We have extracted related code into our etc/overnight-tagger folder.
       
-      python nlidb.py --mode transfer
+      python main.py --mode transfer
