@@ -6,7 +6,8 @@ from tensorflow.python.platform import gfile
 import numpy as np
 import tensorflow as tf
 from tensorflow.python.layers.core import Dense
-from utils.both import load_data,load_vocab_all
+from utils.data_manager import load_data
+from utils.vocab import load_vocab_all
 from utils.bleu import moses_multi_bleu
 from collections import defaultdict
 from argparse import ArgumentParser
@@ -107,12 +108,13 @@ def _decode_data(sess, env, X_data, batch_size, reverse_vocab_dict):
             logics_all.append(logic)
     return logics_all
 
-def decode_data_recover(sess, env, X_data, y_data, s, batch_size=128, annotation_path=os.path.dirname(os.path.abspath(__file__)) + '/data/DATA/wiki/'):
+def decode_data_recover(sess, env, args, X_data, y_data, s, batch_size=128):
     """
     Inference and calculate EM acc based on recovered SQL
     """
+    annotation_path = args.annotation_path
     i, acc = 0, 0
-    _, reverse_vocab_dict, _, _ = load_vocab_all()
+    _, reverse_vocab_dict, _, _ = load_vocab_all(args)
     inf_logics = _decode_data(sess, env, X_data, batch_size, reverse_vocab_dict) 
     xtru, ytru = X_data, y_data
     with gfile.GFile(annotation_path+'%s_infer.txt'%s, mode='w') as output, gfile.GFile(annotation_path+'%s_ground_truth.txt'%s, mode='r') as S_ori_file, \
@@ -133,7 +135,6 @@ def decode_data_recover(sess, env, X_data, y_data, s, batch_size=128, annotation
             true_seq = true_seq[:list(true_seq).index(_END)]
             x = np.append(x, _END)
             x = x[:list(x).index(_END)]
-  
 
             xseq = " ".join([reverse_vocab_dict[idx] for idx in x])
             true_logic = " ".join([reverse_vocab_dict[idx] for idx in true_seq])
@@ -141,10 +142,7 @@ def decode_data_recover(sess, env, X_data, y_data, s, batch_size=128, annotation
             logic = logic.replace(' (','').replace(' )','')
             true_logic = true_logic.replace(' (','').replace(' )','') 
 
-            RIGHT = False
             logic = _switch_cond(logic, true_logic)
-            if logic == true_logic:
-                RIGHT = True 
 
             recover_S = logic
             for sym, word in Qpairs:
@@ -152,7 +150,6 @@ def decode_data_recover(sess, env, X_data, y_data, s, batch_size=128, annotation
 
             acc += (recover_S==S_ori)
             output.write(recover_S + '\n')
-            
             i += 1
     
     print('EM: %.4f'%(acc*1./len(y_data)))  
@@ -160,12 +157,12 @@ def decode_data_recover(sess, env, X_data, y_data, s, batch_size=128, annotation
     
     return acc*1./len(y_data)
 
-def decode_data(sess, env, X_data, y_data , batch_size=128, filename='output.txt'):
+def decode_data(sess, env, args, X_data, y_data, batch_size=128, filename='output.txt'):
     """
     Inference w/o recover annotation symbols
     """
     i, acc = 0, 0
-    _, reverse_vocab_dict, _, _ = load_vocab_all()
+    _, reverse_vocab_dict, _, _ = load_vocab_all(args)
     logics_all = _decode_data(sess, env, X_data, batch_size, reverse_vocab_dict)
     xtru, ytru = X_data, y_data
 
