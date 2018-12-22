@@ -31,7 +31,7 @@ def load_data(args):
         print('========Dev data shape=======')
         print(X_dev.shape)
         print(y_dev.shape) 
-        return X_train, y_train, X_test, y_test, X_dev, y_test
+        return X_train, y_train, X_test, y_test, X_dev, y_dev
     elif args.data=='overnight':
         X_all, y_all = None, None
         for subset in ['basketball','calendar','housing','recipes','restaurants']:
